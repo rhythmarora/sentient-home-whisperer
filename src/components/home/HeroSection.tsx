@@ -1,33 +1,48 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden film-grain">
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
-      
-      {/* Subtle radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[120px]" />
+
+      {/* Floating ambient orbs */}
+      <motion.div
+        animate={{ y: [-20, 20, -20], scale: [1, 1.05, 1] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-cinema/5 blur-[120px]"
+      />
+      <motion.div
+        animate={{ y: [15, -25, 15], scale: [1.05, 1, 1.05] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute top-1/3 right-1/4 w-[350px] h-[350px] rounded-full bg-music/5 blur-[120px]"
+      />
+      <motion.div
+        animate={{ y: [10, -15, 10], scale: [1, 1.08, 1] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute bottom-1/4 left-1/2 w-[300px] h-[300px] rounded-full bg-relax/5 blur-[120px]"
+      />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-body text-sm tracking-[0.4em] uppercase text-primary mb-8"
+          className="font-body text-xs tracking-[0.5em] uppercase text-silver mb-10"
         >
-          Luxury Home Technology
+          QUBIX
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-medium leading-[1.1] mb-8"
+          className="font-display text-5xl md:text-7xl lg:text-8xl font-medium leading-[1.05] mb-8"
         >
           Technology,{" "}
-          <span className="italic text-gold-gradient">designed</span>
+          <span className="italic text-gradient-vibrant">designed</span>
           <br />
           to disappear.
         </motion.h1>
@@ -35,30 +50,31 @@ export default function HeroSection() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="font-body text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="font-body text-lg md:text-xl text-platinum/80 max-w-2xl mx-auto mb-4 leading-relaxed"
         >
-          We craft immersive experiences for luxury residences — where cinema, 
-          music, light, and automation become invisible extensions of how you live.
+          Spaces that respond to you. Sound that surrounds you. Light that adapts to you.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="font-body text-base text-silver italic mb-12"
+        >
+          This is not automation. This is orchestration.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          transition={{ duration: 0.8, delay: 1.1 }}
         >
           <Link
             to="/design"
-            className="px-8 py-4 font-body font-medium text-sm tracking-wider bg-gold-gradient text-primary-foreground rounded-sm hover:opacity-90 transition-opacity"
+            className="inline-flex items-center px-10 py-4 font-body font-medium text-sm tracking-wider bg-gradient-vibrant text-white rounded-full hover:opacity-90 transition-opacity"
           >
-            Design My Home
-          </Link>
-          <Link
-            to="/experience-center"
-            className="px-8 py-4 font-body text-sm tracking-wider text-foreground border border-border rounded-sm hover:border-primary/50 transition-colors"
-          >
-            Visit Experience Center
+            Begin Your Experience
           </Link>
         </motion.div>
 
@@ -66,14 +82,16 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          transition={{ delay: 2 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
         >
+          <span className="font-body text-xs tracking-widest uppercase text-silver">Explore</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-px h-12 bg-gradient-to-b from-transparent via-primary/50 to-transparent"
-          />
+          >
+            <ChevronDown className="w-5 h-5 text-silver" />
+          </motion.div>
         </motion.div>
       </div>
     </section>
