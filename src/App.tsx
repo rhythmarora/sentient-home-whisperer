@@ -3,8 +3,17 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import Index from "./pages/Index";
+import Spaces from "./pages/Spaces";
+import Systems from "./pages/Systems";
+import Philosophy from "./pages/Philosophy";
+import Projects from "./pages/Projects";
+import ExperienceCenter from "./pages/ExperienceCenter";
+import Contact from "./pages/Contact";
+import Brands from "./pages/Brands";
+import Products from "./pages/Products";
+import DesignYourHome from "./pages/DesignYourHome";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +25,18 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/spaces" element={<Spaces />} />
+          <Route path="/systems" element={<Systems />} />
+          <Route path="/philosophy" element={<Philosophy />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:slug" element={<Projects />} />
+          <Route path="/experience-center" element={<ExperienceCenter />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/brands" element={<Brands />} />
+          <Route path="/brands/:slug" element={<Brands />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:slug" element={<Products />} />
+          <Route path="/design" element={<DesignYourHome />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
