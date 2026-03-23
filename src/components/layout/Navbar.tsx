@@ -4,12 +4,11 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
+  { label: "Experience", href: "/#experience" },
+  { label: "Design Your Home", href: "/design" },
   { label: "Spaces", href: "/spaces" },
   { label: "Systems", href: "/systems" },
-  { label: "Projects", href: "/projects" },
-  { label: "Philosophy", href: "/philosophy" },
-  { label: "Experience Center", href: "/experience-center" },
-  { label: "Brands", href: "/brands" },
+  { label: "Talk to an Expert", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -39,26 +38,21 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-2">
-              <span className="font-display text-2xl font-bold tracking-wider text-gold-gradient">
+            <Link to="/" className="flex items-center">
+              <span className="font-display text-2xl font-bold tracking-[0.3em] uppercase text-gold-gradient">
                 QUBIX
-              </span>
-              <span className="font-body text-xs tracking-[0.3em] text-muted-foreground uppercase">
-                HiFi
               </span>
             </Link>
 
-            {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`font-body text-sm tracking-wide transition-colors duration-300 hover:text-primary ${
+                  className={`font-body text-sm tracking-wide transition-colors duration-300 hover:text-foreground ${
                     location.pathname === link.href
-                      ? "text-primary"
-                      : "text-muted-foreground"
+                      ? "text-foreground"
+                      : "text-silver"
                   }`}
                 >
                   {link.label}
@@ -66,13 +60,12 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* CTA + Mobile Toggle */}
             <div className="flex items-center gap-4">
               <Link
-                to="/design"
-                className="hidden sm:inline-flex items-center px-5 py-2.5 text-sm font-body font-medium bg-gold-gradient text-primary-foreground rounded-sm tracking-wide hover:opacity-90 transition-opacity"
+                to="/contact"
+                className="hidden sm:inline-flex items-center px-5 py-2.5 text-sm font-body font-medium bg-gradient-vibrant text-white rounded-full tracking-wide hover:opacity-90 transition-opacity"
               >
-                Design My Home
+                Book Consultation
               </Link>
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
@@ -86,7 +79,6 @@ export default function Navbar() {
         </div>
       </motion.header>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -101,16 +93,16 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className="font-display text-2xl text-foreground hover:text-primary transition-colors"
+                  className="font-display text-2xl text-foreground hover:text-gradient-vibrant transition-colors"
                 >
                   {link.label}
                 </Link>
               ))}
               <Link
-                to="/design"
-                className="mt-4 px-8 py-3 text-lg font-body font-medium bg-gold-gradient text-primary-foreground rounded-sm tracking-wide"
+                to="/contact"
+                className="mt-4 px-8 py-3 text-lg font-body font-medium bg-gradient-vibrant text-white rounded-full tracking-wide"
               >
-                Design My Home
+                Book Consultation
               </Link>
             </nav>
           </motion.div>

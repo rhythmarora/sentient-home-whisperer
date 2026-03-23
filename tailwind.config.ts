@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Playfair Display"', 'serif'],
+        display: ['"Cormorant Garamond"', 'serif'],
         body: ['Inter', 'sans-serif'],
       },
       colors: {
@@ -61,6 +61,23 @@ export default {
           light: "hsl(var(--charcoal-light))",
         },
         obsidian: "hsl(var(--obsidian))",
+        cinema: "hsl(var(--cinema))",
+        music: "hsl(var(--music))",
+        social: "hsl(var(--social))",
+        relax: "hsl(var(--relax))",
+        gaming: "hsl(var(--gaming))",
+        performance: "hsl(var(--performance))",
+        outdoor: "hsl(var(--outdoor))",
+        connectivity: "hsl(var(--connectivity))",
+        "cat-security": "hsl(var(--security))",
+        void: "hsl(var(--void))",
+        carbon: "hsl(var(--carbon))",
+        graphite: "hsl(var(--graphite))",
+        steel: "hsl(var(--steel))",
+        ash: "hsl(var(--ash))",
+        silver: "hsl(var(--silver))",
+        platinum: "hsl(var(--platinum))",
+        ivory: "hsl(var(--ivory))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -102,6 +119,14 @@ export default {
           "0%": { backgroundPosition: "-200% center" },
           "100%": { backgroundPosition: "200% center" },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0) scale(1)" },
+          "50%": { transform: "translateY(-20px) scale(1.05)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { opacity: "0.4" },
+          "50%": { opacity: "0.8" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -110,6 +135,8 @@ export default {
         "fade-in-slow": "fade-in-slow 1.2s ease-out forwards",
         "slide-up": "slide-up 0.8s ease-out forwards",
         "gold-shimmer": "gold-shimmer 3s ease-in-out infinite",
+        "float": "float 6s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 4s ease-in-out infinite",
       },
     },
   },
