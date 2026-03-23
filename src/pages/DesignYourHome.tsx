@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Sparkles, ArrowRight, Home, Maximize, Heart, Wallet, Target } from "lucide-react";
+import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 
 type Step = "home-type" | "size" | "lifestyle" | "budget" | "priority" | "complete";
 
@@ -58,10 +59,28 @@ export default function DesignYourHome() {
   const current = stepConfig[step];
 
   const nextStep = (key: string, value: string) => {
-    setAnswers({ ...answers, [key]: value });
+    const updated = { ...answers, [key]: value };
+    setAnswers(updated);
     const steps: Step[] = ["home-type", "size", "lifestyle", "budget", "priority", "complete"];
     const currentIndex = steps.indexOf(step);
-    setStep(steps[currentIndex + 1]);
+    const nextStepValue = steps[currentIndex + 1];
+    setStep(nextStepValue);
+
+    if (nextStepValue === "complete") {
+      pushLeadToZoho({
+        source: "AI Journey",
+        projectType: updated.homeType,
+        budgetRange: updated.budget,
+        aiJourneyData: {
+          homeType: updated.homeType,
+          size: updated.size,
+          lifestyle: updated.lifestyle,
+          budget: updated.budget,
+          priority: updated.priority,
+        },
+      });
+      window.$zoho?.salesiq?.tracking?.custom?.("trigger", "ai-journey-complete");
+    }
   };
 
   return (

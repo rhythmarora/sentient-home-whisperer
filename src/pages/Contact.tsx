@@ -2,6 +2,7 @@ import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -16,6 +17,14 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    pushLeadToZoho({
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      projectType: form.projectType,
+      budgetRange: form.budgetRange,
+      source: "Contact Form",
+    });
     toast({
       title: "Thank you",
       description: "We'll be in touch within 24 hours.",
