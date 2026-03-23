@@ -17,6 +17,14 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    pushLeadToZoho({
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      projectType: form.projectType,
+      budgetRange: form.budgetRange,
+      source: "Contact Form",
+    });
     toast({
       title: "Thank you",
       description: "We'll be in touch within 24 hours.",
