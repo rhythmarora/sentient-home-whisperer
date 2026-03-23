@@ -9,21 +9,9 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
 
       {/* Floating ambient orbs */}
-      <motion.div
-        animate={{ y: [-20, 20, -20], scale: [1, 1.05, 1] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-cinema/5 blur-[120px]"
-      />
-      <motion.div
-        animate={{ y: [15, -25, 15], scale: [1.05, 1, 1.05] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute top-1/3 right-1/4 w-[350px] h-[350px] rounded-full bg-music/5 blur-[120px]"
-      />
-      <motion.div
-        animate={{ y: [10, -15, 10], scale: [1, 1.08, 1] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-1/4 left-1/2 w-[300px] h-[300px] rounded-full bg-relax/5 blur-[120px]"
-      />
+      <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-cinema/5 blur-[120px]" />
+      <div className="absolute top-1/3 right-1/4 w-[350px] h-[350px] rounded-full bg-music/5 blur-[120px]" />
+      <div className="absolute bottom-1/4 left-1/2 w-[300px] h-[300px] rounded-full bg-relax/5 blur-[120px]" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <motion.p

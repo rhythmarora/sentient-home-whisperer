@@ -37,7 +37,7 @@ export default function CinematicStory() {
       {stories.map((story, i) => (
         <div
           key={i}
-          className="min-h-screen flex items-center justify-center relative film-grain overflow-hidden"
+          className="min-h-screen flex items-center justify-center relative overflow-hidden"
           style={{ background: story.gradient }}
         >
           {/* Colored divider at top */}
