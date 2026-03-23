@@ -2,6 +2,7 @@ import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 
 export default function Contact() {
   const { toast } = useToast();
