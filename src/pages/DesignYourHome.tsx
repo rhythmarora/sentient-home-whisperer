@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Sparkles, ArrowRight, Home, Maximize, Heart, Wallet, Target } from "lucide-react";
+import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 
 type Step = "home-type" | "size" | "lifestyle" | "budget" | "priority" | "complete";
 
