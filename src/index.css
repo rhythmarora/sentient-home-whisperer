@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -43,6 +43,27 @@
     --charcoal-light: 220 15% 12%;
     --obsidian: 220 20% 4%;
 
+    /* Category colors */
+    --cinema: 239 84% 67%;
+    --music: 330 81% 60%;
+    --social: 38 92% 50%;
+    --relax: 160 84% 39%;
+    --gaming: 258 90% 66%;
+    --performance: 24 94% 53%;
+    --outdoor: 187 92% 53%;
+    --connectivity: 217 91% 60%;
+    --security: 215 16% 47%;
+
+    /* Void / Carbon / Graphite / Steel / Ash */
+    --void: 0 0% 2%;
+    --carbon: 0 0% 8%;
+    --graphite: 0 0% 10%;
+    --steel: 0 0% 16%;
+    --ash: 0 0% 23%;
+    --silver: 0 0% 54%;
+    --platinum: 34 13% 89%;
+    --ivory: 34 22% 95%;
+
     --sidebar-background: 220 18% 6%;
     --sidebar-foreground: 40 15% 85%;
     --sidebar-primary: 38 70% 50%;
@@ -65,7 +86,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
   }
 }
 
@@ -77,8 +98,26 @@
     background-clip: text;
   }
 
+  .text-gradient-vibrant {
+    background: linear-gradient(135deg, hsl(239 84% 67%), hsl(330 81% 60%), hsl(38 92% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-cool {
+    background: linear-gradient(135deg, hsl(239 84% 67%), hsl(160 84% 39%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .bg-gold-gradient {
     background: linear-gradient(135deg, hsl(38 80% 35%), hsl(38 70% 50%), hsl(38 60% 65%));
+  }
+
+  .bg-gradient-vibrant {
+    background: linear-gradient(135deg, hsl(239 84% 67%), hsl(330 81% 60%), hsl(38 92% 50%));
   }
 
   .border-gold {
@@ -89,8 +128,24 @@
     box-shadow: 0 0 40px hsl(38 70% 50% / 0.15), 0 0 80px hsl(38 70% 50% / 0.05);
   }
 
+  .glow-cinema {
+    box-shadow: 0 0 40px hsl(239 84% 67% / 0.2);
+  }
+
+  .glow-music {
+    box-shadow: 0 0 40px hsl(330 81% 60% / 0.2);
+  }
+
+  .glow-social {
+    box-shadow: 0 0 40px hsl(38 92% 50% / 0.2);
+  }
+
+  .glow-relax {
+    box-shadow: 0 0 40px hsl(160 84% 39% / 0.2);
+  }
+
   .glass {
-    background: hsl(220 18% 8% / 0.6);
+    background: hsl(220 18% 8% / 0.7);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
@@ -98,18 +153,43 @@
   .glass-border {
     border: 1px solid hsl(40 15% 90% / 0.08);
   }
+
+  .film-grain {
+    position: relative;
+  }
+
+  .film-grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px;
+    z-index: 1;
+    animation: grain 8s steps(10) infinite;
+  }
+
+  @keyframes grain {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-5%, -10%); }
+    30% { transform: translate(3%, -15%); }
+    50% { transform: translate(12%, 9%); }
+    70% { transform: translate(9%, 4%); }
+    90% { transform: translate(-1%, 7%); }
+  }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(220 20% 4%);
+  background: hsl(0 0% 2%);
 }
 ::-webkit-scrollbar-thumb {
   background: hsl(220 15% 20%);
-  border-radius: 3px;
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(38 70% 50% / 0.5);
@@ -118,4 +198,13 @@
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
