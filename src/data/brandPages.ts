@@ -269,6 +269,10 @@ export const brandPages: Record<string, BrandPageData> = {
         description: "Pre-programmed and user-customisable scenes that adjust multiple systems simultaneously — lights, shades, music, temperature — with a single touch or voice command.",
       },
       {
+        name: "DM NAX™ Audio-over-IP",
+        description: "Crestron's network audio platform distributes hi-fi music to every room over standard Ethernet. DM NAX amplifiers stream, switch, and amplify audio across zones with zero perceptible latency — replacing racks of traditional equipment with elegant, scalable network audio.",
+      },
+      {
         name: "Remote Management & Monitoring",
         description: "Crestron Home allows remote diagnostics and system updates by your integrator, meaning issues can often be resolved without a site visit.",
       },
@@ -279,6 +283,7 @@ export const brandPages: Record<string, BrandPageData> = {
       { name: "Horizon™ Keypads", category: "Control Interface", description: "Minimalist, architectural keypads available in custom finishes. Elegant scene control for every room." },
       { name: "MC4-R Processing", category: "Control Processor", description: "The flagship residential processor powering Crestron Home. Handles complex automation logic with enterprise-grade reliability." },
       { name: "Crestron Lighting & Shading", category: "Environmental Control", description: "Integrated lighting dimmers and motorised shade control — all native to the Crestron Home ecosystem." },
+      { name: "DM NAX™ Amplifiers", category: "Network Audio", description: "Audio-over-IP amplifiers that distribute hi-fi music to every room over your home network. Scalable, low-latency, and native to the Crestron ecosystem — replacing racks of traditional equipment." },
       { name: "Crestron Home App", category: "Mobile Control", description: "Full control of your home from anywhere in the world. Elegant interface mirroring the touch panel experience on iOS and Android." },
     ],
     timeline: [
