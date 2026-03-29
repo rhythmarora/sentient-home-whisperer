@@ -15,22 +15,29 @@ export interface BrandTechnology {
   description: string;
 }
 
+export interface BrandSource {
+  label: string;
+  url: string;
+}
+
 export interface BrandPageData {
   slug: string;
   name: string;
   tagline: string;
   heroSubtitle: string;
-  partnerBadge: string; // e.g. "Authorised Constellation Partner"
+  partnerBadge: string;
   logoKey: string;
   founded: string;
   headquarters: string;
   founders: string;
   website: string;
-  about: string[]; // paragraphs
+  instagramUrl?: string;
+  about: string[];
   qubixRelationship: string;
   technologies: BrandTechnology[];
   keyProducts: BrandProduct[];
   timeline: BrandTimelineEvent[];
+  sources?: BrandSource[];
   seo: {
     title: string;
     description: string;
