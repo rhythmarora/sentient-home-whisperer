@@ -7,10 +7,19 @@ export interface ExperienceBrand {
 
 export const experienceBrands: ExperienceBrand[] = [
   // Flagship / Core
-  { name: "PMC", logoKey: "PMC", usp: "Studio monitors trusted by Abbey Road — now for your home.", url: "https://pmc-speakers.com" },
-  { name: "McIntosh", logoKey: "McIntosh", usp: "Legendary American amplification since 1949.", url: "https://www.mcintoshlabs.com" },
   { name: "Meyer Sound", logoKey: "Meyer Sound", usp: "Concert-hall precision engineered for private spaces.", url: "https://meyersound.com" },
   { name: "Constellation", logoKey: "Constellation", usp: "The world's most advanced active acoustics — only demo in the subcontinent.", url: "https://meyersound.com/product/constellation/" },
+  { name: "PMC", logoKey: "PMC", usp: "Studio monitors trusted by Abbey Road — now for your home.", url: "https://pmc-speakers.com" },
+  { name: "Wharfedale", logoKey: "Wharfedale", usp: "85 years of British loudspeaker heritage.", url: "https://www.wharfedale.co.uk" },
+  { name: "SIM2", logoKey: "SIM2", usp: "Italian ultra-high-end laser projection.", url: "https://www.sim2.com" },
+  { name: "Sonos", logoKey: "Sonos", usp: "The simplest way to fill every room with music.", url: "https://www.sonos.com" },
+  { name: "Devialet", logoKey: "Devialet", usp: "Phantom engineering — physics-defying active speakers.", url: "https://www.devialet.com" },
+  { name: "Arcam", logoKey: "Arcam", usp: "British-engineered AV processing and amplification.", url: "https://www.arcam.co.uk" },
+  { name: "Luxman", logoKey: "Luxman", usp: "Japanese precision craftsmanship since 1925.", url: "https://www.luxman.com" },
+  { name: "Audiolab", logoKey: "Audiolab", usp: "Refined British amplification for pure music.", url: "https://www.audiolab.co.uk" },
+  { name: "Quad", logoKey: "Quad", usp: "Pioneering British electrostatic and valve audio since 1936.", url: "https://quad-hifi.co.uk" },
+  { name: "McIntosh", logoKey: "McIntosh", usp: "Legendary American amplification since 1949.", url: "https://www.mcintoshlabs.com" },
+  { name: "K-Array", logoKey: "K-Array", usp: "Ultra-slim Italian speakers with extraordinary power.", url: "https://www.k-array.com" },
   { name: "Trinnov", logoKey: "Trinnov", usp: "The world's most advanced immersive audio processor.", url: "https://www.trinnov.com" },
   { name: "Classé", logoKey: "Classé", usp: "Reference-grade amplification with musical purity.", url: "https://www.classeaviation.com" },
 
