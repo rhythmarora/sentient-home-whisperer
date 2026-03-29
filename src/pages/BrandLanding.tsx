@@ -31,6 +31,7 @@ export default function BrandLanding() {
       <BrandTechnologies brand={brand} />
       <BrandProducts brand={brand} />
       <BrandTimeline brand={brand} />
+      {brand.elfsightAppId && <BrandInstagramFeed brand={brand} />}
       {brand.sources && brand.sources.length > 0 && <BrandSources brand={brand} />}
       <BrandContactForm brand={brand} />
     </Layout>
