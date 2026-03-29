@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import qubixLogo from "@/assets/qubix-logo.png";
 
 const navLinks = [
   { label: "Experience", href: "/#experience" },
@@ -40,9 +41,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center">
-              <span className="font-display text-2xl font-bold tracking-[0.3em] uppercase text-gold-gradient">
-                QUBIX
-              </span>
+              <img src={qubixLogo} alt="Qubix" className="h-8 w-auto" />
             </Link>
 
             <nav className="hidden lg:flex items-center gap-8">
