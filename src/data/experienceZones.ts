@@ -27,8 +27,29 @@ export interface AmbientTechItem {
 
 export const zones: Zone[] = [
   {
-    id: "personal-stereo",
+    id: "constellation-room",
     number: "01",
+    name: "The Constellation Room",
+    tier: "residential",
+    color: "hsl(var(--cinema))",
+    glowClass: "glow-cinema",
+    poweredBy: ["Meyer Sound", "Constellation", "Trinnov", "Lumagen", "SIM2"],
+    tagline: "Where you experience the physics, chemistry, and biology of sound.",
+    description:
+      "40 speakers. 8 subwoofers. All perfectly calibrated in a 30×20 ft room — powered by Constellation by Meyer Sound, the world's most advanced active acoustics system. Constellation uses an array of ambient sensing microphones, sophisticated DSP, and laboratory-grade loudspeakers to modify the reverberant characteristics of the room in real time — transforming a single space into a concert hall, a jazz club, a cathedral, or a recording studio at the touch of a button. This is the only Constellation demo room in the Indian subcontinent. Trusted by venues like Jazz at Lincoln Center, the San Francisco Symphony, and performing arts centres worldwide — now available for you to experience, right here.",
+    roomSize: "30 × 20 ft",
+    systems: [
+      { name: "Constellation Active Acoustics", details: "Real-time variable acoustics — transform the room's sonic character instantly" },
+      { name: "Meyer Sound Speaker Array", details: "40 channels of laboratory-grade active speakers" },
+      { name: "Meyer Sound Subwoofers", details: "8 subwoofers for physically immersive bass" },
+      { name: "Trinnov Altitude", details: "Reference immersive audio processor" },
+      { name: "Lumagen Video Processor", details: "Reference-grade video processing" },
+      { name: "SIM2 Projection", details: "Ultra-high-end laser projection" },
+    ],
+  },
+  {
+    id: "personal-stereo",
+    number: "02",
     name: "Personal Stereo & DJ Studio",
     tier: "residential",
     color: "hsl(var(--music))",
@@ -46,7 +67,7 @@ export const zones: Zone[] = [
   },
   {
     id: "audiophile-living-room",
-    number: "02",
+    number: "03",
     name: "Audiophile Living Room",
     tier: "residential",
     color: "hsl(var(--cinema))",
@@ -63,7 +84,7 @@ export const zones: Zone[] = [
   },
   {
     id: "family-home-theatre",
-    number: "03",
+    number: "04",
     name: "Family Home Theatre",
     tier: "residential",
     color: "hsl(var(--cinema))",
@@ -82,7 +103,7 @@ export const zones: Zone[] = [
   },
   {
     id: "casual-surround",
-    number: "04",
+    number: "05",
     name: "Casual Surround Setup",
     tier: "residential",
     color: "hsl(var(--social))",
@@ -99,7 +120,7 @@ export const zones: Zone[] = [
   },
   {
     id: "value-atmos",
-    number: "05",
+    number: "06",
     name: "Value Atmos System",
     tier: "residential",
     color: "hsl(var(--social))",
@@ -114,7 +135,7 @@ export const zones: Zone[] = [
   },
   {
     id: "heritage-stereo",
-    number: "06",
+    number: "07",
     name: "Heritage Stereo Collection",
     tier: "residential",
     color: "hsl(var(--music))",
@@ -131,7 +152,7 @@ export const zones: Zone[] = [
   },
   {
     id: "casual-architectural",
-    number: "07",
+    number: "08",
     name: "Casual & Architectural Audio",
     tier: "residential",
     color: "hsl(var(--outdoor))",
@@ -149,7 +170,7 @@ export const zones: Zone[] = [
   },
   {
     id: "soundbar-active",
-    number: "08",
+    number: "09",
     name: "Soundbar & Active Systems",
     tier: "residential",
     color: "hsl(var(--performance))",
@@ -166,7 +187,7 @@ export const zones: Zone[] = [
   },
   {
     id: "tv-studio",
-    number: "09",
+    number: "10",
     name: "Digital TV Studio",
     tier: "enterprise",
     color: "hsl(var(--connectivity))",
@@ -183,7 +204,7 @@ export const zones: Zone[] = [
   },
   {
     id: "ultimate-hifi",
-    number: "10",
+    number: "11",
     name: "Ultimate HiFi Reference",
     tier: "enterprise",
     color: "hsl(var(--music))",
@@ -199,7 +220,7 @@ export const zones: Zone[] = [
   },
   {
     id: "command-control",
-    number: "11",
+    number: "12",
     name: "Command & Control Center",
     tier: "enterprise",
     color: "hsl(var(--security))",
@@ -212,27 +233,6 @@ export const zones: Zone[] = [
       { name: "QuantIQ AI Surveillance", details: "Edge analytics and computer vision" },
       { name: "MissionDesk NOC/SOC", details: "Network & security operations consoles" },
       { name: "Cisco Infrastructure", details: "Enterprise networking and collaboration" },
-    ],
-  },
-  {
-    id: "immersive-room",
-    number: "12",
-    name: "The Immersive Room",
-    tier: "enterprise",
-    color: "hsl(var(--cinema))",
-    glowClass: "glow-cinema",
-    poweredBy: ["Meyer Sound", "Constellation", "Trinnov", "Lumagen", "SIM2"],
-    tagline: "Where you experience the physics, chemistry, and biology of sound.",
-    description:
-      "40 speakers. 8 subwoofers. All perfectly calibrated in a 30×20 ft room — powered by Constellation by Meyer Sound, the world's most advanced active acoustics system. Constellation uses an array of ambient sensing microphones, sophisticated DSP, and laboratory-grade loudspeakers to modify the reverberant characteristics of the room in real time — transforming a single space into a concert hall, a jazz club, a cathedral, or a recording studio at the touch of a button. This is the only Constellation demo room in the Indian subcontinent. Trusted by venues like Jazz at Lincoln Center, the San Francisco Symphony, and performing arts centres worldwide — now available for you to experience, right here.",
-    roomSize: "30 × 20 ft",
-    systems: [
-      { name: "Constellation Active Acoustics", details: "Real-time variable acoustics — transform the room's sonic character instantly" },
-      { name: "Meyer Sound Speaker Array", details: "40 channels of laboratory-grade active speakers" },
-      { name: "Meyer Sound Subwoofers", details: "8 subwoofers for physically immersive bass" },
-      { name: "Trinnov Altitude", details: "Reference immersive audio processor" },
-      { name: "Lumagen Video Processor", details: "Reference-grade video processing" },
-      { name: "SIM2 Projection", details: "Ultra-high-end laser projection" },
     ],
   },
 ];

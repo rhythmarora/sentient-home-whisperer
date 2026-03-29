@@ -9,6 +9,7 @@ import Systems from "./pages/Systems";
 import Philosophy from "./pages/Philosophy";
 import Projects from "./pages/Projects";
 import ExperienceCenter from "./pages/ExperienceCenter";
+import ConstellationPage from "./pages/Constellation";
 import Contact from "./pages/Contact";
 import Brands from "./pages/Brands";
 import Products from "./pages/Products";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<Projects />} />
           <Route path="/experience-center" element={<ExperienceCenter />} />
+          <Route path="/constellation" element={<ConstellationPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/brands" element={<Brands />} />
           <Route path="/brands/:slug" element={<Brands />} />
