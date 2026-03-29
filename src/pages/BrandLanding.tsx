@@ -31,6 +31,7 @@ export default function BrandLanding() {
       <BrandTechnologies brand={brand} />
       <BrandProducts brand={brand} />
       <BrandTimeline brand={brand} />
+      {brand.sources && brand.sources.length > 0 && <BrandSources brand={brand} />}
       <BrandContactForm brand={brand} />
     </Layout>
   );
@@ -72,6 +73,11 @@ function BrandHero({ brand }: { brand: typeof brandPages[string] }) {
               <a href={brand.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Globe className="w-4 h-4 text-primary" /> Official Site <ExternalLink className="w-3 h-3" />
               </a>
+              {brand.instagramUrl && (
+                <a href={brand.instagramUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+                  <Instagram className="w-4 h-4 text-primary" /> Instagram <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
             </div>
           </motion.div>
 
