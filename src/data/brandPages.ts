@@ -58,7 +58,7 @@ export const brandPages: Record<string, BrandPageData> = {
     slug: "meyer-sound",
     name: "Meyer Sound",
     tagline: "The world's finest sound — engineered for your home.",
-    heroSubtitle: "From the Sydney Opera House to your living room. Qubix is India's authorised Constellation partner, bringing Meyer Sound's legendary concert-hall technology to private residences.",
+    heroSubtitle: "From the Sydney Opera House to your living room — and your private nightclub. Qubix is India's authorised Constellation partner, bringing Meyer Sound's legendary concert-hall technology to private residences, party rooms, and entertainment spaces.",
     partnerBadge: "Authorised Constellation Partner — India",
     logoKey: "Meyer Sound",
     founded: "1979",
