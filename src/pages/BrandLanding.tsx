@@ -249,6 +249,36 @@ function BrandTimeline({ brand }: { brand: typeof brandPages[string] }) {
   );
 }
 
+function BrandSources({ brand }: { brand: typeof brandPages[string] }) {
+  if (!brand.sources || brand.sources.length === 0) return null;
+
+  return (
+    <section className="py-12 px-6 border-t border-border">
+      <div className="max-w-4xl mx-auto">
+        <div className="flex items-center gap-2 mb-4">
+          <BookOpen className="w-4 h-4 text-muted-foreground" />
+          <h3 className="font-body text-sm tracking-[0.2em] uppercase text-muted-foreground">Sources & References</h3>
+        </div>
+        <div className="space-y-2">
+          {brand.sources.map((source, i) => (
+            <a
+              key={i}
+              href={source.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-primary transition-colors group"
+            >
+              <span className="text-xs text-primary/50">[{i + 1}]</span>
+              <span className="group-hover:underline">{source.label}</span>
+              <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function BrandContactForm({ brand }: { brand: typeof brandPages[string] }) {
   const { toast } = useToast();
   const [formData, setFormData] = useState<Record<string, string>>({});
