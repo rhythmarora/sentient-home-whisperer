@@ -18,6 +18,15 @@ import litheAudioLogo from "@/assets/brands/litheaudio.jpg";
 import corneredAudioLogo from "@/assets/brands/corneredaudio.webp";
 import bwLogo from "@/assets/brands/bw.png";
 import audiolabLogo from "@/assets/brands/audiolab.png";
+import biampLogo from "@/assets/brands/biamp.webp";
+import shureLogo from "@/assets/brands/shure.jpg";
+import wyrestormLogo from "@/assets/brands/wyrestorm.png";
+import logitechLogo from "@/assets/brands/logitech.svg";
+import neatLogo from "@/assets/brands/neat.png";
+import crestronLogo from "@/assets/brands/crestron.webp";
+import ciscoLogo from "@/assets/brands/cisco.png";
+import lumagenLogo from "@/assets/brands/lumagen.webp";
+import karrayLogo from "@/assets/brands/karray.png";
 
 export const brandLogos: Record<string, string> = {
   PMC: pmcLogo,
@@ -40,4 +49,13 @@ export const brandLogos: Record<string, string> = {
   "Cornered Audio": corneredAudioLogo,
   "Bowers & Wilkins": bwLogo,
   Audiolab: audiolabLogo,
+  Biamp: biampLogo,
+  Shure: shureLogo,
+  Wyrestorm: wyrestormLogo,
+  Logitech: logitechLogo,
+  Neat: neatLogo,
+  Crestron: crestronLogo,
+  Cisco: ciscoLogo,
+  Lumagen: lumagenLogo,
+  "K-Array": karrayLogo,
 };
