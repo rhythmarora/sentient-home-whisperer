@@ -86,6 +86,9 @@ export default function ExperienceCenter() {
       {/* Ambient tech strip */}
       <AmbientTech />
 
+      {/* Brand showcase tiles */}
+      <BrandShowcase />
+
       {/* Visit / Book section */}
       <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
