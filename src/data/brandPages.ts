@@ -122,7 +122,7 @@ export const brandPages: Record<string, BrandPageData> = {
         "Other / General Enquiry",
       ], required: true },
       { label: "Property Type", name: "propertyType", type: "select", options: [
-        "Apartment", "Villa / Independent Home", "Penthouse", "Farmhouse / Weekend Home", "Bungalow", "Commercial / Hospitality"
+        "Apartment / Penthouse", "Villa / Bungalow / Independent Home", "Farmhouse / Weekend Home", "Commercial / Hospitality"
       ] },
       { label: "Tell us about your space and vision", name: "message", type: "textarea", placeholder: "Describe your room, what you're looking to achieve, and any specific Meyer Sound products you're interested in." },
     ],

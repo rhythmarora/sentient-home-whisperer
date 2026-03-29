@@ -9,7 +9,7 @@ const interests = [
   "Gaming Den", "Karaoke & Social Lounge",
 ];
 
-const propertyTypes = ["Apartment", "Villa / Independent Home", "Penthouse", "Farmhouse", "Commercial Space"];
+const propertyTypes = ["Apartment / Penthouse", "Villa / Bungalow / Independent Home", "Farmhouse / Weekend Home", "Commercial Space"];
 
 export default function ConsultationCTA() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", propertyType: "", interests: [] as string[] });
