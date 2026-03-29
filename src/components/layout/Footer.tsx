@@ -29,9 +29,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div>
             <Link to="/" className="inline-block mb-4">
-              <span className="font-display text-2xl font-bold tracking-[0.3em] uppercase text-gold-gradient">
-                QUBIX
-              </span>
+              <img src={qubixLogo} alt="Qubix" className="h-8 w-auto brightness-0 invert" />
             </Link>
             <p className="font-body text-sm text-silver leading-relaxed max-w-xs">
               We don't install systems. We design how your home feels.
