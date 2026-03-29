@@ -171,7 +171,7 @@ export const zones: Zone[] = [
     tier: "enterprise",
     color: "hsl(var(--connectivity))",
     glowClass: "",
-    poweredBy: ["Multi-camera", "Live Production"],
+    poweredBy: ["BirdDog", "Vizrt", "Rosco", "Biamp"],
     tagline: "Broadcast-grade. In your building.",
     description:
       "Everything you need to shoot and edit TV channel-grade content. Personal news studios, podcast studios, e-sports setups, and streaming solutions with multi-camera switching and live production capabilities. Content creation at a professional level, in your own space.",
