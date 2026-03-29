@@ -10,6 +10,7 @@ export const experienceBrands: ExperienceBrand[] = [
   { name: "PMC", logoKey: "PMC", usp: "Studio monitors trusted by Abbey Road — now for your home.", url: "https://pmc-speakers.com" },
   { name: "McIntosh", logoKey: "McIntosh", usp: "Legendary American amplification since 1949.", url: "https://www.mcintoshlabs.com" },
   { name: "Meyer Sound", logoKey: "Meyer Sound", usp: "Concert-hall precision engineered for private spaces.", url: "https://meyersound.com" },
+  { name: "Constellation", logoKey: "Constellation", usp: "The world's most advanced active acoustics — only demo in the subcontinent.", url: "https://meyersound.com/product/constellation/" },
   { name: "Trinnov", logoKey: "Trinnov", usp: "The world's most advanced immersive audio processor.", url: "https://www.trinnov.com" },
   { name: "Classé", logoKey: "Classé", usp: "Reference-grade amplification with musical purity.", url: "https://www.classeaviation.com" },
 
@@ -21,7 +22,7 @@ export const experienceBrands: ExperienceBrand[] = [
   { name: "K-Array", logoKey: "K-Array", usp: "Ultra-slim Italian speakers with extraordinary power.", url: "https://www.k-array.com" },
   { name: "Devialet", logoKey: "Devialet", usp: "Phantom engineering — physics-defying active speakers.", url: "https://www.devialet.com" },
   { name: "Lithe Audio", logoKey: "Lithe Audio", usp: "Wireless ceiling speakers with zero-cable install.", url: "https://www.litheaudio.com" },
-  { name: "BEC", logoKey: "BEC", usp: "Discreet in-ceiling audio for distributed systems.", url: "https://www.bec.uk.com" },
+  { name: "BEC", logoKey: "BEC", usp: "Discreet architectural speakers for distributed sound systems.", url: "https://www.bec.uk.com" },
   { name: "Sonos", logoKey: "Sonos", usp: "The simplest way to fill every room with music.", url: "https://www.sonos.com" },
 
   // Electronics & Processing
