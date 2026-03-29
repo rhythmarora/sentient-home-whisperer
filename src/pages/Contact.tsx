@@ -117,11 +117,9 @@ export default function Contact() {
                       className="w-full px-4 py-3 bg-card border border-border rounded-sm font-body text-sm text-foreground focus:border-primary/50 focus:outline-none transition-colors"
                     >
                       <option value="">Select</option>
-                      <option value="apartment">Apartment</option>
-                      <option value="villa">Villa / Independent Home</option>
-                      <option value="penthouse">Penthouse</option>
+                      <option value="apartment">Apartment / Penthouse</option>
+                      <option value="villa">Villa / Bungalow / Independent Home</option>
                       <option value="farmhouse">Farmhouse / Weekend Home</option>
-                      <option value="bungalow">Bungalow</option>
                       <option value="commercial">Commercial / Hospitality</option>
                     </select>
                   </div>
