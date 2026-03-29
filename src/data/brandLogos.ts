@@ -65,4 +65,5 @@ export const brandLogos: Record<string, string> = {
   QuantIQ: quantiqLogo,
   MissionDesk: missionDeskLogo,
   Classé: classeLogo,
+  TCL: tclLogo,
 };
