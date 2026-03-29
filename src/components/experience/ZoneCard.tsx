@@ -60,29 +60,31 @@ export default function ZoneCard({ zone }: { zone: Zone }) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-6"
+          className="mb-6"
         >
-          <span className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground">
+          <span className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground block mb-3">
             Powered by
           </span>
-          {zone.poweredBy.map((brand) => {
-            const logo = brandLogos[brand];
-            return logo ? (
-              <img
-                key={brand}
-                src={logo}
-                alt={brand}
-                className="h-5 md:h-6 w-auto object-contain brightness-0 invert opacity-70"
-              />
-            ) : (
-              <span
-                key={brand}
-                className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground"
-              >
-                {brand}
-              </span>
-            );
-          })}
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+            {zone.poweredBy.map((brand) => {
+              const logo = brandLogos[brand];
+              return logo ? (
+                <img
+                  key={brand}
+                  src={logo}
+                  alt={brand}
+                  className="h-4 md:h-5 w-auto max-w-[100px] md:max-w-[120px] object-contain brightness-0 invert opacity-70"
+                />
+              ) : (
+                <span
+                  key={brand}
+                  className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground"
+                >
+                  {brand}
+                </span>
+              );
+            })}
+          </div>
         </motion.div>
 
         {/* Tagline */}
