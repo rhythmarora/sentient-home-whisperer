@@ -69,4 +69,7 @@ export const brandLogos: Record<string, string> = {
   MissionDesk: missionDeskLogo,
   Classé: classeLogo,
   TCL: tclLogo,
+  Rosco: roscoLogo,
+  BirdDog: birddogLogo,
+  Vizrt: vizrtLogo,
 };
