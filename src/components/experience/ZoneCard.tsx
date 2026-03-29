@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { brandLogos } from "@/data/brandLogos";
 import type { Zone } from "@/data/experienceZones";
 
 export default function ZoneCard({ zone }: { zone: Zone }) {
@@ -30,7 +31,7 @@ export default function ZoneCard({ zone }: { zone: Zone }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="font-display text-5xl md:text-7xl font-medium mb-2"
-          style={{ color: `${zone.color}` , opacity: 0.15 }}
+          style={{ color: `${zone.color}`, opacity: 0.15 }}
         >
           {zone.number}
         </motion.p>
@@ -53,16 +54,36 @@ export default function ZoneCard({ zone }: { zone: Zone }) {
           )}
         </motion.div>
 
-        {/* Powered by */}
-        <motion.p
+        {/* Powered by — logos + text fallback */}
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6"
+          className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-6"
         >
-          Powered by {zone.poweredBy.join(" · ")}
-        </motion.p>
+          <span className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground">
+            Powered by
+          </span>
+          {zone.poweredBy.map((brand) => {
+            const logo = brandLogos[brand];
+            return logo ? (
+              <img
+                key={brand}
+                src={logo}
+                alt={brand}
+                className="h-5 md:h-6 w-auto object-contain brightness-0 invert opacity-70"
+              />
+            ) : (
+              <span
+                key={brand}
+                className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground"
+              >
+                {brand}
+              </span>
+            );
+          })}
+        </motion.div>
 
         {/* Tagline */}
         <motion.p
