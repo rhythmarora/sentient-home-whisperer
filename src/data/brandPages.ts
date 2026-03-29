@@ -32,6 +32,7 @@ export interface BrandPageData {
   founders: string;
   website: string;
   instagramUrl?: string;
+  elfsightAppId?: string;
   about: string[];
   qubixRelationship: string;
   technologies: BrandTechnology[];
