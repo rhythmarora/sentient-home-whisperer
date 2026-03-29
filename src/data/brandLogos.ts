@@ -30,6 +30,7 @@ import karrayLogo from "@/assets/brands/karray.png";
 import quantiqLogo from "@/assets/brands/quantiq.png";
 import missionDeskLogo from "@/assets/brands/missiondesk.png";
 import classeLogo from "@/assets/brands/classe.png";
+import tclLogo from "@/assets/brands/tcl.png";
 
 export const brandLogos: Record<string, string> = {
   PMC: pmcLogo,
@@ -64,4 +65,5 @@ export const brandLogos: Record<string, string> = {
   QuantIQ: quantiqLogo,
   MissionDesk: missionDeskLogo,
   Classé: classeLogo,
+  TCL: tclLogo,
 };
