@@ -206,7 +206,7 @@ export const zones: Zone[] = [
     id: "ultimate-hifi",
     number: "11",
     name: "Ultimate HiFi Reference",
-    tier: "enterprise",
+    tier: "residential",
     color: "hsl(var(--music))",
     glowClass: "glow-music",
     poweredBy: ["PMC", "Classé"],
