@@ -61,4 +61,7 @@ export const brandLogos: Record<string, string> = {
   Cisco: ciscoLogo,
   Lumagen: lumagenLogo,
   "K-Array": karrayLogo,
+  QuantIQ: quantiqLogo,
+  MissionDesk: missionDeskLogo,
+  Classé: classeLogo,
 };
