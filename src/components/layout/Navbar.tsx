@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import qubixLogo from "@/assets/qubix-logo.png";
 
 const navLinks = [
   { label: "Experience", href: "/#experience" },

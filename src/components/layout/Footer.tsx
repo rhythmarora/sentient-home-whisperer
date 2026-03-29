@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import qubixLogo from "@/assets/qubix-logo.png";
 
 const footerLinks = {
   Experience: [
