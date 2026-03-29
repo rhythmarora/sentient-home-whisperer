@@ -27,7 +27,7 @@ export default function Contact() {
     });
     toast({
       title: "Thank you",
-      description: "We'll be in touch within 24 hours.",
+      description: "A Qubix design consultant will reach out within 24 hours — personally, over WhatsApp or email.",
     });
     setForm({ name: "", email: "", phone: "", projectType: "", budgetRange: "", message: "" });
   };
@@ -50,14 +50,16 @@ export default function Contact() {
                 Let's design how your home <span className="italic text-gold-gradient">feels</span>
               </h1>
               <p className="font-body text-muted-foreground leading-relaxed mb-8">
-                Every great home begins with a conversation. Tell us about your 
-                space, your lifestyle, and your vision. No sales pitch — just 
-                a thoughtful discussion about what's possible.
+                Every Qubix project begins with a conversation — about your lifestyle, 
+                your spaces, and the experiences that matter to you. Whether it's a 
+                Constellation-powered listening room, a reference cinema, or whole-home 
+                orchestration — we'll design the technology around how you live.
               </p>
               <div className="space-y-4 text-sm font-body text-muted-foreground">
-                <p>✦ No obligation, no pressure</p>
-                <p>✦ Response within 24 hours</p>
-                <p>✦ Speak directly with a design consultant</p>
+                <p>✦ No obligation, no pressure — we connect over WhatsApp first</p>
+                <p>✦ Response within 24 hours from a design consultant</p>
+                <p>✦ Visit our 12-zone Experience Center in person</p>
+                <p>✦ India's only Constellation by Meyer Sound demo</p>
               </div>
             </motion.div>
 
@@ -94,7 +96,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block font-body text-sm text-foreground mb-2">Phone</label>
+                    <label className="block font-body text-sm text-foreground mb-2">Phone / WhatsApp</label>
                     <input
                       type="tel"
                       required
@@ -108,7 +110,7 @@ export default function Contact() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-sm text-foreground mb-2">Project Type</label>
+                    <label className="block font-body text-sm text-foreground mb-2">Property Type</label>
                     <select
                       value={form.projectType}
                       onChange={(e) => setForm({ ...form, projectType: e.target.value })}
@@ -116,24 +118,25 @@ export default function Contact() {
                     >
                       <option value="">Select</option>
                       <option value="apartment">Apartment</option>
-                      <option value="villa">Villa</option>
+                      <option value="villa">Villa / Independent Home</option>
                       <option value="penthouse">Penthouse</option>
-                      <option value="farmhouse">Farmhouse</option>
-                      <option value="commercial">Commercial</option>
+                      <option value="farmhouse">Farmhouse / Weekend Home</option>
+                      <option value="bungalow">Bungalow</option>
+                      <option value="commercial">Commercial / Hospitality</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block font-body text-sm text-foreground mb-2">Budget Range</label>
+                    <label className="block font-body text-sm text-foreground mb-2">Investment Range</label>
                     <select
                       value={form.budgetRange}
                       onChange={(e) => setForm({ ...form, budgetRange: e.target.value })}
                       className="w-full px-4 py-3 bg-card border border-border rounded-sm font-body text-sm text-foreground focus:border-primary/50 focus:outline-none transition-colors"
                     >
                       <option value="">Select</option>
-                      <option value="10-25L">₹10–25 Lakhs</option>
-                      <option value="25-50L">₹25–50 Lakhs</option>
-                      <option value="50L-1Cr">₹50 Lakhs – 1 Crore</option>
-                      <option value="1Cr+">₹1 Crore+</option>
+                      <option value="15-50L">₹15–50 Lakhs</option>
+                      <option value="50L-2Cr">₹50 Lakhs – 2 Crore</option>
+                      <option value="2Cr-5Cr">₹2 – 5 Crore</option>
+                      <option value="5Cr+">₹5 Crore+</option>
                     </select>
                   </div>
                 </div>
@@ -145,7 +148,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className="w-full px-4 py-3 bg-card border border-border rounded-sm font-body text-sm text-foreground placeholder:text-muted-foreground focus:border-primary/50 focus:outline-none transition-colors resize-none"
-                    placeholder="What spaces are you designing? What matters most to you?"
+                    placeholder="What spaces are you designing? A private cinema, a Constellation room, whole-home audio? Tell us what matters most."
                   />
                 </div>
                 <button

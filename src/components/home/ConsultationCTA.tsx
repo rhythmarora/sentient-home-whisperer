@@ -4,14 +4,15 @@ import { Check } from "lucide-react";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 
 const interests = [
-  "Private Cinema", "Whole Home Audio", "Smart Lighting",
-  "Full Automation", "Gaming Setup", "Wellness Spaces",
+  "Private Cinema", "Constellation Room", "Whole Home Audio",
+  "Smart Lighting & Shading", "Full Home Automation", "Outdoor Entertainment",
+  "Gaming Den", "Karaoke & Social Lounge",
 ];
 
-const homeSizes = ["Under 2,000 sq ft", "2,000–4,000 sq ft", "4,000–8,000 sq ft", "8,000+ sq ft"];
+const propertyTypes = ["Apartment", "Villa / Independent Home", "Penthouse", "Farmhouse", "Commercial Space"];
 
 export default function ConsultationCTA() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", homeSize: "", interests: [] as string[] });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", propertyType: "", interests: [] as string[] });
   const [submitted, setSubmitted] = useState(false);
 
   const toggleInterest = (i: string) => {
@@ -29,8 +30,8 @@ export default function ConsultationCTA() {
       name: form.name,
       email: form.email,
       phone: form.phone,
-      projectType: form.interests.join(", "),
-      aiJourneyData: { homeSize: form.homeSize, interests: form.interests.join(", ") },
+      projectType: form.propertyType,
+      aiJourneyData: { propertyType: form.propertyType, interests: form.interests.join(", ") },
       source: "Consultation CTA",
     });
     setSubmitted(true);
@@ -52,7 +53,7 @@ export default function ConsultationCTA() {
             Let's design <span className="italic text-gradient-vibrant">your home.</span>
           </h2>
           <p className="font-body text-base text-silver max-w-xl mx-auto">
-            Book a private consultation. No spec sheets. No pressure. Just a conversation about how your home should feel.
+            Book a private consultation at the Qubix Experience Center — or we'll come to you. No spec sheets. No pressure. Just a conversation about how your home should feel.
           </p>
         </motion.div>
 
@@ -72,7 +73,7 @@ export default function ConsultationCTA() {
             </motion.div>
             <h3 className="font-display text-2xl font-semibold mb-2">Request Received</h3>
             <p className="font-body text-sm text-silver">
-              We'll be in touch within 24 hours. Thank you{form.name ? `, ${form.name}` : ""}.
+              A Qubix design consultant will reach out within 24 hours — personally, over WhatsApp or email. Thank you{form.name ? `, ${form.name}` : ""}.
             </p>
           </motion.div>
         ) : (
@@ -104,16 +105,16 @@ export default function ConsultationCTA() {
               <input
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                placeholder="Phone number"
+                placeholder="Phone / WhatsApp number"
                 className="px-4 py-3 font-body text-sm rounded-sm border border-graphite bg-void text-foreground placeholder:text-ash focus:outline-none focus:border-cinema/50"
               />
               <select
-                value={form.homeSize}
-                onChange={(e) => setForm({ ...form, homeSize: e.target.value })}
+                value={form.propertyType}
+                onChange={(e) => setForm({ ...form, propertyType: e.target.value })}
                 className="px-4 py-3 font-body text-sm rounded-sm border border-graphite bg-void text-foreground focus:outline-none focus:border-cinema/50 appearance-none"
               >
-                <option value="" disabled>Home size</option>
-                {homeSizes.map((s) => (
+                <option value="" disabled>Property type</option>
+                {propertyTypes.map((s) => (
                   <option key={s} value={s}>{s}</option>
                 ))}
               </select>
