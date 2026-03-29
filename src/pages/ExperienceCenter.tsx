@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { MapPin, Clock, Phone, ArrowDown } from "lucide-react";
+import { MapPin, Clock, Phone, ArrowDown, ExternalLink } from "lucide-react";
 import { zones } from "@/data/experienceZones";
 import ZoneNav from "@/components/experience/ZoneNav";
 import ZoneCard from "@/components/experience/ZoneCard";
@@ -106,8 +106,17 @@ export default function ExperienceCenter() {
                 <div className="flex items-start gap-4">
                   <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-body text-sm text-foreground">Qubix HiFi Experience Center</p>
-                    <p className="font-body text-sm text-muted-foreground">Mumbai, India</p>
+                    <p className="font-body text-sm text-foreground">Qubix</p>
+                    <p className="font-body text-sm text-muted-foreground">No. 15 Museum Road, Opp SBI Gate No. 2</p>
+                    <p className="font-body text-sm text-muted-foreground">Bangalore 560025</p>
+                    <a
+                      href="https://g.page/qubixindia"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-body text-xs text-primary hover:underline mt-1"
+                    >
+                      View on Google Maps <ExternalLink className="w-3 h-3" />
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -127,10 +136,14 @@ export default function ExperienceCenter() {
               </div>
             </div>
             <div className="flex flex-col justify-center">
-              <p className="font-body text-muted-foreground leading-relaxed mb-6">
+              <p className="font-body text-muted-foreground leading-relaxed mb-4">
                 Every visit is a private, curated experience. Bring your family, 
                 your architect, your interior designer. We'll demonstrate systems 
                 tailored to your home and your lifestyle.
+              </p>
+              <p className="font-body text-xs text-muted-foreground/70 italic mb-6">
+                Select experiences — including the Constellation Room — are available by invitation. 
+                Let us know what you'd like to explore, and we'll curate the right session for you.
               </p>
               <Link
                 to="/contact"

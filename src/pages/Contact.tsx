@@ -11,7 +11,6 @@ export default function Contact() {
     email: "",
     phone: "",
     projectType: "",
-    budgetRange: "",
     message: "",
   });
 
@@ -22,14 +21,13 @@ export default function Contact() {
       email: form.email,
       phone: form.phone,
       projectType: form.projectType,
-      budgetRange: form.budgetRange,
       source: "Contact Form",
     });
     toast({
       title: "Thank you",
       description: "A Qubix design consultant will reach out within 24 hours — personally, over WhatsApp or email.",
     });
-    setForm({ name: "", email: "", phone: "", projectType: "", budgetRange: "", message: "" });
+    setForm({ name: "", email: "", phone: "", projectType: "", message: "" });
   };
 
   return (
@@ -108,8 +106,7 @@ export default function Contact() {
                     />
                   </div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
+                <div>
                     <label className="block font-body text-sm text-foreground mb-2">Property Type</label>
                     <select
                       value={form.projectType}
@@ -122,21 +119,6 @@ export default function Contact() {
                       <option value="farmhouse">Farmhouse / Weekend Home</option>
                       <option value="commercial">Commercial / Hospitality</option>
                     </select>
-                  </div>
-                  <div>
-                    <label className="block font-body text-sm text-foreground mb-2">Investment Range</label>
-                    <select
-                      value={form.budgetRange}
-                      onChange={(e) => setForm({ ...form, budgetRange: e.target.value })}
-                      className="w-full px-4 py-3 bg-card border border-border rounded-sm font-body text-sm text-foreground focus:border-primary/50 focus:outline-none transition-colors"
-                    >
-                      <option value="">Select</option>
-                      <option value="15-50L">₹15–50 Lakhs</option>
-                      <option value="50L-2Cr">₹50 Lakhs – 2 Crore</option>
-                      <option value="2Cr-5Cr">₹2 – 5 Crore</option>
-                      <option value="5Cr+">₹5 Crore+</option>
-                    </select>
-                  </div>
                 </div>
                 <div>
                   <label className="block font-body text-sm text-foreground mb-2">Tell us about your vision</label>
