@@ -12,6 +12,7 @@ import ExperienceCenter from "./pages/ExperienceCenter";
 import ConstellationPage from "./pages/Constellation";
 import Contact from "./pages/Contact";
 import Brands from "./pages/Brands";
+import BrandLanding from "./pages/BrandLanding";
 import Products from "./pages/Products";
 import DesignYourHome from "./pages/DesignYourHome";
 import NotFound from "./pages/NotFound";
@@ -35,7 +36,7 @@ const App = () => (
           <Route path="/constellation" element={<ConstellationPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/brands" element={<Brands />} />
-          <Route path="/brands/:slug" element={<Brands />} />
+          <Route path="/brands/:slug" element={<BrandLanding />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:slug" element={<Products />} />
           <Route path="/design" element={<DesignYourHome />} />
