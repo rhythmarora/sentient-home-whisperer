@@ -111,7 +111,7 @@ export const brandPages: Record<string, BrandPageData> = {
       { year: "2009", title: "LEO Family", description: "The LEO-M large-scale line array sets new standards for touring and installed sound, used by artists from Adele to Metallica." },
       { year: "2016", title: "Bluehorn Reference System", description: "The world's first phase-perfect, full-bandwidth studio monitor. A new definition of accuracy." },
       { year: "2020", title: "Spacemap Go", description: "Immersive spatial audio tool launched, enabling real-time 3D sound design for performance and residential applications." },
-      { year: "2024", title: "Qubix Constellation Demo — India", description: "Qubix opens India's first and only Constellation demonstration space, bringing Meyer Sound's active acoustics to the subcontinent." },
+      
     ],
     sources: [
       { label: "Meyer Sound Official Website", url: "https://meyersound.com" },
@@ -196,7 +196,7 @@ export const brandPages: Record<string, BrandPageData> = {
       { year: "2016", title: "Fenestria Unveiled", description: "PMC's flagship residential speaker launches — a 6-driver transmission line design that redefines what home speakers can achieve." },
       { year: "2020", title: "LAMINAIR™ Vent Technology", description: "PMC introduces LAMINAIR — an aerodynamically optimised vent that eliminates turbulence noise from the transmission line." },
       { year: "2025", title: "Apple Music LA Studio", description: "Apple Music opens a 15,000 sq ft next-gen studio complex in Culver City, LA — featuring a dedicated Spatial Audio mixing room with a 9.2.4 PMC speaker system." },
-      { year: "2024", title: "Qubix PMC Demo Partnership — Bangalore", description: "Qubix becomes an authorised PMC demo partner in Bangalore, featuring dedicated PMC listening rooms in their Experience Center." },
+      
     ],
     sources: [
       { label: "PMC Official Website — About", url: "https://pmc-speakers.com/about" },
