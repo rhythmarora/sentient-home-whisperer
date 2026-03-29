@@ -32,6 +32,7 @@ export interface BrandPageData {
   founders: string;
   website: string;
   instagramUrl?: string;
+  elfsightAppId?: string;
   about: string[];
   qubixRelationship: string;
   technologies: BrandTechnology[];
@@ -203,6 +204,7 @@ export const brandPages: Record<string, BrandPageData> = {
       { label: "Abbey Road Studios — PMC Installation", url: "https://www.instagram.com/p/CQGNHEpM1ql/" },
     ],
     instagramUrl: "https://www.instagram.com/pmcspeakers/",
+    elfsightAppId: "33c81363-ec2c-4fd4-ae9a-cb1267745b58",
     seo: {
       title: "PMC Speakers India | Authorised Demo Partner — Qubix",
       description: "Experience PMC speakers in India. Qubix is an authorised PMC demo partner with dedicated listening rooms. From Abbey Road to your home — Fenestria, Prodigy & Dolby Atmos cinema systems for India's finest residences.",

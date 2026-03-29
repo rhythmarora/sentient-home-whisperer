@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useParams, Link } from "react-router-dom";
 import { brandPages } from "@/data/brandPages";
 import { brandLogos } from "@/data/brandLogos";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 import { ExternalLink, MapPin, Calendar, Users, Globe, ArrowLeft, ChevronRight, Instagram, BookOpen } from "lucide-react";
@@ -31,6 +31,7 @@ export default function BrandLanding() {
       <BrandTechnologies brand={brand} />
       <BrandProducts brand={brand} />
       <BrandTimeline brand={brand} />
+      {brand.elfsightAppId && <BrandInstagramFeed brand={brand} />}
       {brand.sources && brand.sources.length > 0 && <BrandSources brand={brand} />}
       <BrandContactForm brand={brand} />
     </Layout>
@@ -274,6 +275,54 @@ function BrandSources({ brand }: { brand: typeof brandPages[string] }) {
             </a>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+function BrandInstagramFeed({ brand }: { brand: typeof brandPages[string] }) {
+  useEffect(() => {
+    // Load Elfsight platform script once
+    if (!document.getElementById("elfsight-platform")) {
+      const script = document.createElement("script");
+      script.id = "elfsight-platform";
+      script.src = "https://elfsightcdn.com/platform.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  return (
+    <section className="py-20 px-6 border-t border-border">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex items-center justify-between mb-12"
+        >
+          <div>
+            <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4">Latest from {brand.name}</p>
+            <h2 className="font-display text-3xl md:text-4xl font-medium">
+              Follow <span className="italic text-gold-gradient">@{brand.instagramUrl?.split("/").filter(Boolean).pop()}</span>
+            </h2>
+          </div>
+          {brand.instagramUrl && (
+            <a
+              href={brand.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex items-center gap-2 px-4 py-2 border border-border rounded-sm font-body text-sm text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+            >
+              <Instagram className="w-4 h-4" /> Follow on Instagram
+            </a>
+          )}
+        </motion.div>
+
+        <div
+          className={`elfsight-app-${brand.elfsightAppId}`}
+          data-elfsight-app-lazy
+        />
       </div>
     </section>
   );
