@@ -127,4 +127,84 @@ export const brandPages: Record<string, BrandPageData> = {
       { label: "Tell us about your space and vision", name: "message", type: "textarea", placeholder: "Describe your room, what you're looking to achieve, and any specific Meyer Sound products you're interested in." },
     ],
   },
+  "pmc": {
+    slug: "pmc",
+    name: "PMC",
+    tagline: "The speakers trusted by Abbey Road — now in India's finest homes.",
+    heroSubtitle: "From Apple Music's mastering facility in Los Angeles to the most discerning residences in India. Qubix is an authorised PMC demo partner, bringing studio-grade truth to private living spaces.",
+    partnerBadge: "Authorised PMC Demo Partner — India",
+    logoKey: "PMC",
+    founded: "1991",
+    headquarters: "Luton, Bedfordshire, United Kingdom",
+    founders: "Peter Thomas & Adrian Loader",
+    website: "https://pmc-speakers.com",
+    about: [
+      "PMC — Professional Monitor Company — builds loudspeakers that reveal the absolute truth in music. Founded by BBC broadcast engineer Peter Thomas, PMC speakers are the reference standard at Abbey Road Studios, Metropolis Studios, and Apple Music's new mastering facility in Los Angeles. When the world's most critical ears need to hear exactly what's in a recording, they turn to PMC.",
+      "What makes PMC unique is their Advanced Transmission Line (ATL™) technology — a proprietary bass-loading method that delivers deep, controlled, distortion-free low frequencies from remarkably compact cabinets. Unlike conventional ported or sealed designs, ATL uses a precisely calculated internal pathway that extends bass response while eliminating the colouration and compression that plague other approaches.",
+      "PMC's residential range brings this uncompromising studio DNA into beautifully crafted cabinets designed for living spaces. The result is a speaker that doesn't just play music — it transports you into the recording studio, hearing every detail exactly as the artist and mastering engineer intended.",
+    ],
+    qubixRelationship: "Qubix is an authorised PMC demo partner in India, with dedicated PMC listening rooms in our Experience Center. We specialise in PMC's residential and home cinema speaker systems — from the elegant Prodigy series to the flagship Fenestria. Every PMC system we install is precision-calibrated to the room, ensuring you hear what the world's best studios hear.",
+    technologies: [
+      {
+        name: "Advanced Transmission Line (ATL™)",
+        description: "PMC's signature technology. A carefully tuned internal pathway absorbs unwanted energy and extends bass response far beyond what the cabinet size suggests — delivering deep, articulate bass without distortion or compression.",
+      },
+      {
+        name: "LAMINAIR™ Vent",
+        description: "A precision-engineered air outlet inspired by Formula 1 aerodynamics. LAMINAIR smooths the airflow exiting the transmission line, eliminating turbulence and the chuffing noise common in ported designs.",
+      },
+      {
+        name: "D-Appolito Driver Configuration",
+        description: "A symmetrical driver arrangement that creates a wide, even listening window. This means every seat in your room gets the same immersive experience — not just the 'sweet spot'.",
+      },
+      {
+        name: "Custom PMC Drivers",
+        description: "PMC designs and specifies their own drive units — from hand-coated mid-range domes to long-throw bass drivers — ensuring every component is optimised for the transmission line topology.",
+      },
+      {
+        name: "Precision Crossover Networks",
+        description: "Hand-tuned crossover networks using audiophile-grade components, designed to preserve every micro-detail in the signal path from amplifier to driver.",
+      },
+    ],
+    keyProducts: [
+      { name: "Fenestria", category: "Flagship Floor-Standing", description: "PMC's statement loudspeaker. A 6-driver, 3-way transmission line design that delivers concert-scale dynamics in a stunningly elegant cabinet. The pinnacle of residential audio." },
+      { name: "Prodigy5", category: "Floor-Standing", description: "The sweet spot of PMC's residential range — ATL bass performance, wide dispersion, and a compact footprint that suits Indian living rooms perfectly." },
+      { name: "Prodigy1", category: "Bookshelf / Stand-Mount", description: "Compact yet remarkably full-range, the Prodigy1 brings transmission line bass to smaller spaces without compromise." },
+      { name: "ci Series", category: "Custom Installation", description: "Purpose-built in-wall and in-ceiling speakers with ATL technology — invisible high-performance audio for whole-home music and cinema." },
+      { name: "Dolby Atmos Cinema Systems", category: "Home Cinema", description: "Complete PMC-based Dolby Atmos systems using dedicated LCR, surround, and height channels — the same speaker technology used in Hollywood dubbing stages." },
+      { name: "PMC Subwoofers", category: "Low-Frequency", description: "Transmission line subwoofers that deliver musical, controlled bass — seamlessly integrating with PMC speakers for full-range performance." },
+    ],
+    timeline: [
+      { year: "1991", title: "Founded by BBC Engineer", description: "Peter Thomas, a BBC broadcast engineer, founds PMC with a mission to build speakers that reveal the truth in recordings." },
+      { year: "1995", title: "Abbey Road Adoption", description: "Abbey Road Studios adopts PMC monitors — beginning a relationship that continues to this day across all their mastering suites." },
+      { year: "2004", title: "ATL™ Technology Patent", description: "PMC patents the Advanced Transmission Line technology that defines their acoustic signature and engineering advantage." },
+      { year: "2010", title: "fact Series Launch", description: "The fact (File Accuracy Confirmation Test) range bridges the gap between studio monitors and residential speakers." },
+      { year: "2016", title: "Fenestria Unveiled", description: "PMC's flagship residential speaker launches — a 6-driver transmission line design that redefines what home speakers can achieve." },
+      { year: "2020", title: "LAMINAIR™ Vent Technology", description: "PMC introduces LAMINAIR — an aerodynamically optimised vent that eliminates turbulence noise from the transmission line." },
+      { year: "2023", title: "Apple Music LA Facility", description: "Apple Music installs PMC speakers in their new Los Angeles mastering facility — the ultimate endorsement of PMC's accuracy." },
+      { year: "2024", title: "Qubix PMC Demo Partnership — India", description: "Qubix becomes an authorised PMC demo partner, featuring dedicated PMC listening rooms in their Experience Center." },
+    ],
+    seo: {
+      title: "PMC Speakers India | Authorised Demo Partner — Qubix",
+      description: "Experience PMC speakers in India. Qubix is an authorised PMC demo partner with dedicated listening rooms. From Abbey Road to your home — Fenestria, Prodigy & Dolby Atmos cinema systems for India's finest residences.",
+      h1: "PMC Speakers India — Authorised Demo Partner",
+    },
+    contactFormFields: [
+      { label: "Name", name: "name", type: "text", placeholder: "Your name", required: true },
+      { label: "Email", name: "email", type: "email", placeholder: "your@email.com", required: true },
+      { label: "Phone / WhatsApp", name: "phone", type: "tel", placeholder: "+91", required: true },
+      { label: "What interests you most?", name: "interest", type: "select", options: [
+        "PMC Fenestria Flagship Speakers",
+        "PMC Prodigy Series for Living Room",
+        "PMC Home Cinema / Dolby Atmos System",
+        "PMC Custom Installation (In-Wall / In-Ceiling)",
+        "Visit the PMC Demo Room",
+        "Other / General Enquiry",
+      ], required: true },
+      { label: "Property Type", name: "propertyType", type: "select", options: [
+        "Apartment / Penthouse", "Villa / Bungalow / Independent Home", "Farmhouse / Weekend Home", "Commercial / Hospitality"
+      ] },
+      { label: "Tell us about your space and vision", name: "message", type: "textarea", placeholder: "Describe your room, what you're looking to achieve, and any specific PMC products you're interested in." },
+    ],
+  },
 };
