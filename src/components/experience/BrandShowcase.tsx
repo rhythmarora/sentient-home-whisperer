@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import { brandLogos } from "@/data/brandLogos";
 import { experienceBrands } from "@/data/experienceBrands";
+import { brandPages } from "@/data/brandPages";
 
 export default function BrandShowcase() {
   return (
