@@ -50,6 +50,7 @@ export const experienceBrands: ExperienceBrand[] = [
   { name: "Biamp", logoKey: "Biamp", usp: "Professional AV signal processing and conferencing.", url: "https://www.biamp.com" },
 
   // Control & Infrastructure
+  { name: "Crestron Home", logoKey: "Crestron", usp: "The operating system for luxury smart homes.", url: "https://crestron.com" },
   { name: "QuantIQ", logoKey: "QuantIQ", usp: "AI-powered surveillance and edge analytics.", url: "https://www.quantiq.com" },
   { name: "MissionDesk", logoKey: "MissionDesk", usp: "Command-center consoles for NOC and SOC operations.", url: "https://www.missiondesk.com" },
   { name: "Cisco", logoKey: "Cisco", usp: "Enterprise networking and collaboration infrastructure.", url: "https://www.cisco.com" },
