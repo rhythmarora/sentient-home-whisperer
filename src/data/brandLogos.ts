@@ -27,6 +27,9 @@ import crestronLogo from "@/assets/brands/crestron.webp";
 import ciscoLogo from "@/assets/brands/cisco.png";
 import lumagenLogo from "@/assets/brands/lumagen.webp";
 import karrayLogo from "@/assets/brands/karray.png";
+import quantiqLogo from "@/assets/brands/quantiq.png";
+import missionDeskLogo from "@/assets/brands/missiondesk.png";
+import classeLogo from "@/assets/brands/classe.png";
 
 export const brandLogos: Record<string, string> = {
   PMC: pmcLogo,
