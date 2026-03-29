@@ -34,6 +34,7 @@ import tclLogo from "@/assets/brands/tcl.png";
 import roscoLogo from "@/assets/brands/rosco.png";
 import birddogLogo from "@/assets/brands/birddog.webp";
 import vizrtLogo from "@/assets/brands/vizrt.png";
+import constellationLogo from "@/assets/brands/constellation.jpg";
 
 export const brandLogos: Record<string, string> = {
   PMC: pmcLogo,
@@ -72,4 +73,5 @@ export const brandLogos: Record<string, string> = {
   Rosco: roscoLogo,
   BirdDog: birddogLogo,
   Vizrt: vizrtLogo,
+  Constellation: constellationLogo,
 };

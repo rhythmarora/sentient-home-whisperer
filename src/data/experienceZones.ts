@@ -144,7 +144,7 @@ export const zones: Zone[] = [
       { name: "Cornered Audio CI6 Pair", details: "Corner-mounted architectural speakers" },
       { name: "Bowers & Wilkins AM1", details: "Weather-resistant outdoor speaker" },
       { name: "Lithe Audio Ceiling Speakers", details: "Wireless ceiling-mounted audio" },
-      { name: "BEC IC120", details: "In-ceiling speakers powered by Sonos & Rotel" },
+      { name: "BEC IC120", details: "Discreet architectural speakers powered by Sonos & Rotel" },
     ],
   },
   {
@@ -221,12 +221,13 @@ export const zones: Zone[] = [
     tier: "enterprise",
     color: "hsl(var(--cinema))",
     glowClass: "glow-cinema",
-    poweredBy: ["Meyer Sound", "Trinnov", "Lumagen", "SIM2"],
+    poweredBy: ["Meyer Sound", "Constellation", "Trinnov", "Lumagen", "SIM2"],
     tagline: "Where you experience the physics, chemistry, and biology of sound.",
     description:
-      "40 speakers. 8 subwoofers. All perfectly calibrated in a 30×20 ft room with active acoustics. This is a studio where we blur the lines between what's possible and what's not. This room is not for everybody — but whoever has seen it has seen something different. Like no other in India or nearby.",
+      "40 speakers. 8 subwoofers. All perfectly calibrated in a 30×20 ft room — powered by Constellation by Meyer Sound, the world's most advanced active acoustics system. Constellation uses an array of ambient sensing microphones, sophisticated DSP, and laboratory-grade loudspeakers to modify the reverberant characteristics of the room in real time — transforming a single space into a concert hall, a jazz club, a cathedral, or a recording studio at the touch of a button. This is the only Constellation demo room in the Indian subcontinent. Trusted by venues like Jazz at Lincoln Center, the San Francisco Symphony, and performing arts centres worldwide — now available for you to experience, right here.",
     roomSize: "30 × 20 ft",
     systems: [
+      { name: "Constellation Active Acoustics", details: "Real-time variable acoustics — transform the room's sonic character instantly" },
       { name: "Meyer Sound Speaker Array", details: "40 channels of laboratory-grade active speakers" },
       { name: "Meyer Sound Subwoofers", details: "8 subwoofers for physically immersive bass" },
       { name: "Trinnov Altitude", details: "Reference immersive audio processor" },
