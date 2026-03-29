@@ -145,8 +145,8 @@ export const brandPages: Record<string, BrandPageData> = {
     slug: "pmc",
     name: "PMC",
     tagline: "The speakers trusted by Abbey Road — now in India's finest homes.",
-    heroSubtitle: "From Apple Music's mastering facility in Los Angeles to the most discerning residences in India. Qubix is an authorised PMC demo partner, bringing studio-grade truth to private living spaces.",
-    partnerBadge: "Authorised PMC Demo Partner — India",
+    heroSubtitle: "From Apple Music's mastering facility in Los Angeles to the most discerning residences in South India. Qubix is an authorised PMC demo partner in Bangalore, bringing studio-grade truth to private living spaces.",
+    partnerBadge: "Authorised PMC Demo Partner — Bangalore",
     logoKey: "PMC",
     founded: "1991",
     headquarters: "Luton, Bedfordshire, United Kingdom",
@@ -157,7 +157,7 @@ export const brandPages: Record<string, BrandPageData> = {
       "What makes PMC unique is their Advanced Transmission Line (ATL™) technology — a proprietary bass-loading method that delivers deep, controlled, distortion-free low frequencies from remarkably compact cabinets. Unlike conventional ported or sealed designs, ATL uses a precisely calculated internal pathway that extends bass response while eliminating the colouration and compression that plague other approaches.",
       "PMC's residential range brings this uncompromising studio DNA into beautifully crafted cabinets designed for living spaces. The result is a speaker that doesn't just play music — it transports you into the recording studio, hearing every detail exactly as the artist and mastering engineer intended.",
     ],
-    qubixRelationship: "Qubix is an authorised PMC demo partner in India, with dedicated PMC listening rooms in our Experience Center. We specialise in PMC's residential and home cinema speaker systems — from the elegant Prodigy series to the flagship Fenestria. Every PMC system we install is precision-calibrated to the room, ensuring you hear what the world's best studios hear.",
+    qubixRelationship: "Qubix is an authorised PMC demo partner in Bangalore, with dedicated PMC listening rooms in our Experience Center. We specialise in PMC's residential and home cinema speaker systems — from the elegant Prodigy series to the flagship Fenestria. Every PMC system we install is precision-calibrated to the room, ensuring you hear what the world's best studios hear.",
     technologies: [
       {
         name: "Advanced Transmission Line (ATL™)",
@@ -196,7 +196,7 @@ export const brandPages: Record<string, BrandPageData> = {
       { year: "2016", title: "Fenestria Unveiled", description: "PMC's flagship residential speaker launches — a 6-driver transmission line design that redefines what home speakers can achieve." },
       { year: "2020", title: "LAMINAIR™ Vent Technology", description: "PMC introduces LAMINAIR — an aerodynamically optimised vent that eliminates turbulence noise from the transmission line." },
       { year: "2025", title: "Apple Music LA Studio", description: "Apple Music opens a 15,000 sq ft next-gen studio complex in Culver City, LA — featuring a dedicated Spatial Audio mixing room with a 9.2.4 PMC speaker system." },
-      { year: "2024", title: "Qubix PMC Demo Partnership — India", description: "Qubix becomes an authorised PMC demo partner, featuring dedicated PMC listening rooms in their Experience Center." },
+      { year: "2024", title: "Qubix PMC Demo Partnership — Bangalore", description: "Qubix becomes an authorised PMC demo partner in Bangalore, featuring dedicated PMC listening rooms in their Experience Center." },
     ],
     sources: [
       { label: "PMC Official Website — About", url: "https://pmc-speakers.com/about" },
@@ -206,9 +206,9 @@ export const brandPages: Record<string, BrandPageData> = {
     instagramUrl: "https://www.instagram.com/pmcspeakers/",
     elfsightAppId: "33c81363-ec2c-4fd4-ae9a-cb1267745b58",
     seo: {
-      title: "PMC Speakers India | Authorised Demo Partner — Qubix",
-      description: "Experience PMC speakers in India. Qubix is an authorised PMC demo partner with dedicated listening rooms. From Abbey Road to your home — Fenestria, Prodigy & Dolby Atmos cinema systems for India's finest residences.",
-      h1: "PMC Speakers India — Authorised Demo Partner",
+      title: "PMC Speakers Bangalore | Authorised Demo Partner — Qubix",
+      description: "Experience PMC speakers in Bangalore. Qubix is an authorised PMC demo partner with dedicated listening rooms. From Abbey Road to your home — Fenestria, Prodigy & Dolby Atmos cinema systems for discerning residences.",
+      h1: "PMC Speakers — Authorised Demo Partner in Bangalore",
     },
     contactFormFields: [
       { label: "Name", name: "name", type: "text", placeholder: "Your name", required: true },
