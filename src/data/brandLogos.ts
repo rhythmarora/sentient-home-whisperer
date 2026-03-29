@@ -31,6 +31,9 @@ import quantiqLogo from "@/assets/brands/quantiq.png";
 import missionDeskLogo from "@/assets/brands/missiondesk.png";
 import classeLogo from "@/assets/brands/classe.png";
 import tclLogo from "@/assets/brands/tcl.png";
+import roscoLogo from "@/assets/brands/rosco.png";
+import birddogLogo from "@/assets/brands/birddog.webp";
+import vizrtLogo from "@/assets/brands/vizrt.png";
 
 export const brandLogos: Record<string, string> = {
   PMC: pmcLogo,
@@ -66,4 +69,7 @@ export const brandLogos: Record<string, string> = {
   MissionDesk: missionDeskLogo,
   Classé: classeLogo,
   TCL: tclLogo,
+  Rosco: roscoLogo,
+  BirdDog: birddogLogo,
+  Vizrt: vizrtLogo,
 };
