@@ -328,6 +328,7 @@ function BrandInstagramFeed({ brand }: { brand: typeof brandPages[string] }) {
   );
 }
 
+function BrandContactForm({ brand }: { brand: typeof brandPages[string] }) {
   const { toast } = useToast();
   const [formData, setFormData] = useState<Record<string, string>>({});
 
