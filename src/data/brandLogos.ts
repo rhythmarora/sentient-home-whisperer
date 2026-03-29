@@ -10,7 +10,7 @@ import sim2Logo from "@/assets/brands/sim2.png";
 import luxmanLogo from "@/assets/brands/luxman.png";
 import trinnovLogo from "@/assets/brands/trinnov.jpg";
 import meyerSoundLogo from "@/assets/brands/meyersound.png";
-import devialetLogo from "@/assets/brands/devialet.png";
+import devialetLogo from "@/assets/brands/devialet.svg";
 import rotelLogo from "@/assets/brands/rotel.png";
 import sonosLogo from "@/assets/brands/sonos.png";
 import becLogo from "@/assets/brands/bec.webp";
