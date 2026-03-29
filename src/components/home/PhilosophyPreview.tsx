@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const pillars = [
-  { title: "Sound", description: "Accuracy over exaggeration" },
-  { title: "Bass", description: "Integration over loudness" },
-  { title: "Control", description: "Simplicity over complexity" },
+  { title: "Sound", description: "PMC accuracy over exaggeration" },
+  { title: "Bass", description: "REL integration over loudness" },
+  { title: "Control", description: "Crestron simplicity over complexity" },
   { title: "Design", description: "Invisible technology" },
-  { title: "Integration", description: "Everything works together" },
+  { title: "Immersion", description: "Constellation acoustics" },
 ];
 
 export default function PhilosophyPreview() {

@@ -3,19 +3,19 @@ import { motion } from "framer-motion";
 const groups = [
   {
     name: "Entertainment", color: "cinema",
-    items: ["Cinema", "Music", "Karaoke", "Gaming"],
+    items: ["Dolby Atmos Cinema", "Hi-Fi Audio", "Karaoke", "Gaming"],
   },
   {
     name: "Ambience", color: "social",
-    items: ["Lighting", "Shading", "Climate"],
+    items: ["Lutron Lighting", "Motorised Shading", "Climate Control"],
   },
   {
     name: "Infrastructure", color: "connectivity",
-    items: ["Network", "AV Distribution", "Cabling"],
+    items: ["Ruckus Wi-Fi 6E", "AV Distribution", "Structured Cabling"],
   },
   {
     name: "Protection", color: "cat-security",
-    items: ["CCTV", "Access", "Alarms"],
+    items: ["CCTV & AI Analytics", "Biometric Access", "Intrusion Alarms"],
   },
 ];
 
@@ -39,6 +39,9 @@ export default function HomeOS() {
           <h2 className="font-display text-4xl md:text-6xl font-medium mb-4">
             One Home. One <span className="italic text-gradient-vibrant">Brain.</span>
           </h2>
+          <p className="font-body text-base text-silver max-w-xl mx-auto">
+            Powered by Crestron. Every system — entertainment, lighting, security, climate — unified under a single intelligent control layer.
+          </p>
         </motion.div>
 
         {/* Hub diagram */}

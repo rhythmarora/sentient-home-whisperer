@@ -5,23 +5,23 @@ import { Check } from "lucide-react";
 const tiers = [
   {
     name: "Essential", price: "₹15L+", color: "silver",
-    description: "Core technology that elevates everyday living. Multi-room audio, basic lighting control, and reliable networking.",
-    features: ["Multi-room audio (4–6 zones)", "Basic lighting scenes", "Enterprise Wi-Fi", "Centralized AV", "App control"],
+    description: "Core technology that elevates everyday living. Multi-room audio, intelligent lighting, and enterprise-grade networking — the invisible backbone of a connected home.",
+    features: ["Multi-room audio (4–6 zones)", "Crestron or RTI control", "Enterprise Wi-Fi (Ruckus)", "Centralised AV distribution", "Smart lighting scenes"],
   },
   {
     name: "Premium", price: "₹50L+", color: "cinema",
-    description: "A serious home entertainment system. Dedicated cinema room, advanced audio, and intelligent automation.",
-    features: ["Dedicated home theatre", "Dolby Atmos / DTS:X", "Advanced lighting", "Climate integration", "Touch panel control", "Security system"],
+    description: "A dedicated cinema, Dolby Atmos surround, and automation that makes your home feel effortless. Powered by PMC, REL, Crestron, and Trinnov.",
+    features: ["Dedicated Dolby Atmos cinema", "PMC or Wisdom Audio speakers", "REL subwoofer integration", "Trinnov room correction", "Touch panel + voice control", "Integrated security system"],
   },
   {
     name: "Signature", price: "₹2Cr+", color: "music",
-    description: "A fully orchestrated living experience. Every room responds to you. Every system works as one.",
-    features: ["Full Dolby Atmos cinema", "Whole-home Hi-Fi audio", "Circadian lighting", "Full automation", "Performance room", "Biometric access", "Outdoor entertainment"],
+    description: "A fully orchestrated living experience. Every room responds to you. Constellation acoustics, reference-grade audio, and circadian-aware environments.",
+    features: ["Constellation by Meyer Sound", "Full PMC reference cinema", "Whole-home Hi-Fi audio", "Circadian lighting (Lutron)", "Full Crestron automation", "Biometric access & surveillance", "Outdoor entertainment zones"],
   },
   {
     name: "Bespoke", price: "₹5Cr+", color: "social",
-    description: "No limits. Concert-grade sound, gallery-level lighting, museum-quality control. For the extraordinary.",
-    features: ["Meyer Sound / PMC reference", "Acoustic engineering", "Custom control UI", "Art & climate integration", "Dedicated server room", "White-glove support", "International standards"],
+    description: "No limits. Concert-grade Meyer Sound, museum-quality control, acoustic engineering. Designed for the extraordinary — from farmhouses to sky-villas.",
+    features: ["Meyer Sound reference systems", "PMC flagship monitoring", "Acoustic room engineering", "Custom Crestron UI design", "Art & climate integration", "Dedicated equipment room", "White-glove lifetime support"],
   },
 ];
 

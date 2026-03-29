@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 
 const points = [
   { text: "Designed before it is sold", color: "bg-cinema" },
-  { text: "Engineered, not assembled", color: "bg-music" },
+  { text: "Acoustically engineered, not just assembled", color: "bg-music" },
   { text: "Invisible when not in use", color: "bg-social" },
-  { text: "Effortless to operate", color: "bg-relax" },
-  { text: "Built to evolve over time", color: "bg-gaming" },
+  { text: "One touch. Everything responds.", color: "bg-relax" },
+  { text: "Built to evolve with your life", color: "bg-gaming" },
 ];
 
 export default function DifferenceSection() {
