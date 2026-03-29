@@ -8,7 +8,7 @@ import arcamLogo from "@/assets/brands/arcam.svg";
 import benqLogo from "@/assets/brands/benq.svg";
 import sim2Logo from "@/assets/brands/sim2.png";
 import luxmanLogo from "@/assets/brands/luxman.png";
-import trinnovLogo from "@/assets/brands/trinnov.jpg";
+import trinnovLogo from "@/assets/brands/trinnov.png";
 import meyerSoundLogo from "@/assets/brands/meyersound.png";
 import devialetLogo from "@/assets/brands/devialet.svg";
 import rotelLogo from "@/assets/brands/rotel.png";
