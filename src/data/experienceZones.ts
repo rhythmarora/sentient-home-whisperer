@@ -136,7 +136,7 @@ export const zones: Zone[] = [
     tier: "residential",
     color: "hsl(var(--outdoor))",
     glowClass: "",
-    poweredBy: ["Cornered Audio", "Bowers & Wilkins", "Lithe Audio", "BEC", "Sonos", "Rotel"],
+    poweredBy: ["Cornered Audio", "Bowers & Wilkins", "Lithe Audio", "BEC", "Sonos", "Rotel", "K-Array"],
     tagline: "Sound that disappears into your architecture.",
     description:
       "Ceiling speakers, in-wall solutions, weatherproof outdoor audio, and casual listening setups. These systems are designed to be heard but not seen — blending into your home's architecture while filling every corner with music.",
