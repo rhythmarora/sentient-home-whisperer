@@ -1,0 +1,150 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+import type { Zone } from "@/data/experienceZones";
+
+export default function ZoneCard({ zone }: { zone: Zone }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <section
+      id={zone.id}
+      className="scroll-mt-32 py-16 md:py-24 px-6 border-b border-border/50"
+    >
+      <div className="max-w-5xl mx-auto">
+        {/* Accent line */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="h-px w-24 origin-left mb-8"
+          style={{ backgroundColor: zone.color }}
+        />
+
+        {/* Zone number */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="font-display text-5xl md:text-7xl font-medium mb-2"
+          style={{ color: `${zone.color}` , opacity: 0.15 }}
+        >
+          {zone.number}
+        </motion.p>
+
+        {/* Name + tags */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="flex flex-wrap items-center gap-3 mb-2"
+        >
+          <h2 className="font-display text-2xl md:text-4xl font-medium text-foreground">
+            {zone.name}
+          </h2>
+          {zone.tier === "enterprise" && (
+            <Badge variant="outline" className="text-[10px] border-primary/30 text-primary">
+              Enterprise
+            </Badge>
+          )}
+        </motion.div>
+
+        {/* Powered by */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15 }}
+          className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6"
+        >
+          Powered by {zone.poweredBy.join(" · ")}
+        </motion.p>
+
+        {/* Tagline */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="font-display text-lg md:text-xl italic text-foreground/80 mb-4"
+        >
+          {zone.tagline}
+        </motion.p>
+
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.25 }}
+          className="font-body text-sm md:text-base text-muted-foreground leading-relaxed max-w-3xl mb-8"
+        >
+          {zone.description}
+        </motion.p>
+
+        {/* Expand button */}
+        <motion.button
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          onClick={() => setExpanded(!expanded)}
+          className={cn(
+            "flex items-center gap-2 font-body text-sm tracking-wider uppercase transition-colors",
+            "text-primary hover:text-primary/80"
+          )}
+        >
+          <span>See the System</span>
+          <ChevronDown
+            className={cn(
+              "w-4 h-4 transition-transform duration-300",
+              expanded && "rotate-180"
+            )}
+          />
+        </motion.button>
+
+        {/* Expanded panel */}
+        <AnimatePresence>
+          {expanded && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="overflow-hidden"
+            >
+              <div
+                className={cn(
+                  "mt-6 p-6 rounded-sm border border-border/60 bg-card/60",
+                  zone.tier === "enterprise" && "border-primary/15"
+                )}
+              >
+                {zone.roomSize && (
+                  <p className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-4">
+                    Room size: {zone.roomSize}
+                  </p>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {zone.systems.map((sys) => (
+                    <div key={sys.name} className="flex flex-col gap-1">
+                      <p className="font-body text-sm font-medium text-foreground">
+                        {sys.name}
+                      </p>
+                      <p className="font-body text-xs text-muted-foreground">
+                        {sys.details}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </section>
+  );
+}
