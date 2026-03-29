@@ -35,8 +35,10 @@ import roscoLogo from "@/assets/brands/rosco.png";
 import birddogLogo from "@/assets/brands/birddog.webp";
 import vizrtLogo from "@/assets/brands/vizrt.png";
 import constellationLogo from "@/assets/brands/constellation.png";
+import quadLogo from "@/assets/brands/quad.png";
 
 export const brandLogos: Record<string, string> = {
+  Quad: quadLogo,
   PMC: pmcLogo,
   Lyngdorf: lyngdorfLogo,
   Pioneer: alphathetaLogo,
