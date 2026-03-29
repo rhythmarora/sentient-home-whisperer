@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useParams, Link } from "react-router-dom";
 import { brandPages } from "@/data/brandPages";
 import { brandLogos } from "@/data/brandLogos";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 import { ExternalLink, MapPin, Calendar, Users, Globe, ArrowLeft, ChevronRight, Instagram, BookOpen } from "lucide-react";
