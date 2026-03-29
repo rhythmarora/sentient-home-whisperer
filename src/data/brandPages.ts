@@ -228,4 +228,94 @@ export const brandPages: Record<string, BrandPageData> = {
       { label: "Tell us about your space and vision", name: "message", type: "textarea", placeholder: "Describe your room, what you're looking to achieve, and any specific PMC products you're interested in." },
     ],
   },
+  "crestron-home": {
+    slug: "crestron-home",
+    name: "Crestron Home",
+    tagline: "One touch. Every system. Total harmony.",
+    heroSubtitle: "Crestron Home is the operating system for luxury residences — unifying lighting, climate, audio, video, shading, and security into a single, intuitive experience. Qubix integrates Crestron Home into India's most discerning private homes.",
+    partnerBadge: "Crestron Integration Partner",
+    logoKey: "Crestron",
+    founded: "1972",
+    headquarters: "Rockleigh, New Jersey, USA",
+    founders: "George Feldstein",
+    website: "https://crestron.com/Products/Market-Solutions/Residential-End-User-Home",
+    instagramUrl: "https://www.instagram.com/crestron/",
+    about: [
+      "Crestron has been the definitive name in control and automation for over five decades — trusted by Fortune 500 boardrooms, government facilities, and the world's most prestigious residences. But Crestron Home is something different: it's Crestron's purpose-built residential platform, designed from the ground up for the way people actually live.",
+      "Where most smart home systems are cobbled together from consumer gadgets, Crestron Home is a true operating system — a unified platform where lighting, shading, climate, audio, video, security, and intercom all communicate natively. There are no workarounds, no compatibility issues, no apps fighting each other. Everything simply works, because everything was designed to work together.",
+      "The Crestron Home OS powers elegant touchscreens, keypads, and remote interfaces that make controlling an entire residence feel effortless. Whether you're adjusting scenes from a flush-mount keypad, a tabletop touch panel, or your phone from another country — the experience is consistent, instant, and beautiful.",
+      "What truly sets Crestron Home apart is its reliability. In a world where consumer smart home devices lose connectivity, need rebooting, or become obsolete in two years, Crestron Home runs on enterprise-grade hardware with local processing. Your home works even when the internet doesn't.",
+    ],
+    qubixRelationship: "Qubix is a certified Crestron integration partner, specialising in Crestron Home deployments for luxury residences across India. Our team designs, programs, and commissions complete Crestron Home systems — from elegant single-room setups to whole-estate automation spanning lighting, AV, climate, security, and motorised shading. Every system is tailored to how you live, not how the technology works.",
+    technologies: [
+      {
+        name: "Crestron Home® OS",
+        description: "A purpose-built residential operating system that unifies every subsystem in your home — lighting, shading, climate, audio, video, security, and intercom — into one seamless, responsive platform.",
+      },
+      {
+        name: "Local Processing Architecture",
+        description: "Unlike cloud-dependent consumer systems, Crestron Home runs on local processors. Your home responds instantly and works reliably even without an internet connection.",
+      },
+      {
+        name: "Native Subsystem Integration",
+        description: "Crestron Home speaks natively to leading brands — Lutron, Sonos, Apple AirPlay, Sonance, and hundreds more — without relying on third-party bridges or workarounds.",
+      },
+      {
+        name: "Crestron Horizon™ Keypads & Interfaces",
+        description: "Architecturally refined keypads, dimmers, and touchscreens designed to blend seamlessly into luxury interiors. Every press is precise, tactile, and satisfying.",
+      },
+      {
+        name: "Scene Intelligence",
+        description: "Pre-programmed and user-customisable scenes that adjust multiple systems simultaneously — lights, shades, music, temperature — with a single touch or voice command.",
+      },
+      {
+        name: "Remote Management & Monitoring",
+        description: "Crestron Home allows remote diagnostics and system updates by your integrator, meaning issues can often be resolved without a site visit.",
+      },
+    ],
+    keyProducts: [
+      { name: "Crestron Home OS", category: "Operating System", description: "The brain of the system. A residential OS that ties together every device and subsystem into one unified, reliable experience." },
+      { name: "TSW Touch Screens", category: "Control Interface", description: "Wall-mounted and tabletop touch panels with stunning displays — the primary way residents interact with their home." },
+      { name: "Horizon™ Keypads", category: "Control Interface", description: "Minimalist, architectural keypads available in custom finishes. Elegant scene control for every room." },
+      { name: "MC4-R Processing", category: "Control Processor", description: "The flagship residential processor powering Crestron Home. Handles complex automation logic with enterprise-grade reliability." },
+      { name: "Crestron Lighting & Shading", category: "Environmental Control", description: "Integrated lighting dimmers and motorised shade control — all native to the Crestron Home ecosystem." },
+      { name: "Crestron Home App", category: "Mobile Control", description: "Full control of your home from anywhere in the world. Elegant interface mirroring the touch panel experience on iOS and Android." },
+    ],
+    timeline: [
+      { year: "1972", title: "Crestron Founded", description: "George Feldstein founds Crestron Electronics in New Jersey, beginning with commercial automation and control systems." },
+      { year: "1995", title: "Residential Division Launched", description: "Crestron enters the luxury residential market, bringing enterprise-grade reliability to private homes for the first time." },
+      { year: "2005", title: "Touch Panel Revolution", description: "Crestron introduces high-resolution residential touch panels, redefining how homeowners interact with automation." },
+      { year: "2015", title: "Pyng / Crestron Home Platform", description: "Crestron launches its dedicated residential platform — later evolving into Crestron Home OS — purpose-built for homeowners, not just integrators." },
+      { year: "2019", title: "Crestron Home OS Released", description: "The modern Crestron Home operating system launches, offering a unified residential experience with native subsystem integration." },
+      { year: "2022", title: "Horizon™ Keypads & Design Push", description: "Crestron introduces the Horizon line — architecturally refined keypads and dimmers designed to disappear into luxury interiors." },
+      { year: "2024", title: "Apple Home & AirPlay Integration", description: "Crestron Home deepens its Apple ecosystem integration, enabling seamless AirPlay 2 streaming and Siri voice control." },
+    ],
+    sources: [
+      { label: "Crestron Home — Official Product Page", url: "https://crestron.com/Products/Market-Solutions/Residential-End-User-Home" },
+      { label: "Crestron Home OS Overview", url: "https://crestron.com/Products/Market-Solutions/Residential-End-User-Home/os-home" },
+    ],
+    seo: {
+      title: "Crestron Home India | Smart Home Automation — Qubix",
+      description: "Experience Crestron Home automation in India. Qubix is a certified Crestron integration partner — luxury smart home control for lighting, AV, climate, shading & security in premium residences.",
+      h1: "Crestron Home — Smart Home Automation by Qubix",
+    },
+    contactFormFields: [
+      { label: "Name", name: "name", type: "text", placeholder: "Your name", required: true },
+      { label: "Email", name: "email", type: "email", placeholder: "your@email.com", required: true },
+      { label: "Phone / WhatsApp", name: "phone", type: "tel", placeholder: "+91", required: true },
+      { label: "What interests you most?", name: "interest", type: "select", options: [
+        "Whole-Home Crestron Automation",
+        "Crestron Lighting & Shading",
+        "Crestron Home Cinema Integration",
+        "Crestron Home for New Construction",
+        "Retrofit / Upgrade Existing System",
+        "Visit the Experience Center",
+        "Other / General Enquiry",
+      ], required: true },
+      { label: "Property Type", name: "propertyType", type: "select", options: [
+        "Apartment / Penthouse", "Villa / Bungalow / Independent Home", "Farmhouse / Weekend Home", "Commercial / Hospitality"
+      ] },
+      { label: "Tell us about your home and vision", name: "message", type: "textarea", placeholder: "Describe your home, what systems you'd like to control, and how you envision your smart home experience." },
+    ],
+  },
 };

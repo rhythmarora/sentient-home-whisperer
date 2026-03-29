@@ -11,10 +11,10 @@ const allBrands = [
     featured: true,
   },
   {
-    name: "Crestron",
-    philosophy: "The gold standard in residential automation. Crestron unifies every system in your home into a single, elegant control experience.",
+    name: "Crestron Home",
+    philosophy: "The gold standard in residential automation. Crestron Home unifies every system in your home into a single, elegant control experience.",
     fit: "Automation · Control",
-    slug: "crestron",
+    slug: "crestron-home",
     featured: true,
   },
   {
