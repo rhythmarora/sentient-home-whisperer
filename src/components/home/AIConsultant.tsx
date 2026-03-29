@@ -6,24 +6,24 @@ import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 type Step = { id: string; botMessage: string; options?: string[]; input?: string; special?: string };
 
 const conversationFlow: Step[] = [
-  { id: "size", botMessage: "How large is your space?", options: ["Under 4,000 sq ft", "4,000–8,000 sq ft", "8,000+ sq ft"] },
+  { id: "property", botMessage: "What kind of property are we designing for?", options: ["Apartment", "Villa / Independent Home", "Penthouse", "Farmhouse / Weekend Home"] },
   { id: "rooms", botMessage: "How many key rooms would you like to enhance?", options: ["2–3 rooms", "4–6 rooms", "Entire home"] },
-  { id: "lifestyle", botMessage: "What's your lifestyle like?", options: ["Entertainment-focused", "Wellness & relaxation", "Social & hosting", "All of the above"] },
-  { id: "killer", botMessage: "Do you want your home to just look good… or actually respond to you?", special: "killer" },
+  { id: "lifestyle", botMessage: "What defines your lifestyle at home?", options: ["Cinema & music", "Hosting & entertaining", "Wellness & relaxation", "All of the above"] },
+  { id: "killer", botMessage: "Do you want your home to just look good… or actually respond to you — lights, sound, climate, all in one touch?", special: "killer" },
   { id: "recommendation", botMessage: "", special: "recommendation" },
   { id: "capture-prompt", botMessage: "This recommendation was crafted just for you.", special: "capture" },
   { id: "name", botMessage: "What should I call you?", input: "Your first name" },
   { id: "email", botMessage: "", input: "Your email address" },
-  { id: "phone", botMessage: "", input: "Your phone number" },
+  { id: "phone", botMessage: "", input: "Your WhatsApp number" },
   { id: "privacy", botMessage: "", special: "privacy" },
-  { id: "connect-pref", botMessage: "How would you like us to connect?", options: ["WhatsApp", "Email", "Zoom & Teams", "Phone call"] },
+  { id: "connect-pref", botMessage: "How would you like our design consultant to connect?", options: ["WhatsApp", "Email", "Zoom / Teams", "Visit the Experience Center"] },
   { id: "thankyou", botMessage: "", special: "thankyou" },
 ];
 
 export default function AIConsultant() {
   const [stepIndex, setStepIndex] = useState(0);
   const [messages, setMessages] = useState<{ from: "bot" | "user"; text: string }[]>([
-    { from: "bot", text: "Welcome to your AI home consultation. Let's design something extraordinary." },
+    { from: "bot", text: "Welcome to Qubix. Let's design something extraordinary — starting with how you want your home to feel." },
   ]);
   const [typing, setTyping] = useState(false);
   const [userData, setUserData] = useState<Record<string, string>>({});
@@ -48,7 +48,7 @@ export default function AIConsultant() {
         const botMsg = nextStep.id === "email"
           ? `Where should I send your recommendation, ${userData.name || userAnswer}?`
           : nextStep.id === "phone"
-          ? "In case our team has a quick question about your space, what's the best number?"
+          ? "In case our design team has a quick question, what's the best WhatsApp number?"
           : nextStep.botMessage;
         if (botMsg) {
           setMessages((prev) => [...prev, { from: "bot", text: botMsg }]);
@@ -90,13 +90,12 @@ export default function AIConsultant() {
   };
 
   const handleThankYou = () => {
-    // Push to Zoho
     pushLeadToZoho({
       name: userData.name,
       email: userData.email,
       phone: userData.phone,
       budgetRange: userData.responds === "yes" ? "₹50L+" : "₹15L+",
-      projectType: userData.lifestyle,
+      projectType: userData.property,
       aiJourneyData: userData,
       source: "AI Consultant",
     });
@@ -202,11 +201,16 @@ export default function AIConsultant() {
                     <p className="font-display text-lg font-semibold text-gradient-vibrant mb-2">
                       {userData.responds === "yes" ? "Signature Experience" : "Premium Experience"}
                     </p>
-                    <p className="font-body text-sm text-silver mb-3">
+                    <p className="font-body text-sm text-silver mb-2">
                       Investment range: {userData.responds === "yes" ? "₹2Cr – ₹5Cr+" : "₹50L – ₹2Cr"}
                     </p>
+                    <p className="font-body text-xs text-muted-foreground mb-1">
+                      {userData.responds === "yes"
+                        ? "Full Crestron automation, PMC reference cinema, Constellation acoustics, Lutron circadian lighting."
+                        : "Dedicated Dolby Atmos cinema, multi-room audio, Crestron control, and smart lighting."}
+                    </p>
                     <p className="font-body text-xs text-muted-foreground">
-                      Based on {userData.size}, {userData.rooms}, {userData.lifestyle?.toLowerCase()} lifestyle
+                      Based on: {userData.property}, {userData.rooms}, {userData.lifestyle?.toLowerCase()}
                     </p>
                     <button onClick={() => { setResponded(true); advanceStep("Show me more"); }} className="mt-4 px-4 py-2 font-body text-xs bg-gradient-vibrant text-white rounded-full">
                       Continue →
@@ -250,7 +254,7 @@ export default function AIConsultant() {
                       <span className="font-body text-xs font-semibold text-relax uppercase tracking-wider">Your privacy</span>
                     </div>
                     <p className="font-body text-sm text-silver leading-relaxed">
-                      We will never call without your consent. Our team will message you first — personally, over WhatsApp. Take your time… We're equally comfortable on email, Zoom, or Teams.
+                      We never cold-call. A Qubix design consultant will message you first — personally, over WhatsApp. You can also visit our 12-zone Experience Center to see everything in person before deciding.
                     </p>
                     <button onClick={() => { setResponded(true); advanceStep("I appreciate that"); }} className="mt-4 px-4 py-2 font-body text-xs bg-relax/20 text-relax rounded-full border border-relax/30">
                       Continue →
@@ -269,10 +273,15 @@ export default function AIConsultant() {
                     <p className="font-display text-xl font-semibold mb-2">
                       Thank you{userData.name ? `, ${userData.name}` : ""}.
                     </p>
-                    <p className="font-body text-sm text-silver mb-4">Your personalized recommendation is on its way.</p>
-                    <a href="/contact" className="inline-block px-6 py-2 font-body text-sm bg-gradient-vibrant text-white rounded-full hover:opacity-90 transition-opacity">
-                      Book a Consultation
-                    </a>
+                    <p className="font-body text-sm text-silver mb-4">Your personalized recommendation is on its way. A Qubix consultant will connect within 24 hours.</p>
+                    <div className="flex flex-col sm:flex-row gap-2 justify-center">
+                      <a href="/experience-center" className="inline-block px-6 py-2 font-body text-sm bg-gradient-vibrant text-white rounded-full hover:opacity-90 transition-opacity">
+                        Explore the Experience Center
+                      </a>
+                      <a href="/contact" className="inline-block px-6 py-2 font-body text-sm border border-graphite text-silver rounded-full hover:text-foreground transition-colors">
+                        Book a Consultation
+                      </a>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

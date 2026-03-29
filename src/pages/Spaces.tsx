@@ -6,44 +6,44 @@ import { Film, Music, Sofa, TreePine, Wine, BookOpen } from "lucide-react";
 const spaces = [
   {
     icon: Film,
-    title: "Home Theatre",
-    description: "From intimate screening rooms to reference-grade Dolby Atmos cinemas. Every seat is the best seat. Every frame, every note — exactly as the director intended.",
-    features: ["Dolby Atmos & DTS:X", "Acoustic treatment", "4K/8K projection", "Automated lighting scenes"],
+    title: "Private Cinema",
+    description: "From intimate screening rooms to reference-grade Dolby Atmos cinemas. PMC speakers for accuracy, REL subwoofers for depth, Trinnov altitude for room correction, and SIM2 laser projection. Every seat is the best seat.",
+    features: ["PMC speakers + REL subwoofers", "Dolby Atmos 9.4.6", "SIM2 / Epson 4K laser projection", "Trinnov altitude room correction"],
     id: "cinema",
   },
   {
     icon: Music,
     title: "Listening Room",
-    description: "Audiophile-grade spaces where music isn't just heard — it's felt. Purpose-built rooms with studio-grade monitoring and room correction that reveals every layer of a recording.",
-    features: ["Studio monitors", "Room acoustics", "Vinyl-ready systems", "Multi-source streaming"],
+    description: "Audiophile-grade spaces with PMC studio monitors, McIntosh amplification, and optional Constellation by Meyer Sound active acoustics. Purpose-built rooms where music isn't just heard — it's felt.",
+    features: ["PMC / Dynaudio monitors", "McIntosh amplification", "Constellation active acoustics", "Roon Hi-Res streaming"],
     id: "music",
   },
   {
     icon: Sofa,
     title: "Living Spaces",
-    description: "Technology that enhances without intruding. Invisible speakers in ceilings, displays that become art, and lighting that shifts with your mood — all controlled by a single touch.",
-    features: ["Architectural speakers", "Motorized displays", "Scene lighting", "Voice control"],
+    description: "Technology that enhances without intruding. BEC Acoustique invisible speakers, Wisdom Audio in-wall arrays, Lutron circadian lighting, and displays that become art — all controlled by Crestron with a single touch.",
+    features: ["BEC / Wisdom invisible speakers", "Lutron lighting & shading", "Motorised art displays", "Crestron scene control"],
     id: "living",
   },
   {
     icon: TreePine,
     title: "Outdoor & Landscape",
-    description: "Your garden, terrace, and pool become extensions of your entertainment ecosystem. Weather-resistant audio that fills open air with concert-quality sound.",
-    features: ["Landscape speakers", "Weatherproof displays", "Pool-side audio", "Garden lighting"],
+    description: "Your garden, terrace, and pool become extensions of your entertainment ecosystem. Sonance landscape speakers, in-ground subwoofers, and outdoor cinema — all weather-resistant, all zone-controlled.",
+    features: ["Sonance landscape speakers", "In-ground subwoofers", "Outdoor cinema screen", "Weatherproof zone control"],
     id: "outdoor",
   },
   {
     icon: Wine,
     title: "Lounge & Karaoke",
-    description: "Social spaces designed for hosting. Professional karaoke systems, party lighting, and audio that transitions from dinner conversation to dance floor in one tap.",
-    features: ["Pro karaoke system", "Party lighting", "Multi-zone audio", "Automated scenes"],
+    description: "Social spaces designed for energy. Professional karaoke with Meyer Sound or PMC clarity, Lutron party lighting, and bass that shakes the floor — transitioning from dinner conversation to dance floor in one tap.",
+    features: ["Pro karaoke (Meyer / PMC)", "Lutron dynamic lighting", "REL bass integration", "Crestron one-tap scenes"],
     id: "social",
   },
   {
     icon: BookOpen,
     title: "Study & Office",
-    description: "Focused work environments with perfect acoustics, video conferencing systems, and ambient sound that shields you from the world beyond your door.",
-    features: ["Noise masking", "Video conferencing", "Focused lighting", "Background audio"],
+    description: "Focused work environments with BEC sound masking, professional video conferencing, and Lutron focused lighting that shields you from the world beyond your door.",
+    features: ["BEC sound masking", "Video conferencing integration", "Lutron focused lighting", "Background audio zones"],
     id: "study",
   },
 ];
@@ -76,7 +76,7 @@ export default function Spaces() {
             className="font-body text-lg text-muted-foreground max-w-2xl mx-auto"
           >
             We design technology around how you live — not the other way around. 
-            Each space is crafted to deliver a specific feeling.
+            Each space is architected with the world's finest brands to deliver a specific feeling.
           </motion.p>
         </div>
       </section>
@@ -108,7 +108,7 @@ export default function Spaces() {
               </div>
               <div className="space-y-3">
                 <p className="font-body text-xs tracking-wider uppercase text-muted-foreground mb-4">
-                  Key Capabilities
+                  Key Technology
                 </p>
                 {space.features.map((feature) => (
                   <div

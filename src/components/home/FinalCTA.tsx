@@ -19,8 +19,8 @@ export default function FinalCTA() {
             <span className="italic text-gold-gradient">your home.</span>
           </h2>
           <p className="font-body text-lg text-muted-foreground mb-10 max-w-xl mx-auto leading-relaxed">
-            Every great home begins with a conversation. Tell us how you want to feel 
-            — we'll design the technology around it.
+            Walk through India's only Constellation by Meyer Sound demo. 
+            Experience 12 curated technology zones. Then let's talk about your home.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -31,10 +31,10 @@ export default function FinalCTA() {
               Design My Home
             </Link>
             <Link
-              to="/contact"
+              to="/experience-center"
               className="px-8 py-4 font-body text-sm tracking-wider text-foreground border border-border rounded-sm hover:border-primary/50 transition-colors"
             >
-              Talk to an Expert
+              Visit the Experience Center
             </Link>
           </div>
         </motion.div>

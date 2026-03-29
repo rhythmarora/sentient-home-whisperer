@@ -11,53 +11,53 @@ const filters = ["All", "Entertainment", "Lifestyle", "Infrastructure"];
 const experiences = [
   {
     icon: Film, title: "Cinema", color: "cinema", filter: "Entertainment",
-    description: "Private theatres engineered for precision, depth, and immersion.",
-    tier: "Signature Cinema", features: ["Dolby Atmos 9.4.6", "Acoustic Treatment", "4K Laser Projection", "Automated Masking"],
+    description: "Private theatres with PMC reference speakers, REL subwoofers, Trinnov processing, and 4K laser projection. Every seat is the best seat.",
+    tier: "Signature Cinema", features: ["Dolby Atmos 9.4.6 (PMC)", "REL subwoofer array", "4K Laser Projection (SIM2)", "Trinnov altitude room correction"],
   },
   {
     icon: Music, title: "Music", color: "music", filter: "Entertainment",
-    description: "Whole-home audio that flows without interruption.",
-    tier: "Audiophile Grade", features: ["Hi-Res Streaming", "Multi-zone Audio", "Room Correction", "Vinyl Integration"],
+    description: "Audiophile-grade spaces with PMC monitors, McIntosh amplification, and optional Constellation active acoustics by Meyer Sound.",
+    tier: "Audiophile Grade", features: ["PMC / Dynaudio monitors", "McIntosh amplification", "Constellation acoustics (optional)", "Hi-Res streaming (Roon)"],
   },
   {
     icon: Mic, title: "Performance", color: "performance", filter: "Entertainment",
-    description: "Not a room. A stage. Mic integration, lighting scenes, screen sync.",
-    tier: "Performance Suite", features: ["Pro Karaoke System", "Stage Lighting", "Wireless Mics", "Video Sync"],
+    description: "Not a room. A stage. Professional karaoke, concert lighting, and Meyer Sound clarity — designed for hosting unforgettable nights.",
+    tier: "Performance Suite", features: ["Meyer Sound or PMC audio", "Concert-grade lighting", "Wireless mics & mixing", "Video sync & recording"],
   },
   {
     icon: Gamepad2, title: "Gaming", color: "gaming", filter: "Entertainment",
-    description: "Purpose-built sanctuaries for immersive play.",
-    tier: "Gaming Den", features: ["Low-latency Display", "Surround Sound", "Ambient Lighting", "Acoustic Isolation"],
+    description: "Purpose-built sanctuaries with low-latency displays, surround sound, and ambient lighting that reacts to gameplay.",
+    tier: "Gaming Den", features: ["Low-latency OLED display", "Dolby Atmos surround", "Reactive ambient lighting", "Acoustic isolation"],
   },
   {
     icon: PartyPopper, title: "Party & Social", color: "social", filter: "Lifestyle",
-    description: "Karaoke rooms, lounges, and party spaces designed for energy.",
-    tier: "Social Hub", features: ["Multi-source Audio", "Dynamic Lighting", "Bass Integration", "Scene Control"],
+    description: "Karaoke rooms, lounges, and party spaces designed for energy — from dinner conversation to dance floor in one tap.",
+    tier: "Social Hub", features: ["Multi-source audio zones", "Dynamic party lighting (Lutron)", "Deep bass integration (REL)", "One-tap scene control (Crestron)"],
   },
   {
     icon: TreePine, title: "Outdoor", color: "outdoor", filter: "Lifestyle",
-    description: "Gardens and terraces that transform into entertainment zones.",
-    tier: "Landscape Audio", features: ["Weather-resistant Speakers", "Landscape Sub", "Outdoor Cinema", "Zone Control"],
+    description: "Gardens, terraces, and poolsides that become extensions of your entertainment ecosystem with weather-resistant audio and cinema.",
+    tier: "Landscape Audio", features: ["Sonance landscape speakers", "In-ground subwoofers", "Outdoor cinema screen", "Weatherproof zone control"],
   },
   {
     icon: Sun, title: "Relaxation", color: "relax", filter: "Lifestyle",
-    description: "Spaces that adapt — lighting, climate, and control in harmony.",
-    tier: "Wellness Zone", features: ["Circadian Lighting", "Climate Integration", "Sound Masking", "Scene Automation"],
+    description: "Spaces that adapt — circadian lighting, climate control, and sound masking working in harmony for wellness.",
+    tier: "Wellness Zone", features: ["Circadian lighting (Lutron)", "Climate integration", "Sound masking (BEC)", "Automated wellness scenes"],
   },
   {
     icon: Home, title: "Whole Home", color: "gold", filter: "Lifestyle",
-    description: "Every room unified into one seamless living experience.",
-    tier: "Total Integration", features: ["Unified Control", "Multi-room Audio", "Smart Scenes", "Voice Control"],
+    description: "Every room unified into one seamless living experience — Crestron control, distributed audio, and intelligent scenes across your entire home.",
+    tier: "Total Integration", features: ["Crestron unified control", "Multi-room audio (Sonos/PMC)", "Intelligent scene automation", "Voice + touch + app"],
   },
   {
     icon: Shield, title: "Security", color: "cat-security", filter: "Infrastructure",
-    description: "Security, monitoring, and access — powerful, but unseen.",
-    tier: "Invisible Shield", features: ["AI Surveillance", "Biometric Access", "Perimeter Detection", "Remote Monitor"],
+    description: "AI-powered surveillance, biometric access, and perimeter detection — powerful, but invisible.",
+    tier: "Invisible Shield", features: ["AI-powered CCTV analytics", "Biometric door access", "Perimeter intrusion detection", "Remote monitoring app"],
   },
   {
     icon: Wifi, title: "Connectivity", color: "connectivity", filter: "Infrastructure",
-    description: "Enterprise-grade networking. The invisible backbone of everything.",
-    tier: "Enterprise Network", features: ["Wi-Fi 6E", "VLAN Segmentation", "Remote Management", "Redundancy"],
+    description: "Enterprise-grade Ruckus networking. VLAN segmentation, seamless roaming, and zero dead zones — the invisible backbone of everything.",
+    tier: "Enterprise Network", features: ["Ruckus Wi-Fi 6E", "VLAN segmentation", "Remote management", "Failover redundancy"],
   },
 ];
 
@@ -96,7 +96,7 @@ export default function ExperienceCategories() {
             We design how your home <span className="italic text-gradient-vibrant">feels.</span>
           </h2>
           <p className="font-body text-base text-silver max-w-2xl mx-auto">
-            Select an experience. Our intelligence will design the architecture required to deliver it.
+            Select an experience. We'll architect the system to deliver it — with the world's finest technology.
           </p>
         </motion.div>
 
@@ -155,7 +155,7 @@ export default function ExperienceCategories() {
                       >
                         <div className="mt-5 pt-5 border-t border-graphite">
                           <p className="font-body text-xs tracking-wider uppercase text-muted-foreground mb-3">
-                            AI Recommendation
+                            System Architecture
                           </p>
                           <p className={`font-display text-lg font-semibold ${textColorMap[exp.color]} mb-3`}>
                             {exp.tier}

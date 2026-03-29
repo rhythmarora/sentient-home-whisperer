@@ -4,23 +4,23 @@ import { Link } from "react-router-dom";
 const philosophyBlocks = [
   {
     title: "Sound", color: "cinema",
-    body: "We believe sound should be accurate, not exaggerated. Every system we design starts with the truth — what the artist intended. No hype, no gimmicks, just precision.",
-    micro: "PMC",
+    body: "We choose speakers that reveal the truth of a recording — not ones that artificially color it. PMC monitors are used in Abbey Road, and they're in our cinemas too. When you hear a voice, you hear the breath behind it.",
+    micro: "PMC · Wisdom Audio · BEC Acoustique",
   },
   {
     title: "Bass", color: "music",
-    body: "Bass should integrate seamlessly into the room — felt in the chest, never boomy, never localized. A great subwoofer disappears. You only notice when it's off.",
-    micro: "REL",
+    body: "Bass should integrate seamlessly into the room — felt in the chest, never boomy, never localized. REL subwoofers don't just play bass — they pressurize the room. You only notice when they're off.",
+    micro: "REL Acoustics",
   },
   {
     title: "Control", color: "social",
-    body: "Technology should disappear behind a single, intuitive interface. One touch. Everything responds. No apps to learn, no remotes to find.",
-    micro: "Crestron",
+    body: "Technology should disappear behind a single, intuitive interface. One touch dims the lights, lowers the shades, starts the film. Your grandmother should be able to use it. If a system needs an instruction manual, we haven't done our job.",
+    micro: "Crestron · RTI · Lutron",
   },
   {
-    title: "Experience", color: "relax",
-    body: "For select spaces, we design fully immersive environments — where sound, light, and architecture merge into something you feel in your entire body.",
-    micro: "Meyer Sound",
+    title: "Immersion", color: "relax",
+    body: "For select spaces, we design fully immersive environments using Constellation by Meyer Sound — active acoustics that transform a room's sonic character in real time. The only residential demo in the Indian subcontinent is at our Experience Center.",
+    micro: "Meyer Sound · Constellation",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function SystemPhilosophy() {
                   {block.body}
                 </p>
                 <p className="font-body text-xs text-muted-foreground italic">
-                  Micro: {block.micro}
+                  Powered by: {block.micro}
                 </p>
               </div>
             </motion.div>

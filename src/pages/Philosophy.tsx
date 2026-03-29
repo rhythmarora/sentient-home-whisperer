@@ -5,27 +5,27 @@ const sections = [
   {
     title: "Sound",
     principle: "Accuracy over exaggeration",
-    description: "We choose speakers that reveal the truth of a recording — not ones that artificially color it. When you hear a voice, you hear the breath behind it. When you hear an orchestra, you hear the room it was recorded in. This is what separates hi-fi from loud.",
+    description: "We choose speakers that reveal the truth of a recording — not ones that artificially color it. PMC monitors are used in Abbey Road Studios, and they're in our cinemas too. When you hear a voice, you hear the breath behind it. When you hear an orchestra, you hear the room it was recorded in. This is what separates hi-fi from loud.",
   },
   {
     title: "Bass",
     principle: "Integration over loudness",
-    description: "Bass isn't about how hard a subwoofer hits. It's about how seamlessly low frequencies blend with mids and highs, how the room disappears, and how you feel the music in your chest without ever hearing a subwoofer. This is the art of bass management.",
+    description: "Bass isn't about how hard a subwoofer hits. It's about how seamlessly low frequencies blend with mids and highs, how the room disappears, and how you feel the music in your chest without ever hearing a subwoofer. REL subwoofers don't add bass — they pressurize the room. You only notice when they're off.",
   },
   {
     title: "Control",
     principle: "Simplicity over complexity",
-    description: "The best automation is the kind you forget exists. One touch dims the lights, lowers the shades, starts the film. Your grandmother should be able to use it. If a system needs an instruction manual, we haven't done our job.",
+    description: "The best automation is the kind you forget exists. One touch dims the Lutron lights, lowers the shades, starts the film — all through Crestron. Your grandmother should be able to use it. If a system needs an instruction manual, we haven't done our job.",
   },
   {
     title: "Design",
     principle: "Invisible technology",
-    description: "Speakers that vanish into walls. Equipment rooms hidden behind panels. Touchscreens that blend with interiors. Technology should enhance a space — never dominate it. The best system is one you never see.",
+    description: "BEC Acoustique speakers vanish into walls. Wisdom Audio arrays disappear behind acoustic fabric. Equipment rooms hide behind panels. Touchscreens blend with interiors. Technology should enhance a space — never dominate it. The best system is one you never see.",
   },
   {
-    title: "Integration",
-    principle: "Everything works together",
-    description: "A Qubix home isn't a collection of devices — it's a living ecosystem. Your cinema talks to your lighting. Your music follows you room to room. Your security system knows when you're home. Every layer is connected, every system aware.",
+    title: "Immersion",
+    principle: "Constellation acoustics",
+    description: "For select spaces, we deploy Constellation by Meyer Sound — the world's most advanced active acoustics system. It transforms a room's sonic character in real time: from an intimate jazz club to a concert hall, at the touch of a button. Ours is the only residential demo in the Indian subcontinent. This isn't a feature. It's a paradigm shift.",
   },
 ];
 
