@@ -15,6 +15,7 @@ import Brands from "./pages/Brands";
 import BrandLanding from "./pages/BrandLanding";
 import Products from "./pages/Products";
 import DesignYourHome from "./pages/DesignYourHome";
+import Commercial from "./pages/Commercial";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/products" element={<Products />} />
           <Route path="/products/:slug" element={<Products />} />
           <Route path="/design" element={<DesignYourHome />} />
+          <Route path="/commercial" element={<Commercial />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
