@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import { brandLogos } from "@/data/brandLogos";
 import { experienceBrands } from "@/data/experienceBrands";
+import { brandPages } from "@/data/brandPages";
 
 export default function BrandShowcase() {
   return (
@@ -27,24 +29,17 @@ export default function BrandShowcase() {
         </motion.div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
-          {experienceBrands.map((brand, i) => {
+        {experienceBrands.map((brand, i) => {
             const logo = brandLogos[brand.logoKey];
-            return (
-              <motion.a
-                key={brand.name}
-                href={brand.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: i * 0.02 }}
-                className="group relative flex flex-col items-center justify-between p-5 md:p-6 rounded-sm border border-border/60 bg-card/40 hover:border-primary/30 hover:bg-card/80 transition-all duration-300"
-              >
-                {/* External link icon */}
-                <ExternalLink className="absolute top-3 right-3 w-3 h-3 text-muted-foreground/0 group-hover:text-muted-foreground/60 transition-all duration-300" />
+            // Check if brand has an internal landing page
+            const slug = Object.keys(brandPages).find(
+              (key) => brandPages[key].name === brand.name
+            );
+            const isInternal = !!slug;
 
-                {/* Logo */}
+            const tileContent = (
+              <>
+                <ExternalLink className="absolute top-3 right-3 w-3 h-3 text-muted-foreground/0 group-hover:text-muted-foreground/60 transition-all duration-300" />
                 <div className="h-10 md:h-12 flex items-center justify-center mb-4 w-full">
                   {logo ? (
                     <img
@@ -58,16 +53,42 @@ export default function BrandShowcase() {
                     </span>
                   )}
                 </div>
-
-                {/* Brand name */}
                 <p className="font-display text-xs md:text-sm font-semibold text-foreground mb-1 text-center">
                   {brand.name}
                 </p>
-
-                {/* USP */}
                 <p className="font-body text-[10px] md:text-xs text-muted-foreground text-center leading-relaxed">
                   {brand.usp}
                 </p>
+              </>
+            );
+
+            const tileClass = "group relative flex flex-col items-center justify-between p-5 md:p-6 rounded-sm border border-border/60 bg-card/40 hover:border-primary/30 hover:bg-card/80 transition-all duration-300";
+
+            return isInternal ? (
+              <motion.div
+                key={brand.name}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: i * 0.02 }}
+              >
+                <Link to={`/brands/${slug}`} className={tileClass}>
+                  {tileContent}
+                </Link>
+              </motion.div>
+            ) : (
+              <motion.a
+                key={brand.name}
+                href={brand.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: i * 0.02 }}
+                className={tileClass}
+              >
+                {tileContent}
               </motion.a>
             );
           })}
