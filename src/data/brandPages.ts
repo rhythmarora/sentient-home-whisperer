@@ -111,6 +111,11 @@ export const brandPages: Record<string, BrandPageData> = {
       { year: "2020", title: "Spacemap Go", description: "Immersive spatial audio tool launched, enabling real-time 3D sound design for performance and residential applications." },
       { year: "2024", title: "Qubix Constellation Demo — India", description: "Qubix opens India's first and only Constellation demonstration space, bringing Meyer Sound's active acoustics to the subcontinent." },
     ],
+    sources: [
+      { label: "Meyer Sound Official Website", url: "https://meyersound.com" },
+      { label: "Constellation Active Acoustics", url: "https://meyersound.com/product/constellation/" },
+    ],
+    instagramUrl: "https://www.instagram.com/maboroshiproductions/",
     seo: {
       title: "Meyer Sound India | Authorised Constellation Partner — Qubix",
       description: "Experience Meyer Sound in India. Qubix is the authorised Constellation partner with India's only active acoustics demo. Concert-hall precision for private residences — home cinema, immersive audio & Constellation systems.",
@@ -188,9 +193,15 @@ export const brandPages: Record<string, BrandPageData> = {
       { year: "2010", title: "fact Series Launch", description: "The fact (File Accuracy Confirmation Test) range bridges the gap between studio monitors and residential speakers." },
       { year: "2016", title: "Fenestria Unveiled", description: "PMC's flagship residential speaker launches — a 6-driver transmission line design that redefines what home speakers can achieve." },
       { year: "2020", title: "LAMINAIR™ Vent Technology", description: "PMC introduces LAMINAIR — an aerodynamically optimised vent that eliminates turbulence noise from the transmission line." },
-      { year: "2023", title: "Apple Music LA Facility", description: "Apple Music installs PMC speakers in their new Los Angeles mastering facility — the ultimate endorsement of PMC's accuracy." },
+      { year: "2025", title: "Apple Music LA Studio", description: "Apple Music opens a 15,000 sq ft next-gen studio complex in Culver City, LA — featuring a dedicated Spatial Audio mixing room with a 9.2.4 PMC speaker system." },
       { year: "2024", title: "Qubix PMC Demo Partnership — India", description: "Qubix becomes an authorised PMC demo partner, featuring dedicated PMC listening rooms in their Experience Center." },
     ],
+    sources: [
+      { label: "PMC Official Website — About", url: "https://pmc-speakers.com/about" },
+      { label: "Apple Music LA Studio with PMC — Audio Media International", url: "https://audiomediainternational.com/apple-music-launch-giant-next-gen-studio-complex-in-la-inc-live-stage-and-pmc-spatial-studio-room/" },
+      { label: "Abbey Road Studios — PMC Installation", url: "https://www.instagram.com/p/CQGNHEpM1ql/" },
+    ],
+    instagramUrl: "https://www.instagram.com/pmcspeakers/",
     seo: {
       title: "PMC Speakers India | Authorised Demo Partner — Qubix",
       description: "Experience PMC speakers in India. Qubix is an authorised PMC demo partner with dedicated listening rooms. From Abbey Road to your home — Fenestria, Prodigy & Dolby Atmos cinema systems for India's finest residences.",
