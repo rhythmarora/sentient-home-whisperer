@@ -1,128 +1,88 @@
 
 
-# Qubix HiFi — Premium AI-First Luxury AV Website
+# Experience Center — Dedicated Page Rebuild
 
-## Phase 1: Foundation & Design System
+## Overview
+Replace the current placeholder Experience Center page with a rich, vertically scrolling showcase of all demo zones. The page blends seamlessly with the site's dark luxury aesthetic while giving each zone its own identity.
 
-### Dark luxury design system
-- Dark cinematic palette (near-black backgrounds, gold/warm accents)
-- Large serif + sans-serif typography pairing
-- Smooth page transitions and scroll animations using Framer Motion
-- Custom CSS variables for gold highlights, glass effects, gradients
+## Page Structure
 
-### Layout components
-- Cinematic full-width hero sections
-- Elegant navigation with minimal UI (transparent header, burger menu on mobile)
-- Footer with luxury brand feel
+### 1. Hero Section
+- Full-screen cinematic hero: "Hear it. Feel it. Believe it."
+- Subline: "10 zones. One destination. The most immersive residential technology experience in India."
+- CTA: "Explore Zones" (scrolls to zone nav) + "Book a Private Session"
 
----
+### 2. Sticky Zone Navigator
+- Horizontal scrollable pill bar that sticks below the navbar on scroll
+- Lists all zone names as clickable anchors
+- Active zone highlights as user scrolls (IntersectionObserver)
+- Visual divider between Residential zones (first 7) and Enterprise zones (last 4)
+- Mobile: horizontally scrollable, compact
 
-## Phase 2: Database & Data Layer (Lovable Cloud)
+### 3. Zone Sections (Vertical Scroll — 14 zones)
 
-### Database tables
-- **brands** — name, slug, philosophy, why_qubix_uses, category_fit, logo_url, featured
-- **products** — name, slug, brand_id, category, short_description, features, specs (JSON), use_cases, image_url
-- **product_relationships** — product_id, related_product_id (for "works best with")
-- **projects** — name, slug, description, images, location, systems_used
-- **categories** — name, slug, icon, parent_category
-- **leads** — name, phone, email, budget_range, project_type, ai_journey_data (JSON), source
+Each zone is a full-width section with consistent structure:
+- **Colored accent line** at top (using category color system)
+- **Zone number** (01–14) in muted display text
+- **Zone name** (serif heading) + **"Powered by [Brand]"** subtle tag
+- **Editorial description** — experience-first storytelling copy
+- **Expandable "See the System" panel** — reveals full equipment list, room size, and technical details
+- Framer Motion whileInView stagger animations
 
-### Seed data
-- 5 brands: PMC, Crestron, Wharfedale, Meyer Sound, Sonance
-- ~20 products across speakers, amplifiers, projectors, processors, control systems, lighting, networking, security
-- 4 projects with cinematic storytelling descriptions
+#### Residential Tier Zones:
 
----
+| # | Zone Name | Color | Powered By | Key Detail |
+|---|-----------|-------|------------|------------|
+| 01 | Personal Stereo & DJ Studio | music (pink) | PMC, Lyngdorf, Pioneer | From 80sqft. Stereo + wireless DJ mixing |
+| 02 | Audiophile Living Room | cinema (indigo) | PMC CI90, McIntosh MHT300, TCL | No projector, no frills. Movies + music |
+| 03 | Family Home Theatre | cinema (indigo) | Artcoustic / Wharfedale M, Arcam, BenQ/SIM2 | 18x13, two system options |
+| 04 | Casual Surround Setup | social (amber) | Wharfedale Aura, Arcam | Tower + center + surround living room |
+| 05 | Value Atmos System | social (amber) | Wharfedale Diamond Inwall | Best value 5.1.2 Atmos |
+| 06 | Heritage Stereo Collection | music (pink) | Wharfedale Linton/Elysian, Luxman, Audiolab, B&W Formation Duo | Multiple stereo setups |
+| 07 | Casual & Architectural Audio | outdoor (cyan) | Cornered Audio, B&W AM1, Lithe, BEC, Sonos, Rotel | Ceiling, in-wall, casual |
+| 08 | Soundbar & Active Systems | performance (orange) | B&W Panorama, Sonos Arc Ultra, Devialet Phantom 7.7 Dante | Soundbars to ultimate active |
 
-## Phase 3: Experience-First Pages
+#### Enterprise Tier Zones (subtle "Enterprise" badge):
 
-### Homepage
-1. **Hero** — Full-screen cinematic with "Technology, designed to disappear." + [Design My Home] CTA
-2. **Experience Categories** — Cinema / Music / Living / Outdoor / Social / Invisible Tech as visual cards with hover effects
-3. **AI Entry** — "Your home. Imagined in minutes." with animated entrance
-4. **Flagship Brands** — PMC, Crestron, Wharfedale, Meyer Sound — editorial, not logo soup
-5. **Curated Ecosystem** — Smaller tiles for additional brands
-6. **Projects** — Cinematic horizontal scroll storytelling
-7. **System Philosophy** preview
-8. **Final CTA** — "Let's design your home."
+| # | Zone Name | Color | Powered By | Key Detail |
+|---|-----------|-------|------------|------------|
+| 09 | Digital TV Studio | connectivity (blue) | Multi-camera, live production | Podcasts, e-sports, streaming |
+| 10 | Ultimate HiFi Reference | music (pink) | PMC Prophecy i9, Classé Delta Pre + Monoblocks | Living-room-feel reference |
+| 11 | Command & Control Center | security (slate) | QuantIQ, MissionDesk, Cisco | NOC, SOC, AI surveillance, edge analytics |
+| 12 | The Immersive Room | cinema (indigo) | Meyer Sound, Trinnov, Lumagen, SIM2 | 40 speakers, 8 subs, 30x20ft, active acoustics |
 
-### Spaces Page
-- Visual grid: Home Theatre, Living Room, Bedroom, Outdoor, Lounge/Karaoke, Study
-- Each links to curated product/system recommendations
+### 4. Hidden in Plain Sight — Ambient Tech Section
+A horizontal scrolling showcase strip after the zones:
+- **Invisible Speakers** — plaster and paint over them
+- **Rolling LED Screen** — rolls up like a curtain
+- **Mirror TV** — display hidden behind a mirror
+- **Projection Mapping** — surfaces become screens
+- **McIntosh RS150/RS250** — HiFi all-in-one speakers
+- **Crestron Control Gallery** — touch panels, voice
+- **Collaboration Tech** — Neat, Cisco, Logitech, Wyrestorm, Shure, Biamp
+- **Interactive Digital Signage**
 
-### Systems Page
-- Grouped: Entertainment / Ambience / Infrastructure / Protection / Control
-- Each with editorial description + linked products
+Each as a compact card with icon, name, one-line description.
 
-### System Philosophy Page
-- Sound / Bass / Control / Design / Integration sections
-- Closing: "You don't see the system. You feel it."
+### 5. Visit / Book Section
+- Reuse existing visit details (location, hours, contact)
+- Prominent "Book a Private Session" CTA
+- "Every visit is curated. Bring your architect, your family."
 
-### Projects Page
-- Cinematic gallery with rich storytelling per project
-- Systems used, brand highlights
+## Technical Approach
 
-### Experience Center Page
-- Location, booking CTA, what to expect
-- Photo gallery
+### Files to create/edit:
+1. **`src/pages/ExperienceCenter.tsx`** — Complete rewrite with all sections
+2. **`src/components/experience/ZoneCard.tsx`** — Reusable zone card component with expand/collapse
+3. **`src/components/experience/ZoneNav.tsx`** — Sticky zone navigator with scroll-spy
+4. **`src/components/experience/AmbientTech.tsx`** — Hidden tech horizontal strip
 
-### Contact / Start Journey Page
-- Lead capture form (name, phone, email, budget range, project type)
-- Saves to leads table + triggers Zoho SalesIQ data pass
-
----
-
-## Phase 4: AI Experience Builder
-
-### "Design Your Home" — Conversational Flow
-- Powered by Lovable AI (edge function calling AI gateway)
-- Step-by-step inputs: home type → size → lifestyle → budget → priorities
-- AI generates personalized output: suggested rooms, experience zones, budget tier, system overview
-- Results stored in leads table
-- Beautiful card-based UI for the conversation, not a plain chatbox
-- CTA at end: "Talk to an Expert" (triggers Zoho + saves journey data)
-
----
-
-## Phase 5: SEO Discovery Layer
-
-### Brands Section
-- Individual brand pages from DB: philosophy, why Qubix uses them, featured products, project references
-- Editorial luxury tone
-
-### Products Section
-- Searchable, filterable product catalog
-- Filters: category, brand, use case
-- Product detail pages: luxury description → key features → collapsible specs → use cases → cross-links → inquiry CTA (never "Buy Now")
-
-### Global Search
-- Search across products + brands with instant results overlay
-
----
-
-## Phase 6: Zoho SalesIQ Integration
-
-- Embed widget script site-wide
-- Trigger rules: time on site >30s, scroll >50%, AI journey completion
-- Pass lead data (name, phone, email, budget, project type, AI responses) to Zoho
-- Tag: "Website Lead – HiFi"
-
----
-
-## Phase 7: Polish & Performance
-
-- Mobile-first responsive design across all pages
-- Lazy loading images, optimized animations
-- SEO meta tags, Open Graph, structured data
-- Page transition animations
-- Loading states with luxury skeleton screens
-
----
-
-## Key UX Principles Throughout
-- Experience leads, products support
-- No pricing, no "buy now", no dealer feel
-- Every CTA drives toward consultation
-- Luxury editorial voice in all copy
-- AI guides the journey, humans close it
+### Implementation details:
+- IntersectionObserver hook for scroll-spy active zone tracking
+- Each zone gets an `id` attribute for anchor navigation
+- AnimatePresence for expand/collapse on "See the System"
+- Zone data stored as a typed array constant (not in DB yet)
+- Enterprise zones get a subtle badge + slightly elevated border styling
+- Responsive: single column on mobile, zone nav becomes horizontal scroll
+- No heavy animations — learned from the performance fix
 
