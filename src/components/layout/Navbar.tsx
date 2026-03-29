@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Design Your Home", href: "/design" },
   { label: "Spaces", href: "/spaces" },
   { label: "Systems", href: "/systems" },
-  { label: "Commercial", href: "/commercial" },
+  
   { label: "Talk to an Expert", href: "/contact" },
 ];
 
