@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { brandLogos } from "@/data/brandLogos";
@@ -108,6 +109,25 @@ export default function ZoneCard({ zone }: { zone: Zone }) {
         >
           {zone.description}
         </motion.p>
+
+        {/* Constellation link */}
+        {zone.id === "constellation-room" && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.28 }}
+            className="mb-8"
+          >
+            <Link
+              to="/constellation"
+              className="inline-flex items-center gap-2 font-body text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+            >
+              Learn more about Constellation
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+        )}
 
         {/* Expand button */}
         <motion.button
