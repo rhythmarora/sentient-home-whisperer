@@ -24,26 +24,19 @@ export const experienceBrands: ExperienceBrand[] = [
   { name: "Classé", logoKey: "Classé", usp: "Reference-grade amplification with musical purity.", url: "https://www.classeaviation.com" },
 
   // Speakers & Audio
-  { name: "Wharfedale", logoKey: "Wharfedale", usp: "85 years of British loudspeaker heritage.", url: "https://www.wharfedale.co.uk" },
   { name: "Artcoustic", logoKey: "Artcoustic", usp: "Architectural speakers that double as art.", url: "https://www.artcoustic.com" },
   { name: "Bowers & Wilkins", logoKey: "Bowers & Wilkins", usp: "Iconic British sound trusted by studios worldwide.", url: "https://www.bowerswilkins.com" },
   { name: "Cornered Audio", logoKey: "Cornered Audio", usp: "Corner-mounted speakers that vanish into architecture.", url: "https://www.corneredaudio.com" },
-  { name: "K-Array", logoKey: "K-Array", usp: "Ultra-slim Italian speakers with extraordinary power.", url: "https://www.k-array.com" },
-  { name: "Devialet", logoKey: "Devialet", usp: "Phantom engineering — physics-defying active speakers.", url: "https://www.devialet.com" },
   { name: "Lithe Audio", logoKey: "Lithe Audio", usp: "Wireless ceiling speakers with zero-cable install.", url: "https://www.litheaudio.com" },
   { name: "BEC", logoKey: "BEC", usp: "Discreet architectural speakers for distributed sound systems.", url: "https://www.bec.uk.com" },
-  { name: "Sonos", logoKey: "Sonos", usp: "The simplest way to fill every room with music.", url: "https://www.sonos.com" },
 
   // Electronics & Processing
+  { name: "Classé", logoKey: "Classé", usp: "Reference-grade amplification with musical purity.", url: "https://www.classeaviation.com" },
   { name: "Lyngdorf", logoKey: "Lyngdorf", usp: "Digital amplification with RoomPerfect™ calibration.", url: "https://www.lyngdorf.com" },
-  { name: "Arcam", logoKey: "Arcam", usp: "British-engineered AV processing and amplification.", url: "https://www.arcam.co.uk" },
   { name: "Rotel", logoKey: "Rotel", usp: "Musical transparency through balanced engineering.", url: "https://www.rotel.com" },
-  { name: "Luxman", logoKey: "Luxman", usp: "Japanese precision craftsmanship since 1925.", url: "https://www.luxman.com" },
-  { name: "Audiolab", logoKey: "Audiolab", usp: "Refined British amplification for pure music.", url: "https://www.audiolab.co.uk" },
   { name: "Lumagen", logoKey: "Lumagen", usp: "Reference-grade video processing and scaling.", url: "https://www.lumagen.com" },
 
   // Display & Projection
-  { name: "SIM2", logoKey: "SIM2", usp: "Italian ultra-high-end laser projection.", url: "https://www.sim2.com" },
   { name: "BenQ", logoKey: "BenQ", usp: "Cinema-grade projection for home theatres.", url: "https://www.benq.com" },
   { name: "TCL", logoKey: "TCL", usp: "QD-Mini LED displays with stunning scale.", url: "https://www.tcl.com" },
 
