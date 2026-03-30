@@ -323,4 +323,96 @@ export const brandPages: Record<string, BrandPageData> = {
       { label: "Tell us about your home and vision", name: "message", type: "textarea", placeholder: "Describe your home, what systems you'd like to control, and how you envision your smart home experience." },
     ],
   },
+  "luxman": {
+    slug: "luxman",
+    name: "Luxman",
+    tagline: "90 years of Japanese audio perfection.",
+    heroSubtitle: "Since 1925, Luxman has defined what a truly musical amplifier sounds like. Qubix brings Japan's oldest and most revered audio manufacturer to discerning Indian homes — warm, effortless, and built to last generations.",
+    partnerBadge: "Authorised Luxman Partner — India",
+    logoKey: "Luxman",
+    founded: "1925",
+    headquarters: "Yokohama, Japan",
+    founders: "Kinoshita Radio Laboratory",
+    website: "https://www.luxman.com/en/",
+    about: [
+      "Luxman is Japan's oldest audio manufacturer, founded in 1925 as Kinoshita Radio Laboratory in Osaka. For nearly a century, the company has pursued a single-minded goal: to reproduce music with the warmth, texture, and emotional immediacy of a live performance.",
+      "Where many high-end brands chase clinical neutrality, Luxman takes a different path. Their amplifiers and players are engineered to be musically engaging — every listening session feels like an event, not an analytical exercise. This philosophy, rooted in the Japanese concept of 'ongaku' (the joy of music), permeates every product they make.",
+      "Luxman's vertically integrated manufacturing in Yokohama ensures total quality control. Every amplifier is hand-assembled by master technicians, each transformer wound in-house, and every unit individually tested and tuned before leaving the factory. The result is build quality and reliability that rivals Swiss watchmaking.",
+      "From their legendary vacuum tube amplifiers of the 1960s to today's reference-grade LECUA attenuator and ODNF feedback circuits, Luxman has consistently pioneered technologies that prioritise musical truth over specification sheets.",
+    ],
+    qubixRelationship: "Qubix is an authorised Luxman partner in India, offering dedicated listening sessions with Luxman integrated amplifiers, separates, and SACD/CD players at our Experience Center. We pair Luxman electronics with reference-grade loudspeakers to demonstrate their legendary warmth and musicality in purpose-built listening environments.",
+    technologies: [
+      {
+        name: "LECUA — Electronically Controlled Attenuator",
+        description: "Luxman's proprietary volume control uses precision resistor ladders switched electronically, eliminating the channel imbalance and noise of conventional potentiometers. The result is perfect tracking and transparency at any volume level.",
+      },
+      {
+        name: "ODNF — Only Distortion Negative Feedback",
+        description: "A unique feedback circuit that detects and corrects only the distortion component of the signal, leaving the original music untouched. This delivers vanishingly low distortion without the sonic penalties of conventional global feedback.",
+      },
+      {
+        name: "LxV-OT Vacuum Tube Technology",
+        description: "Luxman's modern vacuum tube circuits combine the harmonic richness and spatial magic of valves with the reliability and consistency demanded by today's audiophiles. Hand-selected tubes, point-to-point wiring, and custom-wound transformers.",
+      },
+      {
+        name: "Proprietary Transformer Design",
+        description: "Every power and output transformer is designed and wound in-house at Luxman's Yokohama factory. These custom transformers are the heart of Luxman's signature sound — enormous reserves of current delivery with zero mechanical hum.",
+      },
+      {
+        name: "Copper-Plated Chassis Construction",
+        description: "Luxman's chassis are copper-plated internally to provide superior electromagnetic shielding, eliminating interference and ensuring the purest possible signal path from input to output.",
+      },
+      {
+        name: "SACD / MQA-CD Playback",
+        description: "Luxman's digital players support high-resolution formats including SACD, MQA-CD, and DSD, with proprietary digital filtering and analogue output stages that rival dedicated DACs costing far more.",
+      },
+    ],
+    keyProducts: [
+      { name: "L-509Z", category: "Integrated Amplifier", description: "Flagship integrated amplifier with LECUA-EX volume control and ODNF 5.0 amplification. 120W per channel of pure Class-AB power — Luxman's finest single-box solution." },
+      { name: "L-595A SE", category: "Tube Integrated Amplifier", description: "Limited-edition vacuum tube integrated amplifier celebrating Luxman's heritage. Hand-selected EL34 output tubes deliver 30W of the most musical power in audio." },
+      { name: "M-10X", category: "Power Amplifier", description: "Reference stereo power amplifier with Luxman's LIFES 1.0 technology. 150W into 8 ohms of utterly effortless, room-filling power in a stunning chassis." },
+      { name: "C-10X", category: "Preamplifier", description: "Reference preamplifier with LECUA-EX attenuator and fully balanced signal path. The perfect control centre for an ultimate two-channel system." },
+      { name: "D-10X", category: "SACD/CD Player", description: "Reference disc player with proprietary LxDTM digital processing. Extracts every detail from SACD, MQA-CD, and standard Red Book CDs with breathtaking analogue warmth." },
+      { name: "L-507Z", category: "Integrated Amplifier", description: "The sweet spot of Luxman's range — 110W of ODNF 5.0 power with the same build quality and musical character as the flagship, in a more accessible package." },
+    ],
+    timeline: [
+      { year: "1925", title: "Founded in Osaka", description: "Kinoshita Radio Laboratory is established, beginning Japan's longest-running audio legacy." },
+      { year: "1961", title: "SQ-5A Tube Amplifier", description: "The legendary SQ-5A sets the standard for Japanese tube amplification and becomes a collector's icon." },
+      { year: "1975", title: "50th Anniversary — Golden Era", description: "Luxman's transistor amplifiers gain worldwide recognition, establishing the house sound of warmth and musicality." },
+      { year: "1987", title: "LECUA Volume Control", description: "Luxman introduces the Electronically Controlled Ultimate Attenuator, eliminating compromises in volume control transparency." },
+      { year: "1999", title: "ODNF Amplification", description: "Only Distortion Negative Feedback technology debuts, setting a new paradigm for low-distortion amplification without musical sacrifice." },
+      { year: "2015", title: "90th Anniversary", description: "Luxman celebrates 90 years with limited-edition products and a renewed commitment to vacuum tube excellence alongside solid-state innovation." },
+      { year: "2020", title: "LIFES 1.0 & M-10X", description: "The M-10X reference power amplifier debuts with LIFES technology — Luxman Integrated Feedback Engine System — their most advanced amplification circuit." },
+      { year: "2023", title: "L-509Z Flagship Integrated", description: "The L-509Z redefines the integrated amplifier category with ODNF 5.0 and LECUA-EX, proving a single box can rival the best separates." },
+    ],
+    sources: [
+      { label: "Luxman Official Website", url: "https://www.luxman.com/en/" },
+      { label: "Luxman History & Heritage", url: "https://www.luxman.com/en/history/" },
+      { label: "Stereophile — Luxman L-509X Review", url: "https://www.stereophile.com/content/luxman-l-509x-integrated-amplifier" },
+    ],
+    instagramUrl: "https://www.instagram.com/luxman_japan/",
+    seo: {
+      title: "Luxman India | Authorised Partner — Qubix",
+      description: "Experience Luxman amplifiers and players in India. Qubix is an authorised Luxman partner with dedicated listening rooms. Japanese audio perfection since 1925 — integrated amplifiers, tube amps, SACD players.",
+      h1: "Luxman India — 90 Years of Japanese Audio Perfection",
+    },
+    contactFormFields: [
+      { label: "Name", name: "name", type: "text", placeholder: "Your name", required: true },
+      { label: "Email", name: "email", type: "email", placeholder: "your@email.com", required: true },
+      { label: "Phone / WhatsApp", name: "phone", type: "tel", placeholder: "+91", required: true },
+      { label: "What interests you most?", name: "interest", type: "select", options: [
+        "Integrated Amplifier (L-509Z / L-507Z)",
+        "Vacuum Tube Amplifier",
+        "Reference Separates (C-10X / M-10X)",
+        "SACD / CD Player",
+        "Complete Luxman System",
+        "Visit for a Listening Session",
+        "Other / General Enquiry",
+      ], required: true },
+      { label: "Property Type", name: "propertyType", type: "select", options: [
+        "Apartment / Penthouse", "Villa / Bungalow / Independent Home", "Farmhouse / Weekend Home", "Commercial / Hospitality"
+      ] },
+      { label: "Tell us about your space and vision", name: "message", type: "textarea", placeholder: "Describe your listening room, the speakers you own or aspire to, and what you're looking for in a Luxman system." },
+    ],
+  },
 };
