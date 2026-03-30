@@ -99,6 +99,19 @@ export default function ZoneCard({ zone }: { zone: Zone }) {
           {zone.tagline}
         </motion.p>
 
+        {/* Hero image placeholder */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.22 }}
+          className="w-full aspect-[21/9] rounded-sm bg-muted/30 border border-border/40 mb-8 flex items-center justify-center overflow-hidden"
+        >
+          <span className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground/50">
+            Zone Image — {zone.name}
+          </span>
+        </motion.div>
+
         {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
