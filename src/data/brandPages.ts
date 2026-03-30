@@ -8,6 +8,7 @@ export interface BrandProduct {
   name: string;
   category: string;
   description: string;
+  slug?: string;
 }
 
 export interface BrandTechnology {
