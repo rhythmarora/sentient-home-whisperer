@@ -8,6 +8,7 @@ export interface BrandProduct {
   name: string;
   category: string;
   description: string;
+  slug?: string;
 }
 
 export interface BrandTechnology {
@@ -368,7 +369,7 @@ export const brandPages: Record<string, BrandPageData> = {
       },
     ],
     keyProducts: [
-      { name: "L-509Z", category: "Integrated Amplifier", description: "Flagship integrated amplifier with LECUA-EX volume control and ODNF 5.0 amplification. 120W per channel of pure Class-AB power — Luxman's finest single-box solution." },
+      { name: "L-509Z", category: "Integrated Amplifier", description: "Flagship integrated amplifier with LECUA-EX volume control and ODNF 5.0 amplification. 120W per channel of pure Class-AB power — Luxman's finest single-box solution.", slug: "luxman-l-509z" },
       { name: "L-595A SE", category: "Tube Integrated Amplifier", description: "Limited-edition vacuum tube integrated amplifier celebrating Luxman's heritage. Hand-selected EL34 output tubes deliver 30W of the most musical power in audio." },
       { name: "M-10X", category: "Power Amplifier", description: "Reference stereo power amplifier with Luxman's LIFES 1.0 technology. 150W into 8 ohms of utterly effortless, room-filling power in a stunning chassis." },
       { name: "C-10X", category: "Preamplifier", description: "Reference preamplifier with LECUA-EX attenuator and fully balanced signal path. The perfect control centre for an ultimate two-channel system." },
