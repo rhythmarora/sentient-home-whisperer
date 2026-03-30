@@ -178,25 +178,37 @@ function BrandProducts({ brand }: { brand: typeof brandPages[string] }) {
         </motion.div>
 
         <div className="space-y-4">
-          {brand.keyProducts.map((product, i) => (
-            <motion.div
-              key={product.name}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
-              className="group flex flex-col sm:flex-row sm:items-center gap-4 p-6 rounded-sm border border-border bg-card hover:border-primary/30 transition-colors duration-300"
-            >
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="font-display text-lg font-medium">{product.name}</h3>
-                  <span className="px-2 py-0.5 text-xs font-body tracking-wider uppercase bg-primary/10 text-primary rounded-sm">{product.category}</span>
-                </div>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{product.description}</p>
-              </div>
-              <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0 hidden sm:block" />
-            </motion.div>
-          ))}
+          {brand.keyProducts.map((product, i) => {
+            const Wrapper = product.slug ? Link : "div";
+            const wrapperProps = product.slug ? { to: `/product/${product.slug}` } : {};
+            return (
+              <motion.div
+                key={product.name}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06 }}
+              >
+                <Wrapper
+                  {...(wrapperProps as any)}
+                  className={`group flex flex-col sm:flex-row sm:items-center gap-4 p-6 rounded-sm border border-border bg-card hover:border-primary/30 transition-colors duration-300 ${product.slug ? "cursor-pointer block" : ""}`}
+                >
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="font-display text-lg font-medium">{product.name}</h3>
+                      <span className="px-2 py-0.5 text-xs font-body tracking-wider uppercase bg-primary/10 text-primary rounded-sm">{product.category}</span>
+                    </div>
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed">{product.description}</p>
+                  </div>
+                  {product.slug ? (
+                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0 hidden sm:block" />
+                  ) : (
+                    <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0 hidden sm:block" />
+                  )}
+                </Wrapper>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
