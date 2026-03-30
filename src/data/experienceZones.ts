@@ -124,9 +124,9 @@ export const zones: Zone[] = [
     color: "hsl(var(--music))",
     glowClass: "glow-music",
     poweredBy: ["PMC", "Lyngdorf", "Pioneer"],
-    tagline: "Your escape. Your music. Your rules.",
+    tagline: "A private HiFi room. Fits in 80 square feet.",
     description:
-      "If you like to listen to music alone — or explore our small room systems optimised for individual and small group listening. And when you listen alone, why not mix your own music? Our individual stereo systems can be upgraded with Professional Wireless DJ Mixers — so bring out that DJ in you, in the comfort of your own home, where you are the audience and the performance. Take an escape, and immerse yourself in pure stereo HiFi music.",
+      "Not everyone needs a home theatre. Some people just want a room where music sounds incredible — a personal listening space with reference-grade stereo, room correction, and zero distractions. We build compact HiFi rooms starting from just 80 sqft. Add a wireless DJ console and it doubles as your private mixing studio. No audience required.",
     roomSize: "From 80 sqft",
     systems: [
       { name: "PMC Prodigy Bookshelf / Towers", details: "Reference-grade compact stereo speakers" },
