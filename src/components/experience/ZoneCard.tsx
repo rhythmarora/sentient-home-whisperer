@@ -118,7 +118,6 @@ export default function ZoneCard({ zone }: { zone: Zone }) {
               Zone Image — {zone.name}
             </span>
           )}
-          </span>
         </motion.div>
 
         {/* Description */}
