@@ -105,11 +105,19 @@ export default function ZoneCard({ zone }: { zone: Zone }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.22 }}
-          className="w-full aspect-[21/9] rounded-sm bg-muted/30 border border-border/40 mb-8 flex items-center justify-center overflow-hidden"
+          className="w-full aspect-[21/9] rounded-sm border border-border/40 mb-8 flex items-center justify-center overflow-hidden bg-muted/30"
         >
-          <span className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground/50">
-            Zone Image — {zone.name}
-          </span>
+          {zone.heroImage ? (
+            <img
+              src={zone.heroImage}
+              alt={zone.name}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <span className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground/50">
+              Zone Image — {zone.name}
+            </span>
+          )}
         </motion.div>
 
         {/* Description */}
