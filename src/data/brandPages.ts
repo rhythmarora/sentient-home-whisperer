@@ -416,4 +416,98 @@ export const brandPages: Record<string, BrandPageData> = {
       { label: "Tell us about your space and vision", name: "message", type: "textarea", placeholder: "Describe your listening room, the speakers you own or aspire to, and what you're looking for in a Luxman system." },
     ],
   },
+  "bowers-and-wilkins": {
+    slug: "bowers-and-wilkins",
+    name: "Bowers & Wilkins",
+    tagline: "True sound. Nothing more, nothing less.",
+    heroSubtitle: "For over half a century, Bowers & Wilkins has set the benchmark for loudspeaker engineering. From Abbey Road Studios to the world's finest homes — the pursuit of true sound, perfected. Qubix is your authorised Bowers & Wilkins partner in India.",
+    partnerBadge: "Authorised Bowers & Wilkins Partner — India",
+    logoKey: "Bowers & Wilkins",
+    founded: "1966",
+    headquarters: "Worthing, England, UK",
+    founders: "John Bowers & Roy Wilkins",
+    website: "https://www.bowerswilkins.com",
+    instagramUrl: "https://www.instagram.com/baborswilkins/",
+    about: [
+      "Bowers & Wilkins was founded in 1966 by John Bowers with a singular obsession: to reproduce recorded music as faithfully as possible to the original performance. That obsession has driven over five decades of relentless loudspeaker innovation — from the legendary DM70 to today's flagship 800 Series Diamond.",
+      "The 800 Series has been the reference monitor at Abbey Road Studios since 1979, the loudspeaker of choice for some of the most important recordings in history. Every 800 Series speaker is hand-assembled in the company's Worthing, England facility — a testament to craft in an age of mass production.",
+      "Beyond the iconic floor-standing towers, Bowers & Wilkins has pioneered architectural speakers that bring reference-quality sound into walls and ceilings without visual compromise. Their CI (Custom Installation) range is the gold standard for luxury residential integration.",
+      "In 2023, Bowers & Wilkins introduced the 700 S3 Signature series, bringing many of the 800 Series technologies — including Continuum™ cones and Tweeter-on-Top — to a more accessible form factor, without sacrificing the sonic purity the brand is known for.",
+    ],
+    qubixRelationship: "Qubix is an authorised Bowers & Wilkins partner in India, offering dedicated listening sessions at our Experience Center. Our specialists understand every model in the range — from the architectural CI series to the flagship 800 Series Diamond — and design complete systems that bring true sound into Indian homes.",
+    technologies: [
+      {
+        name: "Continuum™ Cone",
+        description: "Bowers & Wilkins' proprietary midrange cone material eliminates the break-up modes of conventional drivers. The result is a midrange of extraordinary clarity — voices and instruments rendered with lifelike presence and zero coloration.",
+      },
+      {
+        name: "Diamond Dome Tweeter",
+        description: "A tweeter dome formed from chemical vapour-deposited diamond — the hardest known material. It extends the frequency response far beyond human hearing, ensuring zero distortion across the entire audible range and effortless high-frequency detail.",
+      },
+      {
+        name: "Tweeter-on-Top™",
+        description: "Decoupling the tweeter from the main cabinet and mounting it atop a solid body eliminates cabinet-edge diffraction, delivering a point-source of high-frequency energy with perfect dispersion and imaging.",
+      },
+      {
+        name: "Aerofoil™ Bass Cone",
+        description: "A composite bass cone with a variable-thickness cross-section — thicker at the centre, thinner at the edges — engineered using finite-element analysis to deliver deep, controlled bass with zero cone flex.",
+      },
+      {
+        name: "Flowport™",
+        description: "A dimpled bass reflex port inspired by golf-ball aerodynamics. The textured surface reduces turbulence at the port exit, eliminating port noise and delivering cleaner, faster bass response.",
+      },
+      {
+        name: "Matrix™ Cabinet Construction",
+        description: "An interlocking internal bracing structure that makes the cabinet walls virtually inert. No energy is wasted as cabinet vibration — every watt drives the drivers, not the enclosure.",
+      },
+    ],
+    keyProducts: [
+      { name: "801 D4", category: "Floorstanding", description: "The flagship loudspeaker. Four-way design with Diamond dome tweeter, Continuum FST midrange, and twin Aerofoil bass drivers. The reference standard at Abbey Road Studios." },
+      { name: "802 D4", category: "Floorstanding", description: "The most popular 800 Series speaker. Three-way design delivering the full 800 Series experience in a slightly more compact form — without any sonic compromise." },
+      { name: "805 D4", category: "Standmount", description: "The world's finest standmount speaker. Diamond tweeter, Continuum midrange/bass driver, and Tweeter-on-Top design in a compact, room-friendly enclosure." },
+      { name: "700 S3 Signature", category: "Series", description: "Signature-edition speakers featuring upgraded crossovers, Midnight Blue Metallic finish, and technologies trickled down from the 800 Series — at a more accessible price point." },
+      { name: "CI 800 Series", category: "Architectural", description: "Reference-grade in-wall and in-ceiling speakers using the same drivers and engineering as the 800 Series. True high-fidelity sound, invisible in the architecture." },
+      { name: "Formation Suite", category: "Wireless", description: "A family of wireless speakers, soundbars, and subwoofers delivering Bowers & Wilkins sound quality with seamless multi-room connectivity and zero-latency synchronisation." },
+    ],
+    timeline: [
+      { year: "1966", title: "Founded in Worthing", description: "John Bowers and Roy Wilkins establish Bowers & Wilkins in Worthing, England, with a mission to build the world's most accurate loudspeakers." },
+      { year: "1974", title: "The DM6 arrives", description: "The DM6 introduces the first use of Kevlar® cones in a loudspeaker — a material innovation that would define the brand for decades." },
+      { year: "1979", title: "Abbey Road adopts 801", description: "Abbey Road Studios selects the 801 as its reference monitor, beginning a partnership that continues to this day." },
+      { year: "1993", title: "Nautilus™ launched", description: "The radical Nautilus speaker is unveiled — a no-compromise design with tapering tubes to eliminate rear-wave interference. It redefines what a loudspeaker can be." },
+      { year: "2005", title: "Diamond Dome Tweeter", description: "Bowers & Wilkins introduces its first diamond dome tweeter in the 800 Series, setting a new benchmark for high-frequency reproduction." },
+      { year: "2010", title: "PM1 and Society of Sound", description: "The PM1 standmount introduces new materials science, while the Society of Sound streaming platform showcases the brand's commitment to music." },
+      { year: "2018", title: "700 Series reinvented", description: "The 700 Series is completely redesigned with trickle-down technology from the 800 Series, making flagship performance more accessible." },
+      { year: "2021", title: "800 Series Diamond — D4 generation", description: "The fourth generation of the 800 Series Diamond is launched, featuring a revised Continuum cone, biomimetic suspension, and a new reverse-wrap cabinet design." },
+      { year: "2023", title: "700 S3 Signature", description: "The Signature edition brings upgraded crossover components and exclusive Midnight Blue Metallic finish to the acclaimed 700 Series platform." },
+    ],
+    sources: [
+      { label: "Bowers & Wilkins — Official Website", url: "https://www.bowerswilkins.com" },
+      { label: "800 Series Diamond — Product Page", url: "https://www.bowerswilkins.com/800-series-diamond" },
+      { label: "The Story — Bowers & Wilkins Heritage", url: "https://www.bowerswilkins.com/story" },
+      { label: "What Hi-Fi — 802 D4 Review", url: "https://www.whathifi.com/bowers-and-wilkins/802-d4/review" },
+    ],
+    seo: {
+      title: "Bowers & Wilkins India | Authorised Partner — Qubix",
+      description: "Experience Bowers & Wilkins 800 Series Diamond, 700 Series, and CI architectural speakers in India. Authorised partner — private listening sessions at the Qubix Experience Center.",
+      h1: "Bowers & Wilkins — True Sound, Perfected",
+    },
+    contactFormFields: [
+      { label: "Name", name: "name", type: "text", placeholder: "Your name", required: true },
+      { label: "Email", name: "email", type: "email", placeholder: "your@email.com", required: true },
+      { label: "Phone / WhatsApp", name: "phone", type: "tel", placeholder: "+91", required: true },
+      { label: "What interests you most?", name: "interest", type: "select", options: [
+        "800 Series Diamond (801 / 802 / 803 / 805)",
+        "700 S3 Signature",
+        "CI Architectural Speakers",
+        "Formation Wireless",
+        "Complete Home Cinema System",
+        "Visit for a Listening Session",
+        "Other / General Enquiry",
+      ], required: true },
+      { label: "Property Type", name: "propertyType", type: "select", options: [
+        "Apartment / Penthouse", "Villa / Bungalow / Independent Home", "Farmhouse / Weekend Home", "Commercial / Hospitality"
+      ] },
+      { label: "Tell us about your space and vision", name: "message", type: "textarea", placeholder: "Describe your room, your current speakers, and what you're looking for in a Bowers & Wilkins system." },
+    ],
+  },
 };
