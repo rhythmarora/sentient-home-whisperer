@@ -1,17 +1,23 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
+const heroVideoUrl = "/__l5e/assets-v1/820f36a5-20a6-47ed-bacc-1e9272afbd7b/hero-bg.mp4";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden film-grain">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
-
-      {/* Floating ambient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-cinema/5 blur-[120px]" />
-      <div className="absolute top-1/3 right-1/4 w-[350px] h-[350px] rounded-full bg-music/5 blur-[120px]" />
-      <div className="absolute bottom-1/4 left-1/2 w-[300px] h-[300px] rounded-full bg-relax/5 blur-[120px]" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+          src={heroVideoUrl}
+        />
+        <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
+      </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <motion.p
