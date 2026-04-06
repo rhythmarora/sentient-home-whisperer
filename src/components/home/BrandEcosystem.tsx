@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { brandLogos } from "@/data/brandLogos";
 
 const flagshipBrands = [
   {
@@ -140,9 +141,19 @@ export default function BrandEcosystem() {
                 to={`/brands/${brand.slug}`}
                 className={`group block p-6 rounded-sm bg-carbon border border-graphite border-t-2 ${colorBorderMap[brand.color]} hover:bg-carbon/80 transition-all duration-300`}
               >
-                <h3 className={`font-display text-2xl font-bold ${textMap[brand.color]} mb-2`}>
-                  {brand.name}
-                </h3>
+                <div className="h-10 flex items-center mb-4">
+                  {brandLogos[brand.name] ? (
+                    <img
+                      src={brandLogos[brand.name]}
+                      alt={brand.name}
+                      className="h-7 md:h-8 w-auto max-w-[130px] object-contain brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  ) : (
+                    <h3 className={`font-display text-2xl font-bold ${textMap[brand.color]}`}>
+                      {brand.name}
+                    </h3>
+                  )}
+                </div>
                 {brand.note && (
                   <span className="font-body text-xs text-relax italic">{brand.note}</span>
                 )}
@@ -194,7 +205,17 @@ export default function BrandEcosystem() {
                     key={b.name}
                     className={`group p-4 rounded-sm bg-carbon/60 border border-graphite ${ecoBorderMap[cat.color]} transition-all duration-300`}
                   >
-                    <p className="font-display text-base font-semibold">{b.name}</p>
+                    <div className="h-8 flex items-center mb-2">
+                      {brandLogos[b.name] ? (
+                        <img
+                          src={brandLogos[b.name]}
+                          alt={b.name}
+                          className="h-5 md:h-6 w-auto max-w-[100px] object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                        />
+                      ) : (
+                        <p className="font-display text-base font-semibold">{b.name}</p>
+                      )}
+                    </div>
                     <p className="font-body text-xs text-silver mt-1">{b.desc}</p>
                   </div>
                 ))}
