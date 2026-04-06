@@ -1,54 +1,61 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const stories = [
   {
     line1: "Not a home theatre.",
     line2: "A private cinema.",
     color: "cinema",
-    gradient: "radial-gradient(ellipse at center, hsl(239 84% 67% / 0.08), transparent 70%)",
   },
   {
     line1: "Not active speakers.",
     line2: "Constellation acoustics.",
     color: "music",
-    gradient: "radial-gradient(ellipse at center, hsl(330 81% 60% / 0.08), transparent 70%)",
   },
   {
     line1: "Not smart home.",
     line2: "Home orchestration.",
     color: "social",
-    gradient: "radial-gradient(ellipse at center, hsl(38 92% 50% / 0.08), transparent 70%)",
   },
   {
     line1: "The technology",
     line2: "you never see.",
     color: "relax",
-    gradient: "radial-gradient(ellipse at center, hsl(160 84% 39% / 0.08), transparent 70%)",
   },
 ];
 
-const dividerColorMap: Record<string, string> = {
-  cinema: "bg-cinema", music: "bg-music", social: "bg-social", relax: "bg-relax",
+const gradientMap: Record<string, string> = {
+  cinema: "radial-gradient(ellipse at center, hsl(239 84% 67% / 0.08), transparent 70%)",
+  music: "radial-gradient(ellipse at center, hsl(330 81% 60% / 0.08), transparent 70%)",
+  social: "radial-gradient(ellipse at center, hsl(38 92% 50% / 0.08), transparent 70%)",
+  relax: "radial-gradient(ellipse at center, hsl(160 84% 39% / 0.08), transparent 70%)",
 };
 
 export default function CinematicStory() {
-  return (
-    <section>
-      {stories.map((story, i) => (
-        <div
-          key={i}
-          className="min-h-screen flex items-center justify-center relative overflow-hidden"
-          style={{ background: story.gradient }}
-        >
-          {/* Colored divider at top */}
-          <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-12 h-0.5 ${dividerColorMap[story.color]}`} />
+  const [active, setActive] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % stories.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const story = stories[active];
+
+  return (
+    <section
+      className="py-32 lg:py-40 flex items-center justify-center relative overflow-hidden"
+      style={{ background: gradientMap[story.color] }}
+    >
+      <div className="text-center px-6 min-h-[200px] flex flex-col items-center justify-center">
+        <AnimatePresence mode="wait">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-20%" }}
-            transition={{ duration: 0.8 }}
-            className="text-center px-6"
+            key={active}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.6 }}
           >
             <p className="font-display text-4xl md:text-7xl font-medium text-platinum/60 mb-2">
               {story.line1}
@@ -57,8 +64,21 @@ export default function CinematicStory() {
               {story.line2}
             </p>
           </motion.div>
+        </AnimatePresence>
+
+        {/* Progress dots */}
+        <div className="flex gap-2 mt-12">
+          {stories.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`h-1.5 rounded-full transition-all duration-500 ${
+                i === active ? "w-8 bg-gradient-vibrant" : "w-1.5 bg-graphite"
+              }`}
+            />
+          ))}
         </div>
-      ))}
+      </div>
     </section>
   );
 }
