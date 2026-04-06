@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const projects = [
   {
     title: "The Oberoi Residence",
-    location: "Mumbai",
+    location: "Bangalore",
     description: "A 12,000 sq ft penthouse transformed into a cinematic sanctuary — with a Dolby Atmos private theatre, whole-home audio across 14 zones, and lighting that shifts with the sun.",
     systems: ["Cinema", "Audio", "Lighting", "Automation"],
     slug: "oberoi-residence",
