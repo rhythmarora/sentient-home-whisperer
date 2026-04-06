@@ -234,7 +234,7 @@ export default function Constellation() {
             transition={{ delay: 0.25 }}
             className="font-body text-sm text-primary font-medium mb-10"
           >
-            Experience it at The Constellation Room — Qubix Experience Center, Mumbai
+            Experience it at The Constellation Room — Qubix Experience Center, Bangalore
           </motion.p>
 
           <motion.div
