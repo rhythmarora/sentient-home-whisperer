@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const projects = [
   {
     title: "The Oberoi Residence",
-    location: "Mumbai",
+    location: "Bangalore",
     area: "12,000 sq ft",
     type: "Penthouse",
-    description: "A cinematic sanctuary high above Mumbai's skyline. A 9.4.6 Dolby Atmos private theatre anchors this penthouse, while 14 audio zones carry music from the master suite to the terrace. Crestron automation orchestrates lighting, climate, and entertainment — all from a single, elegant interface.",
+    description: "A cinematic sanctuary high above Bangalore's skyline. A 9.4.6 Dolby Atmos private theatre anchors this penthouse, while 14 audio zones carry music from the master suite to the terrace. Crestron automation orchestrates lighting, climate, and entertainment — all from a single, elegant interface.",
     systems: ["Dolby Atmos Cinema", "14-Zone Audio", "Crestron Automation", "Lutron Lighting", "Security"],
     slug: "oberoi-residence",
   },
