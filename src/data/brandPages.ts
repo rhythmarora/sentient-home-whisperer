@@ -60,7 +60,7 @@ export const brandPages: Record<string, BrandPageData> = {
     slug: "meyer-sound",
     name: "Meyer Sound",
     tagline: "The world's finest sound — engineered for your home.",
-    heroSubtitle: "From the Sydney Opera House to your living room — and your private nightclub. Qubix is India's authorised Constellation partner, bringing Meyer Sound's legendary concert-hall technology to private residences, party rooms, and entertainment spaces.",
+    heroSubtitle: "From Jazz at Lincoln Center to your living room — and your private nightclub. Qubix is India's authorised Constellation partner, bringing Meyer Sound's legendary concert-hall technology to private residences, party rooms, and entertainment spaces.",
     partnerBadge: "Authorised Constellation Partner — India",
     logoKey: "Meyer Sound",
     founded: "1979",
@@ -68,7 +68,7 @@ export const brandPages: Record<string, BrandPageData> = {
     founders: "John & Helen Meyer",
     website: "https://meyersound.com",
     about: [
-      "Meyer Sound Laboratories is the gold standard in professional audio. For over four decades, Meyer Sound systems have defined the listening experience in the world's most demanding venues — from the Sydney Opera House and the Berlin Philharmonie to Coachella and Broadway.",
+      "Meyer Sound Laboratories is the gold standard in professional audio. For over four decades, Meyer Sound systems have defined the listening experience in the world's most demanding venues — from Jazz at Lincoln Center and the Berlin Philharmonie to Coachella and Broadway.",
       "What sets Meyer Sound apart is an obsessive commitment to accuracy. Every loudspeaker is designed, engineered, and manufactured in Berkeley, California, with a vertically integrated approach that controls every variable from transducer design to DSP algorithms.",
       "With Constellation — their revolutionary active acoustics platform — Meyer Sound has made it possible to transform the acoustic character of any room at the touch of a button. A living room can sound like a jazz club, a cathedral, or a concert hall. This isn't post-processing or reverb effects — it's real-time acoustic reinvention using precisely placed microphones, processors, and loudspeakers.",
       "Beyond cinemas and listening rooms, Meyer Sound systems are increasingly found in private party rooms, home nightclubs, and social entertainment spaces — where owners want the same visceral impact they experience at the world's best clubs and festivals, but in their own home.",
