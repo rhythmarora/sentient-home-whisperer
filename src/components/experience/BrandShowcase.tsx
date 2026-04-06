@@ -35,7 +35,7 @@ export default function BrandShowcase() {
             const slug = Object.keys(brandPages).find(
               (key) => brandPages[key].name === brand.name
             );
-            const isInternal = !!slug;
+            const internalRoute = brand.internalRoute ?? (slug ? `/brands/${slug}` : null);
 
             const tileContent = (
               <>
@@ -64,7 +64,7 @@ export default function BrandShowcase() {
 
             const tileClass = "group relative flex flex-col items-center justify-between p-5 md:p-6 rounded-sm border border-border/60 bg-card/40 hover:border-primary/30 hover:bg-card/80 transition-all duration-300";
 
-            return isInternal ? (
+            return internalRoute ? (
               <motion.div
                 key={brand.name}
                 initial={{ opacity: 0, y: 15 }}
@@ -72,7 +72,7 @@ export default function BrandShowcase() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.02 }}
               >
-                <Link to={`/brands/${slug}`} className={tileClass}>
+                <Link to={internalRoute} className={tileClass}>
                   {tileContent}
                 </Link>
               </motion.div>

@@ -3,12 +3,13 @@ export interface ExperienceBrand {
   logoKey: string; // key in brandLogos
   usp: string;
   url: string;
+  internalRoute?: string;
 }
 
 export const experienceBrands: ExperienceBrand[] = [
   // Flagship / Core
   { name: "Meyer Sound", logoKey: "Meyer Sound", usp: "Concert-hall precision engineered for private spaces.", url: "https://meyersound.com" },
-  { name: "Constellation", logoKey: "Constellation", usp: "The world's most advanced active acoustics — only demo in the subcontinent.", url: "https://meyersound.com/product/constellation/" },
+  { name: "Constellation", logoKey: "Constellation", usp: "The world's most advanced active acoustics — only demo in the subcontinent.", url: "https://meyersound.com/product/constellation/", internalRoute: "/constellation" },
   { name: "PMC", logoKey: "PMC", usp: "Studio monitors trusted by Abbey Road — now for your home.", url: "https://pmc-speakers.com" },
   { name: "Wharfedale", logoKey: "Wharfedale", usp: "85 years of British loudspeaker heritage.", url: "https://www.wharfedale.co.uk" },
   { name: "SIM2", logoKey: "SIM2", usp: "Italian ultra-high-end laser projection.", url: "https://www.sim2.com" },
