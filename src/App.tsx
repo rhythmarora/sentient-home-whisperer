@@ -17,6 +17,7 @@ import Products from "./pages/Products";
 import DesignYourHome from "./pages/DesignYourHome";
 import ProductLanding from "./pages/ProductLanding";
 
+import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/spaces" element={<Spaces />} />
