@@ -14,7 +14,7 @@ export default function HeroSection() {
           loop
           playsInline
           className="w-full h-full object-cover"
-          src={heroVideo.url}
+          src={heroVideoUrl}
         />
         <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
       </div>
