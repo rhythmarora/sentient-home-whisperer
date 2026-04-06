@@ -176,8 +176,15 @@ export default function Constellation() {
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] rounded-full bg-cinema/8 blur-[150px]" />
-          <div className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-primary/5 blur-[120px]" />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            src="/videos/constellation-hero.mp4"
+          />
+          <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
         </div>
 
         <div className="relative text-center max-w-4xl mx-auto">
