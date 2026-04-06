@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Quote, MapPin, ExternalLink } from "lucide-react";
+import { ArrowLeft, Quote, MapPin, ExternalLink, Globe, Music, GraduationCap, Building2, Church, Theater, Clapperboard, UtensilsCrossed } from "lucide-react";
 import { brandLogos } from "@/data/brandLogos";
 
 const testimonials = [
@@ -28,27 +28,14 @@ const testimonials = [
 ];
 
 const applications = [
-  { name: "Performing Arts Centers", description: "Concert halls, opera houses, and theatres worldwide" },
-  { name: "Music Venues", description: "Jazz clubs, recital halls, and live performance spaces" },
-  { name: "Houses of Worship", description: "Churches, cathedrals, and multi-purpose worship spaces" },
-  { name: "Education", description: "Universities, music schools, and learning environments" },
-  { name: "Corporate", description: "Boardrooms, auditoriums, and presentation spaces" },
-  { name: "Hospitality", description: "Hotels, restaurants, and premium entertainment venues" },
-];
-
-const notableInstallations = [
-  "Jazz at Lincoln Center — New York",
-  "San Francisco Symphony — SoundBox",
-  "Nine Trees Shanghai Future Art Center — Shanghai",
-  "Alexela Concert Hall — Tallinn",
-  "National Sawdust — Brooklyn",
-  "Liberty University School of Music — Virginia",
-  "KÀ by Cirque du Soleil — Las Vegas",
-  "House of Dancing Water — Macau",
-  "ASB Theatre, Aotea Center — Auckland",
-  "Barbra Streisand Scoring Stage — Sony Pictures, LA",
-  "TRI Studios — San Rafael",
-  "Monash University — Melbourne",
+  { name: "Performing Arts Centers", description: "Concert halls, opera houses, and theatres across six continents", icon: Theater },
+  { name: "Spectacle Shows", description: "Cirque du Soleil (KÀ, O, LOVE, Michael Jackson ONE, Zumanity), Le Rêve, House of Dancing Water", icon: Clapperboard },
+  { name: "Music Venues & Studios", description: "Jazz clubs, recording stages, and live performance spaces like National Sawdust and TRI Studios", icon: Music },
+  { name: "Education", description: "Universities and music schools — McMaster, McGill, Monash, King Abdullah, Colorado College, and more", icon: GraduationCap },
+  { name: "Houses of Worship", description: "Churches and multi-purpose worship spaces with transformable acoustics", icon: Church },
+  { name: "Corporate & Government", description: "Boardrooms, auditoriums — Audi HQ, NetApp, PIF Tower Riyadh, Moscow City Hall", icon: Building2 },
+  { name: "Hospitality & Restaurants", description: "AMAN New York, Bellota, Kiln, Comal, ACRE Kitchen & Bar", icon: UtensilsCrossed },
+  { name: "Museums & Cultural Centers", description: "Museum of the Bible, Exploratorium, Singapore Art House, Parque Cultural Valparaiso", icon: Globe },
 ];
 
 const whatSetsApart = [
@@ -65,10 +52,123 @@ const whatSetsApart = [
     description: "Control room acoustics with an iPad, laptop, or Crestron panel. Select presets for any performance type — from a dry recording studio to a cathedral with 4-second reverb. Transform a single space into infinite acoustic environments at the touch of a button.",
   },
   {
-    title: "140+ Installations Worldwide",
-    description: "From Jazz at Lincoln Center and the San Francisco Symphony to Cirque du Soleil and Sony Pictures — Constellation is trusted by the world's most discerning venues and artists across performing arts, education, corporate, hospitality, and worship.",
+    title: "Trusted by the World's Best",
+    description: "From Jazz at Lincoln Center and the San Francisco Symphony to five Cirque du Soleil productions, Sony Pictures, and AMAN New York — Constellation is the standard for the world's most discerning venues, artists, and architects.",
   },
 ];
+
+interface InstallationGroup {
+  region: string;
+  venues: { name: string; location: string }[];
+}
+
+const installationsByRegion: InstallationGroup[] = [
+  {
+    region: "North America",
+    venues: [
+      { name: "Appel Room, Jazz at Lincoln Center", location: "New York, USA" },
+      { name: "SoundBox, San Francisco Symphony", location: "San Francisco, USA" },
+      { name: "National Sawdust", location: "Brooklyn, USA" },
+      { name: "The Jazz Club NYC / AMAN New York", location: "New York, USA" },
+      { name: "KÀ by Cirque du Soleil", location: "Las Vegas, USA" },
+      { name: "O by Cirque du Soleil", location: "Las Vegas, USA" },
+      { name: "LOVE by Cirque du Soleil", location: "Las Vegas, USA" },
+      { name: "Michael Jackson ONE by Cirque du Soleil", location: "Las Vegas, USA" },
+      { name: "Le Rêve by Dragone", location: "Las Vegas, USA" },
+      { name: "The Beverly Theater", location: "Las Vegas, USA" },
+      { name: "Barbra Streisand Scoring Stage, Sony Pictures", location: "Los Angeles, USA" },
+      { name: "Tamalpais Research Institute (TRI Studios)", location: "San Rafael, USA" },
+      { name: "Octave 9, Seattle Symphony", location: "Seattle, USA" },
+      { name: "The Rady Shell at Jacobs Park", location: "San Diego, USA" },
+      { name: "Hammer Theater, San Jose State University", location: "San Jose, USA" },
+      { name: "Zellerbach Hall, UC Berkeley", location: "Berkeley, USA" },
+      { name: "SAFE Credit Union Performing Arts Center", location: "Sacramento, USA" },
+      { name: "Soundscape Park WALLCAST®", location: "Miami, USA" },
+      { name: "Liberty University Concert Hall", location: "Lynchburg, USA" },
+      { name: "Johns Hopkins Bloomberg Center Theater", location: "Washington D.C., USA" },
+      { name: "Duke Ellington School of the Arts", location: "Washington D.C., USA" },
+      { name: "Museum of the Bible Theatre", location: "Washington D.C., USA" },
+      { name: "Steven Tanger Performing Arts Center", location: "Greensboro, USA" },
+      { name: "Halloran Center for Performing Arts", location: "Memphis, USA" },
+      { name: "LIVELab, McMaster University", location: "Hamilton, Canada" },
+      { name: "McGill University", location: "Montreal, Canada" },
+      { name: "Cabaret du Casino", location: "Montréal, Canada" },
+      { name: "Enbridge Learning Center", location: "Calgary, Canada" },
+    ],
+  },
+  {
+    region: "Europe",
+    venues: [
+      { name: "Alexela Concert Hall", location: "Tallinn, Estonia" },
+      { name: "Royal College of Music", location: "London, UK" },
+      { name: "Royal Northern College of Music", location: "Manchester, UK" },
+      { name: "kING", location: "Ingelheim, Germany" },
+      { name: "Audi Global Headquarters", location: "Ingolstadt, Germany" },
+      { name: "Stage Operettenhaus", location: "Hamburg, Germany" },
+      { name: "MUMUTH", location: "Graz, Austria" },
+      { name: "Maersk Tower Auditoriums", location: "Copenhagen, Denmark" },
+      { name: "Aarhus Royal Architecture School", location: "Aarhus, Denmark" },
+      { name: "Fosnavåg Konserthus", location: "Fosnavåg, Norway" },
+      { name: "Kongsberg Musikkteater", location: "Kongsberg, Norway" },
+      { name: "Olavshallen Concert Hall", location: "Trondheim, Norway" },
+      { name: "Moss Kulturhus", location: "Moss, Norway" },
+      { name: "Steinkjer Kulturhus", location: "Steinkjer, Norway" },
+      { name: "Logomo", location: "Turku, Finland" },
+      { name: "Karolinska Institute", location: "Solna, Sweden" },
+      { name: "Örebro University", location: "Örebro, Sweden" },
+      { name: "Riddersalen", location: "Copenhagen, Denmark" },
+      { name: "Klaipeda Drama Theater", location: "Klaipeda, Lithuania" },
+      { name: "Théâtre de la Cité Bleue", location: "Geneva, Switzerland" },
+      { name: "Claude Nobs Chalet", location: "Montreux, Switzerland" },
+      { name: "Cartuja Center CITE", location: "Seville, Spain" },
+      { name: "Laboral De Gijon University", location: "Gijon, Spain" },
+      { name: "Central House of Entrepreneurs", location: "Moscow, Russia" },
+      { name: "Moscow City Hall", location: "Moscow, Russia" },
+    ],
+  },
+  {
+    region: "Asia & Middle East",
+    venues: [
+      { name: "Nine Trees Shanghai Future Art Centre", location: "Shanghai, China" },
+      { name: "NEW BUND 31 Performing Arts Center", location: "Shanghai, China" },
+      { name: "Main Theatre, Taiwan Traditional Theatre Center", location: "Taipei, Taiwan" },
+      { name: "Huo Guom Opera", location: "Hanoi, Vietnam" },
+      { name: "Jakarta International Expo", location: "Jakarta, Indonesia" },
+      { name: "Singapore Conference Hall", location: "Singapore" },
+      { name: "Singapore Art House", location: "Singapore" },
+      { name: "Singapore American School Auditorium", location: "Singapore" },
+      { name: "Sohyang Arts Center, Dongseo University", location: "Busan, South Korea" },
+      { name: "King Abdullah University (Multipurpose Room & CAVE)", location: "Jeddah, Saudi Arabia" },
+      { name: "PIF Tower Auditorium", location: "Riyadh, Saudi Arabia" },
+      { name: "Royal Guard of Oman Auditorium", location: "Muscat, Oman" },
+      { name: "Solaire Resorts and Casino", location: "Manila, Philippines" },
+    ],
+  },
+  {
+    region: "Oceania, South America & Africa",
+    venues: [
+      { name: "Alexander Theatre, Monash University", location: "Melbourne, Australia" },
+      { name: "Sound Gallery, Monash University", location: "Melbourne, Australia" },
+      { name: "ASB Theatre, Aotea Center", location: "Auckland, New Zealand" },
+      { name: "James Hay Theatre", location: "Christchurch, New Zealand" },
+      { name: "Centro Cultural Atacama", location: "Copiapo, Chile" },
+      { name: "Parque Cultural Valparaiso", location: "Valparaiso, Chile" },
+      { name: "Ashdod Performing Arts Center", location: "Ashdod, Israel" },
+      { name: "Be'er Sheva Performing Arts Center", location: "Be'er Sheva, Israel" },
+      { name: "Kfar-Saba Hall", location: "Kfar Saba, Israel" },
+    ],
+  },
+];
+
+const cirqueShows = [
+  { name: "KÀ", status: "active" },
+  { name: "O", status: "active" },
+  { name: "LOVE", status: "active" },
+  { name: "Michael Jackson ONE", status: "active" },
+  { name: "Zumanity", status: "closed" },
+];
+
+const totalInstallations = installationsByRegion.reduce((sum, g) => sum + g.venues.length, 0);
 
 export default function Constellation() {
   return (
@@ -81,7 +181,6 @@ export default function Constellation() {
         </div>
 
         <div className="relative text-center max-w-4xl mx-auto">
-          {/* Constellation logo */}
           {brandLogos["Constellation"] && (
             <motion.img
               initial={{ opacity: 0, scale: 0.9 }}
@@ -117,9 +216,9 @@ export default function Constellation() {
             transition={{ delay: 0.2 }}
             className="font-body text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-4"
           >
-            An electronically adjustable room acoustics system that transforms a single space 
-            into a concert hall, a jazz club, a cathedral, or a recording studio — in real time. 
-            140+ installations worldwide. One demo in the Indian subcontinent.
+            An electronically adjustable room acoustics system that transforms a single space
+            into a concert hall, a jazz club, a cathedral, or a recording studio — in real time.
+            {totalInstallations}+ installations across 25+ countries. One demo in the Indian subcontinent.
           </motion.p>
 
           <motion.p
@@ -200,8 +299,58 @@ export default function Constellation() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Cirque du Soleil Spotlight */}
       <section className="py-24 px-6 bg-card/50">
+        <div className="max-w-5xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="font-body text-xs tracking-[0.4em] uppercase text-primary mb-4"
+          >
+            Spectacle & Entertainment
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-display text-3xl md:text-5xl font-medium mb-4"
+          >
+            5 Cirque du Soleil productions.{" "}
+            <span className="italic text-muted-foreground">And counting.</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="font-body text-sm text-muted-foreground max-w-2xl mb-10"
+          >
+            Constellation powers some of the most iconic live spectacles in the world — from water shows to aerial acrobatics. 
+            It also drives Le Rêve by Dragone and House of Dancing Water in Macau.
+          </motion.p>
+
+          <div className="flex flex-wrap gap-4">
+            {cirqueShows.map((show, i) => (
+              <motion.div
+                key={show.name}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="px-6 py-4 rounded-sm border border-border bg-background"
+              >
+                <p className="font-display text-lg font-medium text-foreground">{show.name}</p>
+                <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">
+                  Cirque du Soleil • Las Vegas
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <motion.p
             initial={{ opacity: 0 }}
@@ -228,7 +377,7 @@ export default function Constellation() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-6 rounded-sm border border-border bg-background relative"
+                className="p-6 rounded-sm border border-border bg-card relative"
               >
                 <Quote className="w-6 h-6 text-primary/20 absolute top-4 right-4" />
                 <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4 italic">
@@ -245,7 +394,7 @@ export default function Constellation() {
       </section>
 
       {/* Applications */}
-      <section className="py-24 px-6">
+      <section className="py-24 px-6 bg-card/50">
         <div className="max-w-5xl mx-auto">
           <motion.p
             initial={{ opacity: 0 }}
@@ -265,28 +414,32 @@ export default function Constellation() {
             <span className="italic text-muted-foreground">your living room</span>
           </motion.h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {applications.map((app, i) => (
-              <motion.div
-                key={app.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="p-5 rounded-sm border border-border bg-card hover:border-primary/30 transition-colors"
-              >
-                <h3 className="font-display text-base font-medium text-foreground mb-1">
-                  {app.name}
-                </h3>
-                <p className="font-body text-xs text-muted-foreground">{app.description}</p>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {applications.map((app, i) => {
+              const Icon = app.icon;
+              return (
+                <motion.div
+                  key={app.name}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06 }}
+                  className="p-5 rounded-sm border border-border bg-background hover:border-primary/30 transition-colors"
+                >
+                  <Icon className="w-5 h-5 text-primary mb-3" />
+                  <h3 className="font-display text-sm font-medium text-foreground mb-1">
+                    {app.name}
+                  </h3>
+                  <p className="font-body text-xs text-muted-foreground leading-relaxed">{app.description}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Notable Installations */}
-      <section className="py-24 px-6 bg-card/50">
+      {/* Installations by Region */}
+      <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <motion.p
             initial={{ opacity: 0 }}
@@ -294,29 +447,55 @@ export default function Constellation() {
             viewport={{ once: true }}
             className="font-body text-xs tracking-[0.4em] uppercase text-primary mb-4"
           >
-            140+ Installations Worldwide
+            {totalInstallations}+ Installations Worldwide
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display text-3xl md:text-5xl font-medium mb-12"
+            className="font-display text-3xl md:text-5xl font-medium mb-4"
           >
             Where Constellation lives
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="font-body text-sm text-muted-foreground mb-12 max-w-2xl"
+          >
+            From performing arts centres and concert halls to Cirque du Soleil spectacles, 
+            university auditoriums, and restaurants — a selection of venues worldwide.
+          </motion.p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {notableInstallations.map((venue, i) => (
+          <div className="space-y-12">
+            {installationsByRegion.map((group, gi) => (
               <motion.div
-                key={venue}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                key={group.region}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="flex items-center gap-3 p-3 rounded-sm"
+                transition={{ delay: gi * 0.1 }}
               >
-                <MapPin className="w-3.5 h-3.5 text-primary shrink-0" />
-                <span className="font-body text-sm text-muted-foreground">{venue}</span>
+                <div className="flex items-center gap-3 mb-5">
+                  <Globe className="w-4 h-4 text-primary" />
+                  <h3 className="font-display text-lg font-medium text-foreground">
+                    {group.region}
+                  </h3>
+                  <span className="font-body text-xs text-muted-foreground">
+                    ({group.venues.length} venues)
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3">
+                  {group.venues.map((venue) => (
+                    <div key={venue.name} className="flex items-start gap-2.5">
+                      <MapPin className="w-3 h-3 text-primary/60 shrink-0 mt-1" />
+                      <div>
+                        <p className="font-body text-sm text-foreground/90 leading-snug">{venue.name}</p>
+                        <p className="font-body text-xs text-muted-foreground">{venue.location}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -324,7 +503,7 @@ export default function Constellation() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6">
+      <section className="py-24 px-6 bg-card/50">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -342,7 +521,7 @@ export default function Constellation() {
             viewport={{ once: true }}
             className="font-body text-muted-foreground mb-8 max-w-xl mx-auto"
           >
-            The Constellation Room at the Qubix Experience Center is the only place in the 
+            The Constellation Room at the Qubix Experience Center is the only place in the
             Indian subcontinent where you can experience this technology. Book a private session.
           </motion.p>
           <motion.div
