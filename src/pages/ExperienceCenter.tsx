@@ -25,7 +25,7 @@ export default function ExperienceCenter() {
             loop
             playsInline
             className="w-full h-full object-cover"
-            src="/__l5e/assets-v1/632eed2d-3623-4069-924f-a217d73035fa/experience-center-hero.mp4"
+            src="/__l5e/assets-v1/66e4702b-4804-43a4-82a5-35912eba7ad0/experience-center-hero.mp4"
           />
           <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
         </div>
