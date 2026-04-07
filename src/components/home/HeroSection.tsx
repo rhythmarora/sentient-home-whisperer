@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
-const heroVideoUrl = "/__l5e/assets-v1/820f36a5-20a6-47ed-bacc-1e9272afbd7b/hero-bg.mp4";
+const heroVideoUrl =
+  "/__l5e/assets-v1/820f36a5-20a6-47ed-bacc-1e9272afbd7b/hero-bg.mp4";
 
 export default function HeroSection() {
   return (
