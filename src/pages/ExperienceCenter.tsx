@@ -17,10 +17,17 @@ export default function ExperienceCenter() {
     <Layout>
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center px-6">
-        {/* Background glow */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-[120px]" />
-          <div className="absolute bottom-1/4 right-1/3 w-72 h-72 rounded-full bg-cinema/5 blur-[100px]" />
+        {/* Video Background */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+            src="/__l5e/assets-v1/632eed2d-3623-4069-924f-a217d73035fa/experience-center-hero.mp4"
+          />
+          <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
         </div>
 
         <div className="relative text-center max-w-4xl mx-auto">
