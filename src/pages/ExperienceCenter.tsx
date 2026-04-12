@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { MapPin, Clock, Phone, ArrowDown, ExternalLink } from "lucide-react";
+import { MapPin, Clock, Phone, ArrowDown, ExternalLink, Car } from "lucide-react";
 import { zones } from "@/data/experienceZones";
 import ZoneNav from "@/components/experience/ZoneNav";
 import ZoneCard from "@/components/experience/ZoneCard";
