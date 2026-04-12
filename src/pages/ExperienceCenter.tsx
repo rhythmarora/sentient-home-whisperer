@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { MapPin, Clock, Phone, ArrowDown, ExternalLink } from "lucide-react";
+import { MapPin, Clock, Phone, ArrowDown, ExternalLink, Car } from "lucide-react";
 import { zones } from "@/data/experienceZones";
 import ZoneNav from "@/components/experience/ZoneNav";
 import ZoneCard from "@/components/experience/ZoneCard";
@@ -156,6 +156,18 @@ export default function ExperienceCenter() {
                       <p className="font-body text-sm text-foreground">Sessions last 60–90 minutes</p>
                       <p className="font-body text-sm text-muted-foreground">
                         A consultant will confirm your session personally over WhatsApp or email.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <Car className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-body text-sm text-foreground">Parking</p>
+                      <p className="font-body text-sm text-muted-foreground">
+                        Valet parking available — our showroom security can assist.
+                      </p>
+                      <p className="font-body text-sm text-muted-foreground">
+                        Self-parking available at Nexa Building basement (next building) — look for Qubix reserved spots.
                       </p>
                     </div>
                   </div>
