@@ -150,7 +150,22 @@ export default function ZoneCard({ zone }: { zone: Zone }) {
           </motion.div>
         )}
 
-        {/* Expand button */}
+        {/* Book Now link */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.28 }}
+          className="mb-8"
+        >
+          <a
+            href="#book-session"
+            className="inline-flex items-center gap-2 font-body text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+          >
+            Book a session for {zone.name}
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </motion.div>
         <motion.button
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
