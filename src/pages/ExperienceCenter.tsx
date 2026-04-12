@@ -71,12 +71,12 @@ export default function ExperienceCenter() {
               Explore Zones
               <ArrowDown className="w-4 h-4" />
             </button>
-            <Link
-              to="/contact"
+            <a
+              href="#book-session"
               className="inline-flex px-8 py-4 font-body font-medium text-sm tracking-wider border border-border text-foreground rounded-sm hover:border-primary/40 transition-colors"
             >
               Book a Private Session
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
