@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, CalendarDays, Clock } from "lucide-react";
 import { format, addDays, isSunday, startOfDay } from "date-fns";
@@ -7,6 +7,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
+import { zones } from "@/data/experienceZones";
 
 const TIME_SLOTS = [
   "10:00 AM", "11:00 AM", "12:00 PM",
@@ -14,11 +15,8 @@ const TIME_SLOTS = [
   "4:00 PM", "5:00 PM",
 ];
 
-const interests = [
-  "Private Cinema", "Constellation Room", "Whole Home Audio",
-  "Smart Lighting & Shading", "Full Home Automation", "Outdoor Entertainment",
-  "Gaming Den", "Karaoke & Social Lounge",
-];
+// Derive interests from zone names
+const interests = zones.map((z) => z.name);
 
 const propertyTypes = [
   "Apartment / Penthouse",
