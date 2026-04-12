@@ -7,6 +7,7 @@ import ZoneNav from "@/components/experience/ZoneNav";
 import ZoneCard from "@/components/experience/ZoneCard";
 import AmbientTech from "@/components/experience/AmbientTech";
 import BrandShowcase from "@/components/experience/BrandShowcase";
+import BookingForm from "@/components/experience/BookingForm";
 
 export default function ExperienceCenter() {
   const scrollToZones = () => {
