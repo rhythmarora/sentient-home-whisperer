@@ -7,6 +7,7 @@ import ZoneNav from "@/components/experience/ZoneNav";
 import ZoneCard from "@/components/experience/ZoneCard";
 import AmbientTech from "@/components/experience/AmbientTech";
 import BrandShowcase from "@/components/experience/BrandShowcase";
+import BookingForm from "@/components/experience/BookingForm";
 
 export default function ExperienceCenter() {
   const scrollToZones = () => {
@@ -70,12 +71,12 @@ export default function ExperienceCenter() {
               Explore Zones
               <ArrowDown className="w-4 h-4" />
             </button>
-            <Link
-              to="/contact"
+            <a
+              href="#book-session"
               className="inline-flex px-8 py-4 font-body font-medium text-sm tracking-wider border border-border text-foreground rounded-sm hover:border-primary/40 transition-colors"
             >
               Book a Private Session
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -96,70 +97,72 @@ export default function ExperienceCenter() {
       {/* Brand showcase tiles */}
       <BrandShowcase />
 
-      {/* Visit / Book section */}
-      <section className="py-24 px-6">
+      {/* Book a Session */}
+      <section id="book-session" className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 p-8 md:p-12 rounded-sm border border-border bg-card"
+            className="text-center mb-12"
           >
-            <div>
-              <h2 className="font-display text-3xl md:text-4xl font-medium mb-8">
-                Visit Us
-              </h2>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-body text-sm text-foreground">Qubix</p>
-                    <p className="font-body text-sm text-muted-foreground">No. 15 Museum Road, Opp SBI Gate No. 2</p>
-                    <p className="font-body text-sm text-muted-foreground">Bangalore 560025</p>
-                    <a
-                      href="https://g.page/qubixindia"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 font-body text-xs text-primary hover:underline mt-1"
-                    >
-                      View on Google Maps <ExternalLink className="w-3 h-3" />
-                    </a>
+            <p className="font-body text-xs tracking-[0.4em] uppercase text-primary mb-4">
+              By Appointment Only
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-medium mb-4">
+              Book a Private Session
+            </h2>
+            <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto">
+              Every visit is curated. Bring your family, your architect, your designer.
+              We'll demonstrate systems tailored to your home and lifestyle.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <div className="lg:col-span-3">
+              <BookingForm />
+            </div>
+            <div className="lg:col-span-2">
+              <div className="p-8 rounded-sm bg-card border border-border h-full">
+                <h3 className="font-display text-xl font-medium mb-6">Visit Details</h3>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-body text-sm text-foreground">Qubix</p>
+                      <p className="font-body text-sm text-muted-foreground">No. 15 Museum Road, Opp SBI Gate No. 2</p>
+                      <p className="font-body text-sm text-muted-foreground">Bangalore 560025</p>
+                      <a
+                        href="https://g.page/qubixindia"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 font-body text-xs text-primary hover:underline mt-1"
+                      >
+                        View on Google Maps <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <Clock className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-body text-sm text-foreground">By appointment only</p>
-                    <p className="font-body text-sm text-muted-foreground">Private sessions available 7 days a week</p>
+                  <div className="flex items-start gap-4">
+                    <Clock className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-body text-sm text-foreground">Monday – Saturday</p>
+                      <p className="font-body text-sm text-muted-foreground">10:00 AM – 6:00 PM</p>
+                      <p className="font-body text-sm text-muted-foreground">1-hour curated sessions</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-body text-sm text-foreground">Contact us to schedule</p>
-                    <p className="font-body text-sm text-muted-foreground">Sessions typically last 60–90 minutes</p>
+                  <div className="flex items-start gap-4">
+                    <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-body text-sm text-foreground">Sessions last 60–90 minutes</p>
+                      <p className="font-body text-sm text-muted-foreground">
+                        A consultant will confirm your session personally over WhatsApp or email.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="flex flex-col justify-center">
-              <p className="font-body text-muted-foreground leading-relaxed mb-4">
-                Every visit is a private, curated experience. Bring your family, 
-                your architect, your interior designer. We'll demonstrate systems 
-                tailored to your home and your lifestyle.
-              </p>
-              <p className="font-body text-xs text-muted-foreground/70 italic mb-6">
-                Select experiences — including the Constellation Room — are available by invitation. 
-                Let us know what you'd like to explore, and we'll curate the right session for you.
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex self-start px-8 py-4 font-body font-medium text-sm tracking-wider bg-gold-gradient text-primary-foreground rounded-sm hover:opacity-90 transition-opacity"
-              >
-                Book a Private Session
-              </Link>
-            </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </Layout>
