@@ -436,6 +436,91 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Recognition */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-body text-xs tracking-[0.5em] uppercase text-silver mb-6"
+          >
+            Recognition
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="font-display text-3xl md:text-5xl font-medium mb-16 leading-tight"
+          >
+            Credentials that took decades to earn.
+          </motion.h2>
+
+          {/* Industry Credentials */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-20"
+          >
+            <h3 className="font-display text-xl font-medium mb-8">Industry Credentials</h3>
+            <div className="flex flex-wrap gap-3">
+              {[
+                "CEDIA Certified Company",
+                "AVIXA Member",
+                "CEDIA RP22 — Residential Systems Design",
+                "CEDIA RP32 — Electronic Systems",
+                "CEDIA CPD Educator",
+                "THX Certified Video Calibration",
+                "PVA Certified Calibration",
+                "KNX Certified",
+                "Crestron Home Certified",
+                "Control4 Certified",
+                "Meyer Sound Constellation Trained",
+                "Trinnov Immersive Audio Trained",
+                "300+ Technical Certifications",
+                "85+ Direct Manufacturer Partnerships",
+                "InAVation Technology Awards Finalist",
+                "APAC Top 40 Under 40 — 2019",
+              ].map((cred) => (
+                <span
+                  key={cred}
+                  className="px-4 py-2 rounded-full border border-border font-body text-xs text-foreground tracking-wide"
+                >
+                  {cred}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Press & Publications */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="font-display text-xl font-medium mb-8">Press &amp; Publications</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { pub: "mondo*dr", line: "Mayfair Resort, Raipur — Featured Project" },
+                { pub: "Pro AVL Asia", line: "Lord of the Drinks, Mumbai — Asia's Longest Bar Install" },
+                { pub: "PALM Magazine", line: "Lord of the Drinks, Mumbai — Club Sound Installation" },
+                { pub: "Inavate APAC", line: "Top 40 Under 40 Business Leaders — Rhythm Arora, 2019" },
+              ].map((item) => (
+                <div key={item.pub} className="border border-border rounded-sm p-6">
+                  <p className="font-body text-sm text-primary font-medium mb-2">{item.pub}</p>
+                  <p className="font-body text-sm text-foreground leading-relaxed">{item.line}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </Layout>
   );
 }
