@@ -8,17 +8,16 @@ const heroBg: string | null = null;
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-          src={heroVideoUrl}
-        />
-        <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
+      {/* Hero Background */}
+      <div className="absolute inset-0 bg-[#0D0D0D]">
+        {heroBg && (
+          <img
+            src={heroBg}
+            alt="Luxury home technology"
+            className="w-full h-full object-cover"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/90 via-[#0D0D0D]/65 to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
