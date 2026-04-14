@@ -2,7 +2,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import HeroSection from "@/components/home/HeroSection";
 import ExperienceCategories from "@/components/home/ExperienceCategories";
-import SoundDemo from "@/components/home/SoundDemo";
+
 import BrandEcosystem from "@/components/home/BrandEcosystem";
 import HomeExplorer from "@/components/home/HomeExplorer";
 import AIConsultant from "@/components/home/AIConsultant";
@@ -30,7 +30,7 @@ export default function Index() {
       />
       <HeroSection />
       <ExperienceCategories />
-      <SoundDemo />
+      
       <BrandEcosystem />
       <HomeExplorer />
       <AIConsultant />
