@@ -30,10 +30,10 @@ const scaleCapabilities = [
 ];
 
 const stats = [
-  { value: "35%", label: "Higher perceived value for tech-ready homes" },
-  { value: "2x", label: "Faster sales in premium segments" },
-  { value: "500+", label: "Residences delivered with integrated tech" },
-  { value: "50+", label: "Developer partnerships across India" },
+  { value: "500+", label: "Residences delivered with integrated technology" },
+  { value: "40+", label: "Years of AV and technology integration expertise" },
+  { value: "85+", label: "Global technology brands — direct manufacturer partnerships" },
+  { value: "Pan-India", label: "Multi-city deployment with trained, on-ground teams" },
 ];
 
 const processSteps = [
