@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const tiers = [
   {
@@ -97,14 +98,25 @@ export default function BudgetEngine() {
                   {tier.name}
                 </h3>
                 <p className="font-body text-sm text-silver leading-relaxed mb-5">{tier.description}</p>
-                <ul className="space-y-2">
-                  {tier.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 font-body text-xs text-platinum/70">
-                      <Check className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${c.text}`} />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
+                {tier.name === "Bespoke" ? (
+                  <div className="mt-1">
+                    <p className="font-display text-sm italic text-platinum/70 leading-relaxed mb-4">
+                      Every detail designed from first principles. No catalogue. No limits.
+                    </p>
+                    <Link to="/contact" className={`font-body text-sm ${c.text} hover:opacity-80 transition-opacity`}>
+                      Let's talk privately →
+                    </Link>
+                  </div>
+                ) : (
+                  <ul className="space-y-2">
+                    {tier.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2 font-body text-xs text-platinum/70">
+                        <Check className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${c.text}`} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </motion.div>
             );
           })}
