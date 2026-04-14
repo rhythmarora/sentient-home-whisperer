@@ -31,10 +31,10 @@ const flagshipBrands = [
 ];
 
 const colorBorderMap: Record<string, string> = {
-  cinema: "border-t-cinema", music: "border-t-music", social: "border-t-social", relax: "border-t-relax",
+  cinema: "border-t-music", music: "border-t-music", social: "border-t-music", relax: "border-t-music",
 };
 const textMap: Record<string, string> = {
-  cinema: "text-cinema", music: "text-music", social: "text-social", relax: "text-relax",
+  cinema: "text-music", music: "text-music", social: "text-music", relax: "text-music",
 };
 
 const ecosystemCategories = [
