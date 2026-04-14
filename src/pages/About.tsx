@@ -377,6 +377,65 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* What We Believe */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-body text-xs tracking-[0.5em] uppercase text-silver mb-6"
+          >
+            What We Believe
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="font-display text-3xl md:text-5xl font-medium mb-16 leading-tight"
+          >
+            Four things we don't
+            <br />
+            compromise on.
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {[
+              {
+                heading: "Technology should disappear.",
+                body: "The best system is the one you never notice — until it's off. We design for invisibility first, capability second.",
+              },
+              {
+                heading: "Design intent is sacred.",
+                body: "We never fight an architect's or designer's vision. Every component is selected and placed to honour the space it lives in.",
+              },
+              {
+                heading: "Calibration is not optional.",
+                body: "A system that isn't calibrated isn't finished. Every Qubix HiFi installation is calibrated by certified engineers before we hand over the keys.",
+              },
+              {
+                heading: "Operations are part of the product.",
+                body: "How a project is managed — the documentation, the timelines, the billing, the communication — is as important as the technology itself. We treat both with equal seriousness.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.heading}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.1 }}
+                className="border-t-2 border-primary pt-6"
+              >
+                <h3 className="font-display text-xl md:text-2xl font-medium mb-3">{item.heading}</h3>
+                <p className="font-body text-sm text-silver leading-relaxed">{item.body}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }
