@@ -285,6 +285,34 @@ export default function Builders() {
         </div>
       </section>
 
+      {/* Support Credentials */}
+      <section className="py-24 lg:py-32 px-6">
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-5xl font-medium">Your residents deserve professional support. <span className="italic">Not a mobile number.</span></h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "Ticket-Based SLA System", body: "Every support request logged, tracked, and resolved within defined SLA windows — transparent to both developer and resident." },
+              { title: "Dedicated AMC Programs", body: "Annual maintenance contracts with scheduled preventive visits, remote monitoring, and priority on-site response for all integrated systems." },
+              { title: "Multi-City Support Teams", body: "Trained, on-ground technicians across India's major cities — no dependency on a single point of failure." },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="border-t-2 border-primary pt-6"
+              >
+                <h3 className="font-display text-lg font-medium mb-3">{item.title}</h3>
+                <p className="font-body text-sm text-silver leading-relaxed">{item.body}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Project References */}
       <section className="py-24 lg:py-32 px-6">
         <div className="max-w-4xl mx-auto text-center">
