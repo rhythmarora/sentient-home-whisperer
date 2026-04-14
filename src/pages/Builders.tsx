@@ -203,6 +203,36 @@ export default function Builders() {
         </div>
       </section>
 
+      {/* Commercial Terms */}
+      <section className="py-24 lg:py-32 px-6 bg-card">
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">Commercial Terms</p>
+            <h2 className="font-display text-3xl md:text-5xl font-medium mb-4">Built around how <span className="italic">developers work.</span></h2>
+            <p className="font-body text-base text-silver max-w-2xl mx-auto">We understand construction finance. Our commercial structures are designed around project milestones — not arbitrary payment schedules.</p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "Milestone-Based Billing", body: "Payments tied to construction milestones — slab, pre-plaster, fit-out, and handover — aligned to your draw-down schedule, not ours." },
+              { title: "Volume Pricing", body: "As a scale integrator with direct manufacturer partnerships across 85+ brands, we offer volume-based pricing unavailable to project-by-project vendors." },
+              { title: "Single-Vendor Accountability", body: "One contract. One point of contact. Audio, video, lighting, networking, automation, and security — fully integrated under a single commercial agreement." },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="border-t-2 border-primary pt-6"
+              >
+                <h3 className="font-display text-lg font-medium mb-3">{item.title}</h3>
+                <p className="font-body text-sm text-silver leading-relaxed">{item.body}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 lg:py-32 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
