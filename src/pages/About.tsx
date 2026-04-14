@@ -2,7 +2,7 @@ import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
-import { Compass, Code, Award, Building } from "lucide-react";
+import { Compass, Code, Award, Building, Camera } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function About() {
@@ -161,8 +161,10 @@ export default function About() {
             className="grid grid-cols-1 md:grid-cols-5 gap-10"
           >
             {/* Photo Placeholder — 60% */}
-            <div className="md:col-span-3 aspect-[3/4] border-2 border-dashed border-border rounded-sm flex items-center justify-center">
-              <span className="font-body text-sm text-silver tracking-wide">Rhythm Arora — Photo</span>
+            <div className="md:col-span-3 aspect-[3/4] border-2 border-dashed border-primary/50 rounded-sm flex flex-col items-center justify-center gap-3 bg-primary/5">
+              <Camera className="w-8 h-8 text-primary/60" />
+              <span className="font-body text-sm text-primary/80 tracking-wide font-medium">Rhythm Arora — Photo</span>
+              <span className="font-body text-[10px] text-muted-foreground uppercase tracking-widest">Replace before launch</span>
             </div>
 
             {/* Content — 40% */}
@@ -226,8 +228,10 @@ export default function About() {
             </div>
 
             {/* Photo Placeholder — 60% (right on desktop) */}
-            <div className="md:col-span-3 aspect-[3/4] border-2 border-dashed border-border rounded-sm flex items-center justify-center order-1 md:order-2">
-              <span className="font-body text-sm text-silver tracking-wide">Ritika — Photo</span>
+            <div className="md:col-span-3 aspect-[3/4] border-2 border-dashed border-primary/50 rounded-sm flex flex-col items-center justify-center gap-3 bg-primary/5 order-1 md:order-2">
+              <Camera className="w-8 h-8 text-primary/60" />
+              <span className="font-body text-sm text-primary/80 tracking-wide font-medium">Ritika Arora — Photo</span>
+              <span className="font-body text-[10px] text-muted-foreground uppercase tracking-widest">Replace before launch</span>
             </div>
           </motion.div>
         </div>
@@ -273,8 +277,10 @@ export default function About() {
               transition={{ duration: 0.8 }}
               className="border border-border rounded-sm p-6"
             >
-              <div className="aspect-[3/4] border-2 border-dashed border-border rounded-sm flex items-center justify-center mb-6">
-                <span className="font-body text-sm text-silver tracking-wide">Philip Abraham — Photo</span>
+              <div className="aspect-[3/4] border-2 border-dashed border-primary/50 rounded-sm flex flex-col items-center justify-center gap-3 bg-primary/5 mb-6">
+                <Camera className="w-6 h-6 text-primary/60" />
+                <span className="font-body text-sm text-primary/80 tracking-wide font-medium">Philip Abraham — Photo</span>
+                <span className="font-body text-[10px] text-muted-foreground uppercase tracking-widest">Replace before launch</span>
               </div>
               <h3 className="font-display text-xl md:text-2xl font-medium mb-1">Philip Abraham</h3>
               <p className="font-body text-sm text-primary tracking-wide mb-4">Senior Sound Engineer — Residential</p>
@@ -291,8 +297,10 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.15 }}
               className="border border-border rounded-sm p-6"
             >
-              <div className="aspect-[3/4] border-2 border-dashed border-border rounded-sm flex items-center justify-center mb-6">
-                <span className="font-body text-sm text-silver tracking-wide">Diksha Sinha — Photo</span>
+              <div className="aspect-[3/4] border-2 border-dashed border-primary/50 rounded-sm flex flex-col items-center justify-center gap-3 bg-primary/5 mb-6">
+                <Camera className="w-6 h-6 text-primary/60" />
+                <span className="font-body text-sm text-primary/80 tracking-wide font-medium">Diksha Sinha — Photo</span>
+                <span className="font-body text-[10px] text-muted-foreground uppercase tracking-widest">Replace before launch</span>
               </div>
               <h3 className="font-display text-xl md:text-2xl font-medium mb-1">Diksha Sinha</h3>
               <p className="font-body text-sm text-primary tracking-wide mb-4">Residential Systems Designer</p>
