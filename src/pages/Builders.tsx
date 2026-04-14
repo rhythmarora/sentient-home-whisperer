@@ -364,7 +364,7 @@ export default function Builders() {
               Partner with <span className="italic text-gradient-vibrant">Qubix.</span>
             </h2>
             <p className="font-body text-base text-silver max-w-xl mx-auto">
-              Tell us about your project. Our enterprise team will get back to you within 24 hours.
+              Tell us about your project. Our projects team will review your enquiry and respond within one business day. For urgent requirements call: <a href="tel:+918050200008" className="text-primary hover:underline">+91 80502 00008</a>
             </p>
           </motion.div>
 
