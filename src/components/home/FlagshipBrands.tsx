@@ -43,7 +43,7 @@ export default function FlagshipBrands() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-music mb-4">
             Flagship Partners
           </p>
           <h2 className="font-display text-3xl md:text-5xl font-medium">

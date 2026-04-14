@@ -44,7 +44,7 @@ export default function ProjectsPreview() {
           className="flex flex-col md:flex-row md:items-end md:justify-between mb-16"
         >
           <div>
-            <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4">
+            <p className="font-body text-sm tracking-[0.3em] uppercase text-music mb-4">
               Our Work
             </p>
             <h2 className="font-display text-3xl md:text-5xl font-medium">
@@ -53,7 +53,7 @@ export default function ProjectsPreview() {
           </div>
           <Link
             to="/projects"
-            className="mt-4 md:mt-0 font-body text-sm text-primary hover:text-gold-light transition-colors"
+            className="mt-4 md:mt-0 font-body text-sm text-music hover:opacity-80 transition-opacity"
           >
             View all projects →
           </Link>
@@ -93,7 +93,7 @@ export default function ProjectsPreview() {
                 <p className="font-body text-xs tracking-wider uppercase text-muted-foreground mb-2">
                   {project.location}
                 </p>
-                <h3 className="font-display text-xl mb-3 group-hover:text-primary transition-colors">
+                <h3 className="font-display text-xl mb-3 group-hover:text-music transition-colors">
                   {project.title}
                 </h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">

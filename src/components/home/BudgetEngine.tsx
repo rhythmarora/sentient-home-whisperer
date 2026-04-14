@@ -27,10 +27,10 @@ const tiers = [
 ];
 
 const colorMap: Record<string, { border: string; text: string; bg: string }> = {
-  silver: { border: "border-silver/30", text: "text-silver", bg: "bg-silver/10" },
-  cinema: { border: "border-cinema/30", text: "text-cinema", bg: "bg-cinema/10" },
+  silver: { border: "border-music/30", text: "text-music", bg: "bg-music/10" },
+  cinema: { border: "border-music/30", text: "text-music", bg: "bg-music/10" },
   music: { border: "border-music/30", text: "text-music", bg: "bg-music/10" },
-  social: { border: "border-social/30", text: "text-social", bg: "bg-social/10" },
+  social: { border: "border-music/30", text: "text-music", bg: "bg-music/10" },
 };
 
 export default function BudgetEngine() {

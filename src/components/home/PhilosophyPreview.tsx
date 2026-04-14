@@ -21,7 +21,7 @@ export default function PhilosophyPreview() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-music mb-4">
             Our Philosophy
           </p>
           <h2 className="font-display text-3xl md:text-5xl font-medium mb-12">
@@ -39,7 +39,7 @@ export default function PhilosophyPreview() {
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="p-6 border border-border rounded-sm"
             >
-              <h3 className="font-display text-lg text-primary mb-2">{pillar.title}</h3>
+              <h3 className="font-display text-lg text-music mb-2">{pillar.title}</h3>
               <p className="font-body text-xs text-muted-foreground">{pillar.description}</p>
             </motion.div>
           ))}
@@ -57,7 +57,7 @@ export default function PhilosophyPreview() {
 
         <Link
           to="/philosophy"
-          className="font-body text-sm text-primary hover:text-gold-light transition-colors"
+          className="font-body text-sm text-music hover:opacity-80 transition-opacity"
         >
           Read our philosophy →
         </Link>

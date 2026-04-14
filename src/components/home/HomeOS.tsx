@@ -20,10 +20,10 @@ const groups = [
 ];
 
 const colorMap: Record<string, { text: string; bg: string; border: string }> = {
-  cinema: { text: "text-cinema", bg: "bg-cinema/10", border: "border-cinema/30" },
-  social: { text: "text-social", bg: "bg-social/10", border: "border-social/30" },
-  connectivity: { text: "text-connectivity", bg: "bg-connectivity/10", border: "border-connectivity/30" },
-  "cat-security": { text: "text-cat-security", bg: "bg-cat-security/10", border: "border-cat-security/30" },
+  cinema: { text: "text-music", bg: "bg-music/10", border: "border-music/30" },
+  social: { text: "text-music", bg: "bg-music/10", border: "border-music/30" },
+  connectivity: { text: "text-music", bg: "bg-music/10", border: "border-music/30" },
+  "cat-security": { text: "text-music", bg: "bg-music/10", border: "border-music/30" },
 };
 
 export default function HomeOS() {
@@ -74,7 +74,7 @@ export default function HomeOS() {
                 >
                   {/* Connecting line dot */}
                   <div className="flex items-center gap-2 mb-3">
-                    <div className={`w-2 h-2 rounded-full ${c.text === "text-cinema" ? "bg-cinema" : c.text === "text-social" ? "bg-social" : c.text === "text-connectivity" ? "bg-connectivity" : "bg-cat-security"}`} />
+                    <div className={`w-2 h-2 rounded-full bg-music`} />
                     <h4 className={`font-display text-lg font-semibold ${c.text}`}>{group.name}</h4>
                   </div>
                   <div className="flex flex-wrap gap-1.5">

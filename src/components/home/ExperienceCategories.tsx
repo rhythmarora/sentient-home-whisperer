@@ -69,10 +69,10 @@ const colorMap: Record<string, string> = {
 };
 
 const textColorMap: Record<string, string> = {
-  cinema: "text-cinema", music: "text-music", performance: "text-performance",
-  gaming: "text-gaming", social: "text-social", outdoor: "text-outdoor",
-  relax: "text-relax", gold: "text-primary", "cat-security": "text-cat-security",
-  connectivity: "text-connectivity",
+  cinema: "text-music", music: "text-music", performance: "text-music",
+  gaming: "text-music", social: "text-music", outdoor: "text-music",
+  relax: "text-music", gold: "text-music", "cat-security": "text-music",
+  connectivity: "text-music",
 };
 
 export default function ExperienceCategories() {
@@ -170,7 +170,7 @@ export default function ExperienceCategories() {
                           </ul>
                           <Link
                             to="/design"
-                            className="inline-block mt-4 font-body text-xs text-primary hover:text-gold-light transition-colors"
+                            className="inline-block mt-4 font-body text-xs text-music hover:opacity-80 transition-opacity"
                             onClick={(e) => e.stopPropagation()}
                           >
                             Design this experience →

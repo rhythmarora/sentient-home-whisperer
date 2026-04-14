@@ -22,10 +22,10 @@ const categories = [
 ];
 
 const colorMap: Record<string, { border: string; text: string; dot: string; glow: string }> = {
-  cinema: { border: "border-cinema/40", text: "text-cinema", dot: "bg-cinema", glow: "glow-cinema" },
-  social: { border: "border-social/40", text: "text-social", dot: "bg-social", glow: "glow-social" },
-  connectivity: { border: "border-connectivity/40", text: "text-connectivity", dot: "bg-connectivity", glow: "" },
-  "cat-security": { border: "border-cat-security/40", text: "text-cat-security", dot: "bg-cat-security", glow: "" },
+  cinema: { border: "border-music/40", text: "text-music", dot: "bg-music", glow: "glow-music" },
+  social: { border: "border-music/40", text: "text-music", dot: "bg-music", glow: "glow-music" },
+  connectivity: { border: "border-music/40", text: "text-music", dot: "bg-music", glow: "" },
+  "cat-security": { border: "border-music/40", text: "text-music", dot: "bg-music", glow: "" },
 };
 
 export default function SystemsShowcase() {

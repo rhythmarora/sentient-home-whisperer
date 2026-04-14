@@ -78,7 +78,7 @@ export default function ControlDemo() {
                   key={r}
                   onClick={() => { setActiveRoom(r); setActiveScene(0); }}
                   className={`px-4 py-2 font-body text-xs rounded-full transition-all ${
-                    activeRoom === r ? "bg-gradient-vibrant text-white" : "bg-graphite text-silver"
+                    activeRoom === r ? "bg-music text-white" : "bg-graphite text-silver"
                   }`}
                 >
                   {r}

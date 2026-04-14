@@ -16,9 +16,9 @@ export default function AIEntrySection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="font-body text-xs tracking-wider uppercase text-primary">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-music/30 bg-music/5 mb-8">
+            <Sparkles className="w-4 h-4 text-music" />
+            <span className="font-body text-xs tracking-wider uppercase text-music">
               AI-Powered
             </span>
           </div>
