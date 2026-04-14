@@ -28,6 +28,7 @@ const navItems: NavItem[] = [
   { label: "Builders & Developers", href: "/builders" },
   { label: "Architects & Designers", href: "/architects" },
   { label: "Experience Center", href: "/experience-center" },
+  { label: "About", href: "/about" },
 ];
 
 function DesktopDropdown({ item }: { item: NavItem }) {
