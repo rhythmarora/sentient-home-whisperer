@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Compass, Code, Award, Building } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export default function About() {
   return (
@@ -521,6 +523,120 @@ export default function About() {
           </motion.div>
         </div>
       </section>
+
+      {/* Visit Us — Closing CTA */}
+      <VisitSection />
     </Layout>
+  );
+}
+
+function VisitSection() {
+  const [name, setName] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmedName = name.trim();
+    const trimmedPhone = whatsapp.trim();
+
+    if (!trimmedName || !trimmedPhone) {
+      toast({ title: "Please fill in all fields", variant: "destructive" });
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const msg = encodeURIComponent(
+        `Hi, I'd like to request a private visit to the Qubix Experience Center.\n\nName: ${trimmedName}\nWhatsApp: ${trimmedPhone}`
+      );
+      window.open(`https://wa.me/918050200008?text=${msg}`, "_blank");
+      toast({ title: "Request sent!", description: "We'll confirm your appointment within one business day." });
+      setName("");
+      setWhatsapp("");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <section className="py-24 md:py-32 bg-secondary">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          {/* Left — Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="font-body text-xs tracking-[0.5em] uppercase text-silver mb-6">
+              Visit Us
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-medium mb-8 leading-tight">
+              The Experience Center, Bangalore.
+            </h2>
+            <div className="space-y-5 font-body text-sm text-silver leading-relaxed">
+              <p>
+                The only address in the Indian subcontinent where you can hear Constellation by Meyer Sound in a residential setting. Every system we recommend, you can hear first. Every brand we specify, we have installed and calibrated ourselves.
+              </p>
+              <p className="text-foreground font-medium">By private appointment only.</p>
+              <p>
+                15, State Bank of India Road,
+                <br />
+                Shanthala Nagar, Ashok Nagar,
+                <br />
+                Bengaluru — 560025
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Right — Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="flex flex-col justify-center"
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block font-body text-xs text-silver tracking-wide mb-2">Your name</label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  maxLength={100}
+                  className="w-full bg-background border border-border rounded-sm px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                  placeholder="Full name"
+                />
+              </div>
+              <div>
+                <label className="block font-body text-xs text-silver tracking-wide mb-2">WhatsApp number</label>
+                <input
+                  type="tel"
+                  value={whatsapp}
+                  onChange={(e) => setWhatsapp(e.target.value)}
+                  maxLength={15}
+                  className="w-full bg-background border border-border rounded-sm px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                  placeholder="+91 XXXXX XXXXX"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={submitting}
+                className="w-full px-8 py-3.5 font-body font-medium text-sm tracking-wider bg-[#FFFFFF] text-[#0A0A0A] rounded-full hover:bg-[#F0F0F0] transition-colors disabled:opacity-50"
+              >
+                {submitting ? "Sending…" : "Request a Private Visit"}
+              </button>
+              <p className="font-body text-xs text-muted-foreground italic text-center">
+                We will confirm your appointment within one business day.
+              </p>
+            </form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
   );
 }
