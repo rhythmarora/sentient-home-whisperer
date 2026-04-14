@@ -40,7 +40,7 @@ const processSteps = [
   { step: "01", title: "Consultation", description: "We study your project — layout, positioning, buyer profile — and recommend the right technology stack." },
   { step: "02", title: "Design & Planning", description: "Detailed drawings, conduit plans, BOQs, and specifications aligned to your construction timeline." },
   { step: "03", title: "Deployment", description: "On-site execution with our trained teams. Phase-wise rollout synced with your construction milestones." },
-  { step: "04", title: "Handover & Support", description: "Buyer walkthroughs, system training, and long-term AMC support for every unit delivered." },
+  { step: "04", title: "Handover & Support", description: "Buyer walkthroughs, system training, and structured long-term AMC support for every unit delivered. Residents access our professional support team — ticket-based SLAs, 24/7 helpdesk, and on-site response when it matters." },
 ];
 
 const brands = ["Crestron", "Lutron", "Meyer Sound", "Ruckus", "Sonance", "Control4", "Ubiquiti", "Atlona"];
@@ -279,6 +279,34 @@ export default function Builders() {
                 <p className="font-display text-5xl font-bold text-primary/10 mb-2">{step.step}</p>
                 <h3 className="font-display text-lg font-medium mb-2">{step.title}</h3>
                 <p className="font-body text-sm text-silver leading-relaxed">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Support Credentials */}
+      <section className="py-24 lg:py-32 px-6">
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-5xl font-medium">Your residents deserve professional support. <span className="italic">Not a mobile number.</span></h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "Ticket-Based SLA System", body: "Every support request logged, tracked, and resolved within defined SLA windows — transparent to both developer and resident." },
+              { title: "Dedicated AMC Programs", body: "Annual maintenance contracts with scheduled preventive visits, remote monitoring, and priority on-site response for all integrated systems." },
+              { title: "Multi-City Support Teams", body: "Trained, on-ground technicians across India's major cities — no dependency on a single point of failure." },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="border-t-2 border-primary pt-6"
+              >
+                <h3 className="font-display text-lg font-medium mb-3">{item.title}</h3>
+                <p className="font-body text-sm text-silver leading-relaxed">{item.body}</p>
               </motion.div>
             ))}
           </div>
