@@ -13,6 +13,10 @@ const footerLinks = {
     { label: "Products", href: "/products" },
     { label: "Philosophy", href: "/philosophy" },
   ],
+  Professionals: [
+    { label: "Builders & Developers", href: "/builders" },
+    { label: "Architects & Designers", href: "/architects" },
+  ],
   Connect: [
     { label: "Experience Center", href: "/experience-center" },
     { label: "Contact", href: "/contact" },
@@ -26,7 +30,7 @@ export default function Footer() {
       <div className="h-px bg-gradient-vibrant" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           <div>
             <Link to="/" className="inline-block mb-4">
               <img src={qubixLogo} alt="Qubix" className="h-8 w-auto brightness-0 invert" />
