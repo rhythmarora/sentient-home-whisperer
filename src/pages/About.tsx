@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
+import { Compass, Code, Award, Building } from "lucide-react";
 
 export default function About() {
   return (
