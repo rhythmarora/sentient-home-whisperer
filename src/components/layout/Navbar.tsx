@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import qubixLogo from "@/assets/qubix-logo.png";
 
 const navLinks = [
-  { label: "Experience", href: "/#experience" },
+  
   { label: "Experience Center", href: "/experience-center" },
   { label: "Design Your Home", href: "/design" },
   { label: "Spaces", href: "/spaces" },
