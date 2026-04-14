@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Building2, Wifi, Monitor, Shield, Zap, CheckCircle2, ArrowRight, Check } from "lucide-react";
+import { Building2, Wifi, Monitor, Shield, Zap, CheckCircle2, ArrowRight, Check, ClipboardList, Users } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
@@ -118,6 +118,37 @@ export default function Builders() {
                 <cap.icon className="w-8 h-8 text-primary mb-4" />
                 <h3 className="font-display text-xl font-medium mb-2">{cap.title}</h3>
                 <p className="font-body text-sm text-silver leading-relaxed">{cap.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Site Rules */}
+      <section className="py-24 lg:py-32 px-6 bg-card">
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-5xl font-medium mb-4">We operate by <span className="italic">your site rules.</span></h2>
+            <p className="font-body text-base text-silver max-w-2xl mx-auto">Construction sites have protocols. So do we. Our teams are trained in EHS compliance, site safety standards, and documentation requirements — we integrate into your contractor ecosystem without disrupting it.</p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { icon: Shield, title: "EHS Compliant Teams", description: "Every technician deployed follows EHS protocols — PPE, site induction, method statements, and incident reporting aligned to your contractor requirements." },
+              { icon: ClipboardList, title: "Documentation Ready", description: "BOQs, as-built drawings, compliance certificates, and handover documentation delivered in the format your project management team needs." },
+              { icon: Users, title: "Contractor Coordination", description: "We coordinate directly with your civil, MEP, and interior contractors — conduit planning, ceiling coordination, and snagging handled end-to-end." },
+              { icon: CheckCircle2, title: "Quality Audits", description: "Stage-wise quality checks at pre-plaster, pre-ceiling, and pre-handover milestones — with sign-off documentation at every phase." },
+            ].map((card, i) => (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="p-8 rounded-sm bg-card border border-border hover:border-primary/30 transition-colors"
+              >
+                <card.icon className="w-8 h-8 text-primary mb-4" />
+                <h3 className="font-display text-xl font-medium mb-2">{card.title}</h3>
+                <p className="font-body text-sm text-silver leading-relaxed">{card.description}</p>
               </motion.div>
             ))}
           </div>
