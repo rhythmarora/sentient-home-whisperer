@@ -54,7 +54,7 @@ const projectTypes = [
 ];
 
 export default function Builders() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", projectType: "", units: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", projectType: "", units: "", message: "", wantDocs: false });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -364,7 +364,7 @@ export default function Builders() {
               Partner with <span className="italic text-gradient-vibrant">Qubix.</span>
             </h2>
             <p className="font-body text-base text-silver max-w-xl mx-auto">
-              Tell us about your project. Our enterprise team will get back to you within 24 hours.
+              Tell us about your project. Our projects team will review your enquiry and respond within one business day. For urgent requirements call: <a href="tel:+918050200008" className="text-primary hover:underline">+91 80502 00008</a>
             </p>
           </motion.div>
 
@@ -394,7 +394,11 @@ export default function Builders() {
                 <input value={form.units} onChange={(e) => setForm({ ...form, units: e.target.value })} placeholder="Approx. number of units" className="px-4 py-3 font-body text-sm rounded-sm border border-graphite bg-void text-foreground placeholder:text-ash focus:outline-none focus:border-primary/50" />
               </div>
               <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your project (optional)" rows={3} className="w-full px-4 py-3 font-body text-sm rounded-sm border border-graphite bg-void text-foreground placeholder:text-ash focus:outline-none focus:border-primary/50 resize-none" />
-              <button type="submit" className="w-full py-4 font-body font-medium text-sm tracking-wider bg-gradient-vibrant text-white rounded-sm hover:opacity-90 transition-opacity">
+              <label className="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" checked={form.wantDocs} onChange={(e) => setForm({ ...form, wantDocs: e.target.checked })} className="w-4 h-4 rounded border-graphite bg-void text-primary focus:ring-primary/50" />
+                <span className="font-body text-sm text-silver">I'd like to receive sample documentation (BOQ, handover checklist, AMC structure)</span>
+              </label>
+              <button type="submit" className="w-full py-4 font-body font-medium text-sm tracking-wider bg-[#FFFFFF] text-[#0A0A0A] rounded-sm hover:bg-[#F0F0F0] transition-colors">
                 Submit Partnership Enquiry
               </button>
             </motion.form>
