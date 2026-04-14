@@ -155,7 +155,7 @@ export default function BrandEcosystem() {
                   )}
                 </div>
                 {brand.note && (
-                  <span className="font-body text-xs text-relax italic">{brand.note}</span>
+                  <span className="font-body text-xs text-music italic">{brand.note}</span>
                 )}
                 <p className="font-body text-sm text-silver mt-3 leading-relaxed">{brand.description}</p>
               </Link>

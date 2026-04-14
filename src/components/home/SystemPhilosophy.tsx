@@ -31,7 +31,7 @@ const designApproach = [
 ];
 
 const textColorMap: Record<string, string> = {
-  cinema: "text-cinema", music: "text-music", social: "text-social", relax: "text-relax",
+  cinema: "text-music", music: "text-music", social: "text-music", relax: "text-music",
 };
 
 export default function SystemPhilosophy() {

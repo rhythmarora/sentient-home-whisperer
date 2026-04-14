@@ -109,7 +109,7 @@ export default function HomeExplorer() {
                   exit={{ opacity: 0, x: -20 }}
                   className="p-6 rounded-sm bg-carbon border border-graphite sticky top-24"
                 >
-                  <span className={`inline-block px-2 py-0.5 text-xs font-body rounded ${active.zone === "indoor" ? "bg-cinema/10 text-cinema" : "bg-relax/10 text-relax"}`}>
+                  <span className={`inline-block px-2 py-0.5 text-xs font-body rounded ${active.zone === "indoor" ? "bg-music/10 text-music" : "bg-music/10 text-music"}`}>
                     {active.zone}
                   </span>
                   <h3 className="font-display text-2xl font-semibold mt-3 mb-6 text-gradient-vibrant">{active.name}</h3>
@@ -117,7 +117,7 @@ export default function HomeExplorer() {
                   <div className="space-y-5">
                     <div>
                       <div className="flex items-center gap-2 mb-2">
-                        <Volume2 className="w-4 h-4 text-cinema" />
+                        <Volume2 className="w-4 h-4 text-music" />
                         <span className="font-body text-xs uppercase tracking-wider text-muted-foreground">Audio Architecture</span>
                       </div>
                       <p className="font-body text-sm text-platinum/80">{active.audio}</p>
@@ -125,7 +125,7 @@ export default function HomeExplorer() {
 
                     <div>
                       <div className="flex items-center gap-2 mb-2">
-                        <Lightbulb className="w-4 h-4 text-social" />
+                        <Lightbulb className="w-4 h-4 text-music" />
                         <span className="font-body text-xs uppercase tracking-wider text-muted-foreground">Lighting Scenes</span>
                       </div>
                       <div className="flex flex-wrap gap-2">
@@ -138,7 +138,7 @@ export default function HomeExplorer() {
                     {active.security && (
                       <div>
                         <div className="flex items-center gap-2 mb-2">
-                          <Shield className="w-4 h-4 text-cat-security" />
+                          <Shield className="w-4 h-4 text-music" />
                           <span className="font-body text-xs uppercase tracking-wider text-muted-foreground">Security</span>
                         </div>
                         <div className="flex flex-wrap gap-2">
@@ -152,7 +152,7 @@ export default function HomeExplorer() {
                     {active.modes && (
                       <div>
                         <div className="flex items-center gap-2 mb-2">
-                          <Play className="w-4 h-4 text-performance" />
+                          <Play className="w-4 h-4 text-music" />
                           <span className="font-body text-xs uppercase tracking-wider text-muted-foreground">Performance Modes</span>
                         </div>
                         <div className="flex flex-wrap gap-2">
