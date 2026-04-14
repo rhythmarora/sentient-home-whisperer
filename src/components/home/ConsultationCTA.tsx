@@ -3,35 +3,18 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 
-const interests = [
-  "Private Cinema", "Constellation Room", "Whole Home Audio",
-  "Smart Lighting & Shading", "Full Home Automation", "Outdoor Entertainment",
-  "Gaming Den", "Karaoke & Social Lounge",
-];
-
-const propertyTypes = ["Apartment / Penthouse", "Villa / Bungalow / Independent Home", "Farmhouse / Weekend Home", "Commercial Space"];
-
 export default function ConsultationCTA() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", propertyType: "", interests: [] as string[] });
+  const [form, setForm] = useState({ name: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
-
-  const toggleInterest = (i: string) => {
-    setForm((prev) => ({
-      ...prev,
-      interests: prev.interests.includes(i)
-        ? prev.interests.filter((x) => x !== i)
-        : [...prev.interests, i],
-    }));
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     pushLeadToZoho({
       name: form.name,
-      email: form.email,
+      email: "",
       phone: form.phone,
-      projectType: form.propertyType,
-      aiJourneyData: { propertyType: form.propertyType, interests: form.interests.join(", ") },
+      projectType: "",
+      aiJourneyData: { message: form.message },
       source: "Consultation CTA",
     });
     setSubmitted(true);
@@ -84,71 +67,33 @@ export default function ConsultationCTA() {
             onSubmit={handleSubmit}
             className="space-y-5 p-8 rounded-sm bg-carbon border border-graphite"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                required
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                placeholder="Your name"
-                className="px-4 py-3 font-body text-sm rounded-sm border border-graphite bg-void text-foreground placeholder:text-ash focus:outline-none focus:border-cinema/50"
-              />
-              <input
-                required
-                type="email"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                placeholder="Email address"
-                className="px-4 py-3 font-body text-sm rounded-sm border border-graphite bg-void text-foreground placeholder:text-ash focus:outline-none focus:border-cinema/50"
-              />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                placeholder="Phone / WhatsApp number"
-                className="px-4 py-3 font-body text-sm rounded-sm border border-graphite bg-void text-foreground placeholder:text-ash focus:outline-none focus:border-cinema/50"
-              />
-              <select
-                value={form.propertyType}
-                onChange={(e) => setForm({ ...form, propertyType: e.target.value })}
-                className="px-4 py-3 font-body text-sm rounded-sm border border-graphite bg-void text-foreground focus:outline-none focus:border-cinema/50 appearance-none"
-              >
-                <option value="" disabled>Property type</option>
-                {propertyTypes.map((s) => (
-                  <option key={s} value={s}>{s}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* Interest chips */}
-            <div>
-              <p className="font-body text-xs text-silver mb-3">I'm interested in:</p>
-              <div className="flex flex-wrap gap-2">
-                {interests.map((interest) => {
-                  const active = form.interests.includes(interest);
-                  return (
-                    <button
-                      key={interest}
-                      type="button"
-                      onClick={() => toggleInterest(interest)}
-                      className={`px-4 py-2 font-body text-xs rounded-full border transition-all ${
-                        active
-                          ? "border-cinema/50 bg-cinema/10 text-cinema"
-                          : "border-graphite bg-void text-silver hover:text-foreground"
-                      }`}
-                    >
-                      {interest}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
+            <input
+              required
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              placeholder="Your name"
+              className="w-full px-4 py-3 font-body text-sm rounded-sm border border-graphite bg-void text-foreground placeholder:text-ash focus:outline-none focus:border-cinema/50"
+            />
+            <input
+              required
+              type="tel"
+              value={form.phone}
+              onChange={(e) => setForm({ ...form, phone: e.target.value })}
+              placeholder="WhatsApp number"
+              className="w-full px-4 py-3 font-body text-sm rounded-sm border border-graphite bg-void text-foreground placeholder:text-ash focus:outline-none focus:border-cinema/50"
+            />
+            <textarea
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              placeholder="Tell us about your home — size, location, what you're imagining (optional)"
+              rows={3}
+              className="w-full px-4 py-3 font-body text-sm rounded-sm border border-graphite bg-void text-foreground placeholder:text-ash focus:outline-none focus:border-cinema/50 resize-none"
+            />
             <button
               type="submit"
               className="w-full py-4 font-body font-medium text-sm tracking-wider bg-[#FFFFFF] text-[#0A0A0A] rounded-sm hover:bg-[#F0F0F0] transition-colors"
             >
-              Start Your Journey
+              Request a Private Consultation
             </button>
           </motion.form>
         )}
