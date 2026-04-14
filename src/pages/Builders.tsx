@@ -236,13 +236,33 @@ export default function Builders() {
       <section className="py-24 lg:py-32 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">Premium Amenities</p>
-            <h2 className="font-display text-3xl md:text-5xl font-medium mb-4">World-class brands, <span className="italic">your differentiator.</span></h2>
-            <p className="font-body text-base text-silver max-w-xl mx-auto mb-12">
-              Offer your buyers the same technology found in the world's finest residences.
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">Direct Manufacturer Access</p>
+            <h2 className="font-display text-3xl md:text-5xl font-medium mb-4">Developer pricing, <span className="italic">not retail.</span></h2>
+            <p className="font-body text-base text-silver max-w-2xl mx-auto mb-12">
+              As a direct authorised partner of 85+ global technology brands, we pass manufacturer-level pricing to your project — not distributor markups. For developers specifying across hundreds of units, this changes your project economics entirely.
             </p>
           </motion.div>
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              { title: "Volume Discounting", body: "Tiered pricing based on unit count — the more you deploy, the lower the per-unit cost. Structured for township and multi-tower scale." },
+              { title: "Rate Contracts", body: "Locked-in rate contracts with extended price validity across your project timeline — no mid-project price revisions or surprise escalations." },
+              { title: "Bundled Support Packs", body: "AMC and warranty support bundled into the project cost at preferential rates — a selling point for your buyers, not an afterthought." },
+              { title: "Single Commercial Agreement", body: "One vendor, one contract covering audio, video, lighting, networking, automation, and security — simplified procurement and GST compliance." },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="border-t-2 border-primary pt-6"
+              >
+                <h3 className="font-display text-base font-medium mb-2">{item.title}</h3>
+                <p className="font-body text-sm text-silver leading-relaxed">{item.body}</p>
+              </motion.div>
+            ))}
+          </div>
+          <div className="flex flex-wrap justify-center gap-6 mb-8">
             {brands.map((brand, i) => (
               <motion.div
                 key={brand}
@@ -256,14 +276,9 @@ export default function Builders() {
               </motion.div>
             ))}
           </div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-12 max-w-3xl mx-auto">
-            <p className="font-body text-base text-silver leading-relaxed mb-6">
-              We hold direct manufacturer partnerships with 85+ technology brands — not distributor relationships. This means volume pricing passed directly to your project, faster brand escalation when issues arise, and specifications that are always current. For a developer specifying technology across hundreds of units, this is the difference between a vendor and a strategic supply partner.
-            </p>
-            <p className="font-body text-sm italic text-silver/70">
-              Direct authorised partner: Crestron · Meyer Sound · Lutron · Ruckus · Sonance · Control4 · and 80+ others.
-            </p>
-          </motion.div>
+          <p className="font-body text-sm italic text-silver/70 text-center">
+            Direct authorised partner: Crestron · Meyer Sound · Lutron · Ruckus · Sonance · Control4 · and 80+ others.
+          </p>
         </div>
       </section>
 
