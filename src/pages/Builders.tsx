@@ -153,7 +153,25 @@ export default function Builders() {
         </div>
       </section>
 
-      {/* Brand Portfolio */}
+      {/* Trusted By */}
+      <section className="py-24 lg:py-32 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-12">Trusted By</p>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-8">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <div key={i} className="flex items-center justify-center h-24 rounded-sm border-2 border-dashed border-border">
+                  <span className="font-body text-xs text-muted-foreground">Partner Logo</span>
+                </div>
+              ))}
+            </div>
+            <p className="font-body text-sm italic text-silver">
+              Project references and case studies available under NDA upon request.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-24 lg:py-32 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
