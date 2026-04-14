@@ -198,3 +198,11 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Hide Zoho SalesIQ chat widget */
+.zsiq_floatmain,
+.zsiq_theme1,
+#zsiq_float,
+.siq_bR {
+  display: none !important;
+}
