@@ -79,6 +79,7 @@ const allBrands = [
 export default function Brands() {
   return (
     <Layout>
+      <SEO title="Brands" description="Discover the world-class brands Qubix partners with — PMC, Lutron, Crestron, KEF, Trinnov, and more." path="/brands" />
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <motion.p

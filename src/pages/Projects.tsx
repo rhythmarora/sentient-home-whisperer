@@ -45,6 +45,7 @@ const projects = [
 export default function Projects() {
   return (
     <Layout>
+      <SEO title="Projects" description="Explore Qubix luxury home technology projects — penthouses, villas, and bespoke residences across India." path="/projects" />
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <motion.p

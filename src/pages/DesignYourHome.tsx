@@ -86,6 +86,7 @@ export default function DesignYourHome() {
 
   return (
     <Layout>
+      <SEO title="Design Your Home" description="Tell us about your home and lifestyle — Qubix will craft a personalised luxury technology recommendation." path="/design" />
       <section className="pt-32 pb-24 px-6 min-h-screen">
         <div className="max-w-3xl mx-auto">
           {/* Progress */}
