@@ -109,8 +109,8 @@ export default function HomeExplorer() {
                   exit={{ opacity: 0, x: -20 }}
                   className="p-6 rounded-sm bg-carbon border border-graphite sticky top-24"
                 >
-                  <span className={`inline-block px-2 py-0.5 text-xs font-body rounded ${active.zone === "indoor" ? "bg-music/10 text-music" : "bg-music/10 text-music"}`}>
-                    {active.zone}
+                  <span className="inline-block px-2 py-0.5 text-xs font-body rounded bg-music/10 text-music uppercase tracking-wider">
+                    {active.experience}
                   </span>
                   <h3 className="font-display text-2xl font-semibold mt-3 mb-6 text-gradient-vibrant">{active.name}</h3>
 
