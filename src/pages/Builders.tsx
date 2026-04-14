@@ -68,6 +68,14 @@ const projectTypes = [
 export default function Builders() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", projectType: "", units: "", message: "", wantDocs: false });
   const [submitted, setSubmitted] = useState(false);
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
