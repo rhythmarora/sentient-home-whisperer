@@ -184,6 +184,58 @@ export default function Builders() {
         </div>
       </section>
 
+      {/* Base Prefit + Upgrades */}
+      <section className="py-24 lg:py-32 px-6">
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">Delivery Model</p>
+            <h2 className="font-display text-3xl md:text-5xl font-medium mb-4">Base prefit. <span className="italic">Buyer upgrades.</span></h2>
+            <p className="font-body text-base text-silver max-w-2xl mx-auto">
+              We understand the Indian developer model — a standardised base package across all units, with optional upgrade tiers that buyers choose at the time of booking or possession. Our systems are designed around this workflow from day one.
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="p-8 rounded-sm border border-border bg-card">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-3 h-3 rounded-full bg-primary/60" />
+                <h3 className="font-display text-xl font-medium">Base Prefit Package</h3>
+              </div>
+              <p className="font-body text-sm text-silver leading-relaxed mb-4">
+                A standardised technology backbone provisioned during construction — structured cabling, conduit infrastructure, network points, and basic automation readiness. Every unit is future-proof from handover.
+              </p>
+              <ul className="space-y-2">
+                {["Structured cabling & conduit planning at slab stage", "Network infrastructure per unit", "Basic lighting & curtain automation readiness", "Standardised across all units — no per-unit design cost"].map((item) => (
+                  <li key={item} className="flex items-start gap-2 font-body text-sm text-silver">
+                    <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="p-8 rounded-sm border-2 border-primary/40 bg-card">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-3 h-3 rounded-full bg-primary" />
+                <h3 className="font-display text-xl font-medium">Buyer Upgrade Tiers</h3>
+              </div>
+              <p className="font-body text-sm text-silver leading-relaxed mb-4">
+                Optional upgrade packages that buyers select — presented through your sales team or our experience flat. Tiered pricing lets buyers choose their level of technology, while you earn on the upsell.
+              </p>
+              <ul className="space-y-2">
+                {["Silver / Gold / Platinum tier structures", "Curated upgrade menus with fixed pricing", "Buyer-facing collateral & experience flat walkthroughs", "Revenue share or markup models available"].map((item) => (
+                  <li key={item} className="flex items-start gap-2 font-body text-sm text-silver">
+                    <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="font-body text-sm italic text-silver text-center">
+            This is how most premium developers in India deliver technology — we've built our entire operations, pricing, and documentation around this model.
+          </motion.p>
+        </div>
+      </section>
+
       {/* Trusted By */}
       <section className="py-24 lg:py-32 px-6">
         <div className="max-w-6xl mx-auto text-center">
