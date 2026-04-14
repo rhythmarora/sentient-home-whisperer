@@ -40,7 +40,7 @@ const processSteps = [
   { step: "01", title: "Consultation", description: "We study your project — layout, positioning, buyer profile — and recommend the right technology stack." },
   { step: "02", title: "Design & Planning", description: "Detailed drawings, conduit plans, BOQs, and specifications aligned to your construction timeline." },
   { step: "03", title: "Deployment", description: "On-site execution with our trained teams. Phase-wise rollout synced with your construction milestones." },
-  { step: "04", title: "Handover & Support", description: "Buyer walkthroughs, system training, and long-term AMC support for every unit delivered." },
+  { step: "04", title: "Handover & Support", description: "Buyer walkthroughs, system training, and structured long-term AMC support for every unit delivered. Residents access our professional support team — ticket-based SLAs, 24/7 helpdesk, and on-site response when it matters." },
 ];
 
 const brands = ["Crestron", "Lutron", "Meyer Sound", "Ruckus", "Sonance", "Control4", "Ubiquiti", "Atlona"];
