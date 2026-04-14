@@ -95,8 +95,20 @@ export default function Builders() {
       <SEO title="For Builders & Developers" description="Partner with Qubix for scalable smart home technology across residential towers and villa projects. Pre-wiring, model flats, and enterprise integration." path="/builders" />
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center justify-center px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-card/50 to-background" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[200px]" />
+        {/* Rotating hero backgrounds */}
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={heroIndex}
+            src={heroSlides[heroIndex].src}
+            alt={heroSlides[heroIndex].alt}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2 }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
