@@ -126,6 +126,70 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Leadership */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-body text-xs tracking-[0.5em] uppercase text-silver mb-6"
+          >
+            Leadership
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="font-display text-3xl md:text-5xl font-medium mb-16"
+          >
+            The people behind the work.
+          </motion.h2>
+
+          {/* Rhythm Arora */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-1 md:grid-cols-5 gap-10"
+          >
+            {/* Photo Placeholder — 60% */}
+            <div className="md:col-span-3 aspect-[3/4] border-2 border-dashed border-border rounded-sm flex items-center justify-center">
+              <span className="font-body text-sm text-silver tracking-wide">Rhythm Arora — Photo</span>
+            </div>
+
+            {/* Content — 40% */}
+            <div className="md:col-span-2 flex flex-col justify-center">
+              <h3 className="font-display text-2xl md:text-3xl font-medium mb-1">Rhythm Arora</h3>
+              <p className="font-body text-sm text-primary tracking-wide mb-8">Director &amp; Chief Technology Officer</p>
+
+              <div className="space-y-5 font-body text-sm text-silver leading-relaxed">
+                <p>
+                  Rhythm has spent his career at the intersection of technology and experience — not as an observer, but as a practitioner. He has personally designed and delivered some of India's most technically demanding residential installations — from private cinemas with active acoustics to whole-home systems for the country's most discerning homeowners.
+                </p>
+                <p>
+                  His certifications span every dimension of what a luxury home demands: CEDIA Outreach — CPD Educator, RP22 Residential Systems Designer, RP32 Electronic Systems Technician, THX Certified Video Calibrator, and PVA Certified Calibrator. He holds manufacturer training certifications from Meyer Sound Constellation, Trinnov Immersive Audio, Crestron, and Control4 — among others.
+                </p>
+                <p>
+                  Recognised as one of the Top 40 Under 40 Business Leaders in the APAC region by Inavate APAC in 2019, Rhythm has presented at ISE in Amsterdam and PALME Expo, and his projects have been featured in mondo*dr and Pro AVL Asia.
+                </p>
+                <p className="text-foreground font-medium">
+                  When a home has a Qubix system, Rhythm has either designed it, calibrated it, or signed off on it.
+                </p>
+              </div>
+
+              {/* Credential Strip */}
+              <p className="mt-8 font-body text-xs text-muted-foreground leading-relaxed">
+                CEDIA CPD Educator · RP22 · RP32 · THX Certified · PVA Certified · Meyer Sound Constellation · Trinnov Immersive Audio · Crestron · Control4 · APAC Top 40 Under 40 — 2019
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </Layout>
   );
 }
