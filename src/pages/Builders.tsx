@@ -354,6 +354,50 @@ export default function Builders() {
         </div>
       </section>
 
+      {/* Beyond Residences */}
+      <section className="py-24 lg:py-32 px-6 bg-card">
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">Beyond The Unit</p>
+            <h2 className="font-display text-3xl md:text-5xl font-medium mb-4">Common areas, clubhouses, <span className="italic">and sales offices.</span></h2>
+            <p className="font-body text-base text-silver max-w-2xl mx-auto">
+              Our scope extends well beyond individual residences. We design and integrate technology for every shared space in your project — and build the experience centres that sell your vision before a single unit is handed over.
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              { title: "Clubhouse & Amenities", body: "Multi-zone audio, outdoor entertainment, gym AV systems, co-working spaces, and party halls — fully integrated technology that elevates your amenity offering." },
+              { title: "Lobby & Common Areas", body: "Digital signage, ambient lighting, background audio, and visitor management systems for lobbies, corridors, and lift landings across every tower." },
+              { title: "Sales Office & Experience Centres", body: "Immersive technology showrooms that let buyers experience smart home living before they purchase — model flat integration, demo zones, and interactive walkthroughs." },
+              { title: "Show Flats & Model Units", body: "Fully functional smart home demonstration units with lighting scenes, motorised curtains, multi-room audio, and app-based control — ready for buyer walkthroughs." },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="p-8 rounded-sm bg-background border border-border hover:border-primary/30 transition-colors"
+              >
+                <h3 className="font-display text-base font-medium mb-2">{item.title}</h3>
+                <p className="font-body text-sm text-silver leading-relaxed">{item.body}</p>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
+            <p className="font-body text-sm text-silver mb-6">
+              See how our experience centres and technology showrooms are built — explore the Qubix Experience Centre in Bangalore.
+            </p>
+            <Link
+              to="/experience-center"
+              className="inline-flex items-center gap-2 px-8 py-4 border border-primary/30 text-primary font-body font-medium text-sm tracking-wider rounded-full hover:bg-primary/10 transition-colors"
+            >
+              Explore Experience Centre <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Form */}
       <section id="partner" className="py-32 lg:py-40 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-card to-background" />
