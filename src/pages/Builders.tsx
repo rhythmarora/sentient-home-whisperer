@@ -256,6 +256,14 @@ export default function Builders() {
               </motion.div>
             ))}
           </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-12 max-w-3xl mx-auto">
+            <p className="font-body text-base text-silver leading-relaxed mb-6">
+              We hold direct manufacturer partnerships with 85+ technology brands — not distributor relationships. This means volume pricing passed directly to your project, faster brand escalation when issues arise, and specifications that are always current. For a developer specifying technology across hundreds of units, this is the difference between a vendor and a strategic supply partner.
+            </p>
+            <p className="font-body text-sm italic text-silver/70">
+              Direct authorised partner: Crestron · Meyer Sound · Lutron · Ruckus · Sonance · Control4 · and 80+ others.
+            </p>
+          </motion.div>
         </div>
       </section>
 
