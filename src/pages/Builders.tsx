@@ -1,7 +1,19 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Building2, Wifi, Monitor, Shield, Zap, CheckCircle2, ArrowRight, Check, ClipboardList, Users } from "lucide-react";
+
+import heroApartments from "@/assets/builders/hero-apartments.jpg";
+import heroVilla from "@/assets/builders/hero-villa.jpg";
+import heroInterior from "@/assets/builders/hero-interior.jpg";
+import heroClubhouse from "@/assets/builders/hero-clubhouse.jpg";
+
+const heroSlides = [
+  { src: heroApartments, alt: "Luxury residential apartment towers at dusk", label: "Apartments" },
+  { src: heroVilla, alt: "Modern luxury villa with ambient lighting", label: "Villas" },
+  { src: heroInterior, alt: "Smart home living room with integrated technology", label: "Smart Interiors" },
+  { src: heroClubhouse, alt: "Premium clubhouse with designer lighting", label: "Clubhouses" },
+];
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
@@ -56,6 +68,14 @@ const projectTypes = [
 export default function Builders() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", projectType: "", units: "", message: "", wantDocs: false });
   const [submitted, setSubmitted] = useState(false);
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -75,8 +95,20 @@ export default function Builders() {
       <SEO title="For Builders & Developers" description="Partner with Qubix for scalable smart home technology across residential towers and villa projects. Pre-wiring, model flats, and enterprise integration." path="/builders" />
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center justify-center px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-card/50 to-background" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[200px]" />
+        {/* Rotating hero backgrounds */}
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={heroIndex}
+            src={heroSlides[heroIndex].src}
+            alt={heroSlides[heroIndex].alt}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2 }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -94,6 +126,21 @@ export default function Builders() {
           <a href="#partner" className="inline-flex items-center gap-2 px-8 py-4 bg-[#FFFFFF] text-[#0A0A0A] font-body font-medium text-sm tracking-wider rounded-full hover:bg-[#F0F0F0] transition-colors">
             Partner With Us <ArrowRight className="w-4 h-4" />
           </a>
+
+          {/* Slide indicators */}
+          <div className="flex items-center justify-center gap-3 mt-10">
+            {heroSlides.map((slide, i) => (
+              <button
+                key={slide.label}
+                onClick={() => setHeroIndex(i)}
+                className={`font-body text-xs tracking-wider transition-all duration-500 ${
+                  i === heroIndex ? "text-foreground border-b border-primary pb-1" : "text-silver/50 hover:text-silver"
+                }`}
+              >
+                {slide.label}
+              </button>
+            ))}
+          </div>
         </motion.div>
       </section>
 
