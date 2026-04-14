@@ -394,7 +394,11 @@ export default function Builders() {
                 <input value={form.units} onChange={(e) => setForm({ ...form, units: e.target.value })} placeholder="Approx. number of units" className="px-4 py-3 font-body text-sm rounded-sm border border-graphite bg-void text-foreground placeholder:text-ash focus:outline-none focus:border-primary/50" />
               </div>
               <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your project (optional)" rows={3} className="w-full px-4 py-3 font-body text-sm rounded-sm border border-graphite bg-void text-foreground placeholder:text-ash focus:outline-none focus:border-primary/50 resize-none" />
-              <button type="submit" className="w-full py-4 font-body font-medium text-sm tracking-wider bg-gradient-vibrant text-white rounded-sm hover:opacity-90 transition-opacity">
+              <label className="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" checked={form.wantDocs} onChange={(e) => setForm({ ...form, wantDocs: e.target.checked })} className="w-4 h-4 rounded border-graphite bg-void text-primary focus:ring-primary/50" />
+                <span className="font-body text-sm text-silver">I'd like to receive sample documentation (BOQ, handover checklist, AMC structure)</span>
+              </label>
+              <button type="submit" className="w-full py-4 font-body font-medium text-sm tracking-wider bg-[#FFFFFF] text-[#0A0A0A] rounded-sm hover:bg-[#F0F0F0] transition-colors">
                 Submit Partnership Enquiry
               </button>
             </motion.form>
