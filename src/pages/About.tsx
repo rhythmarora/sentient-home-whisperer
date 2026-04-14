@@ -2,7 +2,7 @@ import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
-import { Compass, Code, Award, Building } from "lucide-react";
+import { Compass, Code, Award, Building, Camera } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function About() {
