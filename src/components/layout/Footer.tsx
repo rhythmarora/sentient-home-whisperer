@@ -13,6 +13,10 @@ const footerLinks = {
     { label: "Products", href: "/products" },
     { label: "Philosophy", href: "/philosophy" },
   ],
+  Professionals: [
+    { label: "Builders & Developers", href: "/builders" },
+    { label: "Architects & Designers", href: "/architects" },
+  ],
   Connect: [
     { label: "Experience Center", href: "/experience-center" },
     { label: "Contact", href: "/contact" },

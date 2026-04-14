@@ -16,6 +16,8 @@ import BrandLanding from "./pages/BrandLanding";
 import Products from "./pages/Products";
 import DesignYourHome from "./pages/DesignYourHome";
 import ProductLanding from "./pages/ProductLanding";
+import Builders from "./pages/Builders";
+import Architects from "./pages/Architects";
 
 import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound";
@@ -45,6 +47,8 @@ const App = () => (
           <Route path="/products/:slug" element={<Products />} />
           <Route path="/product/:slug" element={<ProductLanding />} />
           <Route path="/design" element={<DesignYourHome />} />
+          <Route path="/builders" element={<Builders />} />
+          <Route path="/architects" element={<Architects />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>
