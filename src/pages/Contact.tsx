@@ -1,18 +1,48 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 
 export default function Contact() {
   const { toast } = useToast();
+  const [searchParams] = useSearchParams();
+
+  const buildDesignSummary = () => {
+    const homeType = searchParams.get("homeType");
+    const size = searchParams.get("size");
+    const lifestyle = searchParams.get("lifestyle");
+    const budget = searchParams.get("budget");
+    const priority = searchParams.get("priority");
+
+    if (!homeType && !size && !lifestyle && !budget && !priority) return "";
+
+    const parts: string[] = [];
+    if (homeType) parts.push(`Home: ${homeType}`);
+    if (size) parts.push(`Size: ${size} sq ft`);
+    if (lifestyle) parts.push(`Lifestyle: ${lifestyle.replace("-", " ")}`);
+    if (budget) parts.push(`Budget: ${budget}`);
+    if (priority) parts.push(`Priority: ${priority}`);
+    return parts.join(" · ");
+  };
+
+  const projectTypeFromParams = () => {
+    const ht = searchParams.get("homeType");
+    if (!ht) return "";
+    if (ht === "apartment" || ht === "penthouse") return "apartment";
+    if (ht === "villa") return "villa";
+    if (ht === "farmhouse") return "farmhouse";
+    return "";
+  };
+
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
-    projectType: "",
-    message: "",
+    projectType: projectTypeFromParams(),
+    message: buildDesignSummary(),
   });
 
   const handleSubmit = (e: React.FormEvent) => {
