@@ -304,6 +304,79 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* The Backbone */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-body text-xs tracking-[0.5em] uppercase text-silver mb-6"
+          >
+            The Backbone
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="font-display text-3xl md:text-5xl font-medium mb-4 leading-tight"
+          >
+            Luxury deployed with
+            <br />
+            enterprise infrastructure.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="font-body text-base text-silver max-w-3xl leading-relaxed mb-16"
+          >
+            Every Qubix HiFi project is backed by the full engineering and operational infrastructure of Qubix Technologies — one of India's most certified AV integration companies. This is not a small residential firm learning as it goes. This is enterprise-grade capability applied to private homes.
+          </motion.p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                icon: Compass,
+                title: "Certified CAD Team",
+                body: "Dedicated CAD engineers producing reflected ceiling plans, conduit drawings, equipment layouts, and as-built documentation to professional standards — the same documentation used on enterprise projects.",
+              },
+              {
+                icon: Code,
+                title: "Certified Programmers",
+                body: "In-house programmers certified in Crestron Home, Control4, and KNX — the three most demanding residential control platforms. Custom interfaces, scene logic, and integration built from scratch for every home.",
+              },
+              {
+                icon: Award,
+                title: "300+ Technical Certifications",
+                body: "Across the Qubix team, 300+ technical certifications from 85+ global manufacturers — from Meyer Sound and Trinnov to Lutron, Crestron, and Ruckus. Every specification is backed by certified expertise.",
+              },
+              {
+                icon: Building,
+                title: "Enterprise Project Pipeline",
+                body: "Large-scale residential projects flow through the same project management pipeline as our enterprise deployments — structured phases, milestone sign-offs, material tracking, and billing compliance built into every engagement.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.1 }}
+                className="border border-border rounded-sm p-8"
+              >
+                <item.icon className="w-6 h-6 text-primary mb-5" />
+                <h3 className="font-display text-xl font-medium mb-3">{item.title}</h3>
+                <p className="font-body text-sm text-silver leading-relaxed">{item.body}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }
