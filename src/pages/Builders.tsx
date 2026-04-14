@@ -1,7 +1,19 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Building2, Wifi, Monitor, Shield, Zap, CheckCircle2, ArrowRight, Check, ClipboardList, Users } from "lucide-react";
+
+import heroApartments from "@/assets/builders/hero-apartments.jpg";
+import heroVilla from "@/assets/builders/hero-villa.jpg";
+import heroInterior from "@/assets/builders/hero-interior.jpg";
+import heroClubhouse from "@/assets/builders/hero-clubhouse.jpg";
+
+const heroSlides = [
+  { src: heroApartments, alt: "Luxury residential apartment towers at dusk", label: "Apartments" },
+  { src: heroVilla, alt: "Modern luxury villa with ambient lighting", label: "Villas" },
+  { src: heroInterior, alt: "Smart home living room with integrated technology", label: "Smart Interiors" },
+  { src: heroClubhouse, alt: "Premium clubhouse with designer lighting", label: "Clubhouses" },
+];
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
