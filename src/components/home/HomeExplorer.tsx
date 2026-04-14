@@ -4,16 +4,16 @@ import { Volume2, Lightbulb, Shield, Play } from "lucide-react";
 
 const rooms = [
   // Indoor
-  { id: "living", name: "Living Room", zone: "indoor", row: 1, audio: "Distributed ceiling + architectural sub", lighting: ["Morning Calm", "Evening Glow", "Movie Night"], control: "Voice + touch panel" },
-  { id: "theatre", name: "Private Theatre", zone: "indoor", row: 1, audio: "Dolby Atmos 9.4.6 with PMC monitors", lighting: ["Demo", "Movie", "Interval"], control: "Crestron one-touch" },
-  { id: "bar", name: "Bar & Lounge", zone: "indoor", row: 2, audio: "High-output zone with subwoofer", lighting: ["Intimate", "Party", "Late Night"], control: "Scene buttons" },
-  { id: "performance", name: "Performance Room", zone: "indoor", row: 2, audio: "PA-grade with wireless mic integration", lighting: ["Stage", "House", "Blackout"], control: "Performance modes", modes: ["Karaoke", "DJ Set", "Live Music"] },
-  { id: "master", name: "Master Suite", zone: "indoor", row: 2, audio: "Invisible in-wall + bedside control", lighting: ["Wake", "Relax", "Sleep"], control: "Bedside panel" },
-  { id: "wellness", name: "Wellness Bath", zone: "indoor", row: 3, audio: "Moisture-rated ceiling speakers", lighting: ["Energize", "Spa", "Night Light"], control: "Waterproof remote" },
+  { id: "living", name: "Living Room", zone: "indoor", experience: "LIFESTYLE", row: 1, audio: "Distributed ceiling + architectural sub", lighting: ["Morning Calm", "Evening Glow", "Movie Night"], control: "Voice + touch panel" },
+  { id: "theatre", name: "Private Theatre", zone: "indoor", experience: "ENTERTAINMENT", row: 1, audio: "Dolby Atmos 9.4.6 with PMC monitors", lighting: ["Demo", "Movie", "Interval"], control: "Crestron one-touch" },
+  { id: "bar", name: "Bar & Lounge", zone: "indoor", experience: "ENTERTAINMENT", row: 2, audio: "High-output zone with subwoofer", lighting: ["Intimate", "Party", "Late Night"], control: "Scene buttons" },
+  { id: "performance", name: "Performance Room", zone: "indoor", experience: "ENTERTAINMENT", row: 2, audio: "PA-grade with wireless mic integration", lighting: ["Stage", "House", "Blackout"], control: "Performance modes", modes: ["Karaoke", "DJ Set", "Live Music"] },
+  { id: "master", name: "Master Suite", zone: "indoor", experience: "RELAXATION", row: 2, audio: "Invisible in-wall + bedside control", lighting: ["Wake", "Relax", "Sleep"], control: "Bedside panel" },
+  { id: "wellness", name: "Wellness Bath", zone: "indoor", experience: "RELAXATION", row: 3, audio: "Moisture-rated ceiling speakers", lighting: ["Energize", "Spa", "Night Light"], control: "Waterproof remote" },
   // Outdoor
-  { id: "terrace", name: "Terrace", zone: "outdoor", row: 4, audio: "Weather-resistant landscape speakers", lighting: ["Sunset", "Dinner", "Party"], control: "Outdoor panel" },
-  { id: "garden", name: "Garden & Pool", zone: "outdoor", row: 4, audio: "Buried subwoofer + satellite system", lighting: ["Ambient", "Pool Party", "Stargazing"], control: "App control" },
-  { id: "entry", name: "Entry & Gate", zone: "outdoor", row: 4, audio: "Intercom + announcement", lighting: ["Welcome", "Security", "Away"], control: "Biometric + camera", security: ["Facial Recognition", "Plate Detection", "Visitor Log"] },
+  { id: "terrace", name: "Terrace", zone: "outdoor", experience: "LIFESTYLE", row: 4, audio: "Weather-resistant landscape speakers", lighting: ["Sunset", "Dinner", "Party"], control: "Outdoor panel" },
+  { id: "garden", name: "Garden & Pool", zone: "outdoor", experience: "LIFESTYLE", row: 4, audio: "Buried subwoofer + satellite system", lighting: ["Ambient", "Pool Party", "Stargazing"], control: "App control" },
+  { id: "entry", name: "Entry & Gate", zone: "outdoor", experience: "SECURITY", row: 4, audio: "Intercom + announcement", lighting: ["Welcome", "Security", "Away"], control: "Biometric + camera", security: ["Facial Recognition", "Plate Detection", "Visitor Log"] },
 ];
 
 const zoneColors: Record<string, string> = {
