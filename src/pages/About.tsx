@@ -229,6 +229,80 @@ export default function About() {
           </motion.div>
         </div>
       </section>
+
+      {/* Specialists */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-body text-xs tracking-[0.5em] uppercase text-silver mb-6"
+          >
+            The Specialists
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="font-display text-3xl md:text-5xl font-medium mb-4"
+          >
+            Depth in every discipline.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="font-body text-base text-silver max-w-2xl leading-relaxed mb-16"
+          >
+            The most demanding homes require specialists, not generalists. Our residential team brings focused expertise in every domain a luxury home requires.
+          </motion.p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* Philip Abraham */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="border border-border rounded-sm p-6"
+            >
+              <div className="aspect-[3/4] border-2 border-dashed border-border rounded-sm flex items-center justify-center mb-6">
+                <span className="font-body text-sm text-silver tracking-wide">Philip Abraham — Photo</span>
+              </div>
+              <h3 className="font-display text-xl md:text-2xl font-medium mb-1">Philip Abraham</h3>
+              <p className="font-body text-sm text-primary tracking-wide mb-4">Senior Sound Engineer — Residential</p>
+              <p className="font-body text-sm text-silver leading-relaxed">
+                Philip brings years of hands-on experience designing and tuning audio environments in some of India's most demanding high-end residences. His work spans reference listening rooms, private cinemas, and whole-home audio systems where accuracy is non-negotiable. He doesn't just install sound — he engineers it.
+              </p>
+            </motion.div>
+
+            {/* Diksha Sinha */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              className="border border-border rounded-sm p-6"
+            >
+              <div className="aspect-[3/4] border-2 border-dashed border-border rounded-sm flex items-center justify-center mb-6">
+                <span className="font-body text-sm text-silver tracking-wide">Diksha Sinha — Photo</span>
+              </div>
+              <h3 className="font-display text-xl md:text-2xl font-medium mb-1">Diksha Sinha</h3>
+              <p className="font-body text-sm text-primary tracking-wide mb-4">Residential Systems Designer</p>
+              <p className="font-body text-sm text-silver leading-relaxed">
+                Diksha holds CEDIA RP22 certification as a Residential Systems Designer — one of the most rigorous credentials in the industry for residential AV system design. She translates homeowner experiences and architectural intent into precise, buildable system designs that perform exactly as imagined.
+              </p>
+              <p className="mt-6 font-body text-xs text-muted-foreground leading-relaxed">
+                CEDIA RP22 Certified · CEDIA Certified Designer
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }
