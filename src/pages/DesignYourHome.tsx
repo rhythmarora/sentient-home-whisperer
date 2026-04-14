@@ -2,7 +2,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Sparkles, ArrowRight, Home, Maximize, Heart, Wallet, Target } from "lucide-react";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 
@@ -241,7 +241,7 @@ export default function DesignYourHome() {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
-                    to="/contact"
+                    to={`/contact?homeType=${encodeURIComponent(answers.homeType)}&size=${encodeURIComponent(answers.size)}&lifestyle=${encodeURIComponent(answers.lifestyle)}&budget=${encodeURIComponent(answers.budget)}&priority=${encodeURIComponent(answers.priority)}`}
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 font-body font-medium text-sm tracking-wider bg-gold-gradient text-primary-foreground rounded-sm hover:opacity-90 transition-opacity"
                   >
                     Talk to an Expert <ArrowRight className="w-4 h-4" />
