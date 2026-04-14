@@ -126,6 +126,21 @@ export default function Builders() {
           <a href="#partner" className="inline-flex items-center gap-2 px-8 py-4 bg-[#FFFFFF] text-[#0A0A0A] font-body font-medium text-sm tracking-wider rounded-full hover:bg-[#F0F0F0] transition-colors">
             Partner With Us <ArrowRight className="w-4 h-4" />
           </a>
+
+          {/* Slide indicators */}
+          <div className="flex items-center justify-center gap-3 mt-10">
+            {heroSlides.map((slide, i) => (
+              <button
+                key={slide.label}
+                onClick={() => setHeroIndex(i)}
+                className={`font-body text-xs tracking-wider transition-all duration-500 ${
+                  i === heroIndex ? "text-foreground border-b border-primary pb-1" : "text-silver/50 hover:text-silver"
+                }`}
+              >
+                {slide.label}
+              </button>
+            ))}
+          </div>
         </motion.div>
       </section>
 
