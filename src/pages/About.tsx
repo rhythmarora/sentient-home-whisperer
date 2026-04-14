@@ -188,6 +188,45 @@ export default function About() {
               </p>
             </div>
           </motion.div>
+
+          {/* Ritika Arora — Mirrored layout */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-1 md:grid-cols-5 gap-10 mt-24"
+          >
+            {/* Content — 40% (left on desktop) */}
+            <div className="md:col-span-2 flex flex-col justify-center order-2 md:order-1">
+              <h3 className="font-display text-2xl md:text-3xl font-medium mb-1">Ritika Arora</h3>
+              <p className="font-body text-sm text-primary tracking-wide mb-8">Director — Experience &amp; Operations</p>
+
+              <div className="space-y-5 font-body text-sm text-silver leading-relaxed">
+                <p>
+                  A luxury residential technology project is not just a technical undertaking — it is a precision logistics operation running across months, involving multiple trades, supply chains, billing milestones, and a homeowner whose home is being transformed in real time.
+                </p>
+                <p>
+                  Ritika owns that entire dimension of the Qubix HiFi experience. From the moment a project is signed to the day a home is handed over, she ensures that every supply movement, documentation requirement, installation schedule, and billing cycle runs with the professionalism that the work deserves.
+                </p>
+                <p>
+                  She brings to residential projects the same operational rigour that Qubix has applied to enterprise deployments for decades — because a ₹2 crore home system deserves the same level of project governance as a ₹2 crore commercial installation.
+                </p>
+                <p>
+                  Ritika is a member of CEDIA's and AVIXA's Women in Business Leadership Councils — communities she contributes to as actively as she learns from.
+                </p>
+              </div>
+
+              <p className="mt-8 font-body text-xs text-muted-foreground leading-relaxed">
+                CEDIA Women in Business Council · AVIXA Women in Business Council
+              </p>
+            </div>
+
+            {/* Photo Placeholder — 60% (right on desktop) */}
+            <div className="md:col-span-3 aspect-[3/4] border-2 border-dashed border-border rounded-sm flex items-center justify-center order-1 md:order-2">
+              <span className="font-body text-sm text-silver tracking-wide">Ritika — Photo</span>
+            </div>
+          </motion.div>
         </div>
       </section>
     </Layout>
