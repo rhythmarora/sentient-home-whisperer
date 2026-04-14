@@ -25,13 +25,8 @@ const navItems: NavItem[] = [
       { label: "Systems", href: "/systems" },
     ],
   },
-  {
-    label: "For Professionals",
-    dropdown: [
-      { label: "Builders & Developers", href: "/builders" },
-      { label: "Architects & Designers", href: "/architects" },
-    ],
-  },
+  { label: "Builders & Developers", href: "/builders" },
+  { label: "Architects & Designers", href: "/architects" },
   { label: "Experience Center", href: "/experience-center" },
 ];
 
