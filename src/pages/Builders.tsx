@@ -89,9 +89,9 @@ export default function Builders() {
             <span className="italic text-gradient-vibrant">sells homes.</span>
           </h1>
           <p className="font-body text-lg md:text-xl text-silver max-w-2xl mx-auto mb-10 leading-relaxed">
-            Qubix partners with India's leading developers to deliver smart home infrastructure at scale — from model flats to multi-tower communities. Technology-ready homes sell faster and command premium pricing.
+            Qubix partners with India's leading residential developers to deliver smart home technology at scale. We understand construction timelines, contractor ecosystems, milestone billing, and long-term resident support — because we've delivered across 500+ residences and counting. From model flat to full tower rollout, we are your single technology partner.
           </p>
-          <a href="#partner" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-vibrant text-white font-body font-medium text-sm tracking-wider rounded-full hover:opacity-90 transition-opacity">
+          <a href="#partner" className="inline-flex items-center gap-2 px-8 py-4 bg-[#FFFFFF] text-[#0A0A0A] font-body font-medium text-sm tracking-wider rounded-full hover:bg-[#F0F0F0] transition-colors">
             Partner With Us <ArrowRight className="w-4 h-4" />
           </a>
         </motion.div>
