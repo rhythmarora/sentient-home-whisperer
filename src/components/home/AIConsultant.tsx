@@ -143,7 +143,7 @@ export default function AIConsultant() {
               >
                 <div className={`max-w-[80%] px-4 py-3 rounded-lg font-body text-sm leading-relaxed ${
                   msg.from === "user"
-                    ? "bg-gradient-vibrant text-white"
+                    ? "bg-[#FFFFFF] text-[#0A0A0A]"
                     : "bg-carbon border-l-2 border-l-cinema text-platinum/90"
                 }`}>
                   {msg.text}
@@ -189,7 +189,7 @@ export default function AIConsultant() {
                     <button onClick={() => handleKiller(false)} className="px-4 py-3 font-body text-sm rounded-lg border border-graphite bg-carbon text-silver hover:text-foreground transition-all text-left">
                       Just looking good is enough
                     </button>
-                    <button onClick={() => handleKiller(true)} className="px-4 py-3 font-body text-sm rounded-lg bg-gradient-vibrant text-white hover:opacity-90 transition-all text-left">
+                    <button onClick={() => handleKiller(true)} className="px-4 py-3 font-body text-sm rounded-lg bg-[#FFFFFF] text-[#0A0A0A] hover:bg-[#F0F0F0] transition-all text-left">
                       I want my home to respond to me
                     </button>
                   </motion.div>
@@ -212,7 +212,7 @@ export default function AIConsultant() {
                     <p className="font-body text-xs text-muted-foreground">
                       Based on: {userData.property}, {userData.rooms}, {userData.lifestyle?.toLowerCase()}
                     </p>
-                    <button onClick={() => { setResponded(true); advanceStep("Show me more"); }} className="mt-4 px-4 py-2 font-body text-xs bg-gradient-vibrant text-white rounded-full">
+                    <button onClick={() => { setResponded(true); advanceStep("Show me more"); }} className="mt-4 px-4 py-2 font-body text-xs bg-[#FFFFFF] text-[#0A0A0A] rounded-full hover:bg-[#F0F0F0] transition-colors">
                       Continue →
                     </button>
                   </motion.div>
@@ -221,7 +221,7 @@ export default function AIConsultant() {
                 {/* Capture prompt */}
                 {currentStep.special === "capture" && !responded && (
                   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col gap-2 pt-2">
-                    <button onClick={() => handleCapture(true)} className="px-4 py-3 font-body text-sm rounded-lg bg-gradient-vibrant text-white hover:opacity-90 transition-all">
+                    <button onClick={() => handleCapture(true)} className="px-4 py-3 font-body text-sm rounded-lg bg-[#FFFFFF] text-[#0A0A0A] hover:bg-[#F0F0F0] transition-all">
                       Save & send me the details
                     </button>
                     <button onClick={() => handleCapture(false)} className="px-4 py-3 font-body text-sm rounded-lg border border-graphite bg-carbon text-silver hover:text-foreground transition-all">
@@ -240,7 +240,7 @@ export default function AIConsultant() {
                       placeholder={currentStep.input}
                       className="flex-1 px-4 py-2 font-body text-sm rounded-lg border border-graphite bg-void text-foreground placeholder:text-ash focus:outline-none focus:border-cinema/50"
                     />
-                    <button onClick={handleInput} className="p-2 rounded-lg bg-gradient-vibrant text-white">
+                    <button onClick={handleInput} className="p-2 rounded-lg bg-[#FFFFFF] text-[#0A0A0A]">
                       <Send className="w-4 h-4" />
                     </button>
                   </motion.div>
@@ -275,7 +275,7 @@ export default function AIConsultant() {
                     </p>
                     <p className="font-body text-sm text-silver mb-4">Your personalized recommendation is on its way. A Qubix consultant will connect within 24 hours.</p>
                     <div className="flex flex-col sm:flex-row gap-2 justify-center">
-                      <a href="/experience-center" className="inline-block px-6 py-2 font-body text-sm bg-gradient-vibrant text-white rounded-full hover:opacity-90 transition-opacity">
+                      <a href="/experience-center" className="inline-block px-6 py-2 font-body text-sm bg-[#FFFFFF] text-[#0A0A0A] rounded-full hover:bg-[#F0F0F0] transition-colors">
                         Explore the Experience Center
                       </a>
                       <a href="/contact" className="inline-block px-6 py-2 font-body text-sm border border-graphite text-silver rounded-full hover:text-foreground transition-colors">
