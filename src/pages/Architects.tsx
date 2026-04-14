@@ -64,7 +64,7 @@ export default function Architects() {
       email: form.email,
       phone: form.phone,
       projectType: form.projectStage,
-      aiJourneyData: { firm: form.firm, wantSpecs: form.wantSpecs, segment: "Architects & Designers" },
+      aiJourneyData: { firm: form.firm, wantSpecs: String(form.wantSpecs), segment: "Architects & Designers" },
       source: "Architects Page CTA",
     });
     setSubmitted(true);
