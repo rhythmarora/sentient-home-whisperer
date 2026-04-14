@@ -19,6 +19,7 @@ import DesignYourHome from "./pages/DesignYourHome";
 import ProductLanding from "./pages/ProductLanding";
 import Builders from "./pages/Builders";
 import Architects from "./pages/Architects";
+import About from "./pages/About";
 
 import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound";
@@ -51,6 +52,7 @@ const App = () => (
             <Route path="/design" element={<DesignYourHome />} />
             <Route path="/builders" element={<Builders />} />
             <Route path="/architects" element={<Architects />} />
+            <Route path="/about" element={<About />} />
             
             <Route path="*" element={<NotFound />} />
           </Routes>
