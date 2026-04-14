@@ -40,9 +40,9 @@ export default function CuratedEcosystem() {
             >
               <Link
                 to={`/brands/${brand.slug}`}
-                className="group block p-6 rounded-sm border border-border hover:border-primary/20 text-center transition-all duration-300"
+                className="group block p-6 rounded-sm border border-border hover:border-music/20 text-center transition-all duration-300"
               >
-                <p className="font-display text-lg font-semibold group-hover:text-primary transition-colors">
+                <p className="font-display text-lg font-semibold group-hover:text-music transition-colors">
                   {brand.name}
                 </p>
                 <p className="font-body text-xs text-muted-foreground mt-1">
@@ -62,7 +62,7 @@ export default function CuratedEcosystem() {
         >
           <Link
             to="/brands"
-            className="font-body text-sm text-primary hover:text-gold-light transition-colors"
+            className="font-body text-sm text-music hover:opacity-80 transition-opacity"
           >
             View all brands →
           </Link>
