@@ -116,7 +116,7 @@ export default function AIConsultant() {
           className="text-center mb-12"
         >
           <h2 className="font-display text-4xl md:text-6xl font-medium mb-4">
-            Your AI Home <span className="italic text-gradient-vibrant">Consultant</span>
+            Design Your <span className="italic text-gradient-vibrant">Experience</span>
           </h2>
         </motion.div>
 
