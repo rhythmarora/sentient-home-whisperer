@@ -38,7 +38,7 @@ export default function AIEntrySection() {
 
           <Link
             to="/design"
-            className="inline-flex items-center gap-3 px-10 py-4 font-body font-medium text-sm tracking-wider bg-gold-gradient text-primary-foreground rounded-sm hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-3 px-10 py-4 font-body font-medium text-sm tracking-wider bg-[#FFFFFF] text-[#0A0A0A] rounded-sm hover:bg-[#F0F0F0] transition-colors"
           >
             <Sparkles className="w-4 h-4" />
             Start Designing
