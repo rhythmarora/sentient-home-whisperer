@@ -67,7 +67,7 @@ export default function HeroSection() {
         >
           <Link
             to="/design"
-            className="inline-flex items-center px-10 py-4 font-body font-medium text-sm tracking-wider bg-gradient-vibrant text-white rounded-full hover:opacity-90 transition-opacity"
+            className="inline-flex items-center px-10 py-4 font-body font-medium text-sm tracking-wider bg-[#FFFFFF] text-[#0A0A0A] rounded-full hover:bg-[#F0F0F0] transition-colors"
           >
             Begin Your Experience
           </Link>

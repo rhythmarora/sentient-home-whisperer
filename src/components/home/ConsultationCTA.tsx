@@ -146,7 +146,7 @@ export default function ConsultationCTA() {
 
             <button
               type="submit"
-              className="w-full py-4 font-body font-medium text-sm tracking-wider bg-gradient-vibrant text-white rounded-sm hover:opacity-90 transition-opacity"
+              className="w-full py-4 font-body font-medium text-sm tracking-wider bg-[#FFFFFF] text-[#0A0A0A] rounded-sm hover:bg-[#F0F0F0] transition-colors"
             >
               Start Your Journey
             </button>
