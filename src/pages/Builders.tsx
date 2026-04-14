@@ -54,7 +54,7 @@ const projectTypes = [
 ];
 
 export default function Builders() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", projectType: "", units: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", projectType: "", units: "", message: "", wantDocs: false });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
