@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Building2, Wifi, Monitor, Shield, Zap, CheckCircle2, ArrowRight, Check } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 
 const scaleCapabilities = [
@@ -71,6 +72,7 @@ export default function Builders() {
 
   return (
     <Layout>
+      <SEO title="For Builders & Developers" description="Partner with Qubix for scalable smart home technology across residential towers and villa projects. Pre-wiring, model flats, and enterprise integration." path="/builders" />
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center justify-center px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-card/50 to-background" />

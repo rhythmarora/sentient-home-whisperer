@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Film, Music, Sofa, TreePine, Wine, BookOpen } from "lucide-react";
@@ -51,6 +52,7 @@ const spaces = [
 export default function Spaces() {
   return (
     <Layout>
+      <SEO title="Spaces" description="Explore luxury living spaces — private cinemas, music rooms, outdoor entertainment, and more designed by Qubix." path="/spaces" />
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <motion.p

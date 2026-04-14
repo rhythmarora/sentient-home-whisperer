@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 
 const sections = [
@@ -32,6 +33,7 @@ const sections = [
 export default function Philosophy() {
   return (
     <Layout>
+      <SEO title="Our Philosophy" description="Qubix design philosophy — accuracy in sound, restraint in light, invisible control, and holistic system thinking." path="/philosophy" />
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <motion.p

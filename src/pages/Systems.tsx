@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Film, Sun, Wifi, Shield, Settings } from "lucide-react";
@@ -60,6 +61,7 @@ const systemGroups = [
 export default function Systems() {
   return (
     <Layout>
+      <SEO title="Systems" description="Discover Qubix technology systems — entertainment, lighting, automation, networking, and security for luxury homes." path="/systems" />
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <motion.p

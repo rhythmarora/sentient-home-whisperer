@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -32,6 +33,7 @@ export default function Contact() {
 
   return (
     <Layout>
+      <SEO title="Book a Consultation" description="Schedule a free consultation with Qubix to design your luxury home technology experience." path="/contact" />
       <section className="pt-32 pb-24 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

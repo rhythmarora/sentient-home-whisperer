@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Layers, Eye, Lightbulb, Speaker, Palette, ArrowRight, Check } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 
 const partnershipPoints = [
@@ -56,6 +57,7 @@ export default function Architects() {
 
   return (
     <Layout>
+      <SEO title="For Architects & Designers" description="Qubix integrates sound, light, and control into your architectural vision — invisibly and precisely. Collaborate with us from schematic to handover." path="/architects" />
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center justify-center px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-card/50 to-background" />

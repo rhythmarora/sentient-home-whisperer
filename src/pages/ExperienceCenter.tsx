@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { MapPin, Clock, Phone, ArrowDown, ExternalLink, Car } from "lucide-react";
@@ -16,6 +17,7 @@ export default function ExperienceCenter() {
 
   return (
     <Layout>
+      <SEO title="Experience Center" description="Visit the Qubix Experience Center in Bangalore — demo luxury AV, home automation, private cinema, and smart home technology." path="/experience-center" />
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center px-6">
         {/* Video Background */}
