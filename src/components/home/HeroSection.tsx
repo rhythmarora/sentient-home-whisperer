@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
-const heroVideoUrl =
-  "/__l5e/assets-v1/820f36a5-20a6-47ed-bacc-1e9272afbd7b/hero-bg.mp4";
 
+// Replace this with an imported image when ready, e.g.:
+// import heroBg from "@/assets/hero-bg.jpg";
+const heroBg: string | null = null;
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
