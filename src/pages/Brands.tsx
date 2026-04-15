@@ -53,8 +53,8 @@ export default function Brands() {
               const tileContent = (
                 <>
                   {brand.onDemo && (
-                    <div className="absolute top-0 left-0 overflow-hidden w-20 h-20 pointer-events-none">
-                      <div className="absolute top-[10px] left-[-28px] w-[120px] text-center rotate-[-45deg] bg-primary text-primary-foreground font-body text-[9px] font-semibold tracking-wider py-[3px] shadow-md">
+                    <div className="absolute top-0 left-0 overflow-hidden w-16 h-16 pointer-events-none">
+                      <div className="absolute top-[6px] left-[-26px] w-[100px] text-center rotate-[-45deg] bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-primary-foreground font-body text-[8px] font-semibold tracking-wider py-[2px] shadow-md">
                         On Demo
                       </div>
                     </div>
