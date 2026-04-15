@@ -16,7 +16,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Experience", href: "/#experience" },
+  { label: "Brands", href: "/brands" },
   {
     label: "For Homeowners",
     dropdown: [
