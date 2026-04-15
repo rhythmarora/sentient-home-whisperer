@@ -52,6 +52,13 @@ export default function Brands() {
 
               const tileContent = (
                 <>
+                  {brand.onDemo && (
+                    <div className="absolute top-0 left-0 overflow-hidden w-20 h-20 pointer-events-none">
+                      <div className="absolute top-[10px] left-[-28px] w-[120px] text-center rotate-[-45deg] bg-primary text-primary-foreground font-body text-[9px] font-semibold tracking-wider py-[3px] shadow-md">
+                        On Demo
+                      </div>
+                    </div>
+                  )}
                   <ExternalLink className="absolute top-3 right-3 w-3 h-3 text-muted-foreground/0 group-hover:text-muted-foreground/60 transition-all duration-300" />
                   <div className="h-10 md:h-12 flex items-center justify-center mb-4 w-full">
                     {logo ? (
