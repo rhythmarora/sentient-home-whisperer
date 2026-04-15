@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import HeroSection from "@/components/home/HeroSection";
+import HeroCarousel from "@/components/home/HeroCarousel";
 import ExperienceCategories from "@/components/home/ExperienceCategories";
 
 import BrandEcosystem from "@/components/home/BrandEcosystem";
@@ -28,7 +28,7 @@ export default function Index() {
           "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "url": "https://qubixhifi.com/contact" }
         }}
       />
-      <HeroSection />
+      <HeroCarousel />
       <ExperienceCategories />
       
       <BrandEcosystem />
