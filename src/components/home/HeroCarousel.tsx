@@ -25,16 +25,16 @@ interface HeroSlide {
 const slides: HeroSlide[] = [
   {
     title: "Meyer Sound",
-    subtitle: "The Sound Behind Every Netflix Original",
-    description: "When Hollywood masters its most ambitious productions, they trust Meyer Sound. The same concert-hall precision—now exclusively available for private residences in Bangalore.",
+    subtitle: "The Loudspeakers That Define an Era",
+    description: "When the world's most ambitious creators demand absolute sonic truth, they choose Meyer Sound. Concert-hall precision, now crafted exclusively for private residences.",
     logoKey: "Meyer Sound",
     link: "/brands/meyer-sound",
     heroImage: meyerHero,
   },
   {
     title: "Constellation",
-    subtitle: "One Room. Infinite Acoustic Worlds.",
-    description: "Active acoustics that transform your space from intimate jazz club to soaring cathedral—in real time. The only demonstration in the subcontinent, exclusively at Qubix.",
+    subtitle: "Your Room, Reimagined in Real Time",
+    description: "Active acoustics that transform any space into infinite sonic environments—from intimate chamber to soaring concert hall—with the touch of a button.",
     logoKey: "Constellation",
     link: "/constellation",
     heroImage: constellationHero,
