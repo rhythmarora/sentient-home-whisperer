@@ -4,6 +4,7 @@ export interface ExperienceBrand {
   usp: string;
   url: string;
   internalRoute?: string;
+  onDemo?: boolean;
 }
 
 export const experienceBrands: ExperienceBrand[] = [
