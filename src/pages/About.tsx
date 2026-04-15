@@ -15,8 +15,8 @@ export default function About() {
       />
 
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-background">
-        <div className="max-w-4xl mx-auto px-6 text-center py-20">
+      <section className="relative min-h-[70vh] flex items-center justify-center bg-background">
+        <div className="max-w-4xl mx-auto px-6 text-center pt-28 pb-16">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
