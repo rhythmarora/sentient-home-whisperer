@@ -15,8 +15,8 @@ export default function About() {
       />
 
       {/* Hero */}
-      <section className="relative min-h-[80vh] flex items-center justify-center bg-background">
-        <div className="max-w-4xl mx-auto px-6 text-center py-32">
+      <section className="relative min-h-[60vh] flex items-center justify-center bg-background">
+        <div className="max-w-4xl mx-auto px-6 text-center py-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,14 +53,14 @@ export default function About() {
       </section>
 
       {/* The Story — Two Column Narrative */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-body text-xs tracking-[0.5em] uppercase text-silver mb-16"
+            className="font-body text-xs tracking-[0.5em] uppercase text-silver mb-10"
           >
             The Story
           </motion.p>
@@ -131,7 +131,7 @@ export default function About() {
       </section>
 
       {/* Leadership */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -147,7 +147,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="font-display text-3xl md:text-5xl font-medium mb-16"
+            className="font-display text-3xl md:text-5xl font-medium mb-10"
           >
             The people behind the work.
           </motion.h2>
@@ -200,7 +200,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-5 gap-10 mt-24"
+            className="grid grid-cols-1 md:grid-cols-5 gap-10 mt-16"
           >
             {/* Content — 40% (left on desktop) */}
             <div className="md:col-span-2 flex flex-col justify-center order-2 md:order-1">
@@ -238,7 +238,7 @@ export default function About() {
       </section>
 
       {/* Specialists */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -263,7 +263,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-body text-base text-silver max-w-2xl leading-relaxed mb-16"
+            className="font-body text-base text-silver max-w-2xl leading-relaxed mb-10"
           >
             The most demanding homes require specialists, not generalists. Our residential team brings focused expertise in every domain a luxury home requires.
           </motion.p>
@@ -316,7 +316,7 @@ export default function About() {
       </section>
 
       {/* The Backbone */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -343,7 +343,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-body text-base text-silver max-w-3xl leading-relaxed mb-16"
+            className="font-body text-base text-silver max-w-3xl leading-relaxed mb-10"
           >
             Every Qubix HiFi project is backed by the full engineering and operational infrastructure of Qubix Technologies — one of India's most certified AV integration companies. This is not a small residential firm learning as it goes. This is enterprise-grade capability applied to private homes.
           </motion.p>
@@ -389,7 +389,7 @@ export default function About() {
       </section>
 
       {/* What We Believe */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -405,7 +405,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="font-display text-3xl md:text-5xl font-medium mb-16 leading-tight"
+            className="font-display text-3xl md:text-5xl font-medium mb-10 leading-tight"
           >
             Four things we don't
             <br />
@@ -448,7 +448,7 @@ export default function About() {
       </section>
 
       {/* Recognition */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -464,7 +464,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="font-display text-3xl md:text-5xl font-medium mb-16 leading-tight"
+            className="font-display text-3xl md:text-5xl font-medium mb-10 leading-tight"
           >
             Credentials that took decades to earn.
           </motion.h2>
@@ -475,7 +475,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-20"
+            className="mb-12"
           >
             <h3 className="font-display text-xl font-medium mb-8">Industry Credentials</h3>
             <div className="flex flex-wrap gap-3">
@@ -569,9 +569,9 @@ function VisitSection() {
   };
 
   return (
-    <section className="py-24 md:py-32 bg-secondary">
+    <section className="py-14 md:py-20 bg-secondary">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Left — Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
