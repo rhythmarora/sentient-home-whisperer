@@ -4,6 +4,14 @@ import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { brandLogos } from "@/data/brandLogos";
 
+import meyerHero from "@/assets/heroes/meyer-sound-hero.jpg";
+import constellationHero from "@/assets/heroes/constellation-hero.jpg";
+import pmcHero from "@/assets/heroes/pmc-hero.jpg";
+import mcintoshHero from "@/assets/heroes/mcintosh-hero.jpg";
+import wharfedaleHero from "@/assets/heroes/wharfedale-hero.jpg";
+import sonosHero from "@/assets/heroes/sonos-hero.jpg";
+import crestronHero from "@/assets/heroes/crestron-hero.jpg";
+
 interface HeroSlide {
   title: string;
   subtitle: string;
@@ -11,17 +19,17 @@ interface HeroSlide {
   logoKey: string;
   link: string;
   external?: boolean;
-  accent: string;
+  heroImage: string;
 }
 
 const slides: HeroSlide[] = [
   {
     title: "Meyer Sound",
-    subtitle: "Concert-Hall Precision at Home",
-    description: "The world's most respected professional loudspeaker brand — now engineered for private residences. Only at Qubix.",
+    subtitle: "Netflix Trusts Meyer Sound — So Should You",
+    description: "The loudspeaker brand powering Netflix mastering rooms worldwide. Now engineered for private residences — only at Qubix, Bangalore.",
     logoKey: "Meyer Sound",
     link: "/brands/meyer-sound",
-    accent: "from-blue-500/20 to-transparent",
+    heroImage: meyerHero,
   },
   {
     title: "Constellation",
@@ -29,15 +37,23 @@ const slides: HeroSlide[] = [
     description: "Transform any room's acoustic character in real time. From intimate jazz club to cathedral — at the touch of a button.",
     logoKey: "Constellation",
     link: "/constellation",
-    accent: "from-purple-500/20 to-transparent",
+    heroImage: constellationHero,
   },
   {
     title: "PMC",
-    subtitle: "The Sound of Abbey Road",
-    description: "Studio monitors trusted by the world's greatest recording studios — designed for audiophiles who demand absolute truth.",
+    subtitle: "The Sound of Apple Music Studios, Los Angeles",
+    description: "The studio monitors chosen by Apple Music Studios in LA and Abbey Road — designed for audiophiles who demand absolute truth in sound.",
     logoKey: "PMC",
     link: "/brands/pmc",
-    accent: "from-emerald-500/20 to-transparent",
+    heroImage: pmcHero,
+  },
+  {
+    title: "Crestron Home",
+    subtitle: "The Operating System for Luxury Living",
+    description: "One touch. Every system. Crestron Home unifies lighting, climate, AV, and security into a single elegant interface — the gold standard in home automation.",
+    logoKey: "Crestron",
+    link: "/brands/crestron-home",
+    heroImage: crestronHero,
   },
   {
     title: "McIntosh",
@@ -46,7 +62,7 @@ const slides: HeroSlide[] = [
     logoKey: "McIntosh",
     link: "https://www.mcintoshlabs.com",
     external: true,
-    accent: "from-cyan-500/20 to-transparent",
+    heroImage: mcintoshHero,
   },
   {
     title: "Wharfedale",
@@ -55,7 +71,7 @@ const slides: HeroSlide[] = [
     logoKey: "Wharfedale",
     link: "https://www.wharfedale.co.uk",
     external: true,
-    accent: "from-amber-500/20 to-transparent",
+    heroImage: wharfedaleHero,
   },
   {
     title: "Sonos",
@@ -64,7 +80,7 @@ const slides: HeroSlide[] = [
     logoKey: "Sonos",
     link: "https://www.sonos.com",
     external: true,
-    accent: "from-rose-500/20 to-transparent",
+    heroImage: sonosHero,
   },
 ];
 
@@ -103,9 +119,29 @@ export default function HeroCarousel() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-void">
-      {/* Accent glow */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${slide.accent} transition-all duration-1000`} />
-      <div className="absolute inset-0 bg-gradient-to-t from-void/90 via-void/50 to-transparent" />
+      {/* Background image with crossfade */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={`bg-${current}`}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="absolute inset-0"
+        >
+          <img
+            src={slide.heroImage}
+            alt=""
+            className="w-full h-full object-cover"
+            width={1920}
+            height={1080}
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-void via-void/70 to-void/40" />
+      <div className="absolute inset-0 bg-void/30" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 w-full">
         <AnimatePresence mode="wait" custom={direction}>
