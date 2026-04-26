@@ -160,10 +160,10 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-5 gap-10"
+            className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start"
           >
-            {/* Photo — 60% */}
-            <div className="md:col-span-3 aspect-[3/4] overflow-hidden rounded-sm">
+            {/* Photo — 40% */}
+            <div className="md:col-span-2 aspect-[4/5] overflow-hidden rounded-sm max-w-sm mx-auto md:mx-0 w-full">
               <img
                 src={rhythmPhoto}
                 alt="Rhythm Arora — Founder & Principal Designer at Qubix HiFi"
@@ -172,20 +172,17 @@ export default function About() {
               />
             </div>
 
-            {/* Content — 40% */}
-            <div className="md:col-span-2 flex flex-col justify-center">
+            {/* Content — 60% */}
+            <div className="md:col-span-3 flex flex-col justify-center">
               <h3 className="font-display text-2xl md:text-3xl font-medium mb-1">Rhythm Arora</h3>
-              <p className="font-body text-sm text-primary tracking-wide mb-8">Director &amp; Chief Technology Officer</p>
+              <p className="font-body text-sm text-primary tracking-wide mb-6">Director &amp; Chief Technology Officer</p>
 
-              <div className="space-y-5 font-body text-sm text-silver leading-relaxed">
+              <div className="space-y-4 font-body text-sm text-silver leading-relaxed">
                 <p>
                   Rhythm has spent his career at the intersection of technology and experience — not as an observer, but as a practitioner. He has personally designed and delivered some of India's most technically demanding residential installations — from private cinemas with active acoustics to whole-home systems for the country's most discerning homeowners.
                 </p>
                 <p>
-                  His certifications span every dimension of what a luxury home demands: CEDIA Outreach — CPD Educator, RP22 Residential Systems Designer, RP32 Electronic Systems Technician, THX Certified Video Calibrator, and PVA Certified Calibrator. He holds manufacturer training certifications from Meyer Sound Constellation, Trinnov Immersive Audio, Crestron, and Control4 — among others.
-                </p>
-                <p>
-                  Recognised as one of the Top 40 Under 40 Business Leaders in the APAC region by Inavate APAC in 2019, Rhythm has presented at ISE in Amsterdam and PALME Expo, and his projects have been featured in mondo*dr and Pro AVL Asia.
+                  Recognised as one of the Top 40 Under 40 Business Leaders in the APAC region by Inavate APAC in 2019, Rhythm has presented at ISE in Amsterdam and PALME Expo, with projects featured in mondo*dr and Pro AVL Asia.
                 </p>
                 <p className="text-foreground font-medium">
                   When a home has a Qubix system, Rhythm has either designed it, calibrated it, or signed off on it.
@@ -193,9 +190,50 @@ export default function About() {
               </div>
 
               {/* Credential Strip */}
-              <p className="mt-8 font-body text-xs text-muted-foreground leading-relaxed">
+              <p className="mt-6 font-body text-xs text-muted-foreground leading-relaxed">
                 CEDIA CPD Educator · RP22 · RP32 · THX Certified · PVA Certified · Meyer Sound Constellation · Trinnov Immersive Audio · Crestron · Control4 · APAC Top 40 Under 40 — 2019
               </p>
+            </div>
+          </motion.div>
+
+          {/* Ritika Arora — Mirrored layout */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-1 md:grid-cols-5 gap-10 mt-12 items-start"
+          >
+            {/* Content — 60% (left on desktop) */}
+            <div className="md:col-span-3 flex flex-col justify-center order-2 md:order-1">
+              <h3 className="font-display text-2xl md:text-3xl font-medium mb-1">Ritika Arora</h3>
+              <p className="font-body text-sm text-primary tracking-wide mb-6">Director — Experience &amp; Operations</p>
+
+              <div className="space-y-4 font-body text-sm text-silver leading-relaxed">
+                <p>
+                  A luxury residential technology project is a precision logistics operation running across months — multiple trades, supply chains, billing milestones, and a homeowner whose home is being transformed in real time.
+                </p>
+                <p>
+                  Ritika owns that entire dimension of the Qubix HiFi experience. From the moment a project is signed to the day a home is handed over, she ensures every supply movement, documentation requirement, installation schedule, and billing cycle runs with the professionalism the work deserves — the same operational rigour Qubix has applied to enterprise deployments for decades.
+                </p>
+                <p>
+                  Ritika is a member of CEDIA's and AVIXA's Women in Business Leadership Councils.
+                </p>
+              </div>
+
+              <p className="mt-6 font-body text-xs text-muted-foreground leading-relaxed">
+                CEDIA Women in Business Council · AVIXA Women in Business Council
+              </p>
+            </div>
+
+            {/* Photo — 40% (right on desktop) */}
+            <div className="md:col-span-2 aspect-[4/5] overflow-hidden rounded-sm order-1 md:order-2 max-w-sm mx-auto md:mx-0 w-full">
+              <img
+                src={ritikaPhoto}
+                alt="Ritika Arora — Director, Experience & Operations at Qubix HiFi"
+                className="w-full h-full object-cover object-top"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
