@@ -39,45 +39,65 @@ export default function About() {
       />
 
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center justify-center bg-background">
-        <div className="max-w-4xl mx-auto px-6 text-center pt-28 pb-16">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-body text-xs tracking-[0.5em] uppercase text-silver mb-10"
-          >
-            Our Story
-          </motion.p>
+      <section className="relative bg-background pt-28 pb-16 md:pt-36 md:pb-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            {/* Left — Headline */}
+            <div className="lg:col-span-7">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="font-body text-xs tracking-[0.5em] uppercase text-silver mb-8"
+              >
+                Our Story
+              </motion.p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="font-display text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] mb-10"
-          >
-            Forty years of{" "}
-            <span className="italic text-gradient-vibrant">obsession.</span>
-            <br />
-            Refined into one address.
-          </motion.h1>
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="font-display text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.05] mb-8"
+              >
+                Forty years of{" "}
+                <span className="italic text-gradient-vibrant">obsession.</span>
+                <br />
+                Refined into one address.
+              </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="font-body text-base md:text-lg text-silver max-w-3xl mx-auto leading-relaxed"
-          >
-            Qubix was founded in 1984. For four decades we have designed, built, and lived inside
-            the world of sound, light, and technology. Qubix HiFi is the residential expression
-            of everything we have learned — built for homes that deserve the same standard as
-            the world's finest venues.
-          </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="font-body text-base md:text-lg text-silver max-w-xl leading-relaxed"
+              >
+                Built for homes that deserve the same standard as the world's finest venues.
+              </motion.p>
+            </div>
+
+            {/* Right — Image placeholder */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="lg:col-span-5"
+            >
+              <div className="aspect-[4/5] border-2 border-dashed border-primary/40 rounded-sm flex flex-col items-center justify-center gap-3 bg-primary/5 p-6 text-center">
+                <Camera className="w-7 h-7 text-primary/60" />
+                <span className="font-body text-sm text-primary/80 tracking-wide font-medium">
+                  Hero Portrait / Atelier Image
+                </span>
+                <span className="font-body text-[10px] text-muted-foreground uppercase tracking-widest max-w-[220px] leading-relaxed">
+                  Suggested: editorial portrait of founders, or a calibrated listening room
+                </span>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* The Story — Two Column Narrative */}
-      <section className="py-14 md:py-20 bg-background">
+      <section className="py-14 md:py-20 bg-background border-t border-border/50">
         <div className="max-w-6xl mx-auto px-6">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -89,14 +109,13 @@ export default function About() {
             The Story
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             {/* Left Column */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="pr-0 md:pr-12 pb-12 md:pb-0"
             >
               <h2 className="font-display text-2xl md:text-3xl font-medium mb-6 leading-tight">
                 Born in 1984. Rebuilt for what's next.
@@ -120,18 +139,13 @@ export default function About() {
               </div>
             </motion.div>
 
-            {/* Vertical Divider */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border" style={{ position: "relative", width: 0 }}>
-              <div className="absolute inset-y-0 left-0 w-px bg-border" />
-            </div>
-
             {/* Right Column */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="pl-0 md:pl-12 md:border-l border-border"
+              className="md:pl-16 md:border-l border-border"
             >
               <h2 className="font-display text-2xl md:text-3xl font-medium mb-6 leading-tight">
                 Two businesses. One standard.
@@ -153,6 +167,7 @@ export default function About() {
           </div>
         </div>
       </section>
+
 
       {/* Leadership */}
       <section className="py-14 md:py-20 bg-background">
