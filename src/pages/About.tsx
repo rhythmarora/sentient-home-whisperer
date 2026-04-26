@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Compass, Code, Award, Building, Camera } from "lucide-react";
+import ritikaPhoto from "@/assets/team/ritika-arora.jpg";
 import { useToast } from "@/hooks/use-toast";
 
 export default function About() {
@@ -227,11 +228,14 @@ export default function About() {
               </p>
             </div>
 
-            {/* Photo Placeholder — 60% (right on desktop) */}
-            <div className="md:col-span-3 aspect-[3/4] border-2 border-dashed border-primary/50 rounded-sm flex flex-col items-center justify-center gap-3 bg-primary/5 order-1 md:order-2">
-              <Camera className="w-8 h-8 text-primary/60" />
-              <span className="font-body text-sm text-primary/80 tracking-wide font-medium">Ritika Arora — Photo</span>
-              <span className="font-body text-[10px] text-muted-foreground uppercase tracking-widest">Replace before launch</span>
+            {/* Photo — 60% (right on desktop) */}
+            <div className="md:col-span-3 aspect-[3/4] overflow-hidden rounded-sm order-1 md:order-2">
+              <img
+                src={ritikaPhoto}
+                alt="Ritika Arora — Director, Experience & Operations at Qubix HiFi"
+                className="w-full h-full object-cover object-top"
+                loading="lazy"
+              />
             </div>
           </motion.div>
         </div>
