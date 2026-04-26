@@ -7,7 +7,7 @@ import ritikaPhoto from "@/assets/team/ritika-arora.jpg";
 import rhythmPhoto from "@/assets/team/rhythm-arora.jpg";
 import rhythmCedia from "@/assets/credentials/rhythm-cedia-immersive-audio.png";
 import rhythmThx from "@/assets/credentials/rhythm-thx-video-calibration.png";
-import rhythmMeyer from "@/assets/credentials/rhythm-meyer-constellation.jpeg";
+import rhythmMeyer from "@/assets/credentials/rhythm-meyer-constellation.png";
 import { CredentialsGallery, type Credential } from "@/components/about/CredentialsGallery";
 import { useToast } from "@/hooks/use-toast";
 
