@@ -4,6 +4,7 @@ import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Compass, Code, Award, Building, Camera } from "lucide-react";
 import ritikaPhoto from "@/assets/team/ritika-arora.jpg";
+import rhythmPhoto from "@/assets/team/rhythm-arora.jpg";
 import { useToast } from "@/hooks/use-toast";
 
 export default function About() {
@@ -161,11 +162,14 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 md:grid-cols-5 gap-10"
           >
-            {/* Photo Placeholder — 60% */}
-            <div className="md:col-span-3 aspect-[3/4] border-2 border-dashed border-primary/50 rounded-sm flex flex-col items-center justify-center gap-3 bg-primary/5">
-              <Camera className="w-8 h-8 text-primary/60" />
-              <span className="font-body text-sm text-primary/80 tracking-wide font-medium">Rhythm Arora — Photo</span>
-              <span className="font-body text-[10px] text-muted-foreground uppercase tracking-widest">Replace before launch</span>
+            {/* Photo — 60% */}
+            <div className="md:col-span-3 aspect-[3/4] overflow-hidden rounded-sm">
+              <img
+                src={rhythmPhoto}
+                alt="Rhythm Arora — Founder & Principal Designer at Qubix HiFi"
+                className="w-full h-full object-cover object-top"
+                loading="lazy"
+              />
             </div>
 
             {/* Content — 40% */}
