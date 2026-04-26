@@ -5,7 +5,29 @@ import { motion } from "framer-motion";
 import { Compass, Code, Award, Building, Camera } from "lucide-react";
 import ritikaPhoto from "@/assets/team/ritika-arora.jpg";
 import rhythmPhoto from "@/assets/team/rhythm-arora.jpg";
+import rhythmCedia from "@/assets/credentials/rhythm-cedia-immersive-audio.png";
+import rhythmThx from "@/assets/credentials/rhythm-thx-video-calibration.png";
+import rhythmMeyer from "@/assets/credentials/rhythm-meyer-constellation.jpeg";
+import { CredentialsGallery, type Credential } from "@/components/about/CredentialsGallery";
 import { useToast } from "@/hooks/use-toast";
+
+const rhythmCredentials: Credential[] = [
+  {
+    src: rhythmCedia,
+    title: "Immersive Audio Design Excellence Workshop",
+    issuer: "CEDIA · Bengaluru 2024",
+  },
+  {
+    src: rhythmThx,
+    title: "Video Calibration Levels 1 & 2",
+    issuer: "THX Certified Professional · 2014",
+  },
+  {
+    src: rhythmMeyer,
+    title: "Constellation Certification Program",
+    issuer: "Meyer Sound · Berkeley, California",
+  },
+];
 
 export default function About() {
   return (
@@ -193,6 +215,11 @@ export default function About() {
               <p className="mt-6 font-body text-xs text-muted-foreground leading-relaxed">
                 CEDIA CPD Educator · RP22 · RP32 · THX Certified · PVA Certified · Meyer Sound Constellation · Trinnov Immersive Audio · Crestron · Control4 · APAC Top 40 Under 40 — 2019
               </p>
+
+              <CredentialsGallery
+                credentials={rhythmCredentials}
+                personName="Rhythm Arora"
+              />
             </div>
           </motion.div>
 
