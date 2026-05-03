@@ -122,30 +122,6 @@ export default function Spaces() {
                   </div>
                 ))}
               </div>
-              {space.id === "cinema" && (
-                <div className="lg:col-span-2 mt-4 pt-8 border-t border-border/50">
-                  <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
-                    From our work & systems
-                  </p>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    {cinemaGallery.map((img) => (
-                      <figure key={img.src} className="group">
-                        <div className="aspect-[4/3] overflow-hidden rounded-sm bg-background border border-border">
-                          <img
-                            src={img.src}
-                            alt={img.alt}
-                            loading="lazy"
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                          />
-                        </div>
-                        <figcaption className="mt-2 font-body text-[11px] tracking-wide text-muted-foreground/80 leading-snug">
-                          {img.caption}
-                        </figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                </div>
-              )}
             </motion.div>
           ))}
         </div>
