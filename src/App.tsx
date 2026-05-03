@@ -21,6 +21,7 @@ import Builders from "./pages/Builders";
 import Architects from "./pages/Architects";
 import About from "./pages/About";
 import Investment from "./pages/Investment";
+import SmartHome from "./pages/SmartHome";
 
 import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound";
