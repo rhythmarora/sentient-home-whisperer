@@ -28,9 +28,9 @@ export default function BrandLanding() {
       {/* SEO meta handled via document head */}
       <BrandHero brand={brand} />
       <BrandAbout brand={brand} />
-      <BrandTechnologies brand={brand} />
-      <BrandProducts brand={brand} />
-      <BrandTimeline brand={brand} />
+      {brand.technologies.length > 0 && <BrandTechnologies brand={brand} />}
+      {brand.keyProducts.length > 0 && <BrandProducts brand={brand} />}
+      {brand.timeline.length > 0 && <BrandTimeline brand={brand} />}
       {brand.elfsightAppId && <BrandInstagramFeed brand={brand} />}
       {brand.sources && brand.sources.length > 0 && <BrandSources brand={brand} />}
       <BrandContactForm brand={brand} />

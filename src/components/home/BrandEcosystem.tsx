@@ -41,60 +41,60 @@ const ecosystemCategories = [
   {
     title: "High-Fidelity & Listening", color: "gaming",
     brands: [
-      { name: "McIntosh", desc: "Legendary amplification" },
-      { name: "Luxman", desc: "Japanese precision" },
-      { name: "Devialet", desc: "Phantom engineering" },
-      { name: "Rotel", desc: "Musical transparency" },
-      { name: "Wharfedale", desc: "British heritage" },
+      { name: "McIntosh", slug: "mcintosh" },
+      { name: "Luxman", slug: "luxman" },
+      { name: "Devialet", slug: "devialet" },
+      { name: "Rotel", slug: "rotel" },
+      { name: "Wharfedale", slug: "wharfedale" },
     ],
   },
   {
     title: "Architectural & Distributed Audio", color: "outdoor",
     brands: [
-      { name: "Sonance", desc: "Invisible speakers" },
-      { name: "Amina", desc: "Plaster-over audio" },
-      { name: "Proficient Audio", desc: "Distributed systems" },
-      { name: "Sonos", desc: "Multi-room streaming" },
+      { name: "Sonance", slug: "sonance" },
+      { name: "Amina", slug: "amina" },
+      { name: "Proficient Audio", slug: "proficient-audio" },
+      { name: "Sonos", slug: "sonos" },
     ],
   },
   {
     title: "Immersive & Performance Audio", color: "performance",
     brands: [
-      { name: "K-array", desc: "Italian micro speakers" },
-      { name: "Void Acoustics", desc: "Club-grade impact" },
-      { name: "CSC Audio", desc: "Custom installations" },
-      { name: "Byford Audio", desc: "Professional monitoring" },
+      { name: "K-Array", slug: "k-array" },
+      { name: "Void Acoustics", slug: "void-acoustics" },
+      { name: "CSC Audio", slug: "csc-audio" },
+      { name: "Byford Audio", slug: "byford-audio" },
     ],
   },
   {
     title: "Cinema & Video Processing", color: "cinema",
     brands: [
-      { name: "Trinnov", desc: "Room optimization" },
-      { name: "Arcam", desc: "British AV processing" },
-      { name: "StormAudio", desc: "Immersive processing" },
-      { name: "Lumagen", desc: "Video scaling" },
-      { name: "SIM2", desc: "Italian projection" },
+      { name: "Trinnov", slug: "trinnov" },
+      { name: "Arcam", slug: "arcam" },
+      { name: "StormAudio", slug: "stormaudio" },
+      { name: "Lumagen", slug: "lumagen" },
+      { name: "SIM2", slug: "sim2" },
     ],
   },
   {
     title: "Amplification & Signal", color: "music",
     brands: [
-      { name: "Powersoft", desc: "Class-D amplification" },
-      { name: "Blustream", desc: "AV distribution" },
+      { name: "Powersoft", slug: "powersoft" },
+      { name: "Blustream", slug: "blustream" },
     ],
   },
   {
     title: "Infrastructure & Control", color: "connectivity",
     brands: [
-      { name: "Basalte", desc: "Elegant interfaces" },
-      { name: "KNX", desc: "Building intelligence" },
+      { name: "Basalte", slug: "basalte" },
+      { name: "KNX", slug: "knx" },
     ],
   },
   {
     title: "Security & Access", color: "cat-security",
     brands: [
-      { name: "Ajax", desc: "Wireless security" },
-      { name: "ekey", desc: "Biometric access" },
+      { name: "Ajax", slug: "ajax" },
+      { name: "ekey", slug: "ekey" },
     ],
   },
 ];
@@ -199,21 +199,26 @@ export default function BrandEcosystem() {
                 <div className={`w-1.5 h-1.5 rounded-full ${ecoColorDotMap[cat.color]}`} />
                 <h4 className="font-display text-base font-medium text-platinum">{cat.title}</h4>
               </div>
-              <div className="md:col-span-9 flex flex-wrap items-center gap-x-10 gap-y-5">
+              <div className="md:col-span-9 flex flex-wrap items-center gap-x-8 gap-y-5">
                 {cat.brands.map((b) => (
-                  <div key={b.name} title={b.desc} className="group h-7 flex items-center">
+                  <Link
+                    key={b.name}
+                    to={`/brands/${b.slug}`}
+                    title={b.name}
+                    className="group h-9 flex items-center px-3 rounded-sm border border-transparent hover:border-graphite/60 hover:bg-carbon/40 transition-all duration-300"
+                  >
                     {brandLogos[b.name] ? (
                       <img
                         src={brandLogos[b.name]}
                         alt={b.name}
-                        className="h-5 md:h-6 w-auto max-w-[110px] object-contain brightness-0 invert opacity-50 group-hover:opacity-90 transition-opacity duration-300"
+                        className="h-5 md:h-6 w-auto max-w-[110px] object-contain brightness-0 invert opacity-50 group-hover:opacity-100 transition-opacity duration-300"
                       />
                     ) : (
                       <span className="font-body text-sm tracking-wide text-silver/70 group-hover:text-platinum transition-colors">
                         {b.name}
                       </span>
                     )}
-                  </div>
+                  </Link>
                 ))}
               </div>
             </motion.div>

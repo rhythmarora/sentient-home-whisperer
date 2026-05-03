@@ -36,6 +36,17 @@ import birddogLogo from "@/assets/brands/birddog.webp";
 import vizrtLogo from "@/assets/brands/vizrt.png";
 import constellationLogo from "@/assets/brands/constellation.png";
 import quadLogo from "@/assets/brands/quad.png";
+import aminaLogo from "@/assets/brands/amina.png";
+import ajaxLogo from "@/assets/brands/ajax.svg";
+import basalteLogo from "@/assets/brands/basalte.png";
+import blustreamLogo from "@/assets/brands/blustream.png";
+import byfordLogo from "@/assets/brands/byford.png";
+import cscLogo from "@/assets/brands/csc.png";
+import ekeyLogo from "@/assets/brands/ekey.svg";
+import knxLogo from "@/assets/brands/knx.png";
+import powersoftLogo from "@/assets/brands/powersoft.png";
+import proficientLogo from "@/assets/brands/proficient.svg";
+import voidLogo from "@/assets/brands/void.png";
 
 export const brandLogos: Record<string, string> = {
   Quad: quadLogo,
@@ -76,4 +87,15 @@ export const brandLogos: Record<string, string> = {
   BirdDog: birddogLogo,
   Vizrt: vizrtLogo,
   Constellation: constellationLogo,
+  Amina: aminaLogo,
+  Ajax: ajaxLogo,
+  Basalte: basalteLogo,
+  Blustream: blustreamLogo,
+  "Byford Audio": byfordLogo,
+  "CSC Audio": cscLogo,
+  ekey: ekeyLogo,
+  KNX: knxLogo,
+  Powersoft: powersoftLogo,
+  "Proficient Audio": proficientLogo,
+  "Void Acoustics": voidLogo,
 };
