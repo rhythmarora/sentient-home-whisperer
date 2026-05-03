@@ -107,26 +107,14 @@ export default function AIConsultant() {
   }
 
   return (
-    <section className="py-24 lg:py-32 px-6">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="font-display text-4xl md:text-6xl font-medium mb-4">
-            Design Your <span className="italic text-gradient-vibrant">Experience</span>
-          </h2>
-        </motion.div>
-
-        {/* iPad mockup */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-2xl mx-auto rounded-2xl border border-graphite bg-carbon shadow-2xl overflow-hidden"
-        >
+    <div>
+      {/* iPad mockup */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="rounded-2xl border border-graphite bg-carbon shadow-2xl overflow-hidden"
+      >
           {/* iPad top bar */}
           <div className="h-8 bg-graphite flex items-center justify-center gap-1">
             <div className="w-16 h-1 bg-steel rounded-full" />
@@ -291,7 +279,6 @@ export default function AIConsultant() {
           {/* iPad bottom bar */}
           <div className="h-4 bg-graphite" />
         </motion.div>
-      </div>
-    </section>
+    </div>
   );
 }
