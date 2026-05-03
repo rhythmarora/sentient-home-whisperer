@@ -83,7 +83,17 @@ export default function SmartHome() {
         jsonLd={faqJsonLd}
       />
 
-      <section className="pt-32 pb-16 px-6">
+      <section className="relative pt-32 pb-24 px-6 overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={heroBg}
+            alt="Luxury listening room with Meyer Sound Constellation speaker arrays"
+            className="w-full h-full object-cover"
+            width={1920}
+            height={1080}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background" />
+        </div>
         <div className="max-w-5xl mx-auto text-center">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
