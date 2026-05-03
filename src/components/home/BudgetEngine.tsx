@@ -5,22 +5,22 @@ import { Link } from "react-router-dom";
 
 const tiers = [
   {
-    name: "Essential", price: "₹15L+", color: "silver",
+    name: "Essential", tagline: "The connected foundation", color: "silver",
     description: "Core technology that elevates everyday living. Multi-room audio, intelligent lighting, and enterprise-grade networking — the invisible backbone of a connected home.",
     features: ["Multi-room audio (4–6 zones)", "Crestron or RTI control", "Enterprise Wi-Fi (Ruckus)", "Centralised AV distribution", "Smart lighting scenes"],
   },
   {
-    name: "Premium", price: "₹50L+", color: "cinema",
+    name: "Premium", tagline: "Cinema & automation", color: "cinema",
     description: "A dedicated cinema, Dolby Atmos surround, and automation that makes your home feel effortless. Powered by PMC, REL, Crestron, and Trinnov.",
     features: ["Dedicated Dolby Atmos cinema", "PMC or Wisdom Audio speakers", "REL subwoofer integration", "Trinnov room correction", "Touch panel + voice control", "Integrated security system"],
   },
   {
-    name: "Signature", price: "₹2Cr+", color: "music",
+    name: "Signature", tagline: "Orchestrated living", color: "music",
     description: "A fully orchestrated living experience. Every room responds to you. Constellation acoustics, reference-grade audio, and circadian-aware environments.",
     features: ["Constellation by Meyer Sound", "Full PMC reference cinema", "Whole-home Hi-Fi audio", "Circadian lighting (Lutron)", "Full Crestron automation", "Biometric access & surveillance", "Outdoor entertainment zones"],
   },
   {
-    name: "Bespoke", price: "₹5Cr+", color: "social",
+    name: "Bespoke", tagline: "Without limits", color: "social",
     description: "No limits. Concert-grade Meyer Sound, museum-quality control, acoustic engineering. Designed for the extraordinary — from farmhouses to sky-villas.",
     features: ["Meyer Sound reference systems", "PMC flagship monitoring", "Acoustic room engineering", "Custom Crestron UI design", "Art & climate integration", "Dedicated equipment room", "White-glove lifetime support"],
   },
@@ -91,8 +91,8 @@ export default function BudgetEngine() {
                   isSelected ? `${c.border} shadow-lg` : "border-graphite"
                 }`}
               >
-                <div className={`inline-block px-3 py-1 rounded-full text-xs font-body mb-4 ${c.bg} ${c.text}`}>
-                  {tier.price}
+                <div className={`inline-block px-3 py-1 rounded-full text-xs font-body tracking-wider uppercase mb-4 ${c.bg} ${c.text}`}>
+                  {tier.tagline}
                 </div>
                 <h3 className={`font-display text-2xl font-semibold mb-3 ${isSelected ? c.text : "text-foreground"}`}>
                   {tier.name}
