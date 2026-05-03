@@ -199,21 +199,26 @@ export default function BrandEcosystem() {
                 <div className={`w-1.5 h-1.5 rounded-full ${ecoColorDotMap[cat.color]}`} />
                 <h4 className="font-display text-base font-medium text-platinum">{cat.title}</h4>
               </div>
-              <div className="md:col-span-9 flex flex-wrap items-center gap-x-10 gap-y-5">
+              <div className="md:col-span-9 flex flex-wrap items-center gap-x-8 gap-y-5">
                 {cat.brands.map((b) => (
-                  <div key={b.name} title={b.desc} className="group h-7 flex items-center">
+                  <Link
+                    key={b.name}
+                    to={`/brands/${b.slug}`}
+                    title={b.name}
+                    className="group h-9 flex items-center px-3 rounded-sm border border-transparent hover:border-graphite/60 hover:bg-carbon/40 transition-all duration-300"
+                  >
                     {brandLogos[b.name] ? (
                       <img
                         src={brandLogos[b.name]}
                         alt={b.name}
-                        className="h-5 md:h-6 w-auto max-w-[110px] object-contain brightness-0 invert opacity-50 group-hover:opacity-90 transition-opacity duration-300"
+                        className="h-5 md:h-6 w-auto max-w-[110px] object-contain brightness-0 invert opacity-50 group-hover:opacity-100 transition-opacity duration-300"
                       />
                     ) : (
                       <span className="font-body text-sm tracking-wide text-silver/70 group-hover:text-platinum transition-colors">
                         {b.name}
                       </span>
                     )}
-                  </div>
+                  </Link>
                 ))}
               </div>
             </motion.div>
