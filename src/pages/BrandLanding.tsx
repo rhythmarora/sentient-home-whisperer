@@ -34,6 +34,7 @@ import sonosEraSeries from "@/assets/brands/sonos-era-series.jpg";
 import sonosAmp from "@/assets/brands/sonos-amp.jpg";
 import sonosPort from "@/assets/brands/sonos-port.jpg";
 import sonosSub from "@/assets/brands/sonos-sub.jpg";
+import sonosQubixTeam from "@/assets/brands/sonos-qubix-team-april-2026.jpg";
 
 const brandHeroImages: Record<string, string> = {
   "meyer-sound": meyerSoundHero,
@@ -220,7 +221,22 @@ function BrandAbout({ brand }: { brand: typeof brandPages[string] }) {
           </div>
           <div className="mt-10 p-6 rounded-sm border border-primary/20 bg-primary/5">
             <h3 className="font-display text-lg font-medium text-primary mb-2">Qubix × {brand.name}</h3>
-            <p className="font-body text-sm text-muted-foreground leading-relaxed">{brand.qubixRelationship}</p>
+            <div className={brand.slug === "sonos" ? "grid md:grid-cols-2 gap-6 items-center" : ""}>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">{brand.qubixRelationship}</p>
+              {brand.slug === "sonos" && (
+                <figure className="space-y-2">
+                  <img
+                    src={sonosQubixTeam}
+                    alt="Sonos global team with Luxury Personified and Qubix at the Qubix Experience Center, Bangalore — April 2026"
+                    className="w-full h-auto rounded-sm border border-primary/20 object-cover"
+                    loading="lazy"
+                  />
+                  <figcaption className="font-body text-xs italic text-muted-foreground/80 leading-relaxed">
+                    Sonos global team with Luxury Personified &amp; Qubix at the Qubix Experience Center, Bangalore — April 2026.
+                  </figcaption>
+                </figure>
+              )}
+            </div>
           </div>
         </motion.div>
       </div>
