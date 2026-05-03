@@ -46,6 +46,12 @@ import sonosAmp from "@/assets/brands/sonos-amp.jpg";
 import sonosPort from "@/assets/brands/sonos-port.jpg";
 import sonosSub from "@/assets/brands/sonos-sub.jpg";
 import sonosQubixTeam from "@/assets/brands/sonos-qubix-team-april-2026.jpg";
+import wharfedaleDiamond from "@/assets/brands/wharfedale-diamond.jpg";
+import wharfedaleAura from "@/assets/brands/wharfedale-aura.jpg";
+import wharfedaleMSeries from "@/assets/brands/wharfedale-m-series.jpg";
+import wharfedaleElysian from "@/assets/brands/wharfedale-elysian.jpg";
+import wharfedaleLinton from "@/assets/brands/wharfedale-linton.jpg";
+import wharfedaleEvo from "@/assets/brands/wharfedale-evo.jpg";
 
 const brandHeroImages: Record<string, string> = {
   "meyer-sound": meyerSoundHero,
