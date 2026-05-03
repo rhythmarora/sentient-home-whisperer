@@ -30,6 +30,11 @@ import pmcProdigy1 from "@/assets/brands/pmc-prodigy1.jpg";
 import pmcCiSeries from "@/assets/brands/pmc-ci-series.jpg";
 import pmcSubwoofer from "@/assets/brands/pmc-subwoofer.jpg";
 import pmcDolbyAtmos from "@/assets/brands/pmc-dolby-atmos.png";
+import pmcProphecy from "@/assets/brands/pmc-prophecy.jpg";
+import pmcActiveTwenty5i from "@/assets/brands/pmc-active-twenty5i.jpg";
+import pmcFact from "@/assets/brands/pmc-fact.jpg";
+import pmcSePassive from "@/assets/brands/pmc-se-passive.jpg";
+import pmcSeActive from "@/assets/brands/pmc-se-active.jpg";
 import sonosHero1 from "@/assets/brands/sonos-hero-1.jpg";
 import sonosHero2 from "@/assets/brands/sonos-hero-2.jpg";
 import sonosHero3 from "@/assets/brands/sonos-hero-3.jpg";
@@ -73,11 +78,14 @@ const brandProductImages: Record<string, Record<string, string>> = {
   },
   "pmc": {
     "Fenestria": pmcFenestria,
-    "Prodigy5": pmcProdigy5,
-    "Prodigy1": pmcProdigy1,
+    "Prophecy": pmcProphecy,
+    "Active twenty5i": pmcActiveTwenty5i,
+    "Prodigy": pmcProdigy5,
+    "fact": pmcFact,
     "ci Series": pmcCiSeries,
+    "SE Series — Passive": pmcSePassive,
+    "SE Series — Active": pmcSeActive,
     "Dolby Atmos Cinema Systems": pmcDolbyAtmos,
-    "PMC Subwoofers": pmcSubwoofer,
   },
   "sonos": {
     "Arc Series": sonosArcSeries,
