@@ -102,6 +102,14 @@ const brandProductImages: Record<string, Record<string, string>> = {
     "Sonance by Sonos": sonosSonance,
     "Sonos Amp Multi": sonosAmpMulti,
   },
+  "wharfedale": {
+    "ELYSIAN": wharfedaleElysian,
+    "AURA": wharfedaleAura,
+    "Diamond": wharfedaleDiamond,
+    "Linton": wharfedaleLinton,
+    "EVO": wharfedaleEvo,
+    "M Series": wharfedaleMSeries,
+  },
 };
 
 export default function BrandLanding() {
