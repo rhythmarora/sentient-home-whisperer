@@ -3,17 +3,6 @@ import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Film, Music, Sofa, TreePine, Wine, BookOpen } from "lucide-react";
-import cineRoom from "@/assets/cinema/cine-room.jpg";
-import pmcCiSeries from "@/assets/cinema/pmc-ci-series.jpg";
-import meyerCinemaProducts from "@/assets/cinema/meyer-cinema-products.png";
-import meyerCinemaSystem from "@/assets/cinema/meyer-cinema-system.png";
-
-const cinemaGallery = [
-  { src: cineRoom, alt: "PMC private cinema room", caption: "Reference cinema, PMC Holme Court" },
-  { src: pmcCiSeries, alt: "PMC ci Series in-wall speakers", caption: "PMC ci Series — invisible architecture" },
-  { src: meyerCinemaProducts, alt: "Meyer Sound residential cinema product map", caption: "Meyer Sound · screen, surround & LFE" },
-  { src: meyerCinemaSystem, alt: "Meyer Sound Black 7.1.4 system layout", caption: "Black 7.1.4 — engineered as one" },
-];
 
 const spaces = [
   {
