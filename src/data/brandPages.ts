@@ -521,7 +521,7 @@ export const brandPages: Record<string, BrandPageData> = {
 const ecosystemStubs: Array<{
   slug: string; name: string; logoKey: string; category: string;
   tagline: string; about: string; website: string; headquarters: string; founded?: string;
-  whyWeUseIt: string;
+  whyWeUseIt: string; elfsightAppId?: string;
 }> = [
   { slug: "mcintosh", name: "McIntosh", logoKey: "McIntosh", category: "High-Fidelity & Listening",
     tagline: "Legendary American amplification, since 1949.",
@@ -562,7 +562,8 @@ const ecosystemStubs: Array<{
     tagline: "Wireless multi-room, polished.",
     about: "The reference for software-driven wireless audio. Sonos integrates beautifully into mixed systems where some rooms need fixed install and others need flexibility.",
     website: "https://www.sonos.com", headquarters: "Santa Barbara, California, USA", founded: "2002",
-    whyWeUseIt: "Used as a casual layer alongside reference systems — kitchen, bath, study, terrace." },
+    whyWeUseIt: "Used as a casual layer alongside reference systems — kitchen, bath, study, terrace.",
+    elfsightAppId: "da17e972-bdba-425f-93f8-77ea2d1ae5e2" },
   { slug: "k-array", name: "K-array", logoKey: "K-Array", category: "Immersive & Performance Audio",
     tagline: "Italian micro-loudspeakers. Concert-hall scale.",
     about: "K-array's slim, stainless-steel speakers fit where conventional loudspeakers cannot — yet deliver SPL and clarity normally reserved for touring rigs. Used in museums, yachts, and serious entertainment rooms.",
@@ -670,6 +671,7 @@ ecosystemStubs.forEach((s) => {
       h1: `${s.name} — ${s.tagline}`,
     },
     contactFormFields: stubContactFields,
+    elfsightAppId: s.elfsightAppId,
   };
 });
 
