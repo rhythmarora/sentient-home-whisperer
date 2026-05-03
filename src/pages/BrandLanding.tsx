@@ -305,38 +305,21 @@ function BrandProducts({ brand }: { brand: typeof brandPages[string] }) {
 
         {brand.slug === "meyer-sound" && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-20 pt-12 border-t border-border/60"
+            className="mt-16 pt-10 border-t border-border/40 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
           >
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3">System Architecture</p>
-            <h3 className="font-display text-2xl md:text-3xl font-medium mb-10 max-w-2xl">
-              A complete cinema, <span className="italic text-gold-gradient">engineered as one</span>
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
-              {[
-                { role: "Screen Channel", models: ["Amie", "UP-4slim", "ULTRA-X20 / X22", "ULTRA-X40 / X42", "Acheron Designer / Studio", "Acheron 80 / 100"] },
-                { role: "LFE & Bass Management", models: ["X-400C", "X-800C", "X-1100C", "VLFC", "Amie-Sub", "USW-112P / 210P"] },
-                { role: "Surrounds", models: ["Amie", "UP-4slim", "ULTRA-X20 / X22 / X23", "HMS-5 / 10 / 12 / 15"] },
-              ].map((col) => (
-                <div key={col.role}>
-                  <p className="font-body text-[11px] tracking-[0.25em] uppercase text-primary mb-4">{col.role}</p>
-                  <ul className="space-y-1.5">
-                    {col.models.map((m) => (
-                      <li key={m} className="font-display text-base text-foreground/85">{m}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+            <p className="font-body text-sm text-muted-foreground max-w-xl leading-relaxed">
+              The full Meyer Sound residential cinema lineup spans screen channels, surrounds, subwoofers and bass management — engineered to work as one system.
+            </p>
             <a
               href="/meyer-sound-residential-cinema-products.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-12 inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-primary transition-colors border-b border-border/60 hover:border-primary pb-1"
+              className="inline-flex items-center gap-2 font-body text-xs tracking-[0.2em] uppercase text-foreground/80 hover:text-primary transition-colors whitespace-nowrap"
             >
-              View the full Residential Cinema product map
+              Product Map
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </motion.div>
