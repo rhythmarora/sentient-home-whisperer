@@ -35,8 +35,6 @@ const rooms: Room[] = [
   { id: "outdoor", name: "Outdoor & Landscape", zone: "outdoor", experience: "LIFESTYLE", image: gardenPoolImg, audio: "Sonance landscape + buried subwoofer", lighting: ["Sunset", "Pool Party", "Stargazing"], control: "App + outdoor panel" },
   { id: "social", name: "Lounge & Karaoke", zone: "indoor", experience: "ENTERTAINMENT", image: performanceRoomImg, audio: "Pro karaoke (Meyer / PMC) + REL bass", lighting: ["Intimate", "Party", "Dance Floor"], control: "Crestron one-tap scenes", modes: ["Karaoke", "DJ Set", "Live Music"] },
   { id: "study", name: "Study & Office", zone: "indoor", experience: "FOCUS", image: studyOfficeImg, audio: "BEC sound masking + background zones", lighting: ["Focus", "Conference", "Reading"], control: "Wall panel + voice" },
-
-  { id: "entry", name: "Entry & Gate", zone: "outdoor", experience: "SECURITY", image: entryGateImg, audio: "Intercom + announcement", lighting: ["Welcome", "Security", "Away"], control: "Biometric + camera", security: ["Facial Recognition", "Plate Detection", "Visitor Log"] },
 ];
 
 export default function HomeExplorer() {
