@@ -37,6 +37,18 @@ const brandHeroSlideshows: Record<string, string[]> = {
   "pmc": [pmcHero1, pmcHero2, pmcHero3, pmcHero4],
 };
 
+const brandProductImages: Record<string, Record<string, string>> = {
+  "meyer-sound": {
+    "Constellation System": meyerPearson1,
+    "Bluehorn System": meyerPearson2,
+    "Acheron Series": meyerPearson3,
+    "HMS Series": meyerPearson4,
+    "1100-LFC": meyerPearson8,
+    "UP-4slim": meyerPearson10,
+  },
+  "pmc": {},
+};
+
 export default function BrandLanding() {
   const { slug } = useParams<{ slug: string }>();
   const brand = slug ? brandPages[slug] : null;
