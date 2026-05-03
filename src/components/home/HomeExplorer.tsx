@@ -9,13 +9,21 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import livingRoomImg from "@/assets/rooms/living-room.jpg";
+import privateTheatreImg from "@/assets/rooms/private-theatre.jpg";
+import barLoungeImg from "@/assets/rooms/bar-lounge.jpg";
+import performanceRoomImg from "@/assets/rooms/performance-room.jpg";
+import masterSuiteImg from "@/assets/rooms/master-suite.jpg";
+import wellnessBathImg from "@/assets/rooms/wellness-bath.jpg";
+import terraceImg from "@/assets/rooms/terrace.jpg";
+import gardenPoolImg from "@/assets/rooms/garden-pool.jpg";
+import entryGateImg from "@/assets/rooms/entry-gate.jpg";
 
 type Room = {
   id: string;
   name: string;
   zone: "indoor" | "outdoor";
   experience: string;
-  image?: string; // background photo (drop-in later)
+  image?: string;
   audio: string;
   lighting: string[];
   control: string;
@@ -25,14 +33,14 @@ type Room = {
 
 const rooms: Room[] = [
   { id: "living", name: "Living Room", zone: "indoor", experience: "LIFESTYLE", image: livingRoomImg, audio: "Distributed ceiling + architectural sub", lighting: ["Morning Calm", "Evening Glow", "Movie Night"], control: "Voice + touch panel" },
-  { id: "theatre", name: "Private Theatre", zone: "indoor", experience: "ENTERTAINMENT", audio: "Dolby Atmos 9.4.6 with PMC monitors", lighting: ["Demo", "Movie", "Interval"], control: "Crestron one-touch" },
-  { id: "bar", name: "Bar & Lounge", zone: "indoor", experience: "ENTERTAINMENT", audio: "High-output zone with subwoofer", lighting: ["Intimate", "Party", "Late Night"], control: "Scene buttons" },
-  { id: "performance", name: "Performance Room", zone: "indoor", experience: "ENTERTAINMENT", audio: "PA-grade with wireless mic integration", lighting: ["Stage", "House", "Blackout"], control: "Performance modes", modes: ["Karaoke", "DJ Set", "Live Music"] },
-  { id: "master", name: "Master Suite", zone: "indoor", experience: "RELAXATION", audio: "Invisible in-wall + bedside control", lighting: ["Wake", "Relax", "Sleep"], control: "Bedside panel" },
-  { id: "wellness", name: "Wellness Bath", zone: "indoor", experience: "RELAXATION", audio: "Moisture-rated ceiling speakers", lighting: ["Energize", "Spa", "Night Light"], control: "Waterproof remote" },
-  { id: "terrace", name: "Terrace", zone: "outdoor", experience: "LIFESTYLE", audio: "Weather-resistant landscape speakers", lighting: ["Sunset", "Dinner", "Party"], control: "Outdoor panel" },
-  { id: "garden", name: "Garden & Pool", zone: "outdoor", experience: "LIFESTYLE", audio: "Buried subwoofer + satellite system", lighting: ["Ambient", "Pool Party", "Stargazing"], control: "App control" },
-  { id: "entry", name: "Entry & Gate", zone: "outdoor", experience: "SECURITY", audio: "Intercom + announcement", lighting: ["Welcome", "Security", "Away"], control: "Biometric + camera", security: ["Facial Recognition", "Plate Detection", "Visitor Log"] },
+  { id: "theatre", name: "Private Theatre", zone: "indoor", experience: "ENTERTAINMENT", image: privateTheatreImg, audio: "Dolby Atmos 9.4.6 with PMC monitors", lighting: ["Demo", "Movie", "Interval"], control: "Crestron one-touch" },
+  { id: "bar", name: "Bar & Lounge", zone: "indoor", experience: "ENTERTAINMENT", image: barLoungeImg, audio: "High-output zone with subwoofer", lighting: ["Intimate", "Party", "Late Night"], control: "Scene buttons" },
+  { id: "performance", name: "Performance Room", zone: "indoor", experience: "ENTERTAINMENT", image: performanceRoomImg, audio: "PA-grade with wireless mic integration", lighting: ["Stage", "House", "Blackout"], control: "Performance modes", modes: ["Karaoke", "DJ Set", "Live Music"] },
+  { id: "master", name: "Master Suite", zone: "indoor", experience: "RELAXATION", image: masterSuiteImg, audio: "Invisible in-wall + bedside control", lighting: ["Wake", "Relax", "Sleep"], control: "Bedside panel" },
+  { id: "wellness", name: "Wellness Bath", zone: "indoor", experience: "RELAXATION", image: wellnessBathImg, audio: "Moisture-rated ceiling speakers", lighting: ["Energize", "Spa", "Night Light"], control: "Waterproof remote" },
+  { id: "terrace", name: "Terrace", zone: "outdoor", experience: "LIFESTYLE", image: terraceImg, audio: "Weather-resistant landscape speakers", lighting: ["Sunset", "Dinner", "Party"], control: "Outdoor panel" },
+  { id: "garden", name: "Garden & Pool", zone: "outdoor", experience: "LIFESTYLE", image: gardenPoolImg, audio: "Buried subwoofer + satellite system", lighting: ["Ambient", "Pool Party", "Stargazing"], control: "App control" },
+  { id: "entry", name: "Entry & Gate", zone: "outdoor", experience: "SECURITY", image: entryGateImg, audio: "Intercom + announcement", lighting: ["Welcome", "Security", "Away"], control: "Biometric + camera", security: ["Facial Recognition", "Plate Detection", "Visitor Log"] },
 ];
 
 export default function HomeExplorer() {
