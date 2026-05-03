@@ -3,78 +3,79 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   Film, Music, Mic, Gamepad2, PartyPopper, TreePine,
-  Sun, Home, Shield, Wifi, Check, Image as ImageIcon, Pause, Play
+  Sun, Home, Shield, Wifi, Image as ImageIcon, Pause, Play
 } from "lucide-react";
+import { brandLogos } from "@/data/brandLogos";
 
 const experiences = [
   {
-    icon: Film, title: "Cinema", color: "cinema", filter: "Entertainment",
+    icon: Film, title: "Cinema", color: "cinema",
     tagline: "Every seat is the best seat.",
-    tier: "Signature Cinema",
-    features: ["Dolby Atmos 9.4.6 (PMC)", "REL subwoofer array", "4K Laser Projection", "Trinnov room correction"],
-    image: "", // suggested: dim private cinema, screen lit, reference speakers visible
+    promise: "Reference-grade private cinemas calibrated by THX-certified engineers — the only such team in India.",
+    brands: ["PMC", "Trinnov", "SIM2", "McIntosh"],
+    image: "",
   },
   {
-    icon: Music, title: "Music", color: "music", filter: "Entertainment",
+    icon: Music, title: "Music", color: "music",
     tagline: "Hear the room the artist heard.",
-    tier: "Audiophile Grade",
-    features: ["PMC / Dynaudio monitors", "McIntosh amplification", "Constellation acoustics", "Hi-Res streaming (Roon)"],
+    promise: "Studio-monitor accuracy paired with audiophile electronics — tuned to your room, not a showroom.",
+    brands: ["PMC", "McIntosh", "Luxman", "Devialet"],
     image: "",
   },
   {
-    icon: Mic, title: "Performance", color: "performance", filter: "Entertainment",
+    icon: Mic, title: "Performance", color: "performance",
     tagline: "Not a room. A stage.",
-    tier: "Performance Suite",
-    features: ["Meyer Sound clarity", "Concert-grade lighting", "Wireless mics & mixing", "Video sync & recording"],
+    promise: "Concert-grade clarity at home — powered by Meyer Sound, the system trusted by the world's top venues.",
+    brands: ["Meyer Sound", "K-Array", "Shure"],
     image: "",
   },
   {
-    icon: Gamepad2, title: "Gaming", color: "gaming", filter: "Entertainment",
+    icon: Gamepad2, title: "Gaming", color: "gaming",
     tagline: "Reflexes, rendered.",
-    tier: "Gaming Den",
-    features: ["Low-latency OLED", "Dolby Atmos surround", "Reactive ambient lighting", "Acoustic isolation"],
+    promise: "Low-latency displays and immersive surround engineered for competitive precision.",
+    brands: ["TCL", "Trinnov", "Sonos"],
     image: "",
   },
   {
-    icon: PartyPopper, title: "Party & Social", color: "social", filter: "Lifestyle",
+    icon: PartyPopper, title: "Party & Social", color: "social",
     tagline: "Dinner to dance floor in one tap.",
-    tier: "Social Hub",
-    features: ["Multi-source audio zones", "Dynamic lighting (Lutron)", "Deep bass (REL)", "One-tap scenes"],
+    promise: "Multi-zone audio, dynamic lighting and one-touch scenes — your home transforms with the moment.",
+    brands: ["Pioneer", "Crestron", "Sonos"],
     image: "",
   },
   {
-    icon: TreePine, title: "Outdoor", color: "outdoor", filter: "Lifestyle",
+    icon: TreePine, title: "Outdoor", color: "outdoor",
     tagline: "The garden becomes the venue.",
-    tier: "Landscape Audio",
-    features: ["Sonance landscape speakers", "In-ground subwoofers", "Outdoor cinema screen", "Weatherproof control"],
+    promise: "Weatherproof landscape audio and outdoor cinema — invisible by day, immersive by night.",
+    brands: ["Sonos", "BEC", "Lithe Audio"],
     image: "",
   },
   {
-    icon: Sun, title: "Relaxation", color: "relax", filter: "Lifestyle",
+    icon: Sun, title: "Relaxation", color: "relax",
     tagline: "A home that helps you exhale.",
-    tier: "Wellness Zone",
-    features: ["Circadian lighting", "Climate integration", "Sound masking", "Automated wellness scenes"],
+    promise: "Circadian lighting, climate and sound — orchestrated to support how you live, sleep and recover.",
+    brands: ["Crestron", "Lutron", "Lyngdorf"].filter(b => brandLogos[b]),
     image: "",
   },
   {
-    icon: Home, title: "Whole Home", color: "gold", filter: "Lifestyle",
+    icon: Home, title: "Whole Home", color: "gold",
     tagline: "Every room. One language.",
-    tier: "Total Integration",
-    features: ["Crestron unified control", "Multi-room audio", "Intelligent scenes", "Voice + touch + app"],
+    promise: "A unified Crestron OS — every system, every room, controlled with effortless consistency.",
+    brands: ["Crestron", "Cisco", "Sonos"],
     image: "",
   },
   {
-    icon: Shield, title: "Security", color: "cat-security", filter: "Infrastructure",
+    icon: Shield, title: "Security", color: "cat-security",
     tagline: "Powerful. Invisible.",
-    tier: "Invisible Shield",
-    features: ["AI CCTV analytics", "Biometric access", "Perimeter detection", "Remote monitoring"],
+    promise: "AI-driven surveillance and access control engineered to protect without intruding on the design.",
+    brands: ["QuantIQ", "Cisco"],
     image: "",
   },
   {
-    icon: Wifi, title: "Connectivity", color: "connectivity", filter: "Infrastructure",
+    icon: Wifi, title: "Connectivity", color: "connectivity",
     tagline: "The invisible backbone.",
-    tier: "Enterprise Network",
-    features: ["Ruckus Wi-Fi 6E", "VLAN segmentation", "Remote management", "Failover redundancy"],
+    promise: "Enterprise-grade Wi-Fi 6E and structured networks built to never fail when it matters.",
+    brands: ["Cisco", "Crestron"],
     image: "",
   },
 ];
@@ -86,7 +87,7 @@ const accentMap: Record<string, string> = {
   connectivity: "bg-connectivity",
 };
 
-const ROTATE_MS = 5000;
+const ROTATE_MS = 6000;
 
 export default function ExperienceCategories() {
   const [active, setActive] = useState(0);
@@ -125,7 +126,7 @@ export default function ExperienceCategories() {
           onMouseLeave={() => setPaused(false)}
         >
           {/* Visual */}
-          <div className="lg:col-span-7 relative aspect-[16/10] lg:aspect-auto lg:min-h-[460px] bg-obsidian overflow-hidden">
+          <div className="lg:col-span-7 relative aspect-[16/10] lg:aspect-auto lg:min-h-[420px] bg-obsidian overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={exp.title}
@@ -148,9 +149,6 @@ export default function ExperienceCategories() {
                     </p>
                   </div>
                 )}
-                {/* Accent bar */}
-                <div className={`absolute top-0 left-0 h-1 ${accentMap[exp.color]} transition-all duration-[5000ms] ease-linear`}
-                     style={{ width: paused ? "0%" : "100%" }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 flex items-center gap-3">
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center ${accentMap[exp.color]}/20 border border-${exp.color}/40`}>
@@ -175,21 +173,44 @@ export default function ExperienceCategories() {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.4 }}
               >
-                <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3">
-                  System Architecture
+                <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
+                  What we do
                 </p>
-                <p className="font-display text-2xl font-semibold mb-5">{exp.tier}</p>
-                <ul className="space-y-2.5">
-                  {exp.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 font-body text-sm text-platinum/85">
-                      <Check className="w-4 h-4 text-music mt-0.5 shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
+                <p className="font-display text-xl md:text-2xl font-light leading-snug text-platinum">
+                  {exp.promise}
+                </p>
+
+                <div className="mt-8">
+                  <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">
+                    Curated partners
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {exp.brands.map((b) => {
+                      const logo = brandLogos[b];
+                      return (
+                        <div
+                          key={b}
+                          title={b}
+                          className="h-12 w-20 flex items-center justify-center rounded-sm border border-graphite bg-obsidian/60 px-2"
+                        >
+                          {logo ? (
+                            <img
+                              src={logo}
+                              alt={b}
+                              className="max-h-6 max-w-full object-contain brightness-0 invert opacity-80"
+                            />
+                          ) : (
+                            <span className="font-body text-[10px] text-silver">{b}</span>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
                 <Link
                   to="/design"
-                  className="inline-flex items-center gap-1 mt-6 font-body text-sm text-music hover:opacity-80 transition-opacity"
+                  className="inline-flex items-center gap-1 mt-8 font-body text-sm text-music hover:opacity-80 transition-opacity"
                 >
                   Design this experience →
                 </Link>
