@@ -221,8 +221,8 @@ export default function BrandEcosystem() {
         </div>
 
         <div className="text-center mt-12 space-y-2">
-          <p className="font-body text-sm text-silver italic">And many more — selected per project, without limitation.</p>
-          <p className="font-body text-xs text-ash">We work with the best technology available, not just what's standard.</p>
+          <p className="font-body text-sm text-silver italic">And many more — every project carries its own specification.</p>
+          <p className="font-body text-xs text-ash">We choose the best technology for the room, never the other way around.</p>
         </div>
       </div>
     </section>
