@@ -356,15 +356,16 @@ function BrandSources({ brand }: { brand: typeof brandPages[string] }) {
 
 function BrandInstagramFeed({ brand }: { brand: typeof brandPages[string] }) {
   useEffect(() => {
-    // Load Elfsight platform script once
-    if (!document.getElementById("elfsight-platform")) {
-      const script = document.createElement("script");
-      script.id = "elfsight-platform";
-      script.src = "https://elfsightcdn.com/platform.js";
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }, []);
+    // Re-inject Elfsight platform script on every mount so the widget
+    // initializes correctly when navigating between brand pages (SPA).
+    const existing = document.getElementById("elfsight-platform");
+    if (existing) existing.remove();
+    const script = document.createElement("script");
+    script.id = "elfsight-platform";
+    script.src = "https://elfsightcdn.com/platform.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, [brand.elfsightAppId]);
 
   return (
     <section className="py-20 px-6 border-t border-border">
