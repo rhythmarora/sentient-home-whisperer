@@ -7,6 +7,15 @@ import {
 } from "lucide-react";
 import { brandLogos } from "@/data/brandLogos";
 import cinemaImg from "@/assets/experiences/cinema.jpg";
+import musicImg from "@/assets/experiences/music.jpg";
+import performanceImg from "@/assets/experiences/performance.jpg";
+import gamingImg from "@/assets/experiences/gaming.jpg";
+import socialImg from "@/assets/experiences/social.jpg";
+import outdoorImg from "@/assets/experiences/outdoor.jpg";
+import relaxImg from "@/assets/experiences/relax.jpg";
+import wholeHomeImg from "@/assets/experiences/whole-home.jpg";
+import securityImg from "@/assets/experiences/security.jpg";
+import connectivityImg from "@/assets/experiences/connectivity.jpg";
 
 const experiences = [
   {
@@ -21,63 +30,63 @@ const experiences = [
     tagline: "Hear the room the artist heard.",
     promise: "Studio-monitor accuracy paired with audiophile electronics — tuned to your room, not a showroom.",
     brands: ["PMC", "McIntosh", "Luxman", "Devialet"],
-    image: "",
+    image: musicImg,
   },
   {
     icon: Mic, title: "Performance", color: "performance",
     tagline: "Not a room. A stage.",
     promise: "Concert-grade clarity at home — powered by Meyer Sound, the system trusted by the world's top venues.",
     brands: ["Meyer Sound", "K-Array", "Shure"],
-    image: "",
+    image: performanceImg,
   },
   {
     icon: Gamepad2, title: "Gaming", color: "gaming",
     tagline: "Reflexes, rendered.",
     promise: "Low-latency displays and immersive surround engineered for competitive precision.",
     brands: ["TCL", "Trinnov", "Sonos"],
-    image: "",
+    image: gamingImg,
   },
   {
     icon: PartyPopper, title: "Party & Social", color: "social",
     tagline: "Dinner to dance floor in one tap.",
     promise: "Multi-zone audio, dynamic lighting and one-touch scenes — your home transforms with the moment.",
     brands: ["Pioneer", "Crestron", "Sonos"],
-    image: "",
+    image: socialImg,
   },
   {
     icon: TreePine, title: "Outdoor", color: "outdoor",
     tagline: "The garden becomes the venue.",
     promise: "Weatherproof landscape audio and outdoor cinema — invisible by day, immersive by night.",
     brands: ["Sonos", "BEC", "Lithe Audio"],
-    image: "",
+    image: outdoorImg,
   },
   {
     icon: Sun, title: "Relaxation", color: "relax",
     tagline: "A home that helps you exhale.",
     promise: "Circadian lighting, climate and sound — orchestrated to support how you live, sleep and recover.",
     brands: ["Crestron", "Lutron", "Lyngdorf"].filter(b => brandLogos[b]),
-    image: "",
+    image: relaxImg,
   },
   {
     icon: Home, title: "Whole Home", color: "gold",
     tagline: "Every room. One language.",
     promise: "A unified Crestron OS — every system, every room, controlled with effortless consistency.",
     brands: ["Crestron", "Cisco", "Sonos"],
-    image: "",
+    image: wholeHomeImg,
   },
   {
     icon: Shield, title: "Security", color: "cat-security",
     tagline: "Powerful. Invisible.",
     promise: "AI-driven surveillance and access control engineered to protect without intruding on the design.",
     brands: ["QuantIQ", "Cisco"],
-    image: "",
+    image: securityImg,
   },
   {
     icon: Wifi, title: "Connectivity", color: "connectivity",
     tagline: "The invisible backbone.",
     promise: "Enterprise-grade Wi-Fi 6E and structured networks built to never fail when it matters.",
     brands: ["Cisco", "Crestron"],
-    image: "",
+    image: connectivityImg,
   },
 ];
 
