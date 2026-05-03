@@ -175,13 +175,13 @@ export default function BrandEcosystem() {
           className="text-center mb-12"
         >
           <p className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground mb-4">
-            From past projects
+            The wider toolkit
           </p>
           <h3 className="font-display text-3xl md:text-4xl font-medium mb-3">
             A few names you'll recognise
           </h3>
           <p className="font-body text-sm text-silver max-w-2xl mx-auto">
-            Bits and pieces from rooms we've built over the years. Different briefs, different homes — different tools for each.
+            Different rooms call for different tools. These are some of the names we reach for, depending on the brief.
           </p>
         </motion.div>
 
