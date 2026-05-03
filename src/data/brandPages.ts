@@ -98,12 +98,12 @@ export const brandPages: Record<string, BrandPageData> = {
       },
     ],
     keyProducts: [
-      { name: "Constellation System", category: "Active Acoustics", description: "Complete active acoustics platform that transforms any room's acoustic character in real time. The flagship residential technology." },
-      { name: "Bluehorn System", category: "Reference Monitor", description: "The world's first truly phase-perfect full-bandwidth monitor. Used by top mastering engineers and now available for ultra-reference home listening." },
-      { name: "Acheron Series", category: "Cinema Loudspeakers", description: "Screen channel loudspeakers designed for immersive cinema. Ultra-low distortion with perfectly controlled coverage patterns." },
-      { name: "HMS Series", category: "Home Cinema Surround", description: "Purpose-built surround and immersive cinema loudspeakers for Dolby Atmos and object-based audio installations." },
-      { name: "1100-LFC", category: "Low-Frequency Control", description: "Reference-grade subwoofer using QuietPower technology. Musicality and extension that conventional subwoofers cannot match." },
-      { name: "UP-4slim", category: "Architectural Speaker", description: "Ultra-compact self-powered loudspeaker for architectural installations where space is limited but performance is non-negotiable." },
+      { name: "Constellation System", category: "Active Acoustics", description: "Complete active acoustics platform that transforms any room's acoustic character in real time. The flagship residential technology.", image: "/src/assets/brands/meyer-pearson-1.jpg" },
+      { name: "Bluehorn System", category: "Reference Monitor", description: "The world's first truly phase-perfect full-bandwidth monitor. Used by top mastering engineers and now available for ultra-reference home listening.", image: "/src/assets/brands/meyer-pearson-2.webp" },
+      { name: "Acheron Series", category: "Cinema Loudspeakers", description: "Screen channel loudspeakers designed for immersive cinema. Ultra-low distortion with perfectly controlled coverage patterns.", image: "/src/assets/brands/meyer-pearson-3.webp" },
+      { name: "HMS Series", category: "Home Cinema Surround", description: "Purpose-built surround and immersive cinema loudspeakers for Dolby Atmos and object-based audio installations.", image: "/src/assets/brands/meyer-pearson-4.jpg" },
+      { name: "1100-LFC", category: "Low-Frequency Control", description: "Reference-grade subwoofer using QuietPower technology. Musicality and extension that conventional subwoofers cannot match.", image: "/src/assets/brands/meyer-pearson-8.webp" },
+      { name: "UP-4slim", category: "Architectural Speaker", description: "Ultra-compact self-powered loudspeaker for architectural installations where space is limited but performance is non-negotiable.", image: "/src/assets/brands/meyer-pearson-10.webp" },
     ],
     timeline: [
       { year: "1979", title: "Founded in San Francisco", description: "John and Helen Meyer establish Meyer Sound Laboratories, bringing scientific rigour to professional audio." },
