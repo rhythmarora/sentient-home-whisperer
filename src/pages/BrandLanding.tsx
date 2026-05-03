@@ -15,6 +15,7 @@ import meyerPearson4 from "@/assets/brands/meyer-pearson-4.jpg";
 import meyerPearson8 from "@/assets/brands/meyer-pearson-8.webp";
 import meyerPearson10 from "@/assets/brands/meyer-pearson-10.webp";
 import meyerUltraX40 from "@/assets/meyer-ultra-x40.webp";
+import meyerAmie from "@/assets/meyer-amie.webp";
 import pmcHero1 from "@/assets/brands/pmc-hero-1.jpg";
 import pmcHero2 from "@/assets/brands/pmc-hero-2.jpg";
 import pmcHero3 from "@/assets/brands/pmc-hero-3.jpg";
@@ -44,7 +45,7 @@ const brandProductImages: Record<string, Record<string, string>> = {
     "Bluehorn System": meyerPearson2,
     "Acheron Series": meyerPearson3,
     "ULTRA Series": meyerUltraX40,
-    "1100-LFC": meyerPearson8,
+    "Amie Systems": meyerAmie,
     "UP-4slim": meyerPearson10,
   },
   "pmc": {},

@@ -102,7 +102,7 @@ export const brandPages: Record<string, BrandPageData> = {
       { name: "Bluehorn System", category: "Reference Monitor", description: "The world's first truly phase-perfect full-bandwidth monitor. Used by top mastering engineers and now available for ultra-reference home listening." },
       { name: "Acheron Series", category: "Cinema Loudspeakers", description: "Screen channel loudspeakers designed for immersive cinema. Ultra-low distortion with perfectly controlled coverage patterns." },
       { name: "ULTRA Series", category: "Compact Point Source", description: "Ultra-compact, ultra-powerful point source loudspeakers (ULTRA-X20/X40/X80) delivering extraordinary intelligibility, wide coverage, and concert-grade clarity in a discreet form factor — ideal for premium residential cinemas, listening rooms and architectural installations." },
-      { name: "1100-LFC", category: "Low-Frequency Control", description: "Reference-grade subwoofer using QuietPower technology. Musicality and extension that conventional subwoofers cannot match." },
+      { name: "Amie Systems", category: "Precision Studio Reference", description: "Compact, full-range precision studio monitor engineered for critical listening, post-production and high-performance gaming and media rooms — Meyer's reference accuracy in a discreet near/mid-field form." },
       { name: "UP-4slim", category: "Architectural Speaker", description: "Ultra-compact self-powered loudspeaker for architectural installations where space is limited but performance is non-negotiable." },
     ],
     timeline: [
