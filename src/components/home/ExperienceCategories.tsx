@@ -16,6 +16,17 @@ import relaxImg from "@/assets/experiences/relax.jpg";
 import wholeHomeImg from "@/assets/experiences/whole-home.jpg";
 import securityImg from "@/assets/experiences/security.jpg";
 import connectivityImg from "@/assets/experiences/connectivity.jpg";
+import cineRoom from "@/assets/cinema/cine-room.jpg";
+import pmcCiSeries from "@/assets/cinema/pmc-ci-series.jpg";
+import meyerCinemaProducts from "@/assets/cinema/meyer-cinema-products.png";
+import meyerCinemaSystem from "@/assets/cinema/meyer-cinema-system.png";
+
+const cinemaGallery = [
+  { src: cineRoom, caption: "PMC Holme Court — reference cinema" },
+  { src: pmcCiSeries, caption: "PMC ci Series — invisible architecture" },
+  { src: meyerCinemaProducts, caption: "Meyer Sound — full cinema lineup" },
+  { src: meyerCinemaSystem, caption: "Black 7.1.4 — engineered as one" },
+];
 
 const experiences = [
   {
@@ -214,6 +225,36 @@ export default function ExperienceCategories() {
             </div>
           </div>
         </div>
+
+        {/* Cinema gallery — appears only when Cinema slide is active */}
+        <AnimatePresence>
+          {exp.title === "Cinema" && (
+            <motion.div
+              key="cinema-gallery"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.5 }}
+              className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-2"
+            >
+              {cinemaGallery.map((g) => (
+                <figure key={g.src} className="group">
+                  <div className="aspect-[4/3] overflow-hidden rounded-sm border border-graphite bg-carbon">
+                    <img
+                      src={g.src}
+                      alt={g.caption}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                    />
+                  </div>
+                  <figcaption className="mt-1.5 font-body text-[10px] tracking-wide text-silver/70 leading-snug">
+                    {g.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Thumbnail rail */}
         <div className="mt-6 grid grid-cols-5 lg:grid-cols-10 gap-2">
