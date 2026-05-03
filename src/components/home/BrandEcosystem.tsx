@@ -140,39 +140,48 @@ export default function BrandEcosystem() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-          {flagshipBrands.map((brand, i) => (
-            <motion.div
-              key={brand.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-            >
-              <Link
-                to={`/brands/${brand.slug}`}
-                className={`group block p-6 rounded-sm bg-carbon border border-graphite border-t-2 ${colorBorderMap[brand.color]} hover:bg-carbon/80 transition-all duration-300`}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6 items-stretch">
+          {flagshipBrands.map((brand, i) => {
+            // Wider, shorter logos need more horizontal room to read at the same visual weight
+            const wideLogo = ["Wharfedale", "Crestron Home"].includes(brand.name);
+            return (
+              <motion.div
+                key={brand.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="h-full"
               >
-                <div className="h-10 flex items-center mb-4">
-                  {brandLogos[brand.name] ? (
-                    <img
-                      src={brandLogos[brand.name]}
-                      alt={brand.name}
-                      className="h-7 md:h-8 w-auto max-w-[130px] object-contain brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                    />
-                  ) : (
-                    <h3 className={`font-display text-2xl font-bold ${textMap[brand.color]}`}>
-                      {brand.name}
-                    </h3>
-                  )}
-                </div>
-                {brand.note && (
-                  <span className="font-body text-xs text-music italic">{brand.note}</span>
-                )}
-                <p className="font-body text-sm text-silver mt-3 leading-relaxed">{brand.description}</p>
-              </Link>
-            </motion.div>
-          ))}
+                <Link
+                  to={`/brands/${brand.slug}`}
+                  className={`group h-full flex flex-col p-6 rounded-sm bg-carbon border border-graphite border-t-2 ${colorBorderMap[brand.color]} hover:bg-carbon/80 transition-all duration-300`}
+                >
+                  <div className="h-12 flex items-center mb-4">
+                    {brandLogos[brand.name] ? (
+                      <img
+                        src={brandLogos[brand.name]}
+                        alt={brand.name}
+                        className={`w-auto object-contain object-left brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300 ${
+                          wideLogo ? "h-6 md:h-7 max-w-[180px]" : "h-7 md:h-8 max-w-[140px]"
+                        }`}
+                      />
+                    ) : (
+                      <h3 className={`font-display text-2xl font-bold ${textMap[brand.color]}`}>
+                        {brand.name}
+                      </h3>
+                    )}
+                  </div>
+                  <div className="min-h-[1.25rem]">
+                    {brand.note && (
+                      <span className="font-body text-xs text-music italic">{brand.note}</span>
+                    )}
+                  </div>
+                  <p className="font-body text-sm text-silver mt-3 leading-relaxed">{brand.description}</p>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
 
         <p className="font-body text-sm text-ash italic text-center mb-24">
