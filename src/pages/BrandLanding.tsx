@@ -70,7 +70,13 @@ const brandProductImages: Record<string, Record<string, string>> = {
     "Amie Systems": meyerAmie,
     "Architectural Loudspeakers": meyerArchitectural,
   },
-  "pmc": {},
+  "pmc": {
+    "Fenestria": pmcFenestria,
+    "Prodigy5": pmcProdigy5,
+    "Prodigy1": pmcProdigy1,
+    "ci Series": pmcCiSeries,
+    "PMC Subwoofers": pmcSubwoofer,
+  },
   "sonos": {
     "Arc Series": sonosArcSeries,
     "Era Series": sonosEraSeries,
