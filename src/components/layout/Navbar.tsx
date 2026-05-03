@@ -21,8 +21,6 @@ const navItems: NavItem[] = [
     label: "For Homeowners",
     dropdown: [
       { label: "Design Your Home", href: "/design" },
-      { label: "Spaces", href: "/spaces" },
-      { label: "Systems", href: "/systems" },
     ],
   },
   { label: "Builders & Developers", href: "/builders" },
