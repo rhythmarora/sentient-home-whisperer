@@ -55,6 +55,11 @@ import wharfedaleEvo from "@/assets/brands/wharfedale-evo.jpg";
 import wharfedaleHeroEvo from "@/assets/brands/wharfedale-hero-evo.jpg";
 import wharfedaleHeroLinton from "@/assets/brands/wharfedale-hero-linton.jpg";
 import wharfedaleHeroDiamond from "@/assets/brands/wharfedale-hero-diamond.png";
+import wharfedale90Logo from "@/assets/brands/wharfedale-90.png";
+
+const brandLogoOverrides: Record<string, string> = {
+  "wharfedale": wharfedale90Logo,
+};
 
 const brandHeroImages: Record<string, string> = {
   "meyer-sound": meyerSoundHero,
@@ -148,7 +153,7 @@ export default function BrandLanding() {
 }
 
 function BrandHero({ brand }: { brand: typeof brandPages[string] }) {
-  const logo = brandLogos[brand.logoKey];
+  const logo = brandLogoOverrides[brand.slug] || brandLogos[brand.logoKey];
   const heroImg = brandHeroImages[brand.slug];
   const slideshow = brandHeroSlideshows[brand.slug];
   const [slideIdx, setSlideIdx] = useState(0);
