@@ -180,34 +180,6 @@ export default function ExperienceCategories() {
                   {exp.promise}
                 </p>
 
-                <div className="mt-8">
-                  <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">
-                    Curated partners
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.brands.map((b) => {
-                      const logo = brandLogos[b];
-                      return (
-                        <div
-                          key={b}
-                          title={b}
-                          className="h-12 w-20 flex items-center justify-center rounded-sm border border-graphite bg-obsidian/60 px-2"
-                        >
-                          {logo ? (
-                            <img
-                              src={logo}
-                              alt={b}
-                              className="max-h-6 max-w-full object-contain brightness-0 invert opacity-80"
-                            />
-                          ) : (
-                            <span className="font-body text-[10px] text-silver">{b}</span>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
                 <Link
                   to="/design"
                   className="inline-flex items-center gap-1 mt-8 font-body text-sm text-music hover:opacity-80 transition-opacity"
