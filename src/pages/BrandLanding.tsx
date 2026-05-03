@@ -17,6 +17,7 @@ import meyerPearson10 from "@/assets/brands/meyer-pearson-10.webp";
 import meyerUltraX40 from "@/assets/meyer-ultra-x40.webp";
 import meyerAmie from "@/assets/meyer-amie.webp";
 import meyerBluehorn from "@/assets/meyer-bluehorn.webp";
+import meyerAcheron from "@/assets/meyer-acheron.jpg";
 import pmcHero1 from "@/assets/brands/pmc-hero-1.jpg";
 import pmcHero2 from "@/assets/brands/pmc-hero-2.jpg";
 import pmcHero3 from "@/assets/brands/pmc-hero-3.jpg";
@@ -44,7 +45,7 @@ const brandProductImages: Record<string, Record<string, string>> = {
   "meyer-sound": {
     "Constellation System": meyerPearson1,
     "Bluehorn System": meyerBluehorn,
-    "Acheron Series": meyerPearson3,
+    "Acheron Series": meyerAcheron,
     "ULTRA Series": meyerUltraX40,
     "Amie Systems": meyerAmie,
     "UP-4slim": meyerPearson10,
