@@ -185,38 +185,34 @@ export default function BrandEcosystem() {
           </p>
         </motion.div>
 
-        <div className="space-y-10">
+        <div className="border-t border-graphite">
           {ecosystemCategories.map((cat, ci) => (
             <motion.div
               key={cat.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: ci * 0.05 }}
+              transition={{ delay: ci * 0.04 }}
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 py-8 border-b border-graphite items-center"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className={`w-2 h-2 rounded-full ${ecoColorDotMap[cat.color]}`} />
-                <h4 className="font-display text-lg font-semibold">{cat.title}</h4>
+              <div className="md:col-span-3 flex items-center gap-3">
+                <div className={`w-1.5 h-1.5 rounded-full ${ecoColorDotMap[cat.color]}`} />
+                <h4 className="font-display text-base font-medium text-platinum">{cat.title}</h4>
               </div>
-              <div className="h-px bg-graphite mb-4" />
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              <div className="md:col-span-9 flex flex-wrap items-center gap-x-10 gap-y-5">
                 {cat.brands.map((b) => (
-                  <div
-                    key={b.name}
-                    className={`group p-4 rounded-sm bg-carbon/60 border border-graphite ${ecoBorderMap[cat.color]} transition-all duration-300`}
-                  >
-                    <div className="h-8 flex items-center mb-2">
-                      {brandLogos[b.name] ? (
-                        <img
-                          src={brandLogos[b.name]}
-                          alt={b.name}
-                          className="h-5 md:h-6 w-auto max-w-[100px] object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-300"
-                        />
-                      ) : (
-                        <p className="font-display text-base font-semibold">{b.name}</p>
-                      )}
-                    </div>
-                    <p className="font-body text-xs text-silver mt-1">{b.desc}</p>
+                  <div key={b.name} title={b.desc} className="group h-7 flex items-center">
+                    {brandLogos[b.name] ? (
+                      <img
+                        src={brandLogos[b.name]}
+                        alt={b.name}
+                        className="h-5 md:h-6 w-auto max-w-[110px] object-contain brightness-0 invert opacity-50 group-hover:opacity-90 transition-opacity duration-300"
+                      />
+                    ) : (
+                      <span className="font-body text-sm tracking-wide text-silver/70 group-hover:text-platinum transition-colors">
+                        {b.name}
+                      </span>
+                    )}
                   </div>
                 ))}
               </div>
