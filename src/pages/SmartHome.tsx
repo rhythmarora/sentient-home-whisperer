@@ -3,6 +3,7 @@ import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Cpu, Lightbulb, Music, Shield, Wifi, Smartphone, ArrowRight } from "lucide-react";
+import heroBg from "@/assets/smart-home-hero.jpg";
 
 const pillars = [
   {
