@@ -25,7 +25,7 @@ export default function ConsultationCTA() {
       aiJourneyData: {
         message: form.message,
         preferredSlot: form.slot,
-        sendMessageBeforeCalling: form.sendMessageFirst,
+        sendMessageBeforeCalling: String(form.sendMessageFirst),
       },
       source: "Callback Request",
     });
