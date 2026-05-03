@@ -15,88 +15,70 @@ const qubixScenes: Scene[] = [
   { name: "Goodnight", icon: Moon, detail: "Whole-home off, perimeter armed, kid's nightlight stays at 5%." },
 ];
 
-// Old GUI panel (left)
+// Old GUI panel (left) - Extron-style "Lighting Settings" wall panel
 function LegacyPanel() {
+  const zones = ["Zone A", "Zone B", "Zone C", "Master"];
   return (
-    <div className="relative mx-auto w-full max-w-[420px]">
-      {/* Wall plate bezel */}
-      <div className="rounded-[28px] p-3 bg-gradient-to-b from-[#3a3a3c] to-[#1f1f20] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.8)] border border-black/40">
-        {/* Inset screen */}
-        <div className="rounded-[18px] overflow-hidden border border-black/60 shadow-inner">
-          {/* CRT-ish header */}
-          <div className="bg-[#1e3a5f] text-[#9ec5ff] px-3 py-1.5 flex items-center justify-between font-mono text-[10px] tracking-wider border-b border-black/40">
-            <span>HOME ▸ LIVING ROOM</span>
-            <span>14:32</span>
-          </div>
+    <div className="relative mx-auto w-full max-w-[460px]">
+      {/* White plastic bezel - landscape touch panel on a wall */}
+      <div className="rounded-[14px] p-4 bg-gradient-to-b from-[#f4f4f2] to-[#d8d6d0] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] border border-white/60 relative">
+        {/* Sensor strip */}
+        <div className="absolute top-2 left-1/2 -translate-x-1/2 flex items-center gap-2">
+          <div className="w-1 h-1 rounded-full bg-black/40" />
+          <div className="w-1 h-1 rounded-full bg-black/40" />
+          <div className="w-1.5 h-1.5 rounded-full bg-black/50" />
+          <div className="w-1 h-1 rounded-full bg-black/40" />
+        </div>
 
-          {/* Beige GUI body */}
-          <div className="bg-[#d8d4c4] p-3 space-y-2 min-h-[360px]" style={{ fontFamily: "Verdana, Geneva, sans-serif" }}>
-            {/* Scene buttons */}
-            <div className="grid grid-cols-2 gap-2">
-              {["Scene 1", "Scene 2", "Scene 3", "Scene 4"].map((s, i) => (
-                <button
-                  key={s}
-                  className="bg-gradient-to-b from-[#ededed] to-[#bfbfbf] border border-[#7a7a7a] text-[#222] text-[11px] py-2 shadow-[inset_0_1px_0_#fff,0_1px_0_#5a5a5a] active:translate-y-px"
-                  style={{ borderRadius: 3 }}
-                >
-                  {s}
-                </button>
-              ))}
+        {/* Screen */}
+        <div className="mt-3 rounded-[6px] overflow-hidden border border-black/30 relative" style={{ minHeight: 480 }}>
+          {/* Dim background "photo" behind UI */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(135deg, #1a1f2a 0%, #2a2235 40%, #3a2a40 70%, #1f1a2a 100%)",
+            }}
+          />
+          <div className="absolute inset-0 opacity-30" style={{
+            background: "radial-gradient(circle at 60% 50%, #6a4a8a 0%, transparent 50%), radial-gradient(circle at 30% 70%, #4a3a6a 0%, transparent 40%)"
+          }} />
+          <div className="absolute inset-0 bg-black/40" />
+
+          {/* UI overlay */}
+          <div className="relative z-10 p-4 h-full" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
+            {/* Header */}
+            <div className="flex items-center justify-between mb-4">
+              <p className="text-white text-[15px] font-medium">Lighting Settings</p>
+              <button className="bg-[#5a5a5a] border border-[#3a3a3a] text-white text-[10px] px-3 py-1 shadow-[inset_0_1px_0_#888]" style={{ borderRadius: 3 }}>
+                Close
+              </button>
             </div>
 
-            {/* Light row */}
-            <div className="bg-[#c5c1b1] border border-[#8a8675] p-2 space-y-1.5" style={{ borderRadius: 3 }}>
-              <p className="text-[10px] font-bold text-[#3a3a3a] uppercase tracking-wide">Lights</p>
-              {["Light 1", "Light 2", "Light 3", "Light 4"].map((l, i) => (
-                <div key={l} className="flex items-center gap-2">
-                  <span className="text-[10px] text-[#222] w-12">{l}</span>
-                  <div className="flex-1 h-2 bg-[#888] border border-[#555] relative">
-                    <div className="h-full bg-[#ffb43a]" style={{ width: `${[80, 40, 60, 20][i]}%` }} />
-                  </div>
-                  <span className="text-[9px] font-mono text-[#222] w-8 text-right">{[80, 40, 60, 20][i]}%</span>
+            {/* 4 zones with scenes 1-8 */}
+            <div className="grid grid-cols-4 gap-3">
+              {zones.map((zone, zi) => (
+                <div key={zone} className="flex flex-col items-center gap-1.5">
+                  <p className="text-white text-[11px] mb-1">{zone}</p>
+                  {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+                    <button
+                      key={n}
+                      className="w-full bg-gradient-to-b from-[#7a7a7a] to-[#4a4a4a] border border-[#2a2a2a] text-white text-[9px] py-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] active:translate-y-px"
+                      style={{ borderRadius: 2 }}
+                    >
+                      Scene {n}
+                    </button>
+                  ))}
                 </div>
-              ))}
-            </div>
-
-            {/* AC + Volume blocky */}
-            <div className="grid grid-cols-2 gap-2">
-              <div className="bg-[#c5c1b1] border border-[#8a8675] p-2" style={{ borderRadius: 3 }}>
-                <p className="text-[10px] font-bold text-[#3a3a3a] uppercase">AC</p>
-                <p className="text-[18px] font-mono text-[#222] leading-tight">24°C</p>
-                <div className="flex gap-1 mt-1">
-                  <button className="flex-1 bg-gradient-to-b from-[#ededed] to-[#bfbfbf] border border-[#7a7a7a] text-[10px]">−</button>
-                  <button className="flex-1 bg-gradient-to-b from-[#ededed] to-[#bfbfbf] border border-[#7a7a7a] text-[10px]">+</button>
-                </div>
-              </div>
-              <div className="bg-[#c5c1b1] border border-[#8a8675] p-2" style={{ borderRadius: 3 }}>
-                <p className="text-[10px] font-bold text-[#3a3a3a] uppercase">Volume</p>
-                <p className="text-[18px] font-mono text-[#222] leading-tight">42</p>
-                <div className="flex gap-1 mt-1">
-                  <button className="flex-1 bg-gradient-to-b from-[#ededed] to-[#bfbfbf] border border-[#7a7a7a] text-[10px]">−</button>
-                  <button className="flex-1 bg-gradient-to-b from-[#ededed] to-[#bfbfbf] border border-[#7a7a7a] text-[10px]">+</button>
-                </div>
-              </div>
-            </div>
-
-            {/* Tabs */}
-            <div className="flex gap-0.5 pt-1">
-              {["Lights", "HVAC", "AV", "Sec.", "More"].map((t, i) => (
-                <button key={t} className={`flex-1 text-[9px] py-1 border border-[#7a7a7a] ${i === 0 ? "bg-[#a0a094]" : "bg-gradient-to-b from-[#ededed] to-[#bfbfbf]"} text-[#222]`} style={{ borderRadius: 2 }}>
-                  {t}
-                </button>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Hardware buttons */}
-        <div className="flex justify-center gap-3 pt-3 pb-1">
-          {[0, 1, 2, 3].map((i) => (
-            <div key={i} className="w-2 h-2 rounded-full bg-black/60 border border-black/80 shadow-inner" />
-          ))}
-        </div>
+        {/* Brand label */}
+        <p className="text-center font-body text-[9px] text-[#6a6a6a] mt-2 tracking-wider">Extron</p>
       </div>
-      <p className="text-center font-mono text-[10px] text-silver/50 mt-3 tracking-widest uppercase">Circa 2008 · 4.3" wall panel</p>
+      <p className="text-center font-mono text-[10px] text-silver/50 mt-3 tracking-widest uppercase">Real install · Programmed like a spreadsheet</p>
     </div>
   );
 }
