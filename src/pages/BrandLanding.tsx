@@ -76,6 +76,7 @@ const brandProductImages: Record<string, Record<string, string>> = {
     "Prodigy5": pmcProdigy5,
     "Prodigy1": pmcProdigy1,
     "ci Series": pmcCiSeries,
+    "Dolby Atmos Cinema Systems": pmcDolbyAtmos,
     "PMC Subwoofers": pmcSubwoofer,
   },
   "sonos": {
