@@ -78,11 +78,14 @@ const brandProductImages: Record<string, Record<string, string>> = {
   },
   "pmc": {
     "Fenestria": pmcFenestria,
-    "Prodigy5": pmcProdigy5,
-    "Prodigy1": pmcProdigy1,
+    "Prophecy": pmcProphecy,
+    "Active twenty5i": pmcActiveTwenty5i,
+    "Prodigy": pmcProdigy5,
+    "fact": pmcFact,
     "ci Series": pmcCiSeries,
+    "SE Series — Passive": pmcSePassive,
+    "SE Series — Active": pmcSeActive,
     "Dolby Atmos Cinema Systems": pmcDolbyAtmos,
-    "PMC Subwoofers": pmcSubwoofer,
   },
   "sonos": {
     "Arc Series": sonosArcSeries,
