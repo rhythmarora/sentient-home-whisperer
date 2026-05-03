@@ -175,13 +175,13 @@ export default function BrandEcosystem() {
           className="text-center mb-12"
         >
           <p className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground mb-4">
-            Previously Specified
+            From past projects
           </p>
           <h3 className="font-display text-3xl md:text-4xl font-medium mb-3">
-            Brands We've Built With
+            A few names you'll recognise
           </h3>
           <p className="font-body text-sm text-silver max-w-2xl mx-auto">
-            Every brand below has been specified, installed and commissioned in our past projects — chosen for a specific room, a specific brief, a specific client. We remain brand-agnostic; the right tool for the right room always wins.
+            Bits and pieces from rooms we've built over the years. Different briefs, different homes — different tools for each.
           </p>
         </motion.div>
 
