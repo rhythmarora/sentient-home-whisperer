@@ -7,6 +7,11 @@ import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 import { ExternalLink, MapPin, Calendar, Users, Globe, ArrowLeft, ChevronRight, Instagram, BookOpen, ArrowRight } from "lucide-react";
+import meyerSoundHero from "@/assets/brands/meyer-sound-hero.jpg";
+
+const brandHeroImages: Record<string, string> = {
+  "meyer-sound": meyerSoundHero,
+};
 
 export default function BrandLanding() {
   const { slug } = useParams<{ slug: string }>();
