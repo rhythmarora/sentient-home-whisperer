@@ -21,6 +21,7 @@ import Builders from "./pages/Builders";
 import Architects from "./pages/Architects";
 import About from "./pages/About";
 import Investment from "./pages/Investment";
+import SmartHome from "./pages/SmartHome";
 
 import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound";
@@ -55,6 +56,7 @@ const App = () => (
             <Route path="/architects" element={<Architects />} />
             <Route path="/about" element={<About />} />
             <Route path="/investment" element={<Investment />} />
+            <Route path="/smart-home" element={<SmartHome />} />
             
             <Route path="*" element={<NotFound />} />
           </Routes>
