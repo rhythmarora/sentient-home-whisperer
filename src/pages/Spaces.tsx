@@ -3,6 +3,17 @@ import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Film, Music, Sofa, TreePine, Wine, BookOpen } from "lucide-react";
+import cineRoom from "@/assets/cinema/cine-room.jpg";
+import pmcCiSeries from "@/assets/cinema/pmc-ci-series.jpg";
+import meyerCinemaProducts from "@/assets/cinema/meyer-cinema-products.png";
+import meyerCinemaSystem from "@/assets/cinema/meyer-cinema-system.png";
+
+const cinemaGallery = [
+  { src: cineRoom, alt: "PMC private cinema room", caption: "Reference cinema, PMC Holme Court" },
+  { src: pmcCiSeries, alt: "PMC ci Series in-wall speakers", caption: "PMC ci Series — invisible architecture" },
+  { src: meyerCinemaProducts, alt: "Meyer Sound residential cinema product map", caption: "Meyer Sound · screen, surround & LFE" },
+  { src: meyerCinemaSystem, alt: "Meyer Sound Black 7.1.4 system layout", caption: "Black 7.1.4 — engineered as one" },
+];
 
 const spaces = [
   {
@@ -122,6 +133,30 @@ export default function Spaces() {
                   </div>
                 ))}
               </div>
+              {space.id === "cinema" && (
+                <div className="lg:col-span-2 mt-4 pt-8 border-t border-border/50">
+                  <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
+                    From our work & systems
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    {cinemaGallery.map((img) => (
+                      <figure key={img.src} className="group">
+                        <div className="aspect-[4/3] overflow-hidden rounded-sm bg-background border border-border">
+                          <img
+                            src={img.src}
+                            alt={img.alt}
+                            loading="lazy"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                          />
+                        </div>
+                        <figcaption className="mt-2 font-body text-[11px] tracking-wide text-muted-foreground/80 leading-snug">
+                          {img.caption}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
