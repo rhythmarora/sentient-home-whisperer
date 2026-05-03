@@ -521,7 +521,7 @@ export const brandPages: Record<string, BrandPageData> = {
 const ecosystemStubs: Array<{
   slug: string; name: string; logoKey: string; category: string;
   tagline: string; about: string; website: string; headquarters: string; founded?: string;
-  whyWeUseIt: string;
+  whyWeUseIt: string; elfsightAppId?: string;
 }> = [
   { slug: "mcintosh", name: "McIntosh", logoKey: "McIntosh", category: "High-Fidelity & Listening",
     tagline: "Legendary American amplification, since 1949.",
