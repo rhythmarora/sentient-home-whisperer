@@ -103,7 +103,7 @@ export const brandPages: Record<string, BrandPageData> = {
       { name: "Acheron Series", category: "Cinema Loudspeakers", description: "Screen channel loudspeakers designed for immersive cinema. Ultra-low distortion with perfectly controlled coverage patterns." },
       { name: "ULTRA Series", category: "Compact Point Source", description: "Ultra-compact, ultra-powerful point source loudspeakers (ULTRA-X20/X40/X80) delivering extraordinary intelligibility, wide coverage, and concert-grade clarity in a discreet form factor — ideal for premium residential cinemas, listening rooms and architectural installations." },
       { name: "Amie Systems", category: "Precision Studio Reference", description: "Compact, full-range precision studio monitor engineered for critical listening, post-production and high-performance gaming and media rooms — Meyer's reference accuracy in a discreet near/mid-field form." },
-      { name: "UP-4slim", category: "Architectural Speaker", description: "Ultra-compact self-powered loudspeaker for architectural installations where space is limited but performance is non-negotiable." },
+      { name: "Architectural Loudspeakers", category: "Discreet Integration", description: "A family of ultra-compact and in-ceiling speakers — UP-4slim, Ashby ceiling series, and MM-4XP miniature — engineered to disappear into architecture while delivering Meyer Sound's signature precision throughout the home." },
     ],
     timeline: [
       { year: "1979", title: "Founded in San Francisco", description: "John and Helen Meyer establish Meyer Sound Laboratories, bringing scientific rigour to professional audio." },
