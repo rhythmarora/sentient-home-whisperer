@@ -31,7 +31,7 @@ function LegacyPanel() {
         </div>
 
         {/* Screen */}
-        <div className="mt-3 rounded-[6px] overflow-hidden border border-black/30 relative" style={{ minHeight: 480 }}>
+        <div className="mt-3 rounded-[6px] overflow-hidden border border-black/30 relative" style={{ minHeight: 540 }}>
           {/* Dim background "photo" behind UI */}
           <div
             className="absolute inset-0"
@@ -75,8 +75,6 @@ function LegacyPanel() {
           </div>
         </div>
 
-        {/* Brand label */}
-        <p className="text-center font-body text-[9px] text-[#6a6a6a] mt-2 tracking-wider">Extron</p>
       </div>
       <p className="text-center font-mono text-[10px] text-silver/50 mt-3 tracking-widest uppercase">Real install · Programmed like a spreadsheet</p>
     </div>
