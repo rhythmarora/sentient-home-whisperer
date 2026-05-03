@@ -24,10 +24,14 @@ import pmcHero1 from "@/assets/brands/pmc-hero-1.jpg";
 import pmcHero2 from "@/assets/brands/pmc-hero-2.jpg";
 import pmcHero3 from "@/assets/brands/pmc-hero-3.jpg";
 import pmcHero4 from "@/assets/brands/pmc-hero-4.jpg";
+import sonosHero1 from "@/assets/brands/sonos-hero-1.jpg";
+import sonosHero2 from "@/assets/brands/sonos-hero-2.jpg";
+import sonosHero3 from "@/assets/brands/sonos-hero-3.jpg";
 
 const brandHeroImages: Record<string, string> = {
   "meyer-sound": meyerSoundHero,
   "pmc": pmcHero1,
+  "sonos": sonosHero1,
 };
 
 const brandHeroSlideshows: Record<string, string[]> = {
@@ -41,6 +45,7 @@ const brandHeroSlideshows: Record<string, string[]> = {
     meyerPearson8,
   ],
   "pmc": [pmcHero1, pmcHero2, pmcHero3, pmcHero4],
+  "sonos": [sonosHero1, sonosHero2, sonosHero3],
 };
 
 const brandProductImages: Record<string, Record<string, string>> = {
