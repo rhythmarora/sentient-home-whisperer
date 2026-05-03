@@ -52,11 +52,15 @@ import wharfedaleMSeries from "@/assets/brands/wharfedale-m-series.jpg";
 import wharfedaleElysian from "@/assets/brands/wharfedale-elysian.jpg";
 import wharfedaleLinton from "@/assets/brands/wharfedale-linton.jpg";
 import wharfedaleEvo from "@/assets/brands/wharfedale-evo.jpg";
+import wharfedaleHeroEvo from "@/assets/brands/wharfedale-hero-evo.jpg";
+import wharfedaleHeroLinton from "@/assets/brands/wharfedale-hero-linton.jpg";
+import wharfedaleHeroDiamond from "@/assets/brands/wharfedale-hero-diamond.png";
 
 const brandHeroImages: Record<string, string> = {
   "meyer-sound": meyerSoundHero,
   "pmc": pmcHero1,
   "sonos": sonosHero1,
+  "wharfedale": wharfedaleHeroEvo,
 };
 
 const brandHeroSlideshows: Record<string, string[]> = {
@@ -71,6 +75,7 @@ const brandHeroSlideshows: Record<string, string[]> = {
   ],
   "pmc": [pmcHero1, pmcHero2, pmcHero3, pmcHero4],
   "sonos": [sonosHero1, sonosHero2, sonosHero3],
+  "wharfedale": [wharfedaleHeroEvo, wharfedaleHeroLinton, wharfedaleHeroDiamond],
 };
 
 const brandProductImages: Record<string, Record<string, string>> = {
