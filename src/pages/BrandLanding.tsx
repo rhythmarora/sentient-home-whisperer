@@ -28,6 +28,7 @@ import sonosHero1 from "@/assets/brands/sonos-hero-1.jpg";
 import sonosHero2 from "@/assets/brands/sonos-hero-2.jpg";
 import sonosHero3 from "@/assets/brands/sonos-hero-3.jpg";
 import sonosSonance from "@/assets/brands/sonos-sonance-by-sonos.jpg";
+import sonosAmpMulti from "@/assets/brands/sonos-amp-multi.gif";
 
 const brandHeroImages: Record<string, string> = {
   "meyer-sound": meyerSoundHero,
@@ -61,6 +62,7 @@ const brandProductImages: Record<string, Record<string, string>> = {
   "pmc": {},
   "sonos": {
     "Sonance by Sonos": sonosSonance,
+    "Sonos Amp Multi": sonosAmpMulti,
   },
 };
 
