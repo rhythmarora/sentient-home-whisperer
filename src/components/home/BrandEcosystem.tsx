@@ -175,13 +175,13 @@ export default function BrandEcosystem() {
           className="text-center mb-12"
         >
           <p className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground mb-4">
-            Beyond the Core
+            Previously Specified
           </p>
           <h3 className="font-display text-3xl md:text-4xl font-medium mb-3">
-            Curated Technology Ecosystem
+            Brands We've Built With
           </h3>
           <p className="font-body text-sm text-silver max-w-2xl mx-auto">
-            Beyond our core systems, we work with a curated selection of global brands — each chosen for a specific role within a project.
+            Every brand below has been specified, installed and commissioned in our past projects — chosen for a specific room, a specific brief, a specific client. We remain brand-agnostic; the right tool for the right room always wins.
           </p>
         </motion.div>
 
