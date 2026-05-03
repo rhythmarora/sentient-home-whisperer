@@ -10,23 +10,35 @@ const flagshipBrands = [
     category: "Cinema · Music",
   },
   {
-    name: "REL", color: "music", slug: "rel",
-    tagline: "Bass you feel, never just hear.",
-    description: "REL subwoofers integrate seamlessly into any room, adding foundation and weight without ever overpowering the music.",
-    category: "Bass · Music",
-  },
-  {
-    name: "Crestron", color: "social", slug: "crestron",
-    tagline: "The operating system of the intelligent home.",
-    description: "The gold standard in residential automation. Crestron unifies lighting, AV, climate, and security into a single, effortless experience.",
-    category: "Automation · Control",
-  },
-  {
     name: "Meyer Sound", color: "relax", slug: "meyer-sound",
     tagline: "Concert-grade immersion. Residential scale.",
     description: "From the world's finest concert halls to your private cinema. Meyer Sound delivers impact, precision, and emotional power without compromise.",
     category: "Cinema · Social",
     note: "select projects",
+  },
+  {
+    name: "Wharfedale", color: "music", slug: "wharfedale",
+    tagline: "British heritage. Musical soul.",
+    description: "Ninety years of British speaker design — warmth, musicality, and emotional connection in every listening moment.",
+    category: "Music · Living",
+  },
+  {
+    name: "Sonos", color: "music", slug: "sonos",
+    tagline: "Whole-home music, beautifully simple.",
+    description: "The benchmark for distributed audio. One app, every room, every service — quietly disappearing into daily life.",
+    category: "Distributed Audio",
+  },
+  {
+    name: "Arcam", color: "cinema", slug: "arcam",
+    tagline: "British engineering for the discerning listener.",
+    description: "Reference-grade AV processors and amplifiers — the quiet specification choice when sound has to be right.",
+    category: "Cinema · Hi-Fi",
+  },
+  {
+    name: "Crestron Home", color: "social", slug: "crestron",
+    tagline: "The operating system of the intelligent home.",
+    description: "The gold standard in residential automation. Lighting, AV, climate and security unified into one effortless experience.",
+    category: "Automation · Control",
   },
 ];
 
@@ -128,7 +140,7 @@ export default function BrandEcosystem() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           {flagshipBrands.map((brand, i) => (
             <motion.div
               key={brand.name}
