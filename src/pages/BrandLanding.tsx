@@ -31,6 +31,7 @@ import sonosSonance from "@/assets/brands/sonos-sonance-by-sonos.jpg";
 import sonosAmpMulti from "@/assets/brands/sonos-amp-multi.gif";
 import sonosArcSeries from "@/assets/brands/sonos-arc-series.jpg";
 import sonosEraSeries from "@/assets/brands/sonos-era-series.jpg";
+import sonosAmp from "@/assets/brands/sonos-amp.jpg";
 
 const brandHeroImages: Record<string, string> = {
   "meyer-sound": meyerSoundHero,
@@ -65,6 +66,7 @@ const brandProductImages: Record<string, Record<string, string>> = {
   "sonos": {
     "Arc Series": sonosArcSeries,
     "Era Series": sonosEraSeries,
+    "Sonos Amp": sonosAmp,
     "Sonance by Sonos": sonosSonance,
     "Sonos Amp Multi": sonosAmpMulti,
   },
