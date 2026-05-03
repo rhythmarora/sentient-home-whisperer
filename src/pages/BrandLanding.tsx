@@ -19,6 +19,7 @@ import meyerAmie from "@/assets/meyer-amie.webp";
 import meyerBluehorn from "@/assets/meyer-bluehorn.webp";
 import meyerAcheron from "@/assets/meyer-acheron.jpg";
 import meyerConstellation from "@/assets/meyer-constellation.jpg";
+import meyerArchitectural from "@/assets/meyer-architectural.jpg";
 import pmcHero1 from "@/assets/brands/pmc-hero-1.jpg";
 import pmcHero2 from "@/assets/brands/pmc-hero-2.jpg";
 import pmcHero3 from "@/assets/brands/pmc-hero-3.jpg";
@@ -49,7 +50,7 @@ const brandProductImages: Record<string, Record<string, string>> = {
     "Acheron Series": meyerAcheron,
     "ULTRA Series": meyerUltraX40,
     "Amie Systems": meyerAmie,
-    "UP-4slim": meyerPearson10,
+    "Architectural Loudspeakers": meyerArchitectural,
   },
   "pmc": {},
 };
