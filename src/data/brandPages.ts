@@ -34,6 +34,7 @@ export interface BrandPageData {
   website: string;
   instagramUrl?: string;
   elfsightAppId?: string;
+  heroImage?: string;
   about: string[];
   qubixRelationship: string;
   technologies: BrandTechnology[];
@@ -63,6 +64,7 @@ export const brandPages: Record<string, BrandPageData> = {
     heroSubtitle: "From Jazz at Lincoln Center to your living room — and your private nightclub. Qubix is India's authorised Constellation partner, bringing Meyer Sound's legendary concert-hall technology to private residences, party rooms, and entertainment spaces.",
     partnerBadge: "Authorised Constellation Partner — India",
     logoKey: "Meyer Sound",
+    heroImage: "/src/assets/brands/meyer-sound-hero.jpg",
     founded: "1979",
     headquarters: "Berkeley, California, USA",
     founders: "John & Helen Meyer",
