@@ -1,87 +1,105 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   Film, Music, Mic, Gamepad2, PartyPopper, TreePine,
-  Sun, Home, Shield, Wifi, Check
+  Sun, Home, Shield, Wifi, Check, Image as ImageIcon, Pause, Play
 } from "lucide-react";
-
-const filters = ["All", "Entertainment", "Lifestyle", "Infrastructure"];
 
 const experiences = [
   {
     icon: Film, title: "Cinema", color: "cinema", filter: "Entertainment",
-    description: "Private theatres with PMC reference speakers, REL subwoofers, Trinnov processing, and 4K laser projection. Every seat is the best seat.",
-    tier: "Signature Cinema", features: ["Dolby Atmos 9.4.6 (PMC)", "REL subwoofer array", "4K Laser Projection (SIM2)", "Trinnov altitude room correction"],
+    tagline: "Every seat is the best seat.",
+    tier: "Signature Cinema",
+    features: ["Dolby Atmos 9.4.6 (PMC)", "REL subwoofer array", "4K Laser Projection", "Trinnov room correction"],
+    image: "", // suggested: dim private cinema, screen lit, reference speakers visible
   },
   {
     icon: Music, title: "Music", color: "music", filter: "Entertainment",
-    description: "Audiophile-grade spaces with PMC monitors, McIntosh amplification, and optional Constellation active acoustics by Meyer Sound.",
-    tier: "Audiophile Grade", features: ["PMC / Dynaudio monitors", "McIntosh amplification", "Constellation acoustics (optional)", "Hi-Res streaming (Roon)"],
+    tagline: "Hear the room the artist heard.",
+    tier: "Audiophile Grade",
+    features: ["PMC / Dynaudio monitors", "McIntosh amplification", "Constellation acoustics", "Hi-Res streaming (Roon)"],
+    image: "",
   },
   {
     icon: Mic, title: "Performance", color: "performance", filter: "Entertainment",
-    description: "Not a room. A stage. Professional karaoke, concert lighting, and Meyer Sound clarity — designed for hosting unforgettable nights.",
-    tier: "Performance Suite", features: ["Meyer Sound or PMC audio", "Concert-grade lighting", "Wireless mics & mixing", "Video sync & recording"],
+    tagline: "Not a room. A stage.",
+    tier: "Performance Suite",
+    features: ["Meyer Sound clarity", "Concert-grade lighting", "Wireless mics & mixing", "Video sync & recording"],
+    image: "",
   },
   {
     icon: Gamepad2, title: "Gaming", color: "gaming", filter: "Entertainment",
-    description: "Purpose-built sanctuaries with low-latency displays, surround sound, and ambient lighting that reacts to gameplay.",
-    tier: "Gaming Den", features: ["Low-latency OLED display", "Dolby Atmos surround", "Reactive ambient lighting", "Acoustic isolation"],
+    tagline: "Reflexes, rendered.",
+    tier: "Gaming Den",
+    features: ["Low-latency OLED", "Dolby Atmos surround", "Reactive ambient lighting", "Acoustic isolation"],
+    image: "",
   },
   {
     icon: PartyPopper, title: "Party & Social", color: "social", filter: "Lifestyle",
-    description: "Karaoke rooms, lounges, and party spaces designed for energy — from dinner conversation to dance floor in one tap.",
-    tier: "Social Hub", features: ["Multi-source audio zones", "Dynamic party lighting (Lutron)", "Deep bass integration (REL)", "One-tap scene control (Crestron)"],
+    tagline: "Dinner to dance floor in one tap.",
+    tier: "Social Hub",
+    features: ["Multi-source audio zones", "Dynamic lighting (Lutron)", "Deep bass (REL)", "One-tap scenes"],
+    image: "",
   },
   {
     icon: TreePine, title: "Outdoor", color: "outdoor", filter: "Lifestyle",
-    description: "Gardens, terraces, and poolsides that become extensions of your entertainment ecosystem with weather-resistant audio and cinema.",
-    tier: "Landscape Audio", features: ["Sonance landscape speakers", "In-ground subwoofers", "Outdoor cinema screen", "Weatherproof zone control"],
+    tagline: "The garden becomes the venue.",
+    tier: "Landscape Audio",
+    features: ["Sonance landscape speakers", "In-ground subwoofers", "Outdoor cinema screen", "Weatherproof control"],
+    image: "",
   },
   {
     icon: Sun, title: "Relaxation", color: "relax", filter: "Lifestyle",
-    description: "Spaces that adapt — circadian lighting, climate control, and sound masking working in harmony for wellness.",
-    tier: "Wellness Zone", features: ["Circadian lighting (Lutron)", "Climate integration", "Sound masking (BEC)", "Automated wellness scenes"],
+    tagline: "A home that helps you exhale.",
+    tier: "Wellness Zone",
+    features: ["Circadian lighting", "Climate integration", "Sound masking", "Automated wellness scenes"],
+    image: "",
   },
   {
     icon: Home, title: "Whole Home", color: "gold", filter: "Lifestyle",
-    description: "Every room unified into one seamless living experience — Crestron control, distributed audio, and intelligent scenes across your entire home.",
-    tier: "Total Integration", features: ["Crestron unified control", "Multi-room audio (Sonos/PMC)", "Intelligent scene automation", "Voice + touch + app"],
+    tagline: "Every room. One language.",
+    tier: "Total Integration",
+    features: ["Crestron unified control", "Multi-room audio", "Intelligent scenes", "Voice + touch + app"],
+    image: "",
   },
   {
     icon: Shield, title: "Security", color: "cat-security", filter: "Infrastructure",
-    description: "AI-powered surveillance, biometric access, and perimeter detection — powerful, but invisible.",
-    tier: "Invisible Shield", features: ["AI-powered CCTV analytics", "Biometric door access", "Perimeter intrusion detection", "Remote monitoring app"],
+    tagline: "Powerful. Invisible.",
+    tier: "Invisible Shield",
+    features: ["AI CCTV analytics", "Biometric access", "Perimeter detection", "Remote monitoring"],
+    image: "",
   },
   {
     icon: Wifi, title: "Connectivity", color: "connectivity", filter: "Infrastructure",
-    description: "Enterprise-grade Ruckus networking. VLAN segmentation, seamless roaming, and zero dead zones — the invisible backbone of everything.",
-    tier: "Enterprise Network", features: ["Ruckus Wi-Fi 6E", "VLAN segmentation", "Remote management", "Failover redundancy"],
+    tagline: "The invisible backbone.",
+    tier: "Enterprise Network",
+    features: ["Ruckus Wi-Fi 6E", "VLAN segmentation", "Remote management", "Failover redundancy"],
+    image: "",
   },
 ];
 
-const colorMap: Record<string, string> = {
+const accentMap: Record<string, string> = {
   cinema: "bg-cinema", music: "bg-music", performance: "bg-performance",
   gaming: "bg-gaming", social: "bg-social", outdoor: "bg-outdoor",
   relax: "bg-relax", gold: "bg-primary", "cat-security": "bg-cat-security",
   connectivity: "bg-connectivity",
 };
 
-const textColorMap: Record<string, string> = {
-  cinema: "text-music", music: "text-music", performance: "text-music",
-  gaming: "text-music", social: "text-music", outdoor: "text-music",
-  relax: "text-music", gold: "text-music", "cat-security": "text-music",
-  connectivity: "text-music",
-};
+const ROTATE_MS = 5000;
 
 export default function ExperienceCategories() {
-  const [activeFilter, setActiveFilter] = useState("All");
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
 
-  const filtered = activeFilter === "All"
-    ? experiences
-    : experiences.filter((e) => e.filter === activeFilter);
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => setActive((i) => (i + 1) % experiences.length), ROTATE_MS);
+    return () => clearInterval(id);
+  }, [paused]);
+
+  const exp = experiences[active];
+  const Icon = exp.icon;
 
   return (
     <section id="experience" className="py-24 lg:py-32 px-6">
@@ -96,93 +114,127 @@ export default function ExperienceCategories() {
             We design how your home <span className="italic text-gradient-vibrant">feels.</span>
           </h2>
           <p className="font-body text-base text-silver max-w-2xl mx-auto">
-            Select an experience. We'll architect the system to deliver it — with the world's finest technology.
+            Ten experiences. One seamless system.
           </p>
         </motion.div>
 
-        {/* Filter Tabs */}
-        <div className="flex justify-center gap-2 mb-12">
-          {filters.map((f) => (
-            <button
-              key={f}
-              onClick={() => { setActiveFilter(f); setExpandedIndex(null); }}
-              className={`relative px-5 py-2 font-body text-sm rounded-full transition-colors ${
-                activeFilter === f ? "text-white" : "text-silver hover:text-foreground"
-              }`}
-            >
-              {activeFilter === f && (
-                <motion.div
-                  layoutId="activeFilter"
-                  className="absolute inset-0 bg-gradient-vibrant rounded-full"
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                />
-              )}
-              <span className="relative z-10">{f}</span>
-            </button>
-          ))}
+        {/* Featured stage */}
+        <div
+          className="relative grid grid-cols-1 lg:grid-cols-12 gap-0 rounded-sm overflow-hidden border border-graphite bg-carbon"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          {/* Visual */}
+          <div className="lg:col-span-7 relative aspect-[16/10] lg:aspect-auto lg:min-h-[460px] bg-obsidian overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={exp.title}
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6 }}
+                className="absolute inset-0"
+              >
+                {exp.image ? (
+                  <img src={exp.image} alt={exp.title} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center text-center p-8 bg-gradient-to-br from-obsidian via-carbon to-obsidian">
+                    <ImageIcon className="w-10 h-10 text-primary/40 mb-3" />
+                    <p className="font-body text-xs tracking-[0.3em] uppercase text-primary/60">
+                      {exp.title} Image
+                    </p>
+                    <p className="font-body text-[11px] text-muted-foreground mt-2 max-w-xs">
+                      Suggested: editorial shot of a {exp.title.toLowerCase()} space
+                    </p>
+                  </div>
+                )}
+                {/* Accent bar */}
+                <div className={`absolute top-0 left-0 h-1 ${accentMap[exp.color]} transition-all duration-[5000ms] ease-linear`}
+                     style={{ width: paused ? "0%" : "100%" }} />
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 flex items-center gap-3">
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center ${accentMap[exp.color]}/20 border border-${exp.color}/40`}>
+                    <Icon className="w-5 h-5 text-foreground" />
+                  </div>
+                  <div>
+                    <p className="font-display text-2xl md:text-3xl font-medium leading-tight">{exp.title}</p>
+                    <p className="font-body text-sm text-silver italic">{exp.tagline}</p>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Detail */}
+          <div className="lg:col-span-5 p-8 lg:p-10 flex flex-col justify-between">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={exp.title + "-detail"}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.4 }}
+              >
+                <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3">
+                  System Architecture
+                </p>
+                <p className="font-display text-2xl font-semibold mb-5">{exp.tier}</p>
+                <ul className="space-y-2.5">
+                  {exp.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 font-body text-sm text-platinum/85">
+                      <Check className="w-4 h-4 text-music mt-0.5 shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/design"
+                  className="inline-flex items-center gap-1 mt-6 font-body text-sm text-music hover:opacity-80 transition-opacity"
+                >
+                  Design this experience →
+                </Link>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Controls */}
+            <div className="flex items-center justify-between mt-8 pt-6 border-t border-graphite">
+              <span className="font-body text-xs text-muted-foreground tabular-nums">
+                {String(active + 1).padStart(2, "0")} / {String(experiences.length).padStart(2, "0")}
+              </span>
+              <button
+                onClick={() => setPaused((p) => !p)}
+                className="text-silver hover:text-foreground transition-colors"
+                aria-label={paused ? "Play" : "Pause"}
+              >
+                {paused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Tiles Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          <AnimatePresence mode="popLayout">
-            {filtered.map((exp, i) => {
-              const isExpanded = expandedIndex === i;
-              return (
-                <motion.div
-                  key={exp.title}
-                  layout
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3, delay: i * 0.05 }}
-                  onClick={() => setExpandedIndex(isExpanded ? null : i)}
-                  className="cursor-pointer group p-6 rounded-sm bg-carbon border border-graphite hover:border-muted-foreground/20 transition-all duration-300"
-                >
-                  {/* Colored accent line */}
-                  <div className={`h-0.5 w-12 ${colorMap[exp.color]} rounded-full mb-5`} />
-                  <exp.icon className={`w-6 h-6 ${textColorMap[exp.color]} mb-4`} />
-                  <h3 className="font-display text-xl font-semibold mb-2">{exp.title}</h3>
-                  <p className="font-body text-sm text-silver leading-relaxed">{exp.description}</p>
-
-                  <AnimatePresence>
-                    {isExpanded && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="mt-5 pt-5 border-t border-graphite">
-                          <p className="font-body text-xs tracking-wider uppercase text-muted-foreground mb-3">
-                            System Architecture
-                          </p>
-                          <p className={`font-display text-lg font-semibold ${textColorMap[exp.color]} mb-3`}>
-                            {exp.tier}
-                          </p>
-                          <ul className="space-y-2">
-                            {exp.features.map((f) => (
-                              <li key={f} className="flex items-center gap-2 font-body text-sm text-platinum/80">
-                                <Check className={`w-4 h-4 ${textColorMap[exp.color]}`} />
-                                {f}
-                              </li>
-                            ))}
-                          </ul>
-                          <Link
-                            to="/design"
-                            className="inline-block mt-4 font-body text-xs text-music hover:opacity-80 transition-opacity"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            Design this experience →
-                          </Link>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
+        {/* Thumbnail rail */}
+        <div className="mt-6 grid grid-cols-5 lg:grid-cols-10 gap-2">
+          {experiences.map((e, i) => {
+            const EIcon = e.icon;
+            const isActive = i === active;
+            return (
+              <button
+                key={e.title}
+                onClick={() => { setActive(i); setPaused(true); }}
+                className={`group relative flex flex-col items-center gap-1.5 p-3 rounded-sm border transition-all ${
+                  isActive
+                    ? "border-music/60 bg-carbon"
+                    : "border-graphite bg-carbon/40 hover:border-muted-foreground/30"
+                }`}
+              >
+                <div className={`h-0.5 w-6 rounded-full ${accentMap[e.color]} ${isActive ? "opacity-100" : "opacity-40 group-hover:opacity-70"}`} />
+                <EIcon className={`w-4 h-4 ${isActive ? "text-foreground" : "text-silver"}`} />
+                <span className={`font-body text-[10px] text-center leading-tight ${isActive ? "text-foreground" : "text-silver"}`}>
+                  {e.title}
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
     </section>
