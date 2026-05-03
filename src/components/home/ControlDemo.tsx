@@ -19,9 +19,9 @@ const qubixScenes: Scene[] = [
 function LegacyPanel() {
   const zones = ["Zone A", "Zone B", "Zone C", "Master"];
   return (
-    <div className="relative mx-auto w-full max-w-[460px]">
+    <div className="relative mx-auto w-full max-w-[460px] h-[640px] flex flex-col">
       {/* White plastic bezel - landscape touch panel on a wall */}
-      <div className="rounded-[14px] p-4 bg-gradient-to-b from-[#f4f4f2] to-[#d8d6d0] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] border border-white/60 relative">
+      <div className="rounded-[14px] p-4 bg-gradient-to-b from-[#f4f4f2] to-[#d8d6d0] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] border border-white/60 relative flex-1 flex flex-col">
         {/* Sensor strip */}
         <div className="absolute top-2 left-1/2 -translate-x-1/2 flex items-center gap-2">
           <div className="w-1 h-1 rounded-full bg-black/40" />
@@ -31,7 +31,7 @@ function LegacyPanel() {
         </div>
 
         {/* Screen */}
-        <div className="mt-3 rounded-[6px] overflow-hidden border border-black/30 relative" style={{ minHeight: 540 }}>
+        <div className="mt-3 rounded-[6px] overflow-hidden border border-black/30 relative flex-1">
           {/* Dim background "photo" behind UI */}
           <div
             className="absolute inset-0"
@@ -76,7 +76,6 @@ function LegacyPanel() {
         </div>
 
       </div>
-      <p className="text-center font-mono text-[10px] text-silver/50 mt-3 tracking-widest uppercase">Real install · Programmed like a spreadsheet</p>
     </div>
   );
 }
@@ -85,11 +84,11 @@ function LegacyPanel() {
 function QubixPanel({ active, setActive }: { active: number; setActive: (i: number) => void }) {
   const current = qubixScenes[active];
   return (
-    <div className="relative mx-auto w-full max-w-[460px]">
+    <div className="relative mx-auto w-full max-w-[460px] h-[640px] flex flex-col">
       {/* iPad bezel */}
-      <div className="rounded-[40px] p-3 bg-gradient-to-b from-[#f5f5f7] to-[#d9d9dc] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] border border-white/60">
+      <div className="rounded-[40px] p-3 bg-gradient-to-b from-[#f5f5f7] to-[#d9d9dc] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] border border-white/60 flex-1 flex flex-col">
         {/* Screen */}
-        <div className="rounded-[28px] overflow-hidden bg-gradient-to-br from-[#fafafa] via-[#f0efed] to-[#e6e3dd] relative" style={{ minHeight: 540 }}>
+        <div className="rounded-[28px] overflow-hidden bg-gradient-to-br from-[#fafafa] via-[#f0efed] to-[#e6e3dd] relative flex-1">
           {/* iOS status bar */}
           <div className="px-6 pt-3 pb-2 flex items-center justify-between text-[#1d1d1f]">
             <span className="font-body text-[11px] font-semibold">9:41</span>
@@ -167,7 +166,6 @@ function QubixPanel({ active, setActive }: { active: number; setActive: (i: numb
         {/* Camera dot */}
         <div className="absolute top-6 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-black/40" />
       </div>
-      <p className="text-center font-mono text-[10px] text-silver/60 mt-3 tracking-widest uppercase">The Qubix experience · Today</p>
     </div>
   );
 }
@@ -202,7 +200,7 @@ export function ControlDemo() {
         {/* Mockup comparison on a soft light backdrop */}
         <div className="mt-20 rounded-[36px] p-8 md:p-16 relative overflow-hidden border border-platinum/10"
           style={{
-            background: "radial-gradient(ellipse at 30% 30%, #f4f1ea 0%, #e9e4d8 40%, #d8d2c2 100%)",
+            background: "radial-gradient(ellipse at 50% 30%, #1c1c1e 0%, #131315 60%, #0a0a0c 100%)",
           }}
         >
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
@@ -211,11 +209,11 @@ export function ControlDemo() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <p className="font-body text-[10px] tracking-[0.3em] uppercase text-[#1d1d1f]/60 mb-4 text-center">
+              <p className="font-body text-[10px] tracking-[0.3em] uppercase text-silver/70 mb-6 text-center">
                 Everyone else
               </p>
               <LegacyPanel />
-              <p className="font-body text-xs text-[#1d1d1f]/70 mt-6 italic text-center max-w-xs mx-auto">
+              <p className="font-body text-sm text-silver/80 mt-8 italic text-center max-w-xs mx-auto leading-relaxed">
                 Programmed like a switchboard. The homeowner stops using it within a month.
               </p>
             </motion.div>
@@ -225,14 +223,14 @@ export function ControlDemo() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Sparkles className="w-3.5 h-3.5 text-[#1d1d1f]" />
-                <p className="font-body text-[10px] tracking-[0.3em] uppercase text-[#1d1d1f]">
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <Sparkles className="w-3.5 h-3.5 text-platinum" />
+                <p className="font-body text-[10px] tracking-[0.3em] uppercase text-platinum">
                   The Qubix experience
                 </p>
               </div>
               <QubixPanel active={active} setActive={setActive} />
-              <p className="font-body text-xs text-[#1d1d1f]/70 mt-6 italic text-center max-w-xs mx-auto">
+              <p className="font-body text-sm text-silver/80 mt-8 italic text-center max-w-xs mx-auto leading-relaxed">
                 Real moments. Programmed once. Used every day.
               </p>
             </motion.div>
