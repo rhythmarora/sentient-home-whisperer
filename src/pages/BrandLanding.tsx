@@ -356,15 +356,24 @@ function BrandSources({ brand }: { brand: typeof brandPages[string] }) {
 
 function BrandInstagramFeed({ brand }: { brand: typeof brandPages[string] }) {
   useEffect(() => {
-    // Re-inject Elfsight platform script on every mount so the widget
-    // initializes correctly when navigating between brand pages (SPA).
-    const existing = document.getElementById("elfsight-platform");
-    if (existing) existing.remove();
-    const script = document.createElement("script");
-    script.id = "elfsight-platform";
-    script.src = "https://elfsightcdn.com/platform.js";
-    script.async = true;
-    document.body.appendChild(script);
+    if (!brand.elfsightAppId) return;
+
+    const frame = requestAnimationFrame(() => {
+      const widget = document.querySelector<HTMLDivElement>(`.elfsight-app-${brand.elfsightAppId}`);
+      widget?.replaceChildren();
+
+      document
+        .querySelectorAll<HTMLScriptElement>('script[src^="https://elfsightcdn.com/platform.js"]')
+        .forEach((existingScript) => existingScript.remove());
+
+      const script = document.createElement("script");
+      script.id = "elfsight-platform";
+      script.src = "https://elfsightcdn.com/platform.js";
+      script.async = true;
+      document.body.appendChild(script);
+    });
+
+    return () => cancelAnimationFrame(frame);
   }, [brand.elfsightAppId]);
 
   return (
@@ -395,8 +404,9 @@ function BrandInstagramFeed({ brand }: { brand: typeof brandPages[string] }) {
         </motion.div>
 
         <div
+          key={`${brand.slug}-${brand.elfsightAppId}`}
           className={`elfsight-app-${brand.elfsightAppId}`}
-          data-elfsight-app-lazy
+          data-elfsight-app-lazy=""
         />
       </div>
     </section>

@@ -118,7 +118,7 @@ export const brandPages: Record<string, BrandPageData> = {
       { label: "Meyer Sound Official Website", url: "https://meyersound.com" },
       { label: "Constellation Active Acoustics", url: "https://meyersound.com/product/constellation/" },
     ],
-    instagramUrl: "https://www.instagram.com/maboroshiproductions/",
+    instagramUrl: "https://www.instagram.com/meyersoundlabs/",
     elfsightAppId: "1fdc685d-8657-46ec-9536-a15c2ae29ccf",
     seo: {
       title: "Meyer Sound India | Authorised Constellation Partner — Qubix",
