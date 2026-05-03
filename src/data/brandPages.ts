@@ -119,6 +119,7 @@ export const brandPages: Record<string, BrandPageData> = {
       { label: "Constellation Active Acoustics", url: "https://meyersound.com/product/constellation/" },
     ],
     instagramUrl: "https://www.instagram.com/maboroshiproductions/",
+    elfsightAppId: "1fdc685d-8657-46ec-9536-a15c2ae29ccf",
     seo: {
       title: "Meyer Sound India | Authorised Constellation Partner — Qubix",
       description: "Experience Meyer Sound in India. Qubix is the authorised Constellation partner with India's only active acoustics demo. Concert-hall precision for private residences — home cinema, immersive audio & Constellation systems.",
