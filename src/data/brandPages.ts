@@ -671,6 +671,7 @@ ecosystemStubs.forEach((s) => {
       h1: `${s.name} — ${s.tagline}`,
     },
     contactFormFields: stubContactFields,
+    elfsightAppId: s.elfsightAppId,
   };
 });
 
