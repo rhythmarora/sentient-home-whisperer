@@ -191,7 +191,7 @@ function BrandHero({ brand }: { brand: typeof brandPages[string] }) {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="hidden lg:flex items-center justify-center"
             >
-              <div className="w-48 h-48 rounded-sm border border-border bg-card/60 flex items-center justify-center p-8">
+              <div className="w-48 h-48 rounded-sm border border-border flex items-center justify-center p-8 opacity-100 bg-[#8a8a8a]/[0.43]">
                 <img src={logo} alt={`${brand.name} logo`} className="max-w-full max-h-full object-contain" />
               </div>
             </motion.div>
