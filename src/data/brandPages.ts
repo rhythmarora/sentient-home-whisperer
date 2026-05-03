@@ -636,6 +636,7 @@ export const brandPages: Record<string, BrandPageData> = {
       { label: "Wharfedale History", url: "https://www.wharfedale.co.uk/pages/history" },
     ],
     instagramUrl: "https://www.instagram.com/wharfedaleofficial/",
+    elfsightAppId: "6c95bae1-47b9-4c7a-8e56-6a7e6c9e8f17",
     seo: {
       title: "Wharfedale Speakers in Bangalore | Authorised Dealer — Qubix",
       description: "Experience Wharfedale's full range in Bangalore — ELYSIAN, AURA, Diamond, Linton, EVO and M Series. Specified, installed and tuned by Qubix.",
