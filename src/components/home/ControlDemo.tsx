@@ -1,160 +1,176 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Film, PartyPopper, Moon, Volume2, Lightbulb } from "lucide-react";
+import { Headphones, Sparkles } from "lucide-react";
 
-const rooms = ["Living", "Theatre", "Bedroom", "Terrace"];
-
-const scenes: Record<string, { name: string; icon: typeof Sun; color: string; volume: number; lighting: number }[]> = {
-  Living: [
-    { name: "Morning", icon: Sun, color: "social", volume: 30, lighting: 80 },
-    { name: "Movie Night", icon: Film, color: "cinema", volume: 70, lighting: 15 },
-    { name: "Party", icon: PartyPopper, color: "music", volume: 90, lighting: 60 },
-    { name: "Goodnight", icon: Moon, color: "relax", volume: 0, lighting: 5 },
-  ],
-  Theatre: [
-    { name: "Morning", icon: Sun, color: "social", volume: 20, lighting: 60 },
-    { name: "Movie Night", icon: Film, color: "cinema", volume: 85, lighting: 0 },
-    { name: "Party", icon: PartyPopper, color: "music", volume: 95, lighting: 40 },
-    { name: "Goodnight", icon: Moon, color: "relax", volume: 0, lighting: 0 },
-  ],
-  Bedroom: [
-    { name: "Morning", icon: Sun, color: "social", volume: 25, lighting: 70 },
-    { name: "Movie Night", icon: Film, color: "cinema", volume: 50, lighting: 20 },
-    { name: "Party", icon: PartyPopper, color: "music", volume: 40, lighting: 50 },
-    { name: "Goodnight", icon: Moon, color: "relax", volume: 10, lighting: 2 },
-  ],
-  Terrace: [
-    { name: "Morning", icon: Sun, color: "social", volume: 35, lighting: 90 },
-    { name: "Movie Night", icon: Film, color: "cinema", volume: 60, lighting: 30 },
-    { name: "Party", icon: PartyPopper, color: "music", volume: 85, lighting: 70 },
-    { name: "Goodnight", icon: Moon, color: "relax", volume: 15, lighting: 10 },
-  ],
+type Scene = {
+  name: string;
+  detail: string;
 };
 
-const colorBg: Record<string, string> = {
-  social: "bg-social", cinema: "bg-cinema", music: "bg-music", relax: "bg-relax",
-};
-const colorText: Record<string, string> = {
-  social: "text-social", cinema: "text-cinema", music: "text-music", relax: "text-relax",
-};
+const genericScenes: Scene[] = [
+  { name: "Scene 1", detail: "Light 1: 80% · Light 2: 60% · AC: 24°" },
+  { name: "Scene 2", detail: "Light 1: 20% · Light 2: 0% · AC: 22°" },
+  { name: "Scene 3", detail: "Light 1: 100% · Light 2: 100% · AC: 26°" },
+  { name: "Scene 4", detail: "Light 1: 0% · Light 2: 0% · AC: off" },
+];
+
+const qubixScenes: Scene[] = [
+  { name: "Welcome Home", detail: "Foyer warms, music follows you in, AC pre-cooled before you arrive." },
+  { name: "Movie Night", detail: "Blinds drop, sconces dim to 8%, projector wakes, sub calibrates to the room." },
+  { name: "Sunday Morning", detail: "Curtains open with the sun, kitchen wakes to your playlist, bedrooms stay quiet." },
+  { name: "Goodnight", detail: "Whole-home off, perimeter armed, kid's nightlight stays at 5%." },
+];
 
 export default function ControlDemo() {
-  const [activeRoom, setActiveRoom] = useState("Living");
-  const [activeScene, setActiveScene] = useState(0);
-
-  const currentScenes = scenes[activeRoom];
-  const current = currentScenes[activeScene];
+  const [active, setActive] = useState(1);
 
   return (
     <section className="py-24 lg:py-32 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-6"
         >
-          <h2 className="font-display text-4xl md:text-6xl font-medium mb-4">
-            One Touch. <span className="italic text-gradient-vibrant">Everything Responds.</span>
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-silver mb-6">
+            Automating homes since 2011
+          </p>
+          <h2 className="font-display text-4xl md:text-6xl font-medium leading-tight max-w-3xl mx-auto">
+            We've learned not just <span className="italic">how</span> to program —
+            <br />
+            but <span className="italic text-gradient-vibrant">what</span> to program.
           </h2>
+          <p className="font-body text-base md:text-lg text-silver mt-8 max-w-2xl mx-auto leading-relaxed">
+            Fourteen years of watching customers actually live with their systems taught us which features get used
+            every day, and which look impressive in a demo but never make it into the BOQ.
+          </p>
         </motion.div>
 
-        {/* iPad mockup */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-lg mx-auto rounded-2xl border border-graphite bg-carbon shadow-2xl overflow-hidden"
-        >
-          <div className="h-6 bg-graphite flex items-center justify-center">
-            <div className="w-12 h-1 bg-steel rounded-full" />
-          </div>
-
-          <div className="p-6 space-y-6">
-            {/* Room selector */}
-            <div className="flex gap-2">
-              {rooms.map((r) => (
-                <button
-                  key={r}
-                  onClick={() => { setActiveRoom(r); setActiveScene(0); }}
-                  className={`px-4 py-2 font-body text-xs rounded-full transition-all ${
-                    activeRoom === r ? "bg-music text-white" : "bg-graphite text-silver"
-                  }`}
-                >
-                  {r}
-                </button>
+        {/* Comparison */}
+        <div className="grid md:grid-cols-2 gap-6 mt-20">
+          {/* Everyone else */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="rounded-2xl border border-graphite bg-carbon/40 p-8"
+          >
+            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-silver/60 mb-6">
+              Everyone else
+            </p>
+            <div className="space-y-2">
+              {genericScenes.map((s) => (
+                <div key={s.name} className="p-4 rounded-lg border border-graphite/60 bg-obsidian/40">
+                  <p className="font-body text-sm text-platinum/70">{s.name}</p>
+                  <p className="font-mono text-[11px] text-silver/50 mt-1">{s.detail}</p>
+                </div>
               ))}
             </div>
+            <p className="font-body text-xs text-silver/60 mt-6 italic">
+              Programmed like a switchboard. The homeowner stops using it within a month.
+            </p>
+          </motion.div>
 
-            {/* Scenes */}
-            <div className="grid grid-cols-4 gap-2">
-              {currentScenes.map((scene, i) => (
-                <button
-                  key={scene.name}
-                  onClick={() => setActiveScene(i)}
-                  className={`p-3 rounded-lg border text-center transition-all ${
-                    activeScene === i
-                      ? `border-${scene.color}/50 ${colorBg[scene.color]}/10`
-                      : "border-graphite"
-                  }`}
-                >
-                  <scene.icon className={`w-5 h-5 mx-auto mb-1 ${activeScene === i ? colorText[scene.color] : "text-silver"}`} />
-                  <p className="font-body text-[10px] text-platinum/70">{scene.name}</p>
-                </button>
-              ))}
+          {/* Qubix */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="rounded-2xl border border-platinum/20 bg-gradient-to-br from-carbon to-obsidian p-8 relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-music/10 rounded-full blur-3xl -z-0" />
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-6">
+                <p className="font-body text-[10px] tracking-[0.25em] uppercase text-platinum">
+                  The Qubix experience
+                </p>
+                <Sparkles className="w-3.5 h-3.5 text-music" />
+              </div>
+
+              <div className="space-y-2">
+                {qubixScenes.map((s, i) => (
+                  <button
+                    key={s.name}
+                    onClick={() => setActive(i)}
+                    className={`w-full text-left p-4 rounded-lg border transition-all ${
+                      active === i
+                        ? "border-platinum/40 bg-platinum/5"
+                        : "border-graphite/60 bg-obsidian/40 hover:border-graphite"
+                    }`}
+                  >
+                    <p className={`font-display text-base ${active === i ? "text-platinum" : "text-platinum/80"}`}>
+                      {s.name}
+                    </p>
+                    <AnimatePresence mode="wait">
+                      {active === i && (
+                        <motion.p
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="font-body text-xs text-silver mt-2 leading-relaxed"
+                        >
+                          {s.detail}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+                  </button>
+                ))}
+              </div>
+
+              <p className="font-body text-xs text-silver mt-6 italic">
+                Real moments. Programmed once. Used every day.
+              </p>
             </div>
+          </motion.div>
+        </div>
 
-            {/* Sliders */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={`${activeRoom}-${activeScene}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="space-y-4"
-              >
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Volume2 className="w-4 h-4 text-cinema" />
-                    <span className="font-body text-xs text-silver">Volume</span>
-                    <span className="font-body text-xs text-platinum ml-auto">{current.volume}%</span>
-                  </div>
-                  <div className="h-1.5 bg-graphite rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-cinema rounded-full"
-                      animate={{ width: `${current.volume}%` }}
-                      transition={{ duration: 0.6 }}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Lightbulb className="w-4 h-4 text-social" />
-                    <span className="font-body text-xs text-silver">Lighting</span>
-                    <span className="font-body text-xs text-platinum ml-auto">{current.lighting}%</span>
-                  </div>
-                  <div className="h-1.5 bg-graphite rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-social rounded-full"
-                      animate={{ width: `${current.lighting}%` }}
-                      transition={{ duration: 0.6 }}
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+        {/* Three pillars */}
+        <div className="grid md:grid-cols-3 gap-8 mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="border-t border-graphite pt-6"
+          >
+            <p className="font-display text-2xl font-medium mb-3">Restraint over features</p>
+            <p className="font-body text-sm text-silver leading-relaxed">
+              We program what gets used — not everything that's possible. A shorter, sharper system the family actually
+              touches every day.
+            </p>
+          </motion.div>
 
-            {/* Visual feedback */}
-            <div className={`p-4 rounded-lg border border-graphite text-center transition-all duration-700`}
-              style={{ backgroundColor: `hsl(var(--${current.color}) / 0.05)` }}
-            >
-              <p className={`font-display text-lg ${colorText[current.color]}`}>{current.name} Mode</p>
-              <p className="font-body text-xs text-silver mt-1">{activeRoom} is set</p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="border-t border-platinum/30 pt-6"
+          >
+            <p className="font-display text-2xl font-medium mb-3">Tunable, not exposed</p>
+            <p className="font-body text-sm text-silver leading-relaxed">
+              Save a favourite, nudge a scene, rename a room — without ever opening the hood. Complexity stays our job.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="border-t border-graphite pt-6"
+          >
+            <div className="flex items-center gap-2 mb-3">
+              <Headphones className="w-4 h-4 text-platinum" />
+              <p className="font-display text-2xl font-medium">Remote support, included</p>
             </div>
-          </div>
-
-          <div className="h-4 bg-graphite" />
-        </motion.div>
+            <p className="font-body text-sm text-silver leading-relaxed">
+              Every Qubix project ships with secure remote management. When something needs a change, we're already
+              connected — zero waiting, no service call.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
