@@ -8,9 +8,27 @@ import { useToast } from "@/hooks/use-toast";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 import { ExternalLink, MapPin, Calendar, Users, Globe, ArrowLeft, ChevronRight, Instagram, BookOpen, ArrowRight } from "lucide-react";
 import meyerSoundHero from "@/assets/brands/meyer-sound-hero.jpg";
+import meyerPearson1 from "@/assets/brands/meyer-pearson-1.jpg";
+import meyerPearson2 from "@/assets/brands/meyer-pearson-2.webp";
+import meyerPearson3 from "@/assets/brands/meyer-pearson-3.webp";
+import meyerPearson4 from "@/assets/brands/meyer-pearson-4.jpg";
+import meyerPearson8 from "@/assets/brands/meyer-pearson-8.webp";
+import meyerPearson10 from "@/assets/brands/meyer-pearson-10.webp";
 
 const brandHeroImages: Record<string, string> = {
   "meyer-sound": meyerSoundHero,
+};
+
+const brandHeroSlideshows: Record<string, string[]> = {
+  "meyer-sound": [
+    meyerSoundHero,
+    meyerPearson4,
+    meyerPearson2,
+    meyerPearson1,
+    meyerPearson3,
+    meyerPearson10,
+    meyerPearson8,
+  ],
 };
 
 export default function BrandLanding() {
@@ -46,10 +64,35 @@ export default function BrandLanding() {
 function BrandHero({ brand }: { brand: typeof brandPages[string] }) {
   const logo = brandLogos[brand.logoKey];
   const heroImg = brandHeroImages[brand.slug];
+  const slideshow = brandHeroSlideshows[brand.slug];
+  const [slideIdx, setSlideIdx] = useState(0);
+
+  useEffect(() => {
+    if (!slideshow || slideshow.length < 2) return;
+    const id = setInterval(() => {
+      setSlideIdx((i) => (i + 1) % slideshow.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [slideshow]);
 
   return (
     <section className="pt-28 pb-20 px-6 relative overflow-hidden min-h-[80vh] flex items-center">
-      {heroImg ? (
+      {slideshow && slideshow.length > 0 ? (
+        <div className="absolute inset-0">
+          {slideshow.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt={`${brand.name} listening environment`}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${
+                i === slideIdx ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent to-background" />
+        </div>
+      ) : heroImg ? (
         <div className="absolute inset-0">
           <img src={heroImg} alt={`${brand.name} listening environment`} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
