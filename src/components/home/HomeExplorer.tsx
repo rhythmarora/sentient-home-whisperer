@@ -16,6 +16,7 @@ import masterSuiteImg from "@/assets/rooms/master-suite.jpg";
 import wellnessBathImg from "@/assets/rooms/wellness-bath.jpg";
 import terraceImg from "@/assets/rooms/terrace.jpg";
 import gardenPoolImg from "@/assets/rooms/garden-pool.jpg";
+import gymImg from "@/assets/rooms/gym.jpg";
 import entryGateImg from "@/assets/rooms/entry-gate.jpg";
 
 type Room = {
@@ -38,6 +39,7 @@ const rooms: Room[] = [
   { id: "performance", name: "Party Room", zone: "indoor", experience: "ENTERTAINMENT", image: performanceRoomImg, audio: "PA-grade with wireless mic integration", lighting: ["Stage", "House", "Blackout"], control: "Party modes", modes: ["Karaoke", "DJ Set", "Live Music"] },
   { id: "master", name: "Master Suite", zone: "indoor", experience: "RELAXATION", image: masterSuiteImg, audio: "Invisible in-wall + bedside control", lighting: ["Wake", "Relax", "Sleep"], control: "Bedside panel" },
   { id: "wellness", name: "Wellness Bath", zone: "indoor", experience: "RELAXATION", image: wellnessBathImg, audio: "Moisture-rated ceiling speakers", lighting: ["Energize", "Spa", "Night Light"], control: "Waterproof remote" },
+  { id: "gym", name: "Home Gym", zone: "indoor", experience: "RELAXATION", image: gymImg, audio: "High-energy zone with subwoofer", lighting: ["Energize", "Focus", "Cooldown"], control: "Voice + wall panel", modes: ["Cardio", "Strength", "Yoga"] },
   { id: "terrace", name: "Terrace", zone: "outdoor", experience: "LIFESTYLE", image: terraceImg, audio: "Weather-resistant landscape speakers", lighting: ["Sunset", "Dinner", "Party"], control: "Outdoor panel" },
   { id: "garden", name: "Garden & Pool", zone: "outdoor", experience: "LIFESTYLE", image: gardenPoolImg, audio: "Buried subwoofer + satellite system", lighting: ["Ambient", "Pool Party", "Stargazing"], control: "App control" },
   { id: "entry", name: "Entry & Gate", zone: "outdoor", experience: "SECURITY", image: entryGateImg, audio: "Intercom + announcement", lighting: ["Welcome", "Security", "Away"], control: "Biometric + camera", security: ["Facial Recognition", "Plate Detection", "Visitor Log"] },
