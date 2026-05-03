@@ -37,6 +37,18 @@ const brandHeroSlideshows: Record<string, string[]> = {
   "pmc": [pmcHero1, pmcHero2, pmcHero3, pmcHero4],
 };
 
+const brandProductImages: Record<string, Record<string, string>> = {
+  "meyer-sound": {
+    "Constellation System": meyerPearson1,
+    "Bluehorn System": meyerPearson2,
+    "Acheron Series": meyerPearson3,
+    "HMS Series": meyerPearson4,
+    "1100-LFC": meyerPearson8,
+    "UP-4slim": meyerPearson10,
+  },
+  "pmc": {},
+};
+
 export default function BrandLanding() {
   const { slug } = useParams<{ slug: string }>();
   const brand = slug ? brandPages[slug] : null;
@@ -225,6 +237,7 @@ function BrandTechnologies({ brand }: { brand: typeof brandPages[string] }) {
 }
 
 function BrandProducts({ brand }: { brand: typeof brandPages[string] }) {
+  const productImages = brandProductImages[brand.slug] || {};
   return (
     <section className="py-20 px-6 border-t border-border">
       <div className="max-w-6xl mx-auto">
@@ -239,34 +252,45 @@ function BrandProducts({ brand }: { brand: typeof brandPages[string] }) {
           </h2>
         </motion.div>
 
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {brand.keyProducts.map((product, i) => {
             const Wrapper = product.slug ? Link : "div";
             const wrapperProps = product.slug ? { to: `/product/${product.slug}` } : {};
+            const img = productImages[product.name];
             return (
               <motion.div
                 key={product.name}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
               >
                 <Wrapper
                   {...(wrapperProps as any)}
-                  className={`group flex flex-col sm:flex-row sm:items-center gap-4 p-6 rounded-sm border border-border bg-card hover:border-primary/30 transition-colors duration-300 ${product.slug ? "cursor-pointer block" : ""}`}
+                  className={`group relative block aspect-[4/5] overflow-hidden rounded-sm border border-border bg-card ${product.slug ? "cursor-pointer" : ""}`}
                 >
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="font-display text-lg font-medium">{product.name}</h3>
-                      <span className="px-2 py-0.5 text-xs font-body tracking-wider uppercase bg-primary/10 text-primary rounded-sm">{product.category}</span>
-                    </div>
-                    <p className="font-body text-sm text-muted-foreground leading-relaxed">{product.description}</p>
-                  </div>
-                  {product.slug ? (
-                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0 hidden sm:block" />
+                  {img ? (
+                    <img
+                      src={img}
+                      alt={product.name}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
                   ) : (
-                    <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0 hidden sm:block" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-card to-background" />
                   )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/10" />
+                  <div className="absolute inset-0 p-5 flex flex-col justify-end">
+                    <span className="self-start px-2 py-0.5 text-[10px] font-body tracking-wider uppercase bg-primary/15 text-primary rounded-sm mb-2 backdrop-blur-sm">
+                      {product.category}
+                    </span>
+                    <h3 className="font-display text-xl font-medium mb-2 text-foreground">{product.name}</h3>
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-3">{product.description}</p>
+                    {product.slug && (
+                      <span className="mt-3 inline-flex items-center gap-1 font-body text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                        Explore <ArrowRight className="w-3 h-3" />
+                      </span>
+                    )}
+                  </div>
                 </Wrapper>
               </motion.div>
             );
@@ -279,8 +303,8 @@ function BrandProducts({ brand }: { brand: typeof brandPages[string] }) {
 
 function BrandTimeline({ brand }: { brand: typeof brandPages[string] }) {
   return (
-    <section className="py-20 px-6 bg-card/30 border-t border-border">
-      <div className="max-w-4xl mx-auto">
+    <section className="py-20 px-6 bg-card/30 border-t border-border overflow-hidden">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -291,34 +315,34 @@ function BrandTimeline({ brand }: { brand: typeof brandPages[string] }) {
             A legacy of <span className="italic text-gold-gradient">innovation</span>
           </h2>
         </motion.div>
+      </div>
 
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-[19px] top-0 bottom-0 w-px bg-border" />
-
-          <div className="space-y-8">
+      <div className="relative">
+        <div className="overflow-x-auto scrollbar-hide -mx-6 px-6 pb-6">
+          <div className="relative inline-flex gap-6 min-w-full">
+            {/* Horizontal line */}
+            <div className="absolute left-0 right-0 top-5 h-px bg-border" />
             {brand.timeline.map((event, i) => (
               <motion.div
                 key={event.year + event.title}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="relative flex gap-6 items-start"
+                className="relative w-[280px] shrink-0"
               >
                 {/* Dot */}
-                <div className="relative z-10 w-10 h-10 rounded-full border-2 border-primary bg-background flex items-center justify-center shrink-0">
+                <div className="relative z-10 w-10 h-10 rounded-full border-2 border-primary bg-background flex items-center justify-center mb-4">
                   <span className="text-[10px] font-body font-bold text-primary">{event.year.slice(-2)}</span>
                 </div>
-                <div className="pb-2">
-                  <span className="font-body text-xs text-primary tracking-wider">{event.year}</span>
-                  <h3 className="font-display text-base font-medium mt-0.5 mb-1">{event.title}</h3>
-                  <p className="font-body text-sm text-muted-foreground leading-relaxed">{event.description}</p>
-                </div>
+                <span className="font-body text-xs text-primary tracking-wider">{event.year}</span>
+                <h3 className="font-display text-base font-medium mt-0.5 mb-1">{event.title}</h3>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed">{event.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
+        <p className="text-center font-body text-xs text-muted-foreground/60 mt-2">← scroll →</p>
       </div>
     </section>
   );
