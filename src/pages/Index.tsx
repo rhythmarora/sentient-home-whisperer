@@ -7,7 +7,7 @@ import BrandEcosystem from "@/components/home/BrandEcosystem";
 import HomeExplorer from "@/components/home/HomeExplorer";
 import AIConsultant from "@/components/home/AIConsultant";
 import ControlDemo from "@/components/home/ControlDemo";
-import SystemPhilosophy from "@/components/home/SystemPhilosophy";
+
 import CinematicStory from "@/components/home/CinematicStory";
 import ConsultationCTA from "@/components/home/ConsultationCTA";
 
@@ -34,7 +34,7 @@ export default function Index() {
       <HomeExplorer />
       <AIConsultant />
       <ControlDemo />
-      <SystemPhilosophy />
+      
       <CinematicStory />
       <ConsultationCTA />
     </Layout>
