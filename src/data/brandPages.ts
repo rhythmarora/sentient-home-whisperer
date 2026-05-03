@@ -592,6 +592,74 @@ export const brandPages: Record<string, BrandPageData> = {
       { label: "Tell us about your space and vision", name: "message", type: "textarea", placeholder: "Which rooms, how you want to use Sonos, and any existing system we should integrate with." },
     ],
   },
+  "wharfedale": {
+    slug: "wharfedale",
+    name: "Wharfedale",
+    tagline: "British loudspeaker heritage since 1932.",
+    heroSubtitle: "From the Yorkshire dales to the world's most considered listening rooms — Wharfedale has been crafting loudspeakers with a distinctly British voice for nearly a century.",
+    partnerBadge: "Wharfedale Authorised Dealer — Bangalore",
+    logoKey: "Wharfedale",
+    founded: "1932",
+    headquarters: "Huntingdon, Cambridgeshire, United Kingdom",
+    founders: "Gilbert Briggs",
+    website: "https://www.wharfedale.co.uk",
+    about: [
+      "Wharfedale is one of the oldest and most respected names in British hi-fi. Founded in 1932 by Gilbert Briggs in his cellar in Ilkley, Yorkshire — overlooking the Wharfe valley that gave the company its name — Wharfedale helped define what a loudspeaker should sound like in the home.",
+      "Across nearly a century, Wharfedale has remained committed to a single idea: that a loudspeaker should be musical first. From the legendary Linton heritage standmount to the flagship ELYSIAN series, every Wharfedale speaker is voiced to deliver natural tonality, expressive midrange and an effortless sense of scale — the qualities that have always defined British listening.",
+      "Today Wharfedale's range spans accessible, authentic hi-fi (Diamond), modern reference performance (EVO and AURA), heritage cabinetry (Linton) and statement luxury (ELYSIAN) — alongside a full range of architectural M Series speakers for whole-home and cinema installation.",
+    ],
+    qubixRelationship: "Qubix specifies Wharfedale across residential projects in Bangalore — from heritage Linton pairs in studies and listening corners, to full ELYSIAN reference systems in dedicated music rooms, and M Series architectural speakers throughout multi-zone homes.",
+    technologies: [
+      { name: "AMT Tweeter (ELYSIAN & AURA)", description: "An Air Motion Transformer tweeter delivers exceptionally fast, low-distortion high frequencies — the source of ELYSIAN and AURA's open, airy presentation." },
+      { name: "Slot-Loaded Profile (SLPP) Bass", description: "Wharfedale's slot-loaded down-firing bass system extends low-frequency response while controlling room interaction — the heart of the EVO and ELYSIAN floor-standers." },
+      { name: "Klarity™ Midrange Cone", description: "A proprietary woven-fibre composite cone designed for low coloration and natural vocal reproduction across the Diamond, EVO and AURA ranges." },
+      { name: "Heritage Cabinet Construction", description: "The Linton series is built using traditional veneered, multi-layer MDF cabinetry — voiced to recall the warmth of Wharfedale's classic 1960s and 70s designs." },
+    ],
+    keyProducts: [
+      { name: "ELYSIAN", category: "Flagship Series", description: "Wharfedale's statement loudspeaker range — ELYSIAN 1, 2 and 4 with AMT tweeter, true ribbon midrange and slot-loaded bass. A genuine example of luxury British audio." },
+      { name: "AURA", category: "Premium Series", description: "Inspired by ELYSIAN's flagship engineering, AURA brings AMT-based clarity and refined cabinetry to a more compact, room-friendly footprint." },
+      { name: "Diamond", category: "Reference Hi-Fi Series", description: "The Diamond 12 series — bookshelves, floor-standers and a centre — delivers authentic hi-fi performance that has won awards across every generation since 1982." },
+      { name: "Linton", category: "Heritage Series", description: "Retro style, timeless musicality. The Linton 85th Anniversary pairs a wide-baffle three-way design with optional matching stands — a love letter to the British listening tradition." },
+      { name: "EVO", category: "Modern Reference Series", description: "The EVO 5 family — two standmounts, two floor-standers and a centre — combines AMT tweeter technology with slot-loaded bass loading for serious modern hi-fi performance." },
+      { name: "M Series", category: "Architectural Installation", description: "A complete range of in-ceiling and in-wall installation speakers for home cinema surrounds, multi-room audio and whole-home sound." },
+    ],
+    timeline: [
+      { year: "1932", title: "Founded in Yorkshire", description: "Gilbert Briggs builds his first loudspeaker in his cellar in Ilkley, naming the company after the Wharfe valley." },
+      { year: "1958", title: "Sandwich Cone Construction", description: "Wharfedale pioneers the bonded sandwich cone — a major leap in driver rigidity and low-frequency control." },
+      { year: "1982", title: "Diamond 1 Launched", description: "A compact two-way bookshelf priced at £65 redefines what affordable hi-fi can sound like — and changes the brand's fortunes for good." },
+      { year: "2017", title: "Linton Heritage Reborn", description: "Wharfedale revives the Linton — a wide-baffle, three-way standmount with optional matching stands — to global critical acclaim." },
+      { year: "2020", title: "ELYSIAN Flagship Series", description: "Wharfedale launches ELYSIAN — its most ambitious speaker in decades — with AMT tweeter, ribbon midrange and slot-loaded bass." },
+      { year: "2023", title: "AURA Series", description: "AURA brings flagship-derived AMT engineering to a more compact, design-led series for modern living spaces." },
+    ],
+    sources: [
+      { label: "Wharfedale Official Website", url: "https://www.wharfedale.co.uk" },
+      { label: "Wharfedale History", url: "https://www.wharfedale.co.uk/pages/history" },
+    ],
+    instagramUrl: "https://www.instagram.com/wharfedaleofficial/",
+    seo: {
+      title: "Wharfedale Speakers in Bangalore | Authorised Dealer — Qubix",
+      description: "Experience Wharfedale's full range in Bangalore — ELYSIAN, AURA, Diamond, Linton, EVO and M Series. Specified, installed and tuned by Qubix.",
+      h1: "Wharfedale Speakers — Authorised Dealer in Bangalore",
+    },
+    contactFormFields: [
+      { label: "Name", name: "name", type: "text", placeholder: "Your name", required: true },
+      { label: "Email", name: "email", type: "email", placeholder: "your@email.com", required: true },
+      { label: "Phone / WhatsApp", name: "phone", type: "tel", placeholder: "+91", required: true },
+      { label: "What interests you most?", name: "interest", type: "select", options: [
+        "ELYSIAN Flagship Series",
+        "AURA Series",
+        "Diamond Series",
+        "Linton Heritage Series",
+        "EVO Series",
+        "M Series Architectural / Cinema",
+        "Other / General Enquiry",
+      ], required: true },
+      { label: "Property Type", name: "propertyType", type: "select", options: [
+        "Apartment / Penthouse", "Villa / Bungalow / Independent Home", "Farmhouse / Weekend Home", "Commercial / Hospitality"
+      ] },
+      { label: "Tell us about your space and vision", name: "message", type: "textarea", placeholder: "Describe your room, what you're looking to achieve, and any specific Wharfedale products you're interested in." },
+    ],
+  },
 };
 
 // --- Ecosystem brand stubs ---------------------------------------------------
