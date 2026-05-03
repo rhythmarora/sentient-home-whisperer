@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import livingRoomImg from "@/assets/rooms/living-room.jpg";
 
 type Room = {
   id: string;
@@ -23,7 +24,7 @@ type Room = {
 };
 
 const rooms: Room[] = [
-  { id: "living", name: "Living Room", zone: "indoor", experience: "LIFESTYLE", audio: "Distributed ceiling + architectural sub", lighting: ["Morning Calm", "Evening Glow", "Movie Night"], control: "Voice + touch panel" },
+  { id: "living", name: "Living Room", zone: "indoor", experience: "LIFESTYLE", image: livingRoomImg, audio: "Distributed ceiling + architectural sub", lighting: ["Morning Calm", "Evening Glow", "Movie Night"], control: "Voice + touch panel" },
   { id: "theatre", name: "Private Theatre", zone: "indoor", experience: "ENTERTAINMENT", audio: "Dolby Atmos 9.4.6 with PMC monitors", lighting: ["Demo", "Movie", "Interval"], control: "Crestron one-touch" },
   { id: "bar", name: "Bar & Lounge", zone: "indoor", experience: "ENTERTAINMENT", audio: "High-output zone with subwoofer", lighting: ["Intimate", "Party", "Late Night"], control: "Scene buttons" },
   { id: "performance", name: "Performance Room", zone: "indoor", experience: "ENTERTAINMENT", audio: "PA-grade with wireless mic integration", lighting: ["Stage", "House", "Blackout"], control: "Performance modes", modes: ["Karaoke", "DJ Set", "Live Music"] },
