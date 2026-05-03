@@ -1,32 +1,42 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Volume2, Lightbulb, Shield, Play } from "lucide-react";
+import { Volume2, Lightbulb, Shield, Play, MapPin } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
-const rooms = [
-  // Indoor
-  { id: "living", name: "Living Room", zone: "indoor", experience: "LIFESTYLE", row: 1, audio: "Distributed ceiling + architectural sub", lighting: ["Morning Calm", "Evening Glow", "Movie Night"], control: "Voice + touch panel" },
-  { id: "theatre", name: "Private Theatre", zone: "indoor", experience: "ENTERTAINMENT", row: 1, audio: "Dolby Atmos 9.4.6 with PMC monitors", lighting: ["Demo", "Movie", "Interval"], control: "Crestron one-touch" },
-  { id: "bar", name: "Bar & Lounge", zone: "indoor", experience: "ENTERTAINMENT", row: 2, audio: "High-output zone with subwoofer", lighting: ["Intimate", "Party", "Late Night"], control: "Scene buttons" },
-  { id: "performance", name: "Performance Room", zone: "indoor", experience: "ENTERTAINMENT", row: 2, audio: "PA-grade with wireless mic integration", lighting: ["Stage", "House", "Blackout"], control: "Performance modes", modes: ["Karaoke", "DJ Set", "Live Music"] },
-  { id: "master", name: "Master Suite", zone: "indoor", experience: "RELAXATION", row: 2, audio: "Invisible in-wall + bedside control", lighting: ["Wake", "Relax", "Sleep"], control: "Bedside panel" },
-  { id: "wellness", name: "Wellness Bath", zone: "indoor", experience: "RELAXATION", row: 3, audio: "Moisture-rated ceiling speakers", lighting: ["Energize", "Spa", "Night Light"], control: "Waterproof remote" },
-  // Outdoor
-  { id: "terrace", name: "Terrace", zone: "outdoor", experience: "LIFESTYLE", row: 4, audio: "Weather-resistant landscape speakers", lighting: ["Sunset", "Dinner", "Party"], control: "Outdoor panel" },
-  { id: "garden", name: "Garden & Pool", zone: "outdoor", experience: "LIFESTYLE", row: 4, audio: "Buried subwoofer + satellite system", lighting: ["Ambient", "Pool Party", "Stargazing"], control: "App control" },
-  { id: "entry", name: "Entry & Gate", zone: "outdoor", experience: "SECURITY", row: 4, audio: "Intercom + announcement", lighting: ["Welcome", "Security", "Away"], control: "Biometric + camera", security: ["Facial Recognition", "Plate Detection", "Visitor Log"] },
-];
-
-const zoneColors: Record<string, string> = {
-  indoor: "border-graphite bg-carbon/50",
-  outdoor: "border-dashed border-graphite bg-void/60",
+type Room = {
+  id: string;
+  name: string;
+  zone: "indoor" | "outdoor";
+  experience: string;
+  image?: string; // background photo (drop-in later)
+  audio: string;
+  lighting: string[];
+  control: string;
+  modes?: string[];
+  security?: string[];
 };
 
-export default function HomeExplorer() {
-  const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
-  const active = rooms.find((r) => r.id === selectedRoom);
+const rooms: Room[] = [
+  { id: "living", name: "Living Room", zone: "indoor", experience: "LIFESTYLE", audio: "Distributed ceiling + architectural sub", lighting: ["Morning Calm", "Evening Glow", "Movie Night"], control: "Voice + touch panel" },
+  { id: "theatre", name: "Private Theatre", zone: "indoor", experience: "ENTERTAINMENT", audio: "Dolby Atmos 9.4.6 with PMC monitors", lighting: ["Demo", "Movie", "Interval"], control: "Crestron one-touch" },
+  { id: "bar", name: "Bar & Lounge", zone: "indoor", experience: "ENTERTAINMENT", audio: "High-output zone with subwoofer", lighting: ["Intimate", "Party", "Late Night"], control: "Scene buttons" },
+  { id: "performance", name: "Performance Room", zone: "indoor", experience: "ENTERTAINMENT", audio: "PA-grade with wireless mic integration", lighting: ["Stage", "House", "Blackout"], control: "Performance modes", modes: ["Karaoke", "DJ Set", "Live Music"] },
+  { id: "master", name: "Master Suite", zone: "indoor", experience: "RELAXATION", audio: "Invisible in-wall + bedside control", lighting: ["Wake", "Relax", "Sleep"], control: "Bedside panel" },
+  { id: "wellness", name: "Wellness Bath", zone: "indoor", experience: "RELAXATION", audio: "Moisture-rated ceiling speakers", lighting: ["Energize", "Spa", "Night Light"], control: "Waterproof remote" },
+  { id: "terrace", name: "Terrace", zone: "outdoor", experience: "LIFESTYLE", audio: "Weather-resistant landscape speakers", lighting: ["Sunset", "Dinner", "Party"], control: "Outdoor panel" },
+  { id: "garden", name: "Garden & Pool", zone: "outdoor", experience: "LIFESTYLE", audio: "Buried subwoofer + satellite system", lighting: ["Ambient", "Pool Party", "Stargazing"], control: "App control" },
+  { id: "entry", name: "Entry & Gate", zone: "outdoor", experience: "SECURITY", audio: "Intercom + announcement", lighting: ["Welcome", "Security", "Away"], control: "Biometric + camera", security: ["Facial Recognition", "Plate Detection", "Visitor Log"] },
+];
 
-  const indoor = rooms.filter((r) => r.zone === "indoor");
-  const outdoor = rooms.filter((r) => r.zone === "outdoor");
+export default function HomeExplorer() {
+  const [selectedRoom, setSelectedRoom] = useState<string>(rooms[0].id);
+  const active = rooms.find((r) => r.id === selectedRoom)!;
 
   return (
     <section className="py-24 lg:py-32 px-6">
@@ -35,167 +45,161 @@ export default function HomeExplorer() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="font-display text-4xl md:text-6xl font-medium mb-4">
             Explore Every <span className="italic text-gradient-vibrant">Space</span>
           </h2>
           <p className="font-body text-base text-silver">
-            Tap any room — indoors or out — to reveal the invisible technology within.
+            Swipe through the rooms — tap any tile to reveal the technology within.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* Floor Plan */}
-          <div className="lg:col-span-3 relative">
-            {/* Blueprint dot grid */}
-            <div className="absolute inset-0 opacity-5" style={{
-              backgroundImage: "radial-gradient(hsl(var(--platinum)) 1px, transparent 1px)",
-              backgroundSize: "20px 20px",
-            }} />
+        <Carousel
+          opts={{ align: "start", loop: false }}
+          className="mb-10"
+        >
+          <CarouselContent className="-ml-4">
+            {rooms.map((room) => (
+              <CarouselItem
+                key={room.id}
+                className="pl-4 basis-[80%] sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+              >
+                <RoomTile
+                  room={room}
+                  selected={selectedRoom === room.id}
+                  onClick={() => setSelectedRoom(room.id)}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-4" />
+          <CarouselNext className="hidden md:flex -right-4" />
+        </Carousel>
 
-            <div className="relative space-y-3">
-              {/* Zone label */}
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 rounded-full bg-cinema" />
-                <span className="font-body text-xs text-silver uppercase tracking-wider">Indoor</span>
-              </div>
-
-              {/* Row 1 */}
-              <div className="grid grid-cols-2 gap-3">
-                {indoor.filter(r => r.row === 1).map(room => (
-                  <RoomTile key={room.id} room={room} selected={selectedRoom === room.id} onClick={() => setSelectedRoom(room.id)} />
-                ))}
-              </div>
-              {/* Row 2 */}
-              <div className="grid grid-cols-3 gap-3">
-                {indoor.filter(r => r.row === 2).map(room => (
-                  <RoomTile key={room.id} room={room} selected={selectedRoom === room.id} onClick={() => setSelectedRoom(room.id)} />
-                ))}
-              </div>
-              {/* Row 3 */}
-              <div className="grid grid-cols-1 gap-3">
-                {indoor.filter(r => r.row === 3).map(room => (
-                  <RoomTile key={room.id} room={room} selected={selectedRoom === room.id} onClick={() => setSelectedRoom(room.id)} />
-                ))}
-              </div>
-
-              {/* Dashed boundary */}
-              <div className="border-t border-dashed border-muted-foreground/20 my-4" />
-
-              {/* Outdoor label */}
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 rounded-full bg-relax" />
-                <span className="font-body text-xs text-silver uppercase tracking-wider">Outdoor</span>
-              </div>
-
-              {/* Row 4 */}
-              <div className="grid grid-cols-3 gap-3">
-                {outdoor.map(room => (
-                  <RoomTile key={room.id} room={room} selected={selectedRoom === room.id} onClick={() => setSelectedRoom(room.id)} />
-                ))}
-              </div>
+        {/* Detail Panel */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active.id}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25 }}
+            className="p-8 rounded-sm bg-carbon border border-graphite"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <span className="inline-block px-2 py-0.5 text-xs font-body rounded bg-music/10 text-music uppercase tracking-wider">
+                {active.experience}
+              </span>
+              <span className="font-body text-xs uppercase tracking-wider text-silver flex items-center gap-1">
+                <MapPin className="w-3 h-3" /> {active.zone}
+              </span>
             </div>
-          </div>
+            <h3 className="font-display text-3xl font-semibold mb-6 text-gradient-vibrant">
+              {active.name}
+            </h3>
 
-          {/* Detail Panel */}
-          <div className="lg:col-span-2">
-            <AnimatePresence mode="wait">
-              {active ? (
-                <motion.div
-                  key={active.id}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  className="p-6 rounded-sm bg-carbon border border-graphite sticky top-24"
-                >
-                  <span className="inline-block px-2 py-0.5 text-xs font-body rounded bg-music/10 text-music uppercase tracking-wider">
-                    {active.experience}
-                  </span>
-                  <h3 className="font-display text-2xl font-semibold mt-3 mb-6 text-gradient-vibrant">{active.name}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <Volume2 className="w-4 h-4 text-music" />
+                  <span className="font-body text-xs uppercase tracking-wider text-muted-foreground">Audio</span>
+                </div>
+                <p className="font-body text-sm text-platinum/80">{active.audio}</p>
+              </div>
 
-                  <div className="space-y-5">
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Volume2 className="w-4 h-4 text-music" />
-                        <span className="font-body text-xs uppercase tracking-wider text-muted-foreground">Audio Architecture</span>
-                      </div>
-                      <p className="font-body text-sm text-platinum/80">{active.audio}</p>
-                    </div>
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <Lightbulb className="w-4 h-4 text-music" />
+                  <span className="font-body text-xs uppercase tracking-wider text-muted-foreground">Lighting</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {active.lighting.map((s) => (
+                    <span key={s} className="px-3 py-1 text-xs font-body bg-graphite rounded-full text-platinum/80">{s}</span>
+                  ))}
+                </div>
+              </div>
 
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Lightbulb className="w-4 h-4 text-music" />
-                        <span className="font-body text-xs uppercase tracking-wider text-muted-foreground">Lighting Scenes</span>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {active.lighting.map(s => (
-                          <span key={s} className="px-3 py-1 text-xs font-body bg-graphite rounded-full text-platinum/80">{s}</span>
-                        ))}
-                      </div>
-                    </div>
+              <div>
+                <p className="font-body text-xs uppercase tracking-wider text-muted-foreground mb-2">Control</p>
+                <p className="font-body text-sm text-platinum/80">{active.control}</p>
+              </div>
 
-                    {active.security && (
-                      <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <Shield className="w-4 h-4 text-music" />
-                          <span className="font-body text-xs uppercase tracking-wider text-muted-foreground">Security</span>
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                          {active.security.map(s => (
-                            <span key={s} className="px-3 py-1 text-xs font-body bg-graphite rounded-full text-platinum/80">{s}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {active.modes && (
-                      <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <Play className="w-4 h-4 text-music" />
-                          <span className="font-body text-xs uppercase tracking-wider text-muted-foreground">Performance Modes</span>
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                          {active.modes.map(m => (
-                            <span key={m} className="px-3 py-1 text-xs font-body bg-graphite rounded-full text-platinum/80">{m}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    <div className="pt-3 border-t border-graphite">
-                      <p className="font-body text-xs text-muted-foreground mb-1">Control</p>
-                      <p className="font-body text-sm text-platinum/80">{active.control}</p>
-                    </div>
+              {active.security && (
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Shield className="w-4 h-4 text-music" />
+                    <span className="font-body text-xs uppercase tracking-wider text-muted-foreground">Security</span>
                   </div>
-                </motion.div>
-              ) : (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="p-8 rounded-sm bg-carbon border border-graphite text-center sticky top-24"
-                >
-                  <p className="font-body text-sm text-silver">Select a room to explore its technology</p>
-                </motion.div>
+                  <div className="flex flex-wrap gap-2">
+                    {active.security.map((s) => (
+                      <span key={s} className="px-3 py-1 text-xs font-body bg-graphite rounded-full text-platinum/80">{s}</span>
+                    ))}
+                  </div>
+                </div>
               )}
-            </AnimatePresence>
-          </div>
-        </div>
+
+              {active.modes && (
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Play className="w-4 h-4 text-music" />
+                    <span className="font-body text-xs uppercase tracking-wider text-muted-foreground">Modes</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {active.modes.map((m) => (
+                      <span key={m} className="px-3 py-1 text-xs font-body bg-graphite rounded-full text-platinum/80">{m}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );
 }
 
-function RoomTile({ room, selected, onClick }: { room: typeof rooms[0]; selected: boolean; onClick: () => void }) {
+function RoomTile({ room, selected, onClick }: { room: Room; selected: boolean; onClick: () => void }) {
   return (
     <button
       onClick={onClick}
-      className={`p-4 rounded-sm text-left transition-all duration-300 ${
-        room.zone === "indoor" ? "bg-carbon/50 border border-graphite" : "bg-void/60 border border-dashed border-graphite"
-      } ${selected ? "border-cinema/50 glow-cinema" : "hover:border-muted-foreground/30"}`}
+      className={`group relative w-full aspect-[3/4] rounded-sm overflow-hidden border transition-all duration-300 ${
+        selected
+          ? "border-music/60 glow-music"
+          : "border-graphite hover:border-muted-foreground/40"
+      }`}
     >
-      <p className="font-display text-sm font-semibold">{room.name}</p>
-      {room.zone === "outdoor" && <span className="font-body text-[10px] text-relax uppercase tracking-wider">outdoor</span>}
+      {/* Background image (drop-in: assign room.image). Fallback: textured gradient. */}
+      {room.image ? (
+        <img
+          src={room.image}
+          alt={room.name}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-carbon via-graphite to-void" />
+      )}
+
+      {/* Gradient overlay for legibility */}
+      <div className="absolute inset-0 bg-gradient-to-t from-void via-void/60 to-transparent" />
+
+      {/* Zone tag */}
+      <div className="absolute top-3 left-3 z-10">
+        <span className="font-body text-[10px] uppercase tracking-[0.2em] text-silver/80">
+          {room.zone}
+        </span>
+      </div>
+
+      {/* Title */}
+      <div className="absolute inset-x-0 bottom-0 p-4 z-10 text-left">
+        <p className="font-body text-[10px] tracking-[0.25em] uppercase text-music/80 mb-1">
+          {room.experience}
+        </p>
+        <h3 className="font-display text-xl font-semibold text-platinum">
+          {room.name}
+        </h3>
+      </div>
     </button>
   );
 }
