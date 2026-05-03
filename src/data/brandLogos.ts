@@ -23,7 +23,7 @@ import shureLogo from "@/assets/brands/shure.jpg";
 import wyrestormLogo from "@/assets/brands/wyrestorm.png";
 import logitechLogo from "@/assets/brands/logitech.svg";
 import neatLogo from "@/assets/brands/neat.png";
-import crestronLogo from "@/assets/brands/crestron.webp";
+import crestronLogo from "@/assets/brands/crestron.png";
 import ciscoLogo from "@/assets/brands/cisco.png";
 import lumagenLogo from "@/assets/brands/lumagen.webp";
 import karrayLogo from "@/assets/brands/karray.png";
@@ -76,6 +76,7 @@ export const brandLogos: Record<string, string> = {
   Logitech: logitechLogo,
   Neat: neatLogo,
   Crestron: crestronLogo,
+  "Crestron Home": crestronLogo,
   Cisco: ciscoLogo,
   Lumagen: lumagenLogo,
   "K-Array": karrayLogo,
