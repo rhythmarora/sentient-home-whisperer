@@ -6,6 +6,7 @@ import {
   Sun, Home, Shield, Wifi, Image as ImageIcon, Pause, Play
 } from "lucide-react";
 import { brandLogos } from "@/data/brandLogos";
+import cinemaImg from "@/assets/experiences/cinema.jpg";
 
 const experiences = [
   {
@@ -13,7 +14,7 @@ const experiences = [
     tagline: "Every seat is the best seat.",
     promise: "Reference-grade private cinemas calibrated by THX-certified engineers — the only such team in India.",
     brands: ["PMC", "Trinnov", "SIM2", "McIntosh"],
-    image: "",
+    image: cinemaImg,
   },
   {
     icon: Music, title: "Music", color: "music",
