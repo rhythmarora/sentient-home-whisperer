@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { brandLogos } from "@/data/brandLogos";
 import cinemaImg from "@/assets/experiences/cinema.jpg";
-import musicImg from "@/assets/experiences/music.jpg";
+import musicImg from "@/assets/music/pmc-prophecy9-lakeside.jpg";
 import performanceImg from "@/assets/experiences/performance.jpg";
 import gamingImg from "@/assets/experiences/gaming.jpg";
 import socialImg from "@/assets/experiences/social.jpg";
