@@ -9,6 +9,7 @@ export interface BrandProduct {
   category: string;
   description: string;
   slug?: string;
+  image?: string;
 }
 
 export interface BrandTechnology {
