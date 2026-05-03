@@ -29,6 +29,7 @@ import pmcProdigy5 from "@/assets/brands/pmc-prodigy5.jpg";
 import pmcProdigy1 from "@/assets/brands/pmc-prodigy1.jpg";
 import pmcCiSeries from "@/assets/brands/pmc-ci-series.jpg";
 import pmcSubwoofer from "@/assets/brands/pmc-subwoofer.jpg";
+import pmcDolbyAtmos from "@/assets/brands/pmc-dolby-atmos.png";
 import sonosHero1 from "@/assets/brands/sonos-hero-1.jpg";
 import sonosHero2 from "@/assets/brands/sonos-hero-2.jpg";
 import sonosHero3 from "@/assets/brands/sonos-hero-3.jpg";
