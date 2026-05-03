@@ -14,9 +14,14 @@ import meyerPearson3 from "@/assets/brands/meyer-pearson-3.webp";
 import meyerPearson4 from "@/assets/brands/meyer-pearson-4.jpg";
 import meyerPearson8 from "@/assets/brands/meyer-pearson-8.webp";
 import meyerPearson10 from "@/assets/brands/meyer-pearson-10.webp";
+import pmcHero1 from "@/assets/brands/pmc-hero-1.jpg";
+import pmcHero2 from "@/assets/brands/pmc-hero-2.jpg";
+import pmcHero3 from "@/assets/brands/pmc-hero-3.jpg";
+import pmcHero4 from "@/assets/brands/pmc-hero-4.jpg";
 
 const brandHeroImages: Record<string, string> = {
   "meyer-sound": meyerSoundHero,
+  "pmc": pmcHero1,
 };
 
 const brandHeroSlideshows: Record<string, string[]> = {
@@ -29,6 +34,7 @@ const brandHeroSlideshows: Record<string, string[]> = {
     meyerPearson10,
     meyerPearson8,
   ],
+  "pmc": [pmcHero1, pmcHero2, pmcHero3, pmcHero4],
 };
 
 export default function BrandLanding() {
