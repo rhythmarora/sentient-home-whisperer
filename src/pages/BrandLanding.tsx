@@ -27,6 +27,8 @@ import pmcHero4 from "@/assets/brands/pmc-hero-4.jpg";
 import sonosHero1 from "@/assets/brands/sonos-hero-1.jpg";
 import sonosHero2 from "@/assets/brands/sonos-hero-2.jpg";
 import sonosHero3 from "@/assets/brands/sonos-hero-3.jpg";
+import sonosSonance from "@/assets/brands/sonos-sonance-by-sonos.jpg";
+import sonosHero3 from "@/assets/brands/sonos-hero-3.jpg";
 
 const brandHeroImages: Record<string, string> = {
   "meyer-sound": meyerSoundHero,
