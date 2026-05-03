@@ -45,11 +45,19 @@ export default function BrandLanding() {
 
 function BrandHero({ brand }: { brand: typeof brandPages[string] }) {
   const logo = brandLogos[brand.logoKey];
+  const heroImg = brandHeroImages[brand.slug];
 
   return (
-    <section className="pt-28 pb-20 px-6 relative overflow-hidden">
-      {/* Subtle gradient bg */}
-      <div className="absolute inset-0 bg-gradient-to-b from-card/80 via-background to-background" />
+    <section className="pt-28 pb-20 px-6 relative overflow-hidden min-h-[80vh] flex items-center">
+      {heroImg ? (
+        <div className="absolute inset-0">
+          <img src={heroImg} alt={`${brand.name} listening environment`} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent to-background" />
+        </div>
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-b from-card/80 via-background to-background" />
+      )}
       <div className="max-w-6xl mx-auto relative z-10">
         <Link to="/brands" className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-primary transition-colors mb-8">
           <ArrowLeft className="w-4 h-4" /> All Brands
