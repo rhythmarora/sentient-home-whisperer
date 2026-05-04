@@ -45,9 +45,9 @@ const experiences = [
   },
   {
     icon: Mic, title: "Performance", color: "performance",
-    tagline: "Not a room. A stage.",
-    promise: "Concert-grade clarity at home — powered by Meyer Sound, the system trusted by the world's top venues.",
-    brands: ["Meyer Sound", "K-Array", "Shure"],
+    tagline: "Your personal jam room.",
+    promise: "For families who love to jam, sing and have fun together in a dedicated space inside your home — acoustically treated, professionally calibrated. Because music brings everyone together, be it karaoke, Indian classical, percussion or a DJ set. Why not have a space that can be your personal jam room?",
+    brands: ["Meyer Sound", "PMC", "Crestron", "Shure"],
     image: performanceImg,
   },
   {
