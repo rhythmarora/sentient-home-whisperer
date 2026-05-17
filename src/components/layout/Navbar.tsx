@@ -17,11 +17,13 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "Brands", href: "/brands" },
+  { label: "Cinema", href: "/home-theatre" },
   {
     label: "For Homeowners",
     dropdown: [
       { label: "Design Your Home", href: "/design" },
       { label: "Smart Home Automation", href: "/smart-home" },
+      { label: "Home Theatre", href: "/home-theatre" },
       { label: "Investment", href: "/investment" },
     ],
   },
