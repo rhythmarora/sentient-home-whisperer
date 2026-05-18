@@ -13,6 +13,8 @@ interface LeadPayload {
 }
 
 const CLIQ_WEBHOOK = Deno.env.get('ZOHO_CLIQ_RESI_SALES_WEBHOOK');
+const MDASH_INGEST_URL = 'https://qcmmycttkcdvounokbca.supabase.co/functions/v1/ingest-lead';
+const MDASH_INGEST_TOKEN = Deno.env.get('MDASH_INGEST_TOKEN');
 
 function buildCliqMessage(lead: LeadPayload): Record<string, unknown> {
   const lines: string[] = [];
