@@ -14,7 +14,7 @@ import caseStudyAuditorium from "@/assets/cinema/case-study-auditorium.jpg";
 
 const pillars = [
   {
-    title: "THX-certified team",
+    title: "THX-trained team",
     body: "Our cinema designers are THX-trained — sightlines, acoustics and calibration are engineered, not estimated.",
   },
   {
@@ -25,6 +25,20 @@ const pillars = [
     title: "Built and calibrated in-house",
     body: "From acoustic shell to first frame, every cinema is delivered and measured by the Qubix team. No outsourcing.",
   },
+];
+
+const credentials = [
+  "THX Certified Professional",
+  "CEDIA Certified",
+  "CEDIA RP22 Designer",
+  "CEDIA RP32 Designer",
+  "CEDIA CPD Educator",
+  "PVA Certified",
+  "Meyer Sound Constellation Certified",
+  "Trinnov Certified",
+  "Dolby Atmos Designer",
+  "Crestron",
+  "Control4",
 ];
 
 const stages = [
@@ -40,14 +54,14 @@ const stages = [
     title: "Acoustic shell",
     short: "The room is the most important speaker.",
     detail:
-      "Decoupled walls, floating floor where possible, double-leaf construction for isolation, and a calibrated mix of absorption, diffusion and bass-trapping. We model RT60, modal response, and STC ratings before a single panel goes up.",
+      "Decoupled walls, floating floor where possible, double-leaf construction for isolation, and a calibrated mix of absorption, diffusion and bass-trapping. We model RT60, modal response, and STC ratings before a single panel goes up. We model every cinema in EASE before construction begins — speaker placement, reflection paths, modal response, and RT60 are simulation-validated, not guessed.",
   },
   {
     n: "03",
     title: "Sightlines & seating geometry",
     short: "Every seat is the best seat.",
     detail:
-      "Seat-to-screen ratios per THX/SMPTE, riser heights modelled in 3D, head-clearance and viewing-angle verified for every row. We design around the chair you'll buy — not a generic template.",
+      "Seat-to-screen ratios per THX/SMPTE, riser heights modelled in 3D, head-clearance and viewing-angle verified for every row. We design around the chair you'll buy — not a generic template. All sightlines are validated in photoreal 3D before a panel is ordered. You see your cinema before it is built.",
   },
   {
     n: "04",
@@ -61,14 +75,14 @@ const stages = [
     title: "Calibration & certification",
     short: "Measured. Tuned. Documented.",
     detail:
-      "Trinnov room correction, Lumagen video processing, and a full measurement pass with calibrated mics and Spyder/Calman for video. You receive a signed calibration report — frequency response, decay, gamma, colour, the lot.",
+      "Trinnov room correction, Lumagen video processing, and a full measurement pass with calibrated mics and Spyder/Calman for video. You receive a signed calibration report — frequency response, decay, gamma, colour, the lot. Every Qubix cinema is delivered to CEDIA RP22 (audio) and RP32 (video) — the published industry standards. Ask your other shortlisted vendors which standards they design to.",
   },
   {
     n: "06",
     title: "Handover & care",
     short: "We don't disappear after the screen lights up.",
     detail:
-      "Remote programming, family training, and an annual re-calibration visit. Most of our cinemas are still on their original Qubix service plan five years on.",
+      "We don't disappear after the screen lights up. Annual recalibration. Firmware and content-format management. Remote diagnostics. AV concierge for new releases and upgrades. Some Qubix cinemas have been under our care for over a decade.",
   },
 ];
 
@@ -87,15 +101,51 @@ const roomTypes = [
   },
 ];
 
+const team = [
+  {
+    name: "Rhythm Arora",
+    role: "Director, Qubix HiFi",
+    creds: "CEDIA CPD Educator · CEDIA RP22 & RP32 Designer · THX-trained · PVA Certified · Meyer Sound Constellation · Trinnov · Crestron · Control4 · APAC Top 40 Under 40 (2019)",
+  },
+  {
+    name: "Ritika Arora",
+    role: "Director, Experience & Operations",
+    creds: "Client experience, operations and project delivery across every Qubix cinema.",
+  },
+  {
+    name: "Philip Abraham",
+    role: "Senior Sound Engineer",
+    creds: "Calibration, room correction and reference-grade tuning across PMC, Meyer Sound and Trinnov systems.",
+  },
+  {
+    name: "Diksha Sinha",
+    role: "Cinema Designer",
+    creds: "CEDIA RP22 Certified Designer. Acoustic modelling, sightlines and EASE simulation.",
+  },
+];
+
 const stack = [
   "PMC",
   "Meyer Sound",
   "Trinnov",
   "JBL Synthesis",
+  "Steinway Lyngdorf",
   "Christie",
+  "Barco",
+  "SIM2",
+  "Stewart",
   "Lumagen",
   "Control4",
   "Powersoft",
+];
+
+const recognition = [
+  "Featured in Hidden Wires",
+  "Barco Experience³ Keynote 2026",
+  "Smart Home Expo Mumbai 2026",
+  "NEAT APAC Channel Summit",
+  "CEDIA Industry Panels",
+  "APAC Top 40 Under 40 (2019)",
 ];
 
 const techSpec = [
@@ -132,6 +182,18 @@ const faqs = [
   {
     q: "Are your cinemas THX-certified?",
     a: "Our designers are THX-trained, and our rooms are designed and calibrated to THX/SMPTE reference standards. Formal THX room certification is available on request for qualifying projects.",
+  },
+  {
+    q: "Which industry standards do you design to?",
+    a: "CEDIA RP22 for audio performance. CEDIA RP32 for video performance. THX and PVA for calibration verification. These are the published reference standards for our field. If you are comparing proposals, ask each shortlisted vendor which standards they design to — you will narrow your shortlist quickly.",
+  },
+  {
+    q: "Can I audition a Qubix cinema before commissioning one?",
+    a: "Yes. Our 12-zone Experience Centre on Museum Road, Bangalore, houses India's only Meyer Sound Constellation cinema. We host private auditions by appointment.",
+  },
+  {
+    q: "Do you work with our architect and interior designer?",
+    a: "Always. We share our acoustic and electrical drawings directly with your architect, civil contractor, HVAC consultant, and lighting designer. A cinema is a building project as much as a technology project — we behave accordingly.",
   },
 ];
 
@@ -210,17 +272,26 @@ export default function HomeTheatre() {
           >
             THX-trained private cinemas — designed, built and calibrated in Bangalore.
           </motion.p>
+          <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-silver/50 mt-4 max-w-3xl">
+            CEDIA RP22 · CEDIA RP32 · PVA · Meyer Sound Constellation · Trinnov — Certified, on one team.
+          </p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
-            className="mt-10"
+            className="mt-10 flex flex-wrap items-center justify-center gap-5"
           >
             <Link
               to="/contact?interest=cinema"
               className="inline-flex items-center px-7 py-3.5 text-sm font-body font-medium bg-white text-[#0A0A0A] rounded-full tracking-wide hover:bg-[#F0F0F0] transition-colors"
             >
               Design your cinema
+            </Link>
+            <Link
+              to="/experience-center"
+              className="inline-flex items-center text-sm font-body text-silver hover:text-foreground transition-colors border-b border-silver/40 hover:border-foreground pb-0.5"
+            >
+              Audition our reference cinema →
             </Link>
           </motion.div>
         </div>
@@ -251,6 +322,59 @@ export default function HomeTheatre() {
                 </p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Credentials wall */}
+      <section className="py-24 lg:py-32 px-6 bg-card/30">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">
+            On paper
+          </p>
+          <h2 className="font-display text-3xl md:text-5xl font-medium mb-4">
+            Credentials, not claims.
+          </h2>
+          <p className="font-body text-sm md:text-base text-muted-foreground max-w-2xl mx-auto mb-14">
+            Most home cinema vendors hold one or two of these. Our team holds all of them.
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+            {credentials.map((c) => (
+              <span
+                key={c}
+                className="font-body text-xs md:text-sm tracking-[0.15em] uppercase text-silver/70 hover:text-foreground transition-colors border border-border rounded-full px-4 py-2"
+              >
+                {c}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The Reference Cinema */}
+      <section className="py-24 lg:py-32 px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">
+            Museum Road · Bangalore
+          </p>
+          <h2 className="font-display text-3xl md:text-5xl font-medium mb-8 max-w-4xl mx-auto">
+            India's only <span className="italic text-gold-gradient">Meyer Sound Constellation</span> cinema.
+          </h2>
+          <p className="font-body text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            At our 12-zone Experience Centre on Museum Road, we operate the only Constellation-powered cinema in the country — built around a Meyer Sound Constellation acoustic system, immersive object playback, reference-grade projection, and a room engineered to CEDIA RP22. We invite every serious client to audition it before specifying their own. It is the most honest way to understand what your room could become.
+          </p>
+          <div className="mt-12 border-y border-border py-5">
+            <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-silver/70 leading-loose">
+              Acoustic system: Meyer Sound Constellation · Calibration: Trinnov · Acoustic design: EASE-modelled · Reference content: 4K HDR Dolby Vision + Atmos masters
+            </p>
+          </div>
+          <div className="mt-10">
+            <Link
+              to="/experience-center"
+              className="inline-flex items-center px-7 py-3.5 text-sm font-body font-medium bg-white text-[#0A0A0A] rounded-full tracking-wide hover:bg-[#F0F0F0] transition-colors"
+            >
+              Book a private audition →
+            </Link>
           </div>
         </div>
       </section>
@@ -337,10 +461,43 @@ export default function HomeTheatre() {
         </div>
       </section>
 
-      {/* Case study */}
+      {/* Team */}
       <section className="py-24 lg:py-32 px-6 bg-card/30">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4 text-center">
+            On the floor
+          </p>
+          <h2 className="font-display text-3xl md:text-5xl font-medium text-center mb-16">
+            The people designing your cinema.
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {team.map((t, i) => (
+              <motion.div
+                key={t.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="border border-border rounded-sm bg-background/40 p-6"
+              >
+                <div className="aspect-[4/5] bg-card/60 border border-border/50 rounded-sm mb-5" aria-hidden />
+                <h3 className="font-display text-xl font-medium mb-1">{t.name}</h3>
+                <p className="font-body text-[10px] tracking-[0.25em] uppercase text-primary mb-3">
+                  {t.role}
+                </p>
+                <p className="font-body text-xs text-muted-foreground leading-relaxed">
+                  {t.creds}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case study */}
+      <section className="py-24 lg:py-32 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-3 mb-6 flex-wrap">
             <span className="font-body text-xs tracking-[0.3em] uppercase text-primary">
               Featured case study
             </span>
@@ -349,7 +506,7 @@ export default function HomeTheatre() {
               href="https://www.hiddenwires.co.uk/case-studies/article/taking-your-work-home"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-body text-xs tracking-[0.2em] uppercase text-silver hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-1.5 font-body text-xs tracking-[0.2em] uppercase text-silver hover:text-foreground transition-colors border border-border rounded-full px-3 py-1.5"
             >
               As featured in Hidden Wires <ExternalLink className="w-3 h-3" />
             </a>
@@ -363,13 +520,30 @@ export default function HomeTheatre() {
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 space-y-4">
               <img
                 src={caseStudyAuditorium}
                 alt="Custom red velvet private cinema in a Bangalore residence — tiered seating on dipped floor, concealed LED cove lighting, calibrated Dolby Atmos installation by Qubix"
                 className="w-full h-auto rounded-sm border border-border"
                 loading="lazy"
               />
+              <div className="grid grid-cols-3 gap-4">
+                {[0, 1, 2].map((i) => (
+                  <img
+                    key={i}
+                    src={caseStudyAuditorium}
+                    alt={
+                      i === 0
+                        ? "Wide view of the Bangalore private cinema showing the dipped floor and tiered seating geometry"
+                        : i === 1
+                          ? "Ceiling and acoustic panel detail — velvet absorption, concealed LED cove lighting"
+                          : "Reference projection screen and front-stage acoustic treatment detail"
+                    }
+                    className="w-full h-full object-cover rounded-sm border border-border aspect-[4/3]"
+                    loading="lazy"
+                  />
+                ))}
+              </div>
             </div>
             <div className="lg:col-span-5 space-y-8">
               <blockquote className="border-l-2 border-primary pl-6">
@@ -377,7 +551,7 @@ export default function HomeTheatre() {
                   "The brief was simple — give a man who watches films for a living a room better than the studio he works in."
                 </p>
                 <footer className="font-body text-xs tracking-[0.2em] uppercase text-silver">
-                  Rhythm Kapur, Qubix
+                  Rhythm Arora, Qubix
                 </footer>
               </blockquote>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">
@@ -404,6 +578,48 @@ export default function HomeTheatre() {
         </div>
       </section>
 
+      {/* Selected cinemas */}
+      <section className="py-24 lg:py-32 px-6 bg-card/30">
+        <div className="max-w-6xl mx-auto">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4 text-center">
+            From the portfolio
+          </p>
+          <h2 className="font-display text-3xl md:text-5xl font-medium text-center mb-16">
+            Selected cinemas.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { city: "Bangalore", type: "Dedicated cinema", spec: "PMC reference · Trinnov · Christie 4K" },
+              { city: "Bangalore", type: "Media room", spec: "JBL Synthesis · Lumagen · concealed Stewart screen" },
+              { city: "Hyderabad", type: "Lounge cinema", spec: "Steinway Lyngdorf · Barco · Control4" },
+              { city: "Mumbai", type: "Dedicated cinema", spec: "Meyer Sound · Trinnov · SIM2 projection" },
+              { city: "Bangalore", type: "Dedicated cinema", spec: "PMC · Powersoft · Stewart Studiotek" },
+              { city: "Goa", type: "Media room", spec: "JBL Synthesis · Trinnov · Crestron" },
+            ].map((p, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.06 }}
+                className="border border-border rounded-sm bg-background/40 overflow-hidden"
+              >
+                <div className="aspect-[4/3] bg-card/60" aria-hidden />
+                <div className="p-5">
+                  <p className="font-body text-[10px] tracking-[0.25em] uppercase text-primary mb-2">
+                    {p.city} · {p.type}
+                  </p>
+                  <p className="font-body text-sm text-silver/80 leading-relaxed">{p.spec}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-silver/50 text-center mt-12 max-w-3xl mx-auto leading-loose">
+            Several Qubix cinemas — including residences of public figures — are covered under NDA. Detailed references available on request.
+          </p>
+        </div>
+      </section>
+
       {/* Stack */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
@@ -417,6 +633,25 @@ export default function HomeTheatre() {
                 className="font-display text-lg md:text-xl text-silver/70 hover:text-foreground transition-colors"
               >
                 {s}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recognition */}
+      <section className="py-16 px-6 border-t border-border">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-8">
+            Recognised by
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-3">
+            {recognition.map((r) => (
+              <span
+                key={r}
+                className="font-body text-[11px] md:text-xs tracking-[0.25em] uppercase text-silver/70"
+              >
+                {r}
               </span>
             ))}
           </div>
@@ -448,6 +683,15 @@ export default function HomeTheatre() {
               </AccordionItem>
             ))}
           </Accordion>
+          {/* SEO: ensure full Q&A is in the static DOM for crawlers, even when accordions are collapsed */}
+          <div className="sr-only" aria-hidden="true">
+            {faqs.map((f, i) => (
+              <div key={`seo-${i}`}>
+                <h3>{f.q}</h3>
+                <p>{f.a}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -466,6 +710,14 @@ export default function HomeTheatre() {
           >
             Start the conversation
           </Link>
+          <div className="mt-6">
+            <Link
+              to="/experience-center"
+              className="font-body text-xs tracking-[0.25em] uppercase italic text-silver hover:text-foreground transition-colors"
+            >
+              Or audition our Bangalore reference cinema before you decide →
+            </Link>
+          </div>
         </div>
       </section>
     </Layout>
