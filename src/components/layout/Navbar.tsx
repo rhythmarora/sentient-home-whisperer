@@ -19,18 +19,15 @@ const navItems: NavItem[] = [
   { label: "Brands", href: "/brands" },
   { label: "Cinema", href: "/home-theatre" },
   {
-    label: "For Homeowners",
+    label: "Who It's For",
     dropdown: [
-      { label: "Design Your Home", href: "/design" },
-      { label: "Smart Home Automation", href: "/smart-home" },
-      { label: "Home Theatre", href: "/home-theatre" },
-      { label: "Investment", href: "/investment" },
+      { label: "Homeowners", href: "/design" },
+      { label: "Builders & Developers", href: "/builders" },
+      { label: "Architects & Designers", href: "/architects" },
     ],
   },
-  { label: "Builders & Developers", href: "/builders" },
-  { label: "Architects & Designers", href: "/architects" },
   { label: "Experience Center", href: "/experience-center" },
-  { label: "About", href: "/about" },
+  { label: "Our Story", href: "/about" },
 ];
 
 function DesktopDropdown({ item }: { item: NavItem }) {
