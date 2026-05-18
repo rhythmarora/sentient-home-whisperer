@@ -89,6 +89,38 @@ Deno.serve(async (req) => {
       console.warn('ZOHO_CLIQ_RESI_SALES_WEBHOOK not configured');
     }
 
+    // 3. Forward to MDash ingest endpoint — non-blocking failure
+    if (MDASH_INGEST_TOKEN) {
+      try {
+        const res = await fetch(MDASH_INGEST_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-webhook-token': MDASH_INGEST_TOKEN,
+          },
+          body: JSON.stringify({
+            name: body.name,
+            email: body.email,
+            phone: body.phone,
+            source: body.source,
+            brand: 'Qubix',
+            assigned_to: 'Residential Team',
+            message: body.message,
+            project_type: body.project_type,
+            budget_range: body.budget_range,
+            metadata: body.metadata ?? {},
+          }),
+        });
+        if (!res.ok) {
+          console.error('MDash ingest non-200:', res.status, await res.text());
+        }
+      } catch (e) {
+        console.error('MDash ingest error:', e);
+      }
+    } else {
+      console.warn('MDASH_INGEST_TOKEN not configured');
+    }
+
     return new Response(JSON.stringify({ ok: true, lead_id: inserted?.id ?? null }), {
       status: 200,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
