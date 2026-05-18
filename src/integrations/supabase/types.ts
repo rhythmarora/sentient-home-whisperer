@@ -59,6 +59,51 @@ export type Database = {
         }
         Relationships: []
       }
+      leads: {
+        Row: {
+          budget_range: string | null
+          created_at: string
+          email: string | null
+          id: string
+          message: string | null
+          metadata: Json | null
+          name: string | null
+          phone: string | null
+          project_type: string | null
+          source: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          budget_range?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          message?: string | null
+          metadata?: Json | null
+          name?: string | null
+          phone?: string | null
+          project_type?: string | null
+          source: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          budget_range?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          message?: string | null
+          metadata?: Json | null
+          name?: string | null
+          phone?: string | null
+          project_type?: string | null
+          source?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

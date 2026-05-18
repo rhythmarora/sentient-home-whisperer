@@ -67,7 +67,7 @@ export function useZohoSalesIQ() {
   }, []);
 }
 
-/** Pass lead data to Zoho SalesIQ */
+/** Pass lead data to Zoho SalesIQ, save to leads table, and notify Zoho Cliq */
 export function pushLeadToZoho(data: {
   name?: string;
   email?: string;
@@ -78,22 +78,41 @@ export function pushLeadToZoho(data: {
   source?: string;
 }) {
   const siq = window.$zoho?.salesiq;
-  if (!siq) return;
 
-  if (data.name) siq.visitor?.name(data.name);
-  if (data.email) siq.visitor?.email(data.email);
-  if (data.phone) siq.visitor?.phone(data.phone);
+  if (siq) {
+    if (data.name) siq.visitor?.name(data.name);
+    if (data.email) siq.visitor?.email(data.email);
+    if (data.phone) siq.visitor?.phone(data.phone);
 
-  siq.visitor?.info({
-    ...(data.budgetRange && { "Budget Range": data.budgetRange }),
-    ...(data.projectType && { "Project Type": data.projectType }),
-    ...(data.source && { Source: data.source }),
-    Tag: "Website Lead – HiFi",
-  });
-
-  if (data.aiJourneyData) {
-    Object.entries(data.aiJourneyData).forEach(([key, value]) => {
-      siq.tracking?.custom?.(key, value);
+    siq.visitor?.info({
+      ...(data.budgetRange && { "Budget Range": data.budgetRange }),
+      ...(data.projectType && { "Project Type": data.projectType }),
+      ...(data.source && { Source: data.source }),
+      Tag: "Website Lead – HiFi",
     });
+
+    if (data.aiJourneyData) {
+      Object.entries(data.aiJourneyData).forEach(([key, value]) => {
+        siq.tracking?.custom?.(key, value);
+      });
+    }
   }
+
+  // Fire-and-forget: persist to leads table + notify Zoho Cliq (Resi Sales)
+  // Imported lazily to avoid circular imports
+  import("@/integrations/supabase/client").then(({ supabase }) => {
+    supabase.functions
+      .invoke("notify-lead", {
+        body: {
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          project_type: data.projectType,
+          budget_range: data.budgetRange,
+          source: data.source ?? "Website",
+          metadata: data.aiJourneyData ?? {},
+        },
+      })
+      .catch((err) => console.error("notify-lead failed:", err));
+  });
 }
