@@ -44,7 +44,7 @@ function DesktopDropdown({ item }: { item: NavItem }) {
     <div className="relative" onMouseEnter={enter} onMouseLeave={leave}>
       <button
         className={`flex items-center gap-1 font-body text-sm tracking-wide transition-colors duration-300 hover:text-foreground ${
-          isActive ? "text-foreground" : "text-silver"
+          isActive ? "text-foreground" : "text-platinum/90"
         }`}
       >
         {item.label}
@@ -64,7 +64,7 @@ function DesktopDropdown({ item }: { item: NavItem }) {
                 key={sub.href}
                 to={sub.href}
                 className={`block px-5 py-2.5 font-body text-sm transition-colors hover:bg-secondary hover:text-foreground ${
-                  location.pathname === sub.href ? "text-foreground" : "text-silver"
+                  location.pathname === sub.href ? "text-foreground" : "text-platinum/90"
                 }`}
               >
                 {sub.label}
@@ -135,7 +135,7 @@ export default function Navbar() {
                     to={item.href!}
                     onClick={(e) => handleExperienceClick(e, item.href!)}
                     className={`font-body text-sm tracking-wide transition-colors duration-300 hover:text-foreground ${
-                      location.pathname === item.href ? "text-foreground" : "text-silver"
+                      location.pathname === item.href ? "text-foreground" : "text-platinum/90"
                     }`}
                   >
                     {item.label}
