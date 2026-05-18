@@ -134,7 +134,7 @@ export default function Navbar() {
                     key={item.label}
                     to={item.href!}
                     onClick={(e) => handleExperienceClick(e, item.href!)}
-                    className={`font-body text-sm tracking-wide transition-colors duration-300 hover:text-foreground ${
+                    className={`font-body text-sm font-medium tracking-wide transition-colors duration-300 hover:text-foreground ${
                       location.pathname === item.href ? "text-foreground" : "text-ivory"
                     }`}
                   >
