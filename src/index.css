@@ -92,66 +92,66 @@
 
 @layer utilities {
   .text-gold-gradient {
-    background: linear-gradient(135deg, hsl(38 70% 50%), hsl(38 60% 65%), hsl(38 70% 50%));
+    background: linear-gradient(135deg, hsl(33 27% 51%), hsl(33 35% 65%), hsl(33 27% 51%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-vibrant {
-    background: linear-gradient(135deg, hsl(239 84% 67%), hsl(330 81% 60%), hsl(38 92% 50%));
+    background: linear-gradient(135deg, hsl(339 84% 35%), hsl(33 27% 51%), hsl(168 50% 30%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-cool {
-    background: linear-gradient(135deg, hsl(239 84% 67%), hsl(160 84% 39%));
+    background: linear-gradient(135deg, hsl(168 50% 30%), hsl(33 27% 51%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-gold-gradient {
-    background: linear-gradient(135deg, hsl(38 80% 35%), hsl(38 70% 50%), hsl(38 60% 65%));
+    background: linear-gradient(135deg, hsl(33 35% 38%), hsl(33 27% 51%), hsl(33 35% 65%));
   }
 
   .bg-gradient-vibrant {
-    background: linear-gradient(135deg, hsl(239 84% 67%), hsl(330 81% 60%), hsl(38 92% 50%));
+    background: linear-gradient(135deg, hsl(339 84% 25%), hsl(33 27% 51%), hsl(168 50% 25%));
   }
 
   .border-gold {
-    border-color: hsl(38 70% 50% / 0.3);
+    border-color: hsl(33 27% 51% / 0.3);
   }
 
   .glow-gold {
-    box-shadow: 0 0 40px hsl(38 70% 50% / 0.15), 0 0 80px hsl(38 70% 50% / 0.05);
+    box-shadow: 0 0 40px hsl(33 27% 51% / 0.18), 0 0 80px hsl(33 27% 51% / 0.06);
   }
 
   .glow-cinema {
-    box-shadow: 0 0 40px hsl(239 84% 67% / 0.2);
+    box-shadow: 0 0 40px hsl(339 84% 35% / 0.25);
   }
 
   .glow-music {
-    box-shadow: 0 0 40px hsl(330 81% 60% / 0.2);
+    box-shadow: 0 0 40px hsl(339 70% 40% / 0.25);
   }
 
   .glow-social {
-    box-shadow: 0 0 40px hsl(38 92% 50% / 0.2);
+    box-shadow: 0 0 40px hsl(33 27% 51% / 0.25);
   }
 
   .glow-relax {
-    box-shadow: 0 0 40px hsl(160 84% 39% / 0.2);
+    box-shadow: 0 0 40px hsl(168 50% 30% / 0.25);
   }
 
   .glass {
-    background: hsl(220 18% 8% / 0.7);
+    background: hsl(168 37% 10% / 0.75);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
 
   .glass-border {
-    border: 1px solid hsl(40 15% 90% / 0.08);
+    border: 1px solid hsl(0 0% 88% / 0.08);
   }
 
   .film-grain {
