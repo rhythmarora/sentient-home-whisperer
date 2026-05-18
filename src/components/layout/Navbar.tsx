@@ -215,7 +215,7 @@ export default function Navbar() {
                 to="/contact"
                 className="mt-4 px-8 py-3 text-lg font-body font-medium bg-gradient-vibrant text-white rounded-full tracking-wide"
               >
-                Book Consultation
+                Request Callback
               </Link>
             </nav>
           </motion.div>
