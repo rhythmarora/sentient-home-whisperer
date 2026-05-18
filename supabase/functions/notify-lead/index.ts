@@ -71,23 +71,9 @@ Deno.serve(async (req) => {
 
     if (dbError) console.error('leads insert error:', dbError);
 
-    // 2. Post to Zoho Cliq (Resi Sales) — non-blocking failure
-    if (CLIQ_WEBHOOK) {
-      try {
-        const res = await fetch(CLIQ_WEBHOOK, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(buildCliqMessage(body)),
-        });
-        if (!res.ok) {
-          console.error('Cliq webhook non-200:', res.status, await res.text());
-        }
-      } catch (e) {
-        console.error('Cliq webhook error:', e);
-      }
-    } else {
-      console.warn('ZOHO_CLIQ_RESI_SALES_WEBHOOK not configured');
-    }
+    // 2. Cliq notifications are now handled downstream by MDash's ingest-lead
+    //    (single source of truth). Direct Cliq post from this site removed
+    //    to avoid duplicate messages.
 
     // 3. Forward to MDash ingest endpoint — non-blocking failure
     if (MDASH_INGEST_TOKEN) {
