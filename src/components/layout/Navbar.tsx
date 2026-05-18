@@ -19,18 +19,15 @@ const navItems: NavItem[] = [
   { label: "Brands", href: "/brands" },
   { label: "Cinema", href: "/home-theatre" },
   {
-    label: "For Homeowners",
+    label: "Who It's For",
     dropdown: [
-      { label: "Design Your Home", href: "/design" },
-      { label: "Smart Home Automation", href: "/smart-home" },
-      { label: "Home Theatre", href: "/home-theatre" },
-      { label: "Investment", href: "/investment" },
+      { label: "Homeowners", href: "/design" },
+      { label: "Builders & Developers", href: "/builders" },
+      { label: "Architects & Designers", href: "/architects" },
     ],
   },
-  { label: "Builders & Developers", href: "/builders" },
-  { label: "Architects & Designers", href: "/architects" },
   { label: "Experience Center", href: "/experience-center" },
-  { label: "About", href: "/about" },
+  { label: "Our Story", href: "/about" },
 ];
 
 function DesktopDropdown({ item }: { item: NavItem }) {
@@ -150,7 +147,7 @@ export default function Navbar() {
                 to="/contact"
                 className="hidden sm:inline-flex items-center px-5 py-2.5 text-sm font-body font-medium bg-[#FFFFFF] text-[#0A0A0A] rounded-full tracking-wide hover:bg-[#F0F0F0] transition-colors"
               >
-                Book Consultation
+                Request Callback
               </Link>
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
@@ -218,7 +215,7 @@ export default function Navbar() {
                 to="/contact"
                 className="mt-4 px-8 py-3 text-lg font-body font-medium bg-gradient-vibrant text-white rounded-full tracking-wide"
               >
-                Book Consultation
+                Request Callback
               </Link>
             </nav>
           </motion.div>
