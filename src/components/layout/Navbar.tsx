@@ -43,8 +43,8 @@ function DesktopDropdown({ item }: { item: NavItem }) {
   return (
     <div className="relative" onMouseEnter={enter} onMouseLeave={leave}>
       <button
-        className={`flex items-center gap-1 font-body text-sm tracking-wide transition-colors duration-300 hover:text-foreground ${
-          isActive ? "text-foreground" : "text-platinum/90"
+        className={`flex items-center gap-1 font-body text-sm font-medium tracking-wide transition-colors duration-300 hover:text-foreground ${
+          isActive ? "text-foreground" : "text-ivory"
         }`}
       >
         {item.label}
