@@ -3,11 +3,11 @@ import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useToast } from "@/hooks/use-toast";
+import { Check, Phone } from "lucide-react";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 
 export default function Contact() {
-  const { toast } = useToast();
+  const [submitted, setSubmitted] = useState(false);
   const [searchParams] = useSearchParams();
 
   const buildDesignSummary = () => {
@@ -54,10 +54,7 @@ export default function Contact() {
       projectType: form.projectType,
       source: "Contact Form",
     });
-    toast({
-      title: "Thank you",
-      description: "A Qubix design consultant will reach out within 24 hours — personally, over WhatsApp or email.",
-    });
+    setSubmitted(true);
     setForm({ name: "", email: "", phone: "", projectType: "", message: "" });
   };
 
@@ -99,6 +96,38 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
+              {submitted ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-center p-10 rounded-sm bg-card border border-border"
+                >
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", delay: 0.2 }}
+                    className="w-16 h-16 rounded-full bg-primary/15 flex items-center justify-center mx-auto mb-6"
+                  >
+                    <Check className="w-8 h-8 text-primary" />
+                  </motion.div>
+                  <h2 className="font-display text-3xl font-medium mb-3">Thank you</h2>
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed mb-8">
+                    A Qubix design consultant will reach out within 24 hours — personally, over WhatsApp or email.
+                  </p>
+                  <div className="pt-6 border-t border-border">
+                    <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-3">
+                      Need to speak with us sooner?
+                    </p>
+                    <a
+                      href="tel:+918050200008"
+                      className="inline-flex items-center gap-2 font-display text-xl text-foreground hover:text-primary transition-colors"
+                    >
+                      <Phone className="w-4 h-4 text-primary" />
+                      +91 80502 00008
+                    </a>
+                  </div>
+                </motion.div>
+              ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block font-body text-sm text-foreground mb-2">Name</label>
@@ -170,6 +199,7 @@ export default function Contact() {
                   Start the Conversation
                 </button>
               </form>
+              )}
             </motion.div>
           </div>
         </div>
