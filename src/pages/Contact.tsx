@@ -54,10 +54,7 @@ export default function Contact() {
       projectType: form.projectType,
       source: "Contact Form",
     });
-    toast({
-      title: "Thank you",
-      description: "A Qubix design consultant will reach out within 24 hours — personally, over WhatsApp or email.",
-    });
+    setSubmitted(true);
     setForm({ name: "", email: "", phone: "", projectType: "", message: "" });
   };
 
