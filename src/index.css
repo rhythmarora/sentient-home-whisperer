@@ -6,72 +6,72 @@
 
 @layer base {
   :root {
-    --background: 220 20% 4%;
-    --foreground: 40 15% 90%;
+    --background: 150 73% 4%;
+    --foreground: 0 0% 88%;
 
-    --card: 220 18% 8%;
-    --card-foreground: 40 15% 90%;
+    --card: 168 37% 14%;
+    --card-foreground: 0 0% 88%;
 
-    --popover: 220 18% 8%;
-    --popover-foreground: 40 15% 90%;
+    --popover: 168 37% 14%;
+    --popover-foreground: 0 0% 88%;
 
-    --primary: 38 70% 50%;
-    --primary-foreground: 220 20% 4%;
+    --primary: 33 27% 51%;
+    --primary-foreground: 150 73% 4%;
 
-    --secondary: 220 15% 12%;
-    --secondary-foreground: 40 15% 85%;
+    --secondary: 165 40% 10%;
+    --secondary-foreground: 0 0% 88%;
 
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 165 30% 12%;
+    --muted-foreground: 33 15% 65%;
 
-    --accent: 38 50% 20%;
-    --accent-foreground: 38 70% 70%;
+    --accent: 339 84% 12%;
+    --accent-foreground: 33 27% 65%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 15% 15%;
-    --input: 220 15% 15%;
-    --ring: 38 70% 50%;
+    --border: 165 25% 16%;
+    --input: 165 25% 16%;
+    --ring: 33 27% 51%;
 
     --radius: 0.25rem;
 
-    --gold: 38 70% 50%;
-    --gold-light: 38 60% 65%;
-    --gold-dark: 38 80% 35%;
-    --charcoal: 220 18% 8%;
-    --charcoal-light: 220 15% 12%;
-    --obsidian: 220 20% 4%;
+    --gold: 33 27% 51%;
+    --gold-light: 33 35% 65%;
+    --gold-dark: 33 35% 38%;
+    --charcoal: 168 37% 14%;
+    --charcoal-light: 165 40% 10%;
+    --obsidian: 150 73% 4%;
 
     /* Category colors */
-    --cinema: 239 84% 67%;
-    --music: 330 81% 60%;
-    --social: 38 92% 50%;
-    --relax: 160 84% 39%;
-    --gaming: 258 90% 66%;
-    --performance: 24 94% 53%;
-    --outdoor: 187 92% 53%;
-    --connectivity: 217 91% 60%;
-    --security: 215 16% 47%;
+    --cinema: 339 84% 25%;
+    --music: 339 70% 40%;
+    --social: 33 27% 51%;
+    --relax: 165 40% 25%;
+    --gaming: 168 50% 20%;
+    --performance: 33 35% 45%;
+    --outdoor: 165 35% 30%;
+    --connectivity: 168 40% 25%;
+    --security: 165 20% 30%;
 
     /* Void / Carbon / Graphite / Steel / Ash */
-    --void: 0 0% 2%;
-    --carbon: 0 0% 8%;
-    --graphite: 0 0% 10%;
-    --steel: 0 0% 16%;
-    --ash: 0 0% 23%;
-    --silver: 0 0% 54%;
-    --platinum: 34 13% 89%;
-    --ivory: 34 22% 95%;
+    --void: 150 73% 3%;
+    --carbon: 150 60% 6%;
+    --graphite: 165 40% 10%;
+    --steel: 165 30% 16%;
+    --ash: 165 20% 24%;
+    --silver: 33 15% 60%;
+    --platinum: 0 0% 88%;
+    --ivory: 33 20% 92%;
 
-    --sidebar-background: 220 18% 6%;
-    --sidebar-foreground: 40 15% 85%;
-    --sidebar-primary: 38 70% 50%;
-    --sidebar-primary-foreground: 220 20% 4%;
-    --sidebar-accent: 220 15% 12%;
-    --sidebar-accent-foreground: 40 15% 85%;
-    --sidebar-border: 220 15% 12%;
-    --sidebar-ring: 38 70% 50%;
+    --sidebar-background: 150 73% 5%;
+    --sidebar-foreground: 0 0% 88%;
+    --sidebar-primary: 33 27% 51%;
+    --sidebar-primary-foreground: 150 73% 4%;
+    --sidebar-accent: 168 37% 14%;
+    --sidebar-accent-foreground: 0 0% 88%;
+    --sidebar-border: 165 25% 16%;
+    --sidebar-ring: 33 27% 51%;
   }
 }
 
@@ -92,66 +92,66 @@
 
 @layer utilities {
   .text-gold-gradient {
-    background: linear-gradient(135deg, hsl(38 70% 50%), hsl(38 60% 65%), hsl(38 70% 50%));
+    background: linear-gradient(135deg, hsl(33 27% 51%), hsl(33 35% 65%), hsl(33 27% 51%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-vibrant {
-    background: linear-gradient(135deg, hsl(239 84% 67%), hsl(330 81% 60%), hsl(38 92% 50%));
+    background: linear-gradient(135deg, hsl(339 84% 35%), hsl(33 27% 51%), hsl(168 50% 30%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-cool {
-    background: linear-gradient(135deg, hsl(239 84% 67%), hsl(160 84% 39%));
+    background: linear-gradient(135deg, hsl(168 50% 30%), hsl(33 27% 51%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-gold-gradient {
-    background: linear-gradient(135deg, hsl(38 80% 35%), hsl(38 70% 50%), hsl(38 60% 65%));
+    background: linear-gradient(135deg, hsl(33 35% 38%), hsl(33 27% 51%), hsl(33 35% 65%));
   }
 
   .bg-gradient-vibrant {
-    background: linear-gradient(135deg, hsl(239 84% 67%), hsl(330 81% 60%), hsl(38 92% 50%));
+    background: linear-gradient(135deg, hsl(339 84% 25%), hsl(33 27% 51%), hsl(168 50% 25%));
   }
 
   .border-gold {
-    border-color: hsl(38 70% 50% / 0.3);
+    border-color: hsl(33 27% 51% / 0.3);
   }
 
   .glow-gold {
-    box-shadow: 0 0 40px hsl(38 70% 50% / 0.15), 0 0 80px hsl(38 70% 50% / 0.05);
+    box-shadow: 0 0 40px hsl(33 27% 51% / 0.18), 0 0 80px hsl(33 27% 51% / 0.06);
   }
 
   .glow-cinema {
-    box-shadow: 0 0 40px hsl(239 84% 67% / 0.2);
+    box-shadow: 0 0 40px hsl(339 84% 35% / 0.25);
   }
 
   .glow-music {
-    box-shadow: 0 0 40px hsl(330 81% 60% / 0.2);
+    box-shadow: 0 0 40px hsl(339 70% 40% / 0.25);
   }
 
   .glow-social {
-    box-shadow: 0 0 40px hsl(38 92% 50% / 0.2);
+    box-shadow: 0 0 40px hsl(33 27% 51% / 0.25);
   }
 
   .glow-relax {
-    box-shadow: 0 0 40px hsl(160 84% 39% / 0.2);
+    box-shadow: 0 0 40px hsl(168 50% 30% / 0.25);
   }
 
   .glass {
-    background: hsl(220 18% 8% / 0.7);
+    background: hsl(168 37% 10% / 0.75);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
 
   .glass-border {
-    border: 1px solid hsl(40 15% 90% / 0.08);
+    border: 1px solid hsl(0 0% 88% / 0.08);
   }
 
   .film-grain {
@@ -178,11 +178,11 @@
   background: hsl(0 0% 2%);
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(220 15% 20%);
+  background: hsl(165 25% 18%);
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(38 70% 50% / 0.5);
+  background: hsl(33 27% 51% / 0.5);
 }
 
 /* Smooth scroll */
