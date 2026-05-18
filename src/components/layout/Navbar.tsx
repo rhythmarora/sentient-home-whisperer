@@ -64,7 +64,7 @@ function DesktopDropdown({ item }: { item: NavItem }) {
                 key={sub.href}
                 to={sub.href}
                 className={`block px-5 py-2.5 font-body text-sm transition-colors hover:bg-secondary hover:text-foreground ${
-                  location.pathname === sub.href ? "text-foreground" : "text-platinum/90"
+                  location.pathname === sub.href ? "text-foreground" : "text-ivory"
                 }`}
               >
                 {sub.label}
@@ -116,7 +116,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "glass glass-border"
-            : "bg-gradient-to-b from-black/70 via-black/40 to-transparent backdrop-blur-sm"
+            : "bg-gradient-to-b from-black/85 via-black/60 to-transparent backdrop-blur-md"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -135,7 +135,7 @@ export default function Navbar() {
                     to={item.href!}
                     onClick={(e) => handleExperienceClick(e, item.href!)}
                     className={`font-body text-sm tracking-wide transition-colors duration-300 hover:text-foreground ${
-                      location.pathname === item.href ? "text-foreground" : "text-platinum/90"
+                      location.pathname === item.href ? "text-foreground" : "text-ivory"
                     }`}
                   >
                     {item.label}
