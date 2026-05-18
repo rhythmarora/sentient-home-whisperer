@@ -79,23 +79,29 @@ export function pushLeadToZoho(data: {
 }) {
   const siq = window.$zoho?.salesiq;
 
-  if (siq) {
-    if (data.name) siq.visitor?.name(data.name);
-    if (data.email) siq.visitor?.email(data.email);
-    if (data.phone) siq.visitor?.phone(data.phone);
-
-    siq.visitor?.info({
-      ...(data.budgetRange && { "Budget Range": data.budgetRange }),
-      ...(data.projectType && { "Project Type": data.projectType }),
-      ...(data.source && { Source: data.source }),
-      Tag: "Website Lead – HiFi",
-    });
-
-    if (data.aiJourneyData) {
-      Object.entries(data.aiJourneyData).forEach(([key, value]) => {
-        siq.tracking?.custom?.(key, value);
-      });
+  try {
+    if (siq) {
+      const v = siq.visitor as any;
+      if (data.name && typeof v?.name === "function") v.name(data.name);
+      if (data.email && typeof v?.email === "function") v.email(data.email);
+      if (data.phone && typeof v?.phone === "function") v.phone(data.phone);
+      if (typeof v?.info === "function") {
+        v.info({
+          ...(data.budgetRange && { "Budget Range": data.budgetRange }),
+          ...(data.projectType && { "Project Type": data.projectType }),
+          ...(data.source && { Source: data.source }),
+          Tag: "Website Lead – HiFi",
+        });
+      }
+      const t = siq.tracking as any;
+      if (data.aiJourneyData && typeof t?.custom === "function") {
+        Object.entries(data.aiJourneyData).forEach(([key, value]) => {
+          try { t.custom(key, value); } catch (e) { /* ignore */ }
+        });
+      }
     }
+  } catch (e) {
+    console.warn("Zoho SalesIQ push failed (non-blocking):", e);
   }
 
   // Fire-and-forget: persist to leads table + notify Zoho Cliq (Resi Sales)
