@@ -3,11 +3,11 @@ import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useToast } from "@/hooks/use-toast";
+import { Check, Phone } from "lucide-react";
 import { pushLeadToZoho } from "@/hooks/useZohoSalesIQ";
 
 export default function Contact() {
-  const { toast } = useToast();
+  const [submitted, setSubmitted] = useState(false);
   const [searchParams] = useSearchParams();
 
   const buildDesignSummary = () => {
