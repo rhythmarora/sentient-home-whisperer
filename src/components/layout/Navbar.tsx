@@ -147,7 +147,7 @@ export default function Navbar() {
                 to="/contact"
                 className="hidden sm:inline-flex items-center px-5 py-2.5 text-sm font-body font-medium bg-[#FFFFFF] text-[#0A0A0A] rounded-full tracking-wide hover:bg-[#F0F0F0] transition-colors"
               >
-                Book Consultation
+                Request Callback
               </Link>
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
