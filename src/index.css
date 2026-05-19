@@ -199,10 +199,4 @@ html {
   scrollbar-width: none;
 }
 
-/* Hide Zoho SalesIQ chat widget */
-.zsiq_floatmain,
-.zsiq_theme1,
-#zsiq_float,
-.siq_bR {
-  display: none !important;
-}
+/* Zoho SalesIQ chat widget visible (re-enabled) */
