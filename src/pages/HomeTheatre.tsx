@@ -1,7 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ChevronDown, ExternalLink } from "lucide-react";
+import {
+  ChevronDown,
+  ExternalLink,
+  Sparkles,
+  Armchair,
+  Projector,
+  Tv,
+  Volume2,
+  Speaker,
+  Film,
+  Trophy,
+  Gamepad2,
+  Music,
+  Mic2,
+  Heart,
+} from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import {
@@ -139,6 +154,72 @@ const stack = [
   "Powersoft",
 ];
 
+const highlights = [
+  {
+    icon: Sparkles,
+    title: "Premium interior design",
+    body: "Bespoke acoustic finishes in velvet, leather, micro-perforated wood and stone — designed with your architect, not against them.",
+  },
+  {
+    icon: Armchair,
+    title: "Reference cinema seating",
+    body: "Motorised recliners, tiered risers and dipped floors. Italian leather, electric headrests, integrated tray tables and side lighting.",
+  },
+  {
+    icon: Tv,
+    title: "Wall-sized projection screen",
+    body: "Stewart, Screen Research and Da-Lite — anamorphic-ready, micro-perforated for behind-screen LCR, scaled to your room geometry.",
+  },
+  {
+    icon: Projector,
+    title: "4K / 8K HDR projection",
+    body: "Christie, Barco and SIM2 reference projection. Dolby Vision-grade contrast, laser light engines, Lumagen video processing.",
+  },
+  {
+    icon: Volume2,
+    title: "Soundproofed acoustic shell",
+    body: "A room within a room. Decoupled walls, floating floor, double-leaf isolation — your cinema doesn't leak into the bedroom above.",
+  },
+  {
+    icon: Speaker,
+    title: "Dolby Atmos immersive sound",
+    body: "7.4.4 to 15.4.11 layouts with PMC, Meyer Sound, JBL Synthesis or Steinway Lyngdorf — calibrated by Trinnov to reference.",
+  },
+];
+
+const useCases = [
+  {
+    icon: Film,
+    title: "Movies",
+    body: "4K HDR Dolby Vision masters with reference Atmos — watch films the way the director intended.",
+  },
+  {
+    icon: Trophy,
+    title: "Live sport",
+    body: "F1, Premier League, IPL on a wall-sized screen with stadium-scale sound. Match days, redefined.",
+  },
+  {
+    icon: Gamepad2,
+    title: "Gaming",
+    body: "PlayStation 5, Xbox Series X, PC, VR and SimRacing rigs — low-latency 4K120, Atmos game audio.",
+  },
+  {
+    icon: Music,
+    title: "Stereo & Atmos music",
+    body: "Audiophile two-channel listening sessions and Dolby Atmos music — your cinema doubles as a reference listening room.",
+  },
+  {
+    icon: Mic2,
+    title: "Karaoke nights",
+    body: "Professional dual-mic karaoke layered onto the Atmos system. Saturday nights at home become an event.",
+  },
+  {
+    icon: Heart,
+    title: "Wellness & meditation",
+    body: "Guided meditation, yoga, breathwork — immersive sound and ambient lighting tuned for stillness.",
+  },
+];
+
 const recognition = [
   "Featured in Hidden Wires",
   "Barco Experience³ Keynote 2026",
@@ -232,8 +313,8 @@ export default function HomeTheatre() {
   return (
     <Layout>
       <SEO
-        title="Home Theatre Design in Bangalore | Private Cinema by Qubix"
-        description="THX-trained private cinema designers in Bangalore. Reference acoustics, Dolby Atmos, calibrated projection. See our Hidden Wires-featured case study."
+        title="Home Theatre Design in Bangalore | The Purple Room Cinema by Qubix"
+        description="Private home cinemas designed, built and calibrated in Bangalore. Audition The Purple Room — India's only Meyer Sound Constellation cinema. Reference Atmos, 4K HDR projection, soundproofed acoustic shell."
         path="/home-theatre"
         image={caseStudyAuditorium}
         jsonLd={jsonLd}
@@ -351,17 +432,20 @@ export default function HomeTheatre() {
         </div>
       </section>
 
-      {/* The Reference Cinema */}
+      {/* The Reference Cinema — The Purple Room */}
       <section className="py-24 lg:py-32 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">
             Museum Road · Bangalore
           </p>
-          <h2 className="font-display text-3xl md:text-5xl font-medium mb-8 max-w-4xl mx-auto">
-            India's only <span className="italic text-gold-gradient">Meyer Sound Constellation</span> cinema.
+          <h2 className="font-display text-3xl md:text-5xl font-medium mb-6 max-w-4xl mx-auto">
+            <span className="italic text-gold-gradient">The Purple Room Cinema</span> — India's only Meyer Sound Constellation room.
           </h2>
+          <p className="font-body text-sm tracking-[0.2em] uppercase text-silver/70 mb-8">
+            Our reference cinema. The blueprint for yours.
+          </p>
           <p className="font-body text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            At our 12-zone Experience Centre on Museum Road, we operate the only Constellation-powered cinema in the country — built around a Meyer Sound Constellation acoustic system, immersive object playback, reference-grade projection, and a room engineered to CEDIA RP22. We invite every serious client to audition it before specifying their own. It is the most honest way to understand what your room could become.
+            At our 12-zone Experience Centre on Museum Road, The Purple Room Cinema is the only Constellation-powered cinema in the country — built around a Meyer Sound Constellation acoustic system, immersive object playback, reference-grade projection, and a room engineered to CEDIA RP22. We invite every serious client to audition it before specifying their own. It is the most honest way to understand what your room could become.
           </p>
           <div className="mt-12 border-y border-border py-5">
             <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-silver/70 leading-loose">
@@ -373,8 +457,50 @@ export default function HomeTheatre() {
               to="/experience-center"
               className="inline-flex items-center px-7 py-3.5 text-sm font-body font-medium bg-white text-[#0A0A0A] rounded-full tracking-wide hover:bg-[#F0F0F0] transition-colors"
             >
-              Book a private audition →
+              Audition The Purple Room →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Highlights — what's in a Qubix cinema */}
+      <section className="py-24 lg:py-32 px-6 bg-card/30">
+        <div className="max-w-6xl mx-auto">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4 text-center">
+            What's inside
+          </p>
+          <h2 className="font-display text-3xl md:text-5xl font-medium text-center mb-4">
+            Six elements. <span className="italic text-gold-gradient">One room.</span>
+          </h2>
+          <p className="font-body text-sm md:text-base text-muted-foreground text-center max-w-2xl mx-auto mb-16">
+            Every Qubix cinema — from a media room to a flagship dedicated theatre — is built on the same six fundamentals.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border/60 border border-border rounded-sm overflow-hidden">
+            {highlights.map((h, i) => {
+              const Icon = h.icon;
+              return (
+                <motion.div
+                  key={h.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.06 }}
+                  className="bg-background/80 p-8 lg:p-10"
+                >
+                  <div className="flex items-center gap-3 mb-5">
+                    <span className="font-display text-xs text-primary/60 tracking-widest">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="h-px flex-1 bg-border" />
+                    <Icon className="w-5 h-5 text-primary" strokeWidth={1.25} />
+                  </div>
+                  <h3 className="font-display text-xl font-medium mb-3">{h.title}</h3>
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                    {h.body}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -460,6 +586,44 @@ export default function HomeTheatre() {
           </div>
         </div>
       </section>
+
+      {/* Beyond movies — use cases */}
+      <section className="py-24 lg:py-32 px-6">
+        <div className="max-w-6xl mx-auto">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4 text-center">
+            Beyond movies
+          </p>
+          <h2 className="font-display text-3xl md:text-5xl font-medium text-center mb-4 max-w-3xl mx-auto">
+            A cinema is the <span className="italic text-gold-gradient">most used room</span> in the house.
+          </h2>
+          <p className="font-body text-sm md:text-base text-muted-foreground text-center max-w-2xl mx-auto mb-16">
+            Films are the headline. The room itself becomes your concert hall, stadium, gaming arena and sanctuary — every evening.
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-border/60 border border-border rounded-sm overflow-hidden">
+            {useCases.map((u, i) => {
+              const Icon = u.icon;
+              return (
+                <motion.div
+                  key={u.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: i * 0.05 }}
+                  className="bg-background/80 p-6 md:p-8"
+                >
+                  <Icon className="w-6 h-6 text-primary mb-5" strokeWidth={1.25} />
+                  <h3 className="font-display text-lg md:text-xl font-medium mb-2">{u.title}</h3>
+                  <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    {u.body}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Team */}
       <section className="py-24 lg:py-32 px-6 bg-card/30">
