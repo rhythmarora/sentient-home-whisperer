@@ -26,6 +26,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import caseStudyAuditorium from "@/assets/cinema/case-study-auditorium.jpg";
+import purpleRoomHero from "@/assets/cinema/purple-room-hero.jpg";
 
 const pillars = [
   {
@@ -434,7 +435,19 @@ export default function HomeTheatre() {
 
       {/* The Reference Cinema — The Purple Room */}
       <section className="py-24 lg:py-32 px-6">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto">
+          <div className="relative aspect-[21/9] w-full overflow-hidden rounded-sm border border-border mb-16">
+            <img
+              src={purpleRoomHero}
+              alt="The Purple Room Cinema at Qubix Museum Road, Bangalore — tiered black leather recliners under deep aubergine velvet acoustic panels with violet LED cove lighting and a reference projection screen"
+              width={1920}
+              height={1080}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+          </div>
+          <div className="text-center">
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">
             Museum Road · Bangalore
           </p>
