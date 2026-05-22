@@ -313,8 +313,8 @@ export default function HomeTheatre() {
   return (
     <Layout>
       <SEO
-        title="Home Theatre Design in Bangalore | Private Cinema by Qubix"
-        description="THX-trained private cinema designers in Bangalore. Reference acoustics, Dolby Atmos, calibrated projection. See our Hidden Wires-featured case study."
+        title="Home Theatre Design in Bangalore | The Purple Room Cinema by Qubix"
+        description="Private home cinemas designed, built and calibrated in Bangalore. Audition The Purple Room — India's only Meyer Sound Constellation cinema. Reference Atmos, 4K HDR projection, soundproofed acoustic shell."
         path="/home-theatre"
         image={caseStudyAuditorium}
         jsonLd={jsonLd}
@@ -586,6 +586,44 @@ export default function HomeTheatre() {
           </div>
         </div>
       </section>
+
+      {/* Beyond movies — use cases */}
+      <section className="py-24 lg:py-32 px-6">
+        <div className="max-w-6xl mx-auto">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4 text-center">
+            Beyond movies
+          </p>
+          <h2 className="font-display text-3xl md:text-5xl font-medium text-center mb-4 max-w-3xl mx-auto">
+            A cinema is the <span className="italic text-gold-gradient">most used room</span> in the house.
+          </h2>
+          <p className="font-body text-sm md:text-base text-muted-foreground text-center max-w-2xl mx-auto mb-16">
+            Films are the headline. The room itself becomes your concert hall, stadium, gaming arena and sanctuary — every evening.
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-border/60 border border-border rounded-sm overflow-hidden">
+            {useCases.map((u, i) => {
+              const Icon = u.icon;
+              return (
+                <motion.div
+                  key={u.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: i * 0.05 }}
+                  className="bg-background/80 p-6 md:p-8"
+                >
+                  <Icon className="w-6 h-6 text-primary mb-5" strokeWidth={1.25} />
+                  <h3 className="font-display text-lg md:text-xl font-medium mb-2">{u.title}</h3>
+                  <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    {u.body}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Team */}
       <section className="py-24 lg:py-32 px-6 bg-card/30">
