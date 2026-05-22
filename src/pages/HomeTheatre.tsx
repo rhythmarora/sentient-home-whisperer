@@ -350,11 +350,11 @@ export default function HomeTheatre() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-body text-base md:text-lg text-silver/80 mt-6 max-w-2xl"
+            className="font-body text-base md:text-lg text-platinum/90 mt-6 max-w-2xl"
           >
             THX-trained private cinemas — designed, built and calibrated in Bangalore.
           </motion.p>
-          <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-silver/50 mt-4 max-w-3xl">
+          <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-platinum/90 mt-4 max-w-3xl">
             CEDIA RP22 · CEDIA RP32 · PVA · Meyer Sound Constellation · Trinnov — Certified, on one team.
           </p>
           <motion.div
@@ -424,7 +424,7 @@ export default function HomeTheatre() {
             {credentials.map((c) => (
               <span
                 key={c}
-                className="font-body text-xs md:text-sm tracking-[0.15em] uppercase text-silver/70 hover:text-foreground transition-colors border border-border rounded-full px-4 py-2"
+                className="font-body text-xs md:text-sm tracking-[0.15em] uppercase text-platinum/80 hover:text-foreground transition-colors border border-border rounded-full px-4 py-2"
               >
                 {c}
               </span>
@@ -454,14 +454,14 @@ export default function HomeTheatre() {
           <h2 className="font-display text-3xl md:text-5xl font-medium mb-6 max-w-4xl mx-auto">
             <span className="italic text-gold-gradient">The Purple Room Cinema</span> — India's only Meyer Sound Constellation room.
           </h2>
-          <p className="font-body text-sm tracking-[0.2em] uppercase text-silver/70 mb-8">
+          <p className="font-body text-sm tracking-[0.2em] uppercase text-platinum/80 mb-8">
             Our reference cinema. The blueprint for yours.
           </p>
           <p className="font-body text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             At our 12-zone Experience Centre on Museum Road, The Purple Room Cinema is the only Constellation-powered cinema in the country — built around a Meyer Sound Constellation acoustic system, immersive object playback, reference-grade projection, and a room engineered to CEDIA RP22. We invite every serious client to audition it before specifying their own. It is the most honest way to understand what your room could become.
           </p>
           <div className="mt-12 border-y border-border py-5">
-            <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-silver/70 leading-loose">
+            <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-platinum/80 leading-loose">
               Acoustic system: Meyer Sound Constellation · Calibration: Trinnov · Acoustic design: EASE-modelled · Reference content: 4K HDR Dolby Vision + Atmos masters
             </p>
           </div>
@@ -560,7 +560,7 @@ export default function HomeTheatre() {
                       transition={{ duration: 0.3 }}
                       className="px-6 pb-6 pl-[88px]"
                     >
-                      <p className="font-body text-sm text-silver/80 leading-relaxed border-l border-primary/30 pl-5">
+                      <p className="font-body text-sm text-platinum/90 leading-relaxed border-l border-primary/30 pl-5">
                         {s.detail}
                       </p>
                     </motion.div>
@@ -679,7 +679,7 @@ export default function HomeTheatre() {
             <span className="font-body text-xs tracking-[0.3em] uppercase text-primary">
               Featured case study
             </span>
-            <span className="text-silver/40">·</span>
+            <span className="text-platinum/80">·</span>
             <a
               href="https://www.hiddenwires.co.uk/case-studies/article/taking-your-work-home"
               target="_blank"
@@ -743,7 +743,7 @@ export default function HomeTheatre() {
                   {techSpec.map((t) => (
                     <li
                       key={t}
-                      className="font-body text-sm text-silver/90 flex items-start gap-3 leading-relaxed"
+                      className="font-body text-sm text-platinum flex items-start gap-3 leading-relaxed"
                     >
                       <span className="text-primary mt-1.5 shrink-0">—</span>
                       <span>{t}</span>
@@ -787,12 +787,12 @@ export default function HomeTheatre() {
                   <p className="font-body text-[10px] tracking-[0.25em] uppercase text-primary mb-2">
                     {p.city} · {p.type}
                   </p>
-                  <p className="font-body text-sm text-silver/80 leading-relaxed">{p.spec}</p>
+                  <p className="font-body text-sm text-platinum/90 leading-relaxed">{p.spec}</p>
                 </div>
               </motion.div>
             ))}
           </div>
-          <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-silver/50 text-center mt-12 max-w-3xl mx-auto leading-loose">
+          <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-platinum/90 text-center mt-12 max-w-3xl mx-auto leading-loose">
             Several Qubix cinemas — including residences of public figures — are covered under NDA. Detailed references available on request.
           </p>
         </div>
@@ -808,7 +808,7 @@ export default function HomeTheatre() {
             {stack.map((s) => (
               <span
                 key={s}
-                className="font-display text-lg md:text-xl text-silver/70 hover:text-foreground transition-colors"
+                className="font-display text-lg md:text-xl text-platinum/80 hover:text-foreground transition-colors"
               >
                 {s}
               </span>
@@ -827,7 +827,7 @@ export default function HomeTheatre() {
             {recognition.map((r) => (
               <span
                 key={r}
-                className="font-body text-[11px] md:text-xs tracking-[0.25em] uppercase text-silver/70"
+                className="font-body text-[11px] md:text-xs tracking-[0.25em] uppercase text-platinum/80"
               >
                 {r}
               </span>
