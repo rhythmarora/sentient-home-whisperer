@@ -473,6 +473,7 @@ export default function HomeTheatre() {
               Audition The Purple Room →
             </Link>
           </div>
+          </div>
         </div>
       </section>
 
