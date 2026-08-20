@@ -3,6 +3,7 @@ import livingRoom from "@/assets/living-room.webp.asset.json";
 import personalDjStereo from "@/assets/personal-dj-stereo.webp.asset.json";
 import familyHomeTheatre from "@/assets/family-home-theatre.webp.asset.json";
 import tvStudio from "@/assets/tv-studio.webp.asset.json";
+import commandControlCenter from "@/assets/command-control-center.webp.asset.json";
 
 export type ZoneTier = "residential" | "enterprise";
 
@@ -237,7 +238,7 @@ export const zones: Zone[] = [
     tier: "enterprise",
     color: "hsl(var(--security))",
     glowClass: "",
-    heroImage: "/src/assets/zones/command-control.jpg",
+    heroImage: commandControlCenter.url,
     poweredBy: ["QuantIQ", "MissionDesk", "Cisco"],
     tagline: "See everything. Control everything.",
     description:
