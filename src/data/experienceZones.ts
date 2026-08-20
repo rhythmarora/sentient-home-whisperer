@@ -1,6 +1,7 @@
 import constellationRoom from "@/assets/constellation-room.webp.asset.json";
 import livingRoom from "@/assets/living-room.webp.asset.json";
 import personalDjStereo from "@/assets/personal-dj-stereo.webp.asset.json";
+import familyHomeTheatre from "@/assets/family-home-theatre.webp.asset.json";
 
 export type ZoneTier = "residential" | "enterprise";
 
