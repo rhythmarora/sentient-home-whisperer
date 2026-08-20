@@ -105,13 +105,16 @@ export default function ZoneCard({ zone }: { zone: Zone }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.22 }}
-          className="w-full aspect-video rounded-sm border border-border/40 mb-8 flex items-center justify-center overflow-hidden bg-muted/30"
+          className={cn(
+            "w-full rounded-sm border border-border/40 mb-8 flex items-center justify-center overflow-hidden bg-muted/30",
+            !zone.heroImage && "aspect-video"
+          )}
         >
           {zone.heroImage ? (
             <img
               src={zone.heroImage}
               alt={zone.name}
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-contain"
             />
           ) : (
             <span className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground/50">
