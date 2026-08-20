@@ -134,6 +134,7 @@ export const zones: Zone[] = [
     description:
       "Not everyone needs a home theatre. Some people just want a room where music sounds incredible — a personal listening space with reference-grade stereo, room correction, and zero distractions. We build compact HiFi rooms starting from just 80 sqft. Add a wireless DJ console and it doubles as your private mixing studio. No audience required.",
     roomSize: "From 80 sqft",
+    heroImage: personalDjStereo.url,
     systems: [
       { name: "PMC Prodigy Bookshelf / Towers", details: "Reference-grade compact stereo speakers" },
       { name: "Lyngdorf TDAI 1120", details: "Digital DSP Amplifier with RoomPerfect™ calibration" },
