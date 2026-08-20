@@ -1,6 +1,7 @@
 import constellationRoom from "@/assets/constellation-room.webp.asset.json";
 import livingRoom from "@/assets/living-room.webp.asset.json";
 import personalDjStereo from "@/assets/personal-dj-stereo.webp.asset.json";
+import familyHomeTheatre from "@/assets/family-home-theatre.webp.asset.json";
 
 export type ZoneTier = "residential" | "enterprise";
 
@@ -99,6 +100,7 @@ export const zones: Zone[] = [
     description:
       "This is a small family escape in an 18×13 room. This system offers excellent value for every rupee spent — nice, punchy, powerful. We have two complete systems in this room so you can compare and choose what resonates with your space and your ears.",
     roomSize: "18 × 13 ft",
+    heroImage: familyHomeTheatre.url,
     systems: [
       { name: "Option 1: Artcoustic Spitfire", details: "Architectural speakers with stunning visual design" },
       { name: "Option 2: Wharfedale M Series", details: "Dynamic performance in a compact form factor" },
