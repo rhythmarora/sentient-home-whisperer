@@ -222,6 +222,7 @@ export const zones: Zone[] = [
     tagline: "Broadcast-grade. In your building.",
     description:
       "Everything you need to shoot and edit TV channel-grade content. Personal news studios, podcast studios, e-sports setups, and streaming solutions with multi-camera switching and live production capabilities. Content creation at a professional level, in your own space.",
+    heroImage: tvStudio.url,
     systems: [
       { name: "Multi-Camera Production", details: "Professional switching and live direction" },
       { name: "Podcast & Streaming Setup", details: "Broadcast-quality audio and video capture" },
