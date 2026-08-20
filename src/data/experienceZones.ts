@@ -39,6 +39,7 @@ export const zones: Zone[] = [
     description:
       "40 speakers. 8 subwoofers. All perfectly calibrated in a 30×20 ft room — powered by Constellation by Meyer Sound, the world's most advanced active acoustics system. Constellation uses an array of ambient sensing microphones, sophisticated DSP, and laboratory-grade loudspeakers to modify the reverberant characteristics of the room in real time — transforming a single space into a concert hall, a jazz club, a cathedral, or a recording studio at the touch of a button. This is the only Constellation demo room in the Indian subcontinent. Trusted by venues like Jazz at Lincoln Center, the San Francisco Symphony, and performing arts centres worldwide — now available for you to experience, right here.",
     roomSize: "30 × 20 ft",
+    heroImage: constellationRoom.url,
     systems: [
       { name: "Constellation Active Acoustics", details: "Real-time variable acoustics — transform the room's sonic character instantly" },
       { name: "Meyer Sound Speaker Array", details: "40 channels of laboratory-grade active speakers" },
