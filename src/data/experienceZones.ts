@@ -2,6 +2,7 @@ import constellationRoom from "@/assets/constellation-room.webp.asset.json";
 import livingRoom from "@/assets/living-room.webp.asset.json";
 import personalDjStereo from "@/assets/personal-dj-stereo.webp.asset.json";
 import familyHomeTheatre from "@/assets/family-home-theatre.webp.asset.json";
+import tvStudio from "@/assets/tv-studio.webp.asset.json";
 
 export type ZoneTier = "residential" | "enterprise";
 
@@ -222,6 +223,7 @@ export const zones: Zone[] = [
     tagline: "Broadcast-grade. In your building.",
     description:
       "Everything you need to shoot and edit TV channel-grade content. Personal news studios, podcast studios, e-sports setups, and streaming solutions with multi-camera switching and live production capabilities. Content creation at a professional level, in your own space.",
+    heroImage: tvStudio.url,
     systems: [
       { name: "Multi-Camera Production", details: "Professional switching and live direction" },
       { name: "Podcast & Streaming Setup", details: "Broadcast-quality audio and video capture" },
