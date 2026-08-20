@@ -1,3 +1,5 @@
+import constellationRoom from "@/assets/constellation-room.webp.asset.json";
+
 export type ZoneTier = "residential" | "enterprise";
 
 export interface ZoneSystem {
