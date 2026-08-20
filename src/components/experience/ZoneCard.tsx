@@ -105,7 +105,7 @@ export default function ZoneCard({ zone }: { zone: Zone }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.22 }}
-          className="w-full aspect-[21/9] rounded-sm border border-border/40 mb-8 flex items-center justify-center overflow-hidden bg-muted/30"
+          className="w-full aspect-video rounded-sm border border-border/40 mb-8 flex items-center justify-center overflow-hidden bg-muted/30"
         >
           {zone.heroImage ? (
             <img
