@@ -78,6 +78,7 @@ export const zones: Zone[] = [
     tagline: "No projector. No multiple remotes. Just pure performance.",
     description:
       "Only a few systems do equal justice to movies and music. A free-style living room system — no acoustic treatments, wooden floor, charcoal and leather panels, normal seating. No frills. Slim profile speakers mounted alongside a calibrated 100\" QD-Mini LED TV. Enjoy Netflix, music, concerts, music videos, or Atmos music on a HiFi audiophile-grade system.",
+    heroImage: livingRoom.url,
     systems: [
       { name: "PMC CI90 Speakers", details: "Slim-profile audiophile speakers for living spaces" },
       { name: "McIntosh MHT300", details: "Integrated AV Processor — the best AVR money can buy" },
