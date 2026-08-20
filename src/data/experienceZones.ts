@@ -238,7 +238,7 @@ export const zones: Zone[] = [
     tier: "enterprise",
     color: "hsl(var(--security))",
     glowClass: "",
-    heroImage: "/src/assets/zones/command-control.jpg",
+    heroImage: commandControlCenter.url,
     poweredBy: ["QuantIQ", "MissionDesk", "Cisco"],
     tagline: "See everything. Control everything.",
     description:
