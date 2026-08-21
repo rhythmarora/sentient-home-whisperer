@@ -8,6 +8,7 @@ import ultimateHifi from "@/assets/ultimate-hifi.webp.asset.json";
 import heritageStereo from "@/assets/heritage-stereo.webp.asset.json";
 import soundbarActive from "@/assets/soundbar-active.webp.asset.json";
 import casualSurround from "@/assets/casual-surround.webp.asset.json";
+import casualArchitectural from "@/assets/casual-architectural.webp.asset.json";
 
 export type ZoneTier = "residential" | "enterprise";
 
@@ -197,6 +198,7 @@ export const zones: Zone[] = [
     glowClass: "",
     poweredBy: ["Cornered Audio", "Bowers & Wilkins", "Lithe Audio", "BEC", "Sonos", "Rotel", "K-Array"],
     tagline: "Sound that disappears into your architecture.",
+    heroImage: casualArchitectural.url,
     description:
       "Ceiling speakers, in-wall solutions, weatherproof outdoor audio, and casual listening setups. These systems are designed to be heard but not seen — blending into your home's architecture while filling every corner with music.",
     systems: [
