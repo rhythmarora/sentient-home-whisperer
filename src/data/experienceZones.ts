@@ -7,6 +7,7 @@ import commandControlCenter from "@/assets/command-control-center.webp.asset.jso
 import ultimateHifi from "@/assets/ultimate-hifi.webp.asset.json";
 import heritageStereo from "@/assets/heritage-stereo.webp.asset.json";
 import soundbarActive from "@/assets/soundbar-active.webp.asset.json";
+import casualSurround from "@/assets/casual-surround.webp.asset.json";
 
 export type ZoneTier = "residential" | "enterprise";
 
@@ -178,6 +179,7 @@ export const zones: Zone[] = [
     glowClass: "glow-social",
     poweredBy: ["Wharfedale", "Arcam"],
     tagline: "Tower speakers meet everyday living.",
+    heroImage: casualSurround.url,
     description:
       "A casual living room tower + center + surround setup that proves you don't need a dedicated room for immersive sound. This system blends into your living space while delivering a surround experience that pulls you into every scene and every track.",
     systems: [
