@@ -4,6 +4,7 @@ import personalDjStereo from "@/assets/personal-dj-stereo.webp.asset.json";
 import familyHomeTheatre from "@/assets/family-home-theatre.webp.asset.json";
 import tvStudio from "@/assets/tv-studio.webp.asset.json";
 import commandControlCenter from "@/assets/command-control-center.webp.asset.json";
+import ultimateHifi from "@/assets/ultimate-hifi.webp.asset.json";
 
 export type ZoneTier = "residential" | "enterprise";
 
@@ -67,6 +68,7 @@ export const zones: Zone[] = [
     tagline: "As pure as sound can get. In a room that feels like home.",
     description:
       "A reference stereo setup that actually resembles your living room — not an audiophile's den. Because HiFi music can be enjoyed with friends and family in everyday spaces. This is what uncompromising audio sounds like when it's designed to live with you.",
+    heroImage: ultimateHifi.url,
     systems: [
       { name: "PMC Prophecy i9 Towers", details: "Flagship transmission-line speakers" },
       { name: "Classé Delta Pre + Monoblocks", details: "Reference-grade amplification chain" },
