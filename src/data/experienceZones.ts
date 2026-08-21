@@ -5,6 +5,7 @@ import familyHomeTheatre from "@/assets/family-home-theatre.webp.asset.json";
 import tvStudio from "@/assets/tv-studio.webp.asset.json";
 import commandControlCenter from "@/assets/command-control-center.webp.asset.json";
 import ultimateHifi from "@/assets/ultimate-hifi.webp.asset.json";
+import heritageStereo from "@/assets/heritage-stereo.webp.asset.json";
 
 export type ZoneTier = "residential" | "enterprise";
 
@@ -123,6 +124,7 @@ export const zones: Zone[] = [
     tagline: "Where craftsmanship meets sonic purity.",
     description:
       "Multiple stereo setups showcasing the range and depth of two-channel audio — from heritage warmth to modern precision. Each pairing is curated to demonstrate a different philosophy of stereo listening.",
+    heroImage: heritageStereo.url,
     systems: [
       { name: "Wharfedale Linton Heritage", details: "Paired with Audiolab amplification — classic warmth" },
       { name: "Wharfedale Elysian Flagship", details: "Paired with Luxman L-505z — reference-grade stereo" },
