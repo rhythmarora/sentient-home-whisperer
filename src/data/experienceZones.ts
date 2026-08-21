@@ -6,6 +6,7 @@ import tvStudio from "@/assets/tv-studio.webp.asset.json";
 import commandControlCenter from "@/assets/command-control-center.webp.asset.json";
 import ultimateHifi from "@/assets/ultimate-hifi.webp.asset.json";
 import heritageStereo from "@/assets/heritage-stereo.webp.asset.json";
+import soundbarActive from "@/assets/soundbar-active.webp.asset.json";
 
 export type ZoneTier = "residential" | "enterprise";
 
@@ -161,6 +162,7 @@ export const zones: Zone[] = [
     tagline: "From soundbars to the ultimate active speaker system.",
     description:
       "The spectrum of modern active audio — from premium soundbars to an unprecedented 7.7 active speaker system. The Devialet setup, connected via Dante Audio Network, redefines what's possible without traditional amplifiers and receivers.",
+    heroImage: soundbarActive.url,
     systems: [
       { name: "Bowers & Wilkins Panorama", details: "Premium soundbar experience" },
       { name: "Sonos Arc Ultra + Sub 4 + Era 100 Pair", details: "Complete wireless surround ecosystem" },
