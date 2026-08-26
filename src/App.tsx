@@ -39,6 +39,8 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <GoogleAnalytics />
+
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/spaces" element={<Spaces />} />
