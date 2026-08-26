@@ -25,6 +25,8 @@ import SmartHome from "./pages/SmartHome";
 import HomeTheatre from "./pages/HomeTheatre";
 
 import ScrollToTop from "./components/ScrollToTop";
+import GoogleAnalytics from "./components/GoogleAnalytics";
+
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +39,8 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <GoogleAnalytics />
+
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/spaces" element={<Spaces />} />
