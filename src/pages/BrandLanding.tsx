@@ -57,6 +57,19 @@ import wharfedaleHeroLinton from "@/assets/brands/wharfedale-hero-linton.jpg";
 import wharfedaleHeroDiamond from "@/assets/brands/wharfedale-hero-diamond.png";
 import wharfedale90Logo from "@/assets/brands/wharfedale-90.png";
 
+import agHero1 from "@/assets/brands/avantgarde-hero-1.jpg";
+import agHero2 from "@/assets/brands/avantgarde-hero-2.jpg";
+import agHero3 from "@/assets/brands/avantgarde-hero-3.webp";
+import agTrio from "@/assets/brands/avantgarde-trio.webp";
+import agDuoGt from "@/assets/brands/avantgarde-duo-gt.webp";
+import agDuoSd from "@/assets/brands/avantgarde-duo-sd.webp";
+import agUnoSd from "@/assets/brands/avantgarde-uno-sd.webp";
+import agMezzo from "@/assets/brands/avantgarde-mezzo.webp";
+import agOpus1 from "@/assets/brands/avantgarde-opus1.webp";
+import agZero from "@/assets/brands/avantgarde-zero.webp";
+import agSub from "@/assets/brands/avantgarde-subwoofer.webp";
+import agColibri from "@/assets/brands/avantgarde-colibri.webp";
+
 const brandLogoOverrides: Record<string, string> = {
   "wharfedale": wharfedale90Logo,
 };
@@ -66,6 +79,7 @@ const brandHeroImages: Record<string, string> = {
   "pmc": pmcHero1,
   "sonos": sonosHero1,
   "wharfedale": wharfedaleHeroEvo,
+  "avantgarde-acoustics": agHero1,
 };
 
 const brandHeroSlideshows: Record<string, string[]> = {
@@ -81,6 +95,7 @@ const brandHeroSlideshows: Record<string, string[]> = {
   "pmc": [pmcHero1, pmcHero2, pmcHero3, pmcHero4],
   "sonos": [sonosHero1, sonosHero2, sonosHero3],
   "wharfedale": [wharfedaleHeroEvo, wharfedaleHeroLinton, wharfedaleHeroDiamond],
+  "avantgarde-acoustics": [agHero1, agHero2, agHero3],
 };
 
 const brandProductImages: Record<string, Record<string, string>> = {
@@ -119,6 +134,17 @@ const brandProductImages: Record<string, Record<string, string>> = {
     "Linton": wharfedaleLinton,
     "EVO": wharfedaleEvo,
     "M Series": wharfedaleMSeries,
+  },
+  "avantgarde-acoustics": {
+    "Trio G3": agTrio,
+    "Duo GT": agDuoGt,
+    "Duo SD": agDuoSd,
+    "Uno SD": agUnoSd,
+    "Mezzo": agMezzo,
+    "Opus 1": agOpus1,
+    "Zero / iTRON": agZero,
+    "Subwoofers": agSub,
+    "Colibri": agColibri,
   },
 };
 
