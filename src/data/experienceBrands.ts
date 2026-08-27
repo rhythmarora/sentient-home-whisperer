@@ -13,7 +13,7 @@ export const experienceBrands: ExperienceBrand[] = [
   { name: "Constellation", logoKey: "Constellation", usp: "The world's most advanced active acoustics — only demo in the subcontinent.", url: "https://meyersound.com/product/constellation/", internalRoute: "/constellation", onDemo: true },
   { name: "PMC", logoKey: "PMC", usp: "Studio monitors trusted by Abbey Road — now for your home.", url: "https://pmc-speakers.com", onDemo: true },
   { name: "Wharfedale", logoKey: "Wharfedale", usp: "85 years of British loudspeaker heritage.", url: "https://www.wharfedale.co.uk", onDemo: true },
-  { name: "Avantgarde Acoustics", logoKey: "Avantgarde Acoustics", usp: "German spherical horn loudspeakers, pure emotion.", url: "https://www.avantgarde-acoustic.de", onDemo: false },
+  { name: "Avantgarde Acoustics", logoKey: "Avantgarde Acoustics", usp: "German spherical horn loudspeakers, pure emotion.", url: "https://www.avantgarde-acoustic.de", internalRoute: "/brands/avantgarde-acoustics", onDemo: true },
   { name: "SIM2", logoKey: "SIM2", usp: "Italian ultra-high-end laser projection.", url: "https://www.sim2.com", onDemo: true },
   { name: "Sonos", logoKey: "Sonos", usp: "The simplest way to fill every room with music.", url: "https://www.sonos.com", onDemo: true },
   { name: "Devialet", logoKey: "Devialet", usp: "Phantom engineering — physics-defying active speakers.", url: "https://www.devialet.com", onDemo: true },
