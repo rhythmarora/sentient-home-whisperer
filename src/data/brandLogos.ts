@@ -47,6 +47,7 @@ import knxLogo from "@/assets/brands/knx.png";
 import powersoftLogo from "@/assets/brands/powersoft.png";
 import proficientLogo from "@/assets/brands/proficient.svg";
 import voidLogo from "@/assets/brands/void.png";
+import avantgardeLogo from "@/assets/brands/avantgarde.svg";
 
 export const brandLogos: Record<string, string> = {
   Quad: quadLogo,
@@ -99,4 +100,5 @@ export const brandLogos: Record<string, string> = {
   Powersoft: powersoftLogo,
   "Proficient Audio": proficientLogo,
   "Void Acoustics": voidLogo,
+  "Avantgarde Acoustics": avantgardeLogo,
 };
