@@ -34,7 +34,6 @@ export const experienceBrands: ExperienceBrand[] = [
   { name: "BEC-Akustik", logoKey: "BEC", usp: "Discreet architectural speakers for distributed sound systems.", url: "https://bec-akustik.de/en/", onDemo: true },
 
   // Electronics & Processing
-  { name: "Classé", logoKey: "Classé", usp: "Reference-grade amplification with musical purity.", url: "https://www.classeaviation.com", onDemo: true },
   { name: "Lyngdorf", logoKey: "Lyngdorf", usp: "Digital amplification with RoomPerfect™ calibration.", url: "https://www.lyngdorf.com", onDemo: true },
   { name: "Rotel", logoKey: "Rotel", usp: "Musical transparency through balanced engineering.", url: "https://www.rotel.com", onDemo: true },
   { name: "Lumagen", logoKey: "Lumagen", usp: "Reference-grade video processing and scaling.", url: "https://www.lumagen.com", onDemo: true },
