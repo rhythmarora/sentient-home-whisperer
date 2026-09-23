@@ -31,7 +31,7 @@ export const experienceBrands: ExperienceBrand[] = [
   { name: "Bowers & Wilkins", logoKey: "Bowers & Wilkins", usp: "Iconic British sound trusted by studios worldwide.", url: "https://www.bowerswilkins.com", onDemo: true },
   { name: "Cornered Audio", logoKey: "Cornered Audio", usp: "Corner-mounted speakers that vanish into architecture.", url: "https://www.corneredaudio.com", onDemo: true },
   { name: "Lithe Audio", logoKey: "Lithe Audio", usp: "Wireless ceiling speakers with zero-cable install.", url: "https://www.litheaudio.com", onDemo: true },
-  { name: "BEC", logoKey: "BEC", usp: "Discreet architectural speakers for distributed sound systems.", url: "https://www.bec.uk.com", onDemo: true },
+  { name: "BEC-Akustik", logoKey: "BEC", usp: "Discreet architectural speakers for distributed sound systems.", url: "https://bec-akustik.de/en/", onDemo: true },
 
   // Electronics & Processing
   { name: "Classé", logoKey: "Classé", usp: "Reference-grade amplification with musical purity.", url: "https://www.classeaviation.com", onDemo: true },
