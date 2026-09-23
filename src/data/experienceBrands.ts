@@ -24,7 +24,7 @@ export const experienceBrands: ExperienceBrand[] = [
   { name: "McIntosh", logoKey: "McIntosh", usp: "Legendary American amplification since 1949.", url: "https://www.mcintoshlabs.com", onDemo: true },
   { name: "K-Array", logoKey: "K-Array", usp: "Ultra-slim Italian speakers with extraordinary power.", url: "https://www.k-array.com", onDemo: true },
   { name: "Trinnov", logoKey: "Trinnov", usp: "The world's most advanced immersive audio processor.", url: "https://www.trinnov.com", onDemo: true },
-  { name: "Classé", logoKey: "Classé", usp: "Reference-grade amplification with musical purity.", url: "https://www.classeaviation.com", onDemo: true },
+  { name: "Classé", logoKey: "Classé", usp: "Reference-grade amplification with musical purity.", url: "https://www.classeaudio.com/", onDemo: true },
 
   // Speakers & Audio
   { name: "Artcoustic", logoKey: "Artcoustic", usp: "Architectural speakers that double as art.", url: "https://www.artcoustic.com", onDemo: true },
